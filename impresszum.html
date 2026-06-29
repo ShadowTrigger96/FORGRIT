@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="hu" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Impresszum – FORGRIT</title>
+  <meta name="description" content="FORGRIT impresszum – szolgáltatói adatok" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --cyan: #0ea5e9;
+      --cyan-dark: #0284c7;
+    }
+
+    [data-theme="light"] {
+      --bg: #eef2f7; --bg-card: rgba(255,255,255,0.85); --bg-nav: rgba(238,242,247,0.85);
+      --text: #0f172a; --text-secondary: #475569; --text-muted: #94a3b8;
+      --border: rgba(15,23,42,0.08); --border-hover: rgba(15,23,42,0.15);
+      --shadow-card: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03);
+    }
+
+    [data-theme="dark"] {
+      --bg: #0f1225; --bg-card: rgba(255,255,255,0.05); --bg-nav: rgba(15,18,37,0.85);
+      --text: #e2e8f0; --text-secondary: #94a3b8; --text-muted: #475569;
+      --border: rgba(255,255,255,0.08); --border-hover: rgba(255,255,255,0.15);
+      --shadow-card: none;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg); color: var(--text);
+      line-height: 1.7; transition: background 0.4s, color 0.4s;
+    }
+
+    h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
+
+    /* Navbar */
+    .navbar {
+      position: sticky; top: 0; width: 100%; z-index: 100;
+      padding: 0.7rem 0; background: var(--bg-nav);
+      backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: 900px; margin: 0 auto; padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+
+    .nav-brand {
+      display: flex; align-items: center; gap: 0.75rem;
+      text-decoration: none; color: var(--text);
+    }
+
+    .nav-brand img { height: 32px; width: auto; }
+    .nav-brand span { font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem; font-weight: 700; letter-spacing: 0.12em; }
+
+    .nav-right { display: flex; align-items: center; gap: 0.75rem; }
+
+    .toggle-btn {
+      width: 38px; height: 38px; border-radius: 10px;
+      border: 1px solid var(--border); background: var(--bg-card);
+      color: var(--text-secondary); display: flex; align-items: center;
+      justify-content: center; cursor: pointer; transition: all 0.3s; font-size: 0;
+    }
+
+    .toggle-btn:hover { border-color: var(--border-hover); color: var(--text); }
+    .toggle-btn svg { width: 18px; height: 18px; }
+
+    .back-link {
+      font-size: 0.875rem; font-weight: 500; color: var(--cyan);
+      text-decoration: none; transition: opacity 0.3s;
+    }
+
+    .back-link:hover { opacity: 0.7; }
+
+    /* Content */
+    .legal-page {
+      max-width: 900px; margin: 0 auto; padding: 3rem 2rem 5rem;
+    }
+
+    .legal-page h1 {
+      font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.5rem;
+    }
+
+    .legal-page .updated {
+      font-size: 0.85rem; color: var(--text-muted); margin-bottom: 3rem;
+    }
+
+    .legal-page h2 {
+      font-size: 1.25rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 1rem;
+      padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
+    }
+
+    .legal-page p { margin-bottom: 1rem; color: var(--text-secondary); font-size: 0.95rem; }
+
+    .legal-page ul, .legal-page ol {
+      margin-bottom: 1rem; padding-left: 1.5rem; color: var(--text-secondary); font-size: 0.95rem;
+    }
+
+    .legal-page li { margin-bottom: 0.4rem; }
+
+    .legal-page a { color: var(--cyan); text-decoration: none; }
+    .legal-page a:hover { text-decoration: underline; }
+
+    .info-table {
+      width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .info-table td {
+      padding: 0.75rem 1rem; border: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .info-table td:first-child {
+      font-weight: 600; width: 200px; color: var(--text);
+    }
+
+    .info-table td:last-child { color: var(--text-secondary); }
+
+    /* Footer */
+    .footer {
+      border-top: 1px solid var(--border); padding: 2rem;
+    }
+
+    .footer-inner {
+      max-width: 900px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+    }
+
+    .footer-brand { display: flex; align-items: center; gap: 0.75rem; }
+    .footer-brand img { height: 24px; width: auto; opacity: 0.7; }
+    .footer-brand span { font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: 0.1em; font-size: 0.85rem; color: var(--text-muted); }
+
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 0.8rem; transition: color 0.3s; }
+    .footer-links a:hover { color: var(--cyan); }
+
+    @media (max-width: 600px) {
+      .legal-page { padding: 2rem 1.2rem 3rem; }
+      .legal-page h1 { font-size: 1.6rem; }
+      .info-table td:first-child { width: 120px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <img src="logo2.png" alt="FORGRIT">
+      <span>FORGRIT</span>
+    </a>
+    <div class="nav-right">
+      <a href="index.html" class="back-link">&larr; Vissza a főoldalra</a>
+      <button class="toggle-btn" id="themeToggle" title="Téma váltás">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="legal-page">
+  <h1>Impresszum</h1>
+  <p class="updated">Utolsó frissítés: 2026. június 29.</p>
+
+  <h2>1. Szolgáltató adatai</h2>
+  <table class="info-table">
+    <tr><td>Szolgáltató neve</td><td>Tompos Richárd egyéni vállalkozó</td></tr>
+    <tr><td>Márkanév</td><td>FORGRIT</td></tr>
+    <tr><td>Székhely</td><td>9222 Hegyeshalom, Magyarország</td></tr>
+    <tr><td>Levelezési cím</td><td>9222 Hegyeshalom, Magyarország</td></tr>
+    <tr><td>E-mail</td><td><a href="mailto:shdwtrggr@gmail.com">shdwtrggr@gmail.com</a></td></tr>
+    <tr><td>Telefon</td><td><a href="tel:+36202389569">+36 20 238 9569</a></td></tr>
+    <tr><td>Adószám</td><td>[Adószám]</td></tr>
+    <tr><td>Nyilvántartási szám</td><td>[Nyilvántartási szám]</td></tr>
+  </table>
+  <p>Az egyéni vállalkozó nyilvántartásba vételét a területileg illetékes járási hivatal végezte.</p>
+
+  <h2>2. Tárhelyszolgáltató adatai</h2>
+  <table class="info-table">
+    <tr><td>Név</td><td>[Tárhelyszolgáltató neve]</td></tr>
+    <tr><td>Székhely</td><td>[Tárhelyszolgáltató címe]</td></tr>
+    <tr><td>Weboldal</td><td>[Tárhelyszolgáltató weboldala]</td></tr>
+    <tr><td>E-mail</td><td>[Tárhelyszolgáltató e-mail]</td></tr>
+  </table>
+
+  <h2>3. Szerzői jogok</h2>
+  <p>A weboldal teljes tartalma – beleértve a szövegeket, grafikákat, logókat, ikonokat, képeket, adatösszeállításokat és szoftvert – a FORGRIT – Tompos Richárd E.V. szellemi tulajdonát képezi, és a magyar szerzői jogi törvény (1999. évi LXXVI. törvény), valamint nemzetközi szerzői jogi egyezmények védik.</p>
+  <p>A tartalom bármely részének másolása, terjesztése, módosítása vagy felhasználása kizárólag a szolgáltató előzetes írásbeli engedélyével lehetséges.</p>
+
+  <h2>4. Felelősségkorlátozás</h2>
+  <p>A szolgáltató minden ésszerű erőfeszítést megtesz az oldalon közzétett információk pontossága és naprakészsége érdekében, azonban azok teljességéért és hibamentességéért felelősséget nem vállal.</p>
+  <p>A weboldalon található külső hivatkozások harmadik felek által üzemeltetett oldalakra mutatnak, amelyek tartalmáért a szolgáltató nem felel. A külső linkek elhelyezésekor a szolgáltató ellenőrizte, hogy azok nem tartalmaznak jogellenes tartalmat; a folyamatos ellenőrzés azonban a szolgáltató ésszerű kapacitásain túlmutat.</p>
+
+  <h2>5. Alkalmazandó jog és vitarendezés</h2>
+  <p>A jelen impresszumra és a weboldal használatára a magyar jog az irányadó. Jogvita esetén a felek elsősorban békés úton, egyeztetéssel kísérlik meg a vita rendezését. Ennek sikertelensége esetén a szolgáltató székhelye szerinti bíróság illetékes.</p>
+
+  <h2>6. Vonatkozó jogszabályok</h2>
+  <ul>
+    <li>2001. évi CVIII. törvény – az elektronikus kereskedelmi szolgáltatások, valamint az információs társadalommal összefüggő szolgáltatások egyes kérdéseiről (Eker. tv.)</li>
+    <li>1999. évi LXXVI. törvény – a szerzői jogról (Szjt.)</li>
+    <li>2011. évi CXII. törvény – az információs önrendelkezési jogról és az információszabadságról (Infotv.)</li>
+    <li>Az Európai Parlament és a Tanács (EU) 2016/679 rendelete – az általános adatvédelmi rendelet (GDPR)</li>
+  </ul>
+
+  <h2>7. Kapcsolat</h2>
+  <p>Az impresszummal kapcsolatos kérdéseket az <a href="mailto:shdwtrggr@gmail.com">shdwtrggr@gmail.com</a> e-mail címre vagy a <a href="tel:+36202389569">+36 20 238 9569</a> telefonszámra lehet küldeni.</p>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="logo2.png" alt="FORGRIT">
+      <span>FORGRIT</span>
+    </div>
+    <div class="footer-links">
+      <a href="impresszum.html">Impresszum</a>
+      <a href="adatkezeles.html">Adatkezelés</a>
+      <a href="sutikezeles.html">Sütikezelés</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function() {
+  var theme = localStorage.getItem('fg-theme') || 'light';
+  function applyTheme(t) {
+    theme = t;
+    document.documentElement.setAttribute('data-theme', t);
+    localStorage.setItem('fg-theme', t);
+    document.querySelectorAll('.icon-sun').forEach(function(el) { el.style.display = t === 'light' ? 'block' : 'none'; });
+    document.querySelectorAll('.icon-moon').forEach(function(el) { el.style.display = t === 'dark' ? 'block' : 'none'; });
+  }
+  applyTheme(theme);
+  document.getElementById('themeToggle').addEventListener('click', function() {
+    applyTheme(theme === 'light' ? 'dark' : 'light');
+  });
+})();
+</script>
+
+</body>
+</html>
