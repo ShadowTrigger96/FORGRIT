@@ -705,7 +705,7 @@
     .portfolio-name { font-size: 1.15rem; font-weight: 700; margin-top: 0.3rem; }
 
     /* ===== GRAPHIC DESIGN ===== */
-    .service-graphics { grid-column: span 2; }
+    .service-graphics { grid-column: auto; }
     .service-link { display: inline-flex; gap: 0.5rem; margin-top: 1.25rem; color: var(--text); font-weight: 600; text-underline-offset: 5px; }
     .portfolio-img.project-preview img { object-fit: contain; }
     .project-preview { background: var(--bg-alt); }
@@ -1009,9 +1009,10 @@
 
     .work-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 2.25rem 1.4rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 2.4rem 2rem;
       margin-top: 2.5rem;
+      max-width: 1080px;
     }
 
     .work-item {
@@ -1025,7 +1026,7 @@
       display: grid;
       place-items: center;
       width: 100%;
-      aspect-ratio: 4 / 3;
+      aspect-ratio: 16 / 9;
       overflow: hidden;
       border-radius: 9px;
       border: 1px solid var(--border);
@@ -1130,14 +1131,13 @@
     }
 
     .work-footer a:hover { text-decoration: underline; text-underline-offset: 4px; }
-    #grafika { scroll-margin-top: 105px; }
 
-    @media (max-width: 1100px) {
-      .work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    @media (max-width: 820px) {
+      .work-grid { grid-template-columns: 1fr; max-width: 680px; }
     }
 
     @media (max-width: 640px) {
-      .work-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .work-grid { gap: 2rem; }
       .work-thumb { aspect-ratio: 16 / 10; }
     }
 
@@ -1160,8 +1160,7 @@
       <li><a href="#szolgaltatasok" data-i18n="nav.services">Szolgáltatások</a></li>
       <li><a href="#folyamat" data-i18n="nav.process">Folyamat</a></li>
       <li><a href="#portfolio" data-i18n="nav.portfolio">Portfólió</a></li>
-      <li><a href="#grafika" data-i18n="nav.graphics">Grafika</a></li>
-      <li><a href="#csomagok" data-i18n="nav.packages">Csomagok</a></li>
+<li><a href="#csomagok" data-i18n="nav.packages">Csomagok</a></li>
       <li><a href="#rolam" data-i18n="nav.about">Rólam</a></li>
     </ul>
     <div class="nav-right">
@@ -1181,8 +1180,7 @@
   <a href="#szolgaltatasok" onclick="closeMobile()" data-i18n="nav.services">Szolgáltatások</a>
   <a href="#folyamat" onclick="closeMobile()" data-i18n="nav.process">Folyamat</a>
   <a href="#portfolio" onclick="closeMobile()" data-i18n="nav.portfolio">Portfólió</a>
-  <a href="#grafika" onclick="closeMobile()" data-i18n="nav.graphics">Grafika</a>
-  <a href="#csomagok" onclick="closeMobile()" data-i18n="nav.packages">Csomagok</a>
+<a href="#csomagok" onclick="closeMobile()" data-i18n="nav.packages">Csomagok</a>
   <a href="#rolam" onclick="closeMobile()" data-i18n="nav.about">Rólam</a>
   <a href="#kapcsolat" onclick="closeMobile()" data-i18n="nav.contact">Kapcsolat</a>
   <div class="mobile-controls">
@@ -1321,8 +1319,7 @@
         </div>
         <h3 data-i18n="services.graphics.title">Grafikai tervezés</h3>
         <p data-i18n="services.graphics.desc">Reklámanyagok, bannerek és közösségi média grafikák – a vállalkozásod arculatához igazítva.</p>
-        <a class="service-link" href="#grafika"><span data-i18n="services.graphics.link">Grafikai munkáim</span> <span aria-hidden="true">↗</span></a>
-      </div>
+</div>
     </div>
   </div>
 </section>
@@ -1395,7 +1392,7 @@
     <div class="work-heading reveal">
       <div class="section-label"><span class="line"></span> <span data-i18n="portfolio.label">Portfólió</span></div>
       <h2 id="portfolio-title" class="section-title" data-i18n="portfolio.title">Munkáim</h2>
-      <p class="section-desc" data-i18n="portfolio.desc">Válogatás webes és grafikai munkáimból.</p>
+      <p class="section-desc" data-i18n="portfolio.desc">Néhány munka, ahol az ötletből működő webes megoldás vagy karakteres vizuál született.</p>
     </div>
 
     <div class="work-grid">
@@ -1427,7 +1424,7 @@
         <span class="work-action" data-i18n="portfolio.own.note">Jelenleg ezt az oldalt nézed.</span>
       </article>
 
-      <article class="work-item reveal" id="grafika">
+      <article class="work-item reveal">
         <a class="work-thumb" href="assets/graphics/carsystem-reklamanyag.png" data-graphic="cs-graphic-title" aria-labelledby="cs-graphic-title">
           <img src="assets/graphics/carsystem-reklamanyag.png" alt="Piros CarSystem reklámgrafika fehér BMW-vel, termékfotókkal és a webshop elérhetőségével" width="2658" height="984" loading="lazy" decoding="async" data-alt-hu="Piros CarSystem reklámgrafika fehér BMW-vel, termékfotókkal és a webshop elérhetőségével" data-alt-en="Red CarSystem promotional graphic with a white BMW, product images and webshop details">
         </a>
@@ -1712,7 +1709,7 @@
       'process.s4.desc': 'Go-live, analytics setup, SEO basics, training – and I won\'t leave you on your own after.',
       'portfolio.label': 'Portfolio',
       'portfolio.title': 'Selected work',
-      'portfolio.desc': 'A selection of my web and graphic design work.',
+      'portfolio.desc': 'A few projects where an idea became a working web solution or a distinctive visual.',
       'portfolio.view': 'View',
       'portfolio.company.tag': 'Company project',
       'portfolio.category.web': 'Website',
@@ -1886,8 +1883,12 @@
         if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || event.button !== 0) return;
         event.preventDefault();
         var preview = link.querySelector('img');
+        if (!preview) {
+          var workItem = link.closest('.work-item');
+          preview = workItem ? workItem.querySelector('.work-thumb img') : null;
+        }
         document.getElementById('graphicDialogImage').src = link.href;
-        document.getElementById('graphicDialogImage').alt = preview.alt;
+        document.getElementById('graphicDialogImage').alt = preview ? preview.alt : '';
         document.getElementById('graphicDialogTitle').textContent = document.getElementById(link.getAttribute('data-graphic')).textContent;
         document.getElementById('graphicDialogOriginal').href = link.href;
         graphicDialog.showModal();
