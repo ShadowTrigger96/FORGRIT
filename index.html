@@ -1044,42 +1044,61 @@
 
     .section-geo-shape {
       position: absolute;
-      opacity: 0.13;
+      opacity: 0.24;
       will-change: transform;
-      animation: sectionGeoFloat 12s ease-in-out infinite;
+      animation: sectionGeoFloat 11s ease-in-out infinite;
     }
 
-    [data-theme="dark"] .section-geo-shape { opacity: 0.2; }
+    [data-theme="dark"] .section-geo-shape {
+      opacity: 0.40;
+      filter: drop-shadow(0 0 9px rgba(56,189,248,0.16));
+    }
 
     .section-geo-shape.square {
-      width: 48px; height: 48px;
-      border: 1.5px solid var(--cyan);
+      width: 62px;
+      height: 62px;
+      border: 2px solid var(--cyan);
       transform: rotate(14deg);
     }
 
     .section-geo-shape.circle {
-      width: 34px; height: 34px;
-      border: 1.5px solid var(--purple);
+      width: 42px;
+      height: 42px;
+      border: 2px solid var(--purple);
       border-radius: 50%;
     }
 
     .section-geo-shape.diamond {
-      width: 16px; height: 16px;
+      width: 18px;
+      height: 18px;
       background: var(--cyan);
       transform: rotate(45deg);
       border-radius: 2px;
-      opacity: 0.08;
+      opacity: 0.17;
+    }
+
+    [data-theme="dark"] .section-geo-shape.diamond {
+      opacity: 0.32;
     }
 
     .section-geo-shape.triangle {
-      width: 0; height: 0;
-      border-left: 18px solid transparent;
-      border-right: 18px solid transparent;
-      border-bottom: 31px solid var(--amber);
-      opacity: 0.1;
+      width: 0;
+      height: 0;
+      border-left: 22px solid transparent;
+      border-right: 22px solid transparent;
+      border-bottom: 38px solid var(--amber);
+      opacity: 0.17;
     }
 
-    .section-geo-shape.plus { width: 24px; height: 24px; }
+    [data-theme="dark"] .section-geo-shape.triangle {
+      opacity: 0.30;
+      filter: drop-shadow(0 0 8px rgba(245,158,11,0.14));
+    }
+
+    .section-geo-shape.plus {
+      width: 28px;
+      height: 28px;
+    }
 
     .section-geo-shape.plus::before,
     .section-geo-shape.plus::after {
@@ -1089,30 +1108,52 @@
       border-radius: 2px;
     }
 
-    .section-geo-shape.plus::before { width: 24px; height: 3px; top: 10px; left: 0; }
-    .section-geo-shape.plus::after { width: 3px; height: 24px; top: 0; left: 10px; }
+    .section-geo-shape.plus::before {
+      width: 28px;
+      height: 3px;
+      top: 12px;
+      left: 0;
+    }
 
-    .section-geo-a .section-geo-shape:nth-child(1) { top: 14%; left: 4%; animation-delay: -2s; }
-    .section-geo-a .section-geo-shape:nth-child(2) { top: 68%; right: 5%; animation-delay: -7s; }
-    .section-geo-a .section-geo-shape:nth-child(3) { top: 38%; right: 14%; animation-delay: -4s; }
+    .section-geo-shape.plus::after {
+      width: 3px;
+      height: 28px;
+      top: 0;
+      left: 12px;
+    }
 
-    .section-geo-b .section-geo-shape:nth-child(1) { top: 20%; right: 5%; animation-delay: -5s; }
-    .section-geo-b .section-geo-shape:nth-child(2) { top: 72%; left: 6%; animation-delay: -9s; }
-    .section-geo-b .section-geo-shape:nth-child(3) { top: 44%; left: 13%; animation-delay: -1s; }
+    .section-geo-a .section-geo-shape:nth-child(1) { top: 9%; left: 4%; animation-delay: -2s; }
+    .section-geo-a .section-geo-shape:nth-child(2) { top: 22%; right: 7%; animation-delay: -6s; }
+    .section-geo-a .section-geo-shape:nth-child(3) { top: 43%; left: 11%; animation-delay: -3s; }
+    .section-geo-a .section-geo-shape:nth-child(4) { top: 59%; right: 13%; animation-delay: -8s; }
+    .section-geo-a .section-geo-shape:nth-child(5) { top: 76%; left: 6%; animation-delay: -5s; }
+    .section-geo-a .section-geo-shape:nth-child(6) { top: 84%; right: 5%; animation-delay: -1s; }
 
-    .section-geo-c .section-geo-shape:nth-child(1) { top: 12%; left: 7%; animation-delay: -8s; }
-    .section-geo-c .section-geo-shape:nth-child(2) { top: 62%; right: 7%; animation-delay: -3s; }
-    .section-geo-c .section-geo-shape:nth-child(3) { top: 30%; right: 18%; animation-delay: -6s; }
+    .section-geo-b .section-geo-shape:nth-child(1) { top: 13%; right: 5%; animation-delay: -7s; }
+    .section-geo-b .section-geo-shape:nth-child(2) { top: 25%; left: 7%; animation-delay: -4s; }
+    .section-geo-b .section-geo-shape:nth-child(3) { top: 42%; right: 16%; animation-delay: -2s; }
+    .section-geo-b .section-geo-shape:nth-child(4) { top: 60%; left: 10%; animation-delay: -9s; }
+    .section-geo-b .section-geo-shape:nth-child(5) { top: 74%; right: 6%; animation-delay: -5s; }
+    .section-geo-b .section-geo-shape:nth-child(6) { top: 86%; left: 16%; animation-delay: -3s; }
+
+    .section-geo-c .section-geo-shape:nth-child(1) { top: 11%; left: 6%; animation-delay: -5s; }
+    .section-geo-c .section-geo-shape:nth-child(2) { top: 26%; right: 9%; animation-delay: -1s; }
+    .section-geo-c .section-geo-shape:nth-child(3) { top: 41%; left: 14%; animation-delay: -8s; }
+    .section-geo-c .section-geo-shape:nth-child(4) { top: 58%; right: 8%; animation-delay: -4s; }
+    .section-geo-c .section-geo-shape:nth-child(5) { top: 75%; left: 5%; animation-delay: -7s; }
+    .section-geo-c .section-geo-shape:nth-child(6) { top: 83%; right: 18%; animation-delay: -2s; }
 
     @keyframes sectionGeoFloat {
       0%, 100% { translate: 0 0; }
-      35% { translate: 10px -16px; }
-      70% { translate: -7px 9px; }
+      35% { translate: 12px -18px; }
+      70% { translate: -9px 11px; }
     }
 
     @media (max-width: 700px) {
-      .section-geo-shape { opacity: 0.08; }
-      [data-theme="dark"] .section-geo-shape { opacity: 0.12; }
+      .section-geo-shape { opacity: 0.15; }
+      [data-theme="dark"] .section-geo-shape { opacity: 0.25; }
+      [data-theme="dark"] .section-geo-shape.diamond,
+      [data-theme="dark"] .section-geo-shape.triangle { opacity: 0.22; }
     }
 
 /* ===== EDITORIAL PORTFOLIO ===== */
@@ -1754,8 +1795,7 @@
             <input id="contactWebsite" name="website" type="text" tabindex="-1" autocomplete="off">
           </div>
           <button type="submit" class="form-submit" data-i18n="contact.form.submit">Üzenet küldése</button>
-          <p class="form-note" data-i18n="contact.form.note">Az üzenetet közvetlenül innen küldheted el, nem nyílik meg külön levelező.</p>
-          <p id="contactStatus" class="form-status" role="status" aria-live="polite"></p>
+<p id="contactStatus" class="form-status" role="status" aria-live="polite"></p>
         </form>
       </div>
     </div>
@@ -1896,8 +1936,7 @@
       'contact.service.support': 'Maintenance and IT support',
       'contact.form.message': 'Message',
       'contact.form.submit': 'Send message',
-      'contact.form.note': 'Send your message directly from here — no email app will open.',
-      'footer.rights': 'All rights reserved.',
+'footer.rights': 'All rights reserved.',
       'footer.imprint': 'Imprint',
       'footer.privacy': 'Privacy',
       'footer.cookies': 'Cookies'
@@ -2070,9 +2109,9 @@
 
   /* Subtle geometric accents across the full page. */
   var geoPatterns = [
-    ['square', 'circle', 'diamond'],
-    ['triangle', 'plus', 'circle'],
-    ['circle', 'square', 'plus']
+    ['square', 'circle', 'diamond', 'triangle', 'plus', 'circle'],
+    ['triangle', 'plus', 'circle', 'square', 'diamond', 'circle'],
+    ['circle', 'square', 'plus', 'diamond', 'triangle', 'circle']
   ];
 
   document.querySelectorAll('.section:not(.hero)').forEach(function(section, index) {
