@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>FORGRIT — Az ötletedből kovácsolunk online jelenlétet</title>
-  <meta name="description" content="Weboldal- és webshopfejlesztés, karbantartás és IT támogatás — FORGRIT" />
+  <meta name="description" content="Weboldal- és webshopfejlesztés, grafikai tervezés, reklámanyagok és IT támogatás. Nézd meg Tompos Richárd munkáit, és kérj egyedi ajánlatot — FORGRIT." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -160,7 +160,7 @@
     .nav-center {
       display: flex;
       align-items: center;
-      gap: 2rem;
+      gap: 1.25rem;
       list-style: none;
     }
 
@@ -461,24 +461,6 @@
 
     @keyframes heroLogoIn { to { opacity: 1; transform: scale(1); } }
 
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      padding: 0.4rem 1.2rem; border-radius: 100px;
-      border: 1px solid var(--border);
-      background: var(--icon-bg);
-      font-size: 0.8rem; color: var(--cyan); font-weight: 600; letter-spacing: 0.05em;
-      margin-bottom: 1.5rem;
-      opacity: 0; transform: translateY(20px);
-      animation: fadeSlideUp 0.8s 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    }
-
-    .hero-badge .dot {
-      width: 6px; height: 6px; border-radius: 50%; background: var(--cyan);
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
-
     .hero h1 {
       font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 800;
       line-height: 1.1; letter-spacing: -0.02em;
@@ -547,7 +529,7 @@
     }
 
     /* ===== SECTIONS ===== */
-    .section { padding: 7rem 2rem; position: relative; }
+    .section { padding: 7rem 2rem; position: relative; scroll-margin-top: 80px; overflow-x: clip; }
     .section-inner { max-width: 1200px; margin: 0 auto; }
 
     .section-label {
@@ -585,7 +567,7 @@
     [data-parallax] { will-change: transform; }
 
     /* ===== SERVICES ===== */
-    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .services-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; margin-top: 3rem; }
 
     .service-card {
       position: relative; padding: 2.5rem 2rem; border-radius: 20px;
@@ -721,6 +703,73 @@
     .portfolio-info { padding: 1.5rem 2rem; }
     .portfolio-tag { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--cyan); }
     .portfolio-name { font-size: 1.15rem; font-weight: 700; margin-top: 0.3rem; }
+
+    /* ===== GRAPHIC DESIGN ===== */
+    .service-graphics { grid-column: span 2; }
+    .service-link { display: inline-flex; gap: 0.5rem; margin-top: 1.25rem; color: var(--text); font-weight: 600; text-underline-offset: 5px; }
+    .portfolio-img.project-preview img { object-fit: contain; }
+    .project-preview { background: var(--bg-alt); }
+    .project-description { margin-top: 0.65rem; font-size: 0.9rem; color: var(--text-secondary); }
+    .project-note { display: inline-block; margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted); }
+    .graphics-section { background: var(--bg-alt); border-block: 1px solid var(--border); }
+    .graphics-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem; }
+    .graphics-heading .section-desc { max-width: 650px; }
+    .graphics-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; margin-top: 3rem; }
+    .graphic-card { overflow: hidden; border: 1px solid var(--border); border-radius: 20px; background: var(--bg-card); box-shadow: var(--shadow-card); }
+    .graphic-preview { display: block; color: inherit; text-decoration: none; }
+    .graphic-visual { display: grid; place-items: center; aspect-ratio: 16 / 11; padding: 1rem; background: rgba(0,0,0,0.04); }
+    .graphic-visual img { display: block; width: 100%; height: 100%; min-height: 0; object-fit: contain; }
+    .graphic-open { display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1.5rem; border-block: 1px solid var(--border); font-size: 0.8rem; font-weight: 600; }
+    .graphic-preview:hover .graphic-open { background: var(--icon-bg); }
+    .graphic-info { padding: 1.5rem; }
+    .graphic-info h3 { margin-top: 0.4rem; font-size: 1.35rem; line-height: 1.3; }
+    .graphic-info p { color: var(--text-secondary); font-size: 0.95rem; margin-top: 0.75rem; }
+    .graphics-quote { display: flex; align-items: center; justify-content: space-between; gap: 2rem; margin-top: 2rem; padding: 2rem; border: 1px solid var(--border); border-radius: 20px; }
+    .graphics-quote h3 { font-size: 1.25rem; }
+    .graphics-quote p { color: var(--text-secondary); max-width: 650px; margin-top: 0.5rem; font-size: 0.95rem; }
+    .graphics-quote .btn-primary { flex-shrink: 0; }
+    .graphic-dialog { margin: auto; width: min(1200px, calc(100% - 2rem)); max-height: calc(100dvh - 2rem); padding: 1.25rem; border: 1px solid var(--border); border-radius: 16px; background: var(--bg); color: var(--text); }
+    .graphic-dialog::backdrop { background: rgba(5,10,24,0.85); }
+    .graphic-dialog-header { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+    .graphic-dialog h2 { font-size: 1.1rem; }
+    .graphic-dialog button { padding: 0.6rem 1rem; border: 1px solid var(--border); border-radius: 10px; background: var(--bg-card); color: var(--text); font: inherit; cursor: pointer; }
+    .graphic-dialog img { display: block; width: 100%; max-height: 70dvh; object-fit: contain; }
+    .graphic-original { display: inline-block; margin-top: 1rem; color: var(--text); text-underline-offset: 4px; }
+    body.gallery-open { overflow: hidden; }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--cyan); outline-offset: 5px; }
+    .contact-info-card .value a { color: inherit; text-underline-offset: 4px; overflow-wrap: anywhere; }
+    .form-group select { width: 100%; padding: 0.9rem 1.2rem; border-radius: 14px; border: 1px solid var(--border); background: var(--input-bg); color: var(--text); font: inherit; }
+    .form-group select option { background: var(--bg); color: var(--text); }
+    .form-group select:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+
+    @media (max-width: 1100px) {
+      .nav-center, .nav-right .nav-cta-btn { display: none; }
+      .mobile-toggle { display: block; }
+      .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 900px) {
+      .graphics-grid { grid-template-columns: 1fr; }
+      .graphics-heading, .graphics-quote { align-items: flex-start; flex-direction: column; }
+      .cursor-glow { display: none; }
+    }
+    @media (max-width: 600px) {
+      .service-graphics { grid-column: auto; }
+      .graphics-quote { padding: 1.5rem; }
+      .graphics-quote .btn-primary { width: 100%; justify-content: center; text-align: center; }
+      .nav-inner { padding-inline: 1.2rem; }
+      .nav-brand { gap: 0.4rem; }
+      .nav-brand span { font-size: 1rem; }
+      .nav-right { gap: 0.4rem; }
+      .contact-form { padding: 1.5rem; }
+      .contact-info-card { padding: 1rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+      .reveal, .reveal-left, .reveal-right, .reveal-scale { opacity: 1; transform: none; }
+      [data-parallax] { transform: none !important; }
+      .cursor-glow { display: none; }
+    }
 
     /* ===== ABOUT / STATS ===== */
     .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 3rem; align-items: center; }
@@ -972,6 +1021,7 @@
       <li><a href="#szolgaltatasok" data-i18n="nav.services">Szolgáltatások</a></li>
       <li><a href="#folyamat" data-i18n="nav.process">Folyamat</a></li>
       <li><a href="#portfolio" data-i18n="nav.portfolio">Portfólió</a></li>
+      <li><a href="#grafika" data-i18n="nav.graphics">Grafika</a></li>
       <li><a href="#csomagok" data-i18n="nav.packages">Csomagok</a></li>
       <li><a href="#rolam" data-i18n="nav.about">Rólam</a></li>
     </ul>
@@ -982,7 +1032,7 @@
         <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
       </button>
       <a href="#kapcsolat" class="nav-cta-btn" data-i18n="nav.contact">Kapcsolat</a>
-      <button class="mobile-toggle" id="mobileToggle" aria-label="Menü">&#9776;</button>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Menü" aria-expanded="false" aria-controls="mobileMenu">&#9776;</button>
     </div>
   </div>
 </header>
@@ -992,6 +1042,7 @@
   <a href="#szolgaltatasok" onclick="closeMobile()" data-i18n="nav.services">Szolgáltatások</a>
   <a href="#folyamat" onclick="closeMobile()" data-i18n="nav.process">Folyamat</a>
   <a href="#portfolio" onclick="closeMobile()" data-i18n="nav.portfolio">Portfólió</a>
+  <a href="#grafika" onclick="closeMobile()" data-i18n="nav.graphics">Grafika</a>
   <a href="#csomagok" onclick="closeMobile()" data-i18n="nav.packages">Csomagok</a>
   <a href="#rolam" onclick="closeMobile()" data-i18n="nav.about">Rólam</a>
   <a href="#kapcsolat" onclick="closeMobile()" data-i18n="nav.contact">Kapcsolat</a>
@@ -1035,17 +1086,13 @@
   </div>
   <div class="hero-content">
     <img src="logo2.png" alt="FORGRIT" class="hero-logo">
-    <div class="hero-badge">
-      <span class="dot"></span>
-      <span data-i18n="hero.badge">Webfejlesztés & IT megoldások</span>
-    </div>
     <h1>
       <span data-i18n="hero.title1">Az ötletedből</span><br>
       <span class="gradient-text" data-i18n="hero.title2">kovácsolunk</span>
       <span data-i18n="hero.title3">online jelenlétet</span>
     </h1>
     <p class="hero-sub" data-i18n="hero.sub">
-      Egyedi weboldalak és webshopok fejlesztése, folyamatos karbantartással és megbízható IT támogatással. Egy kézből, átláthatóan.
+      Egyedi weboldalak, webshopok és grafikai anyagok, folyamatos karbantartással és megbízható IT támogatással. Egy kézből, átláthatóan.
     </p>
     <div class="hero-buttons">
       <a href="#kapcsolat" class="btn-primary">
@@ -1098,7 +1145,7 @@
     <div class="reveal">
       <div class="section-label"><span class="line"></span> <span data-i18n="services.label">Szolgáltatások</span></div>
       <h2 class="section-title" data-i18n="services.title">Minden, ami az online sikerhez kell</h2>
-      <p class="section-desc" data-i18n="services.desc">Komplex megoldások egyetlen megbízható partnertől – a tervezéstől az éles üzemeltetésig.</p>
+      <p class="section-desc" data-i18n="services.desc">Webfejlesztés, grafikai tervezés és IT támogatás – a tervezéstől a mindennapi működésig.</p>
     </div>
     <div class="services-grid stagger">
       <div class="service-card reveal" style="--i:0; --card-accent: var(--cyan);">
@@ -1128,6 +1175,14 @@
         </div>
         <h3 data-i18n="services.s4.title">Teljes IT segítség</h3>
         <p data-i18n="services.s4.desc">Tárhely, domain, email, felhő, automatizálás – mindent egy kézből. Fókuszálj a vállalkozásodra.</p>
+      </div>
+      <div class="service-card service-graphics reveal" style="--i:4; --card-accent: var(--purple);">
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" focusable="false"><path d="m16 3 5 5-12 12-6 1 1-6L16 3Z"/><path d="m13 6 5 5M4 15l5 5"/></svg>
+        </div>
+        <h3 data-i18n="services.graphics.title">Grafikai tervezés</h3>
+        <p data-i18n="services.graphics.desc">Reklámanyagok, bannerek és közösségi média grafikák – a vállalkozásod arculatához igazítva.</p>
+        <a class="service-link" href="#grafika"><span data-i18n="services.graphics.link">Grafikai munkáim</span> <span aria-hidden="true">↗</span></a>
       </div>
     </div>
   </div>
@@ -1200,13 +1255,13 @@
   <div class="section-inner" style="position:relative; z-index:1;">
     <div class="reveal">
       <div class="section-label"><span class="line"></span> <span data-i18n="portfolio.label">Portfólió</span></div>
-      <h2 class="section-title" data-i18n="portfolio.title">Friss projektek</h2>
-      <p class="section-desc" data-i18n="portfolio.desc">Válogatás az elkészült munkáimból és sablonjaimból.</p>
+      <h2 class="section-title" data-i18n="portfolio.title">Webes munkáim</h2>
+      <p class="section-desc" data-i18n="portfolio.desc">Válogatás az elkészült webes munkáimból.</p>
     </div>
     <div class="portfolio-grid stagger">
       <a href="https://carsystemshop.hu/" target="_blank" rel="noopener" class="portfolio-card reveal" style="--i:0;">
-        <div class="portfolio-img">
-          <img src="https://images.unsplash.com/photo-1498049794561-7780e7231661?q=80&w=1600&auto=format&fit=crop" alt="Carsystemshop">
+        <div class="portfolio-img project-preview">
+          <img src="cs%20portfolio.png" alt="A CarSystem Hungária webes felületének részlete" loading="lazy" decoding="async" width="1191" height="558">
           <div class="overlay">
             <span class="overlay-text">
               <span data-i18n="portfolio.view">Megtekintés</span>
@@ -1217,31 +1272,81 @@
         <div class="portfolio-info">
           <span class="portfolio-tag">Webshop</span>
           <div class="portfolio-name">Carsystemshop – B2B/B2C</div>
+          <p class="project-description" data-i18n="portfolio.carsystem.desc">Webshop autófényezési és járműjavítási termékekhez, lakossági és üzleti vásárlóknak.</p>
+          <span class="project-note">carsystemshop.hu ↗</span>
         </div>
       </a>
-      <a href="#" class="portfolio-card reveal" style="--i:1;">
-        <div class="portfolio-img">
-          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1600&auto=format&fit=crop" alt="Landing page">
-          <div class="overlay"><span class="overlay-text"><span data-i18n="portfolio.view">Megtekintés</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
+      <article class="portfolio-card reveal" style="--i:1;">
+        <div class="portfolio-img project-preview">
+          <img src="FORGRIT.png" alt="FORGRIT logó és szlogen" loading="lazy" decoding="async">
         </div>
         <div class="portfolio-info">
-          <span class="portfolio-tag">Landing</span>
+          <span class="portfolio-tag" data-i18n="portfolio.own.tag">Saját projekt</span>
           <div class="portfolio-name">FORGRIT Landing Page</div>
+          <p class="project-description" data-i18n="portfolio.own.desc">A FORGRIT bemutatkozó oldala – szolgáltatások, referenciák és ajánlatkérés egy helyen.</p>
+          <span class="project-note" data-i18n="portfolio.own.note">Jelenleg ezt az oldalt nézed.</span>
         </div>
-      </a>
-      <a href="#" class="portfolio-card reveal" style="--i:2;">
-        <div class="portfolio-img">
-          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop" alt="Portfólió sablon">
-          <div class="overlay"><span class="overlay-text"><span data-i18n="portfolio.view">Megtekintés</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span></div>
-        </div>
-        <div class="portfolio-info">
-          <span class="portfolio-tag" data-i18n="portfolio.p3.tag">Weboldal</span>
-          <div class="portfolio-name" data-i18n="portfolio.p3.name">Portfólió sablon</div>
-        </div>
-      </a>
+      </article>
     </div>
   </div>
 </section>
+
+<!-- GRAPHIC DESIGN -->
+<section id="grafika" class="section graphics-section" aria-labelledby="graphics-title">
+  <div class="section-inner">
+    <div class="graphics-heading reveal">
+      <div>
+        <div class="section-label"><span class="line"></span> <span data-i18n="graphics.label">Grafikai tervezés</span></div>
+        <h2 id="graphics-title" class="section-title" data-i18n="graphics.title">Grafikai munkáim</h2>
+        <p class="section-desc" data-i18n="graphics.desc">Reklámanyagok és egyedi grafikák a weboldaladhoz, kampányaidhoz vagy közösségi felületeidre. Nézd meg néhány elkészült munkámat.</p>
+      </div>
+    </div>
+    <div class="graphics-grid">
+      <article class="graphic-card reveal">
+        <a class="graphic-preview" href="assets/graphics/carsystem-reklamanyag.png" data-graphic="cs-graphic-title" aria-labelledby="cs-graphic-title cs-graphic-open">
+          <div class="graphic-visual">
+            <img src="assets/graphics/carsystem-reklamanyag.png" alt="Piros CarSystem reklámgrafika fehér BMW-vel, termékfotókkal és a webshop elérhetőségével" width="2658" height="984" loading="lazy" decoding="async" data-alt-hu="Piros CarSystem reklámgrafika fehér BMW-vel, termékfotókkal és a webshop elérhetőségével" data-alt-en="Red CarSystem promotional graphic with a white BMW, product images and webshop details">
+          </div>
+          <span class="graphic-open"><span id="cs-graphic-open" data-i18n="graphics.open">Megnyitás nagyban</span><span aria-hidden="true">↗</span></span>
+        </a>
+        <div class="graphic-info">
+          <span class="portfolio-tag" data-i18n="graphics.cs.tag">Reklámanyag</span>
+          <h3 id="cs-graphic-title">CarSystem Hungária</h3>
+          <p data-i18n="graphics.cs.desc">A CarSystem Hungária termékeit és webshopját bemutató reklámgrafika, a márka piros-fehér színeivel.</p>
+        </div>
+      </article>
+      <article class="graphic-card reveal">
+        <a class="graphic-preview" href="assets/graphics/bmw-tipografia.png" data-graphic="bmw-graphic-title" aria-labelledby="bmw-graphic-title bmw-graphic-open">
+          <div class="graphic-visual">
+            <img src="assets/graphics/bmw-tipografia.png" alt="Türkiz BMW őszi erdei környezetben, nagyméretű fehér BMW betűkompozícióval" width="2250" height="1410" loading="lazy" decoding="async" data-alt-hu="Türkiz BMW őszi erdei környezetben, nagyméretű fehér BMW betűkompozícióval" data-alt-en="Turquoise BMW in an autumn forest with a large white BMW typographic composition">
+          </div>
+          <span class="graphic-open"><span id="bmw-graphic-open" data-i18n="graphics.open">Megnyitás nagyban</span><span aria-hidden="true">↗</span></span>
+        </a>
+        <div class="graphic-info">
+          <span class="portfolio-tag" data-i18n="graphics.bmw.tag">Képszerkesztés</span>
+          <h3 id="bmw-graphic-title" data-i18n="graphics.bmw.title">BMW – fotó és tipográfia</h3>
+          <p data-i18n="graphics.bmw.desc">Autós fotóra épülő grafika, ahol a BMW felirat a kép részeként jelenik meg.</p>
+        </div>
+      </article>
+    </div>
+    <div class="graphics-quote reveal">
+      <div>
+        <h3 data-i18n="graphics.quote.title">Kérj ajánlatot a grafikádra</h3>
+        <p data-i18n="graphics.quote.desc">Írd meg, milyen grafikára van szükséged, hol használnád és mikorra készüljön el. A részletek alapján egyedi ajánlatot készítek.</p>
+      </div>
+      <a href="#kapcsolat" class="btn-primary" data-service="graphics"><span data-i18n="graphics.quote.cta">Grafikai ajánlatot kérek</span><span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<dialog id="graphicDialog" class="graphic-dialog" aria-labelledby="graphicDialogTitle">
+  <div class="graphic-dialog-header">
+    <h2 id="graphicDialogTitle"></h2>
+    <button type="button" id="graphicDialogClose" autofocus data-i18n="graphics.close">Bezárás</button>
+  </div>
+  <img id="graphicDialogImage" alt="">
+  <a id="graphicDialogOriginal" class="graphic-original" target="_blank" rel="noopener" data-i18n="graphics.original">Eredeti kép megnyitása új lapon</a>
+</dialog>
 
 <!-- PRICING -->
 <section id="csomagok" class="section parallax-section" style="border-top:1px solid var(--border);">
@@ -1306,7 +1411,7 @@
         <div class="section-label"><span class="line"></span> <span data-i18n="about.label">Rólam</span></div>
         <h2 class="section-title" data-i18n="about.title">A FORGRIT mögött</h2>
         <div class="about-text">
-          <p data-i18n="about.text">Egy olyan fejlesztő áll, aki szereti az átgondolt, gyors és letisztult megoldásokat. WordPress, React, Tailwind – ahol a projekt igényli, ott a legjobb eszközt használom. Célom, hogy a vállalkozásod mérhetően erősebb online jelenlétet kapjon.</p>
+          <p data-i18n="about.text">Tompos Richárd vagyok, a FORGRIT mögött álló fejlesztő. Weboldalak, webshopok és grafikai anyagok készítésével segítem a vállalkozásod online megjelenését. A tervezéstől az átadásig közvetlenül velem egyeztetsz.</p>
         </div>
         <div class="about-features">
           <div class="about-feature">
@@ -1364,7 +1469,7 @@
             </div>
             <div>
               <div class="label">Email</div>
-              <div class="value">shdwtrggr@gmail.com</div>
+              <div class="value"><a href="mailto:shdwtrggr@gmail.com">shdwtrggr@gmail.com</a></div>
             </div>
           </div>
           <div class="contact-info-card">
@@ -1373,7 +1478,7 @@
             </div>
             <div>
               <div class="label" data-i18n="contact.phone">Telefon</div>
-              <div class="value">+36 20 238 9569</div>
+              <div class="value"><a href="tel:+36202389569">+36 20 238 9569</a></div>
             </div>
           </div>
           <div class="contact-info-card">
@@ -1390,16 +1495,26 @@
       <div class="reveal-right">
         <form id="contactForm" class="contact-form">
           <div class="form-group">
-            <label data-i18n="contact.form.name">Név</label>
-            <input name="name" required data-placeholder-hu="Teljes név" data-placeholder-en="Full name" placeholder="Teljes név">
+            <label for="contactName" data-i18n="contact.form.name">Név</label>
+            <input id="contactName" name="name" autocomplete="name" required data-placeholder-hu="Teljes név" data-placeholder-en="Full name" placeholder="Teljes név">
           </div>
           <div class="form-group">
-            <label>Email</label>
-            <input type="email" name="email" required data-placeholder-hu="nev@ceg.hu" data-placeholder-en="name@company.com" placeholder="nev@ceg.hu">
+            <label for="contactEmail">Email</label>
+            <input id="contactEmail" type="email" name="email" autocomplete="email" required data-placeholder-hu="nev@ceg.hu" data-placeholder-en="name@company.com" placeholder="nev@ceg.hu">
           </div>
           <div class="form-group">
-            <label data-i18n="contact.form.message">Üzenet</label>
-            <textarea name="message" rows="5" required data-placeholder-hu="Pár mondat a célokról, határidőről..." data-placeholder-en="A few words about your goals and timeline..." placeholder="Pár mondat a célokról, határidőről..."></textarea>
+            <label for="contactService" data-i18n="contact.form.service">Miben segíthetek?</label>
+            <select id="contactService" name="service">
+              <option value="general" data-i18n="contact.service.general">Általános érdeklődés</option>
+              <option value="website" data-i18n="contact.service.website">Weboldal készítés</option>
+              <option value="webshop" data-i18n="contact.service.webshop">Webshop fejlesztés</option>
+              <option value="graphics" data-i18n="contact.service.graphics">Grafikai tervezés</option>
+              <option value="support" data-i18n="contact.service.support">Karbantartás és IT támogatás</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="contactMessage" data-i18n="contact.form.message">Üzenet</label>
+            <textarea id="contactMessage" name="message" rows="5" required data-placeholder-hu="Pár mondat a célokról, felületről, méretről és határidőről..." data-placeholder-en="A few words about your goals, platform, dimensions and timeline..." placeholder="Pár mondat a célokról, felületről, méretről és határidőről..."></textarea>
           </div>
           <button type="submit" class="form-submit" data-i18n="contact.form.submit">Küldés emailben</button>
           <p class="form-note" data-i18n="contact.form.note">Beküldéskor a leveleződ nyílik meg előre kitöltött üzenettel.</p>
@@ -1433,20 +1548,20 @@
       'nav.services': 'Services',
       'nav.process': 'Process',
       'nav.portfolio': 'Portfolio',
+      'nav.graphics': 'Graphics',
       'nav.packages': 'Packages',
       'nav.about': 'About',
       'nav.contact': 'Contact',
-      'hero.badge': 'Web Development & IT Solutions',
       'hero.title1': 'We forge your ideas',
       'hero.title2': 'into',
       'hero.title3': 'online presence',
-      'hero.sub': 'Custom websites and webshops with ongoing maintenance and reliable IT support. All from one source, transparently.',
+      'hero.sub': 'Custom websites, webshops and graphics, with ongoing maintenance and reliable IT support. One partner, clear communication.',
       'hero.cta1': 'Get a quote',
       'hero.cta2': 'View portfolio',
       'hero.scroll': 'SCROLL',
       'services.label': 'Services',
       'services.title': 'Everything you need for online success',
-      'services.desc': 'Comprehensive solutions from a single reliable partner – from design to live operations.',
+      'services.desc': 'Web development, graphic design and IT support – from planning to day-to-day operation.',
       'services.s1.title': 'Custom Websites',
       'services.s1.desc': 'Lightning-fast, responsive and SEO-friendly sites built with modern technologies. First impressions matter.',
       'services.s2.title': 'Webshop Launch',
@@ -1455,6 +1570,9 @@
       'services.s3.desc': 'Updates, security, monitoring and fast bug fixes month after month. Peace of mind, not headaches.',
       'services.s4.title': 'Full IT Support',
       'services.s4.desc': 'Hosting, domain, email, cloud, automation – everything from one hand. Focus on your business.',
+      'services.graphics.title': 'Graphic Design',
+      'services.graphics.desc': 'Promotional materials, banners and social media graphics – designed to match your brand.',
+      'services.graphics.link': 'My graphic design work',
       'banner.title': 'percent client satisfaction',
       'banner.desc': 'Every project is built with personal attention – because quality is non-negotiable.',
       'process.label': 'Process',
@@ -1469,11 +1587,27 @@
       'process.s4.title': 'Launch & Support',
       'process.s4.desc': 'Go-live, analytics setup, SEO basics, training – and I won\'t leave you on your own after.',
       'portfolio.label': 'Portfolio',
-      'portfolio.title': 'Recent projects',
-      'portfolio.desc': 'A selection of completed work and templates.',
+      'portfolio.title': 'Web projects',
+      'portfolio.desc': 'A selection of my completed web projects.',
       'portfolio.view': 'View',
-      'portfolio.p3.tag': 'Website',
-      'portfolio.p3.name': 'Portfolio template',
+      'portfolio.carsystem.desc': 'A webshop for automotive refinishing and repair products, serving retail and business customers.',
+      'portfolio.own.tag': 'Own project',
+      'portfolio.own.desc': 'The FORGRIT business website – services, portfolio and quote requests in one place.',
+      'portfolio.own.note': 'You are viewing this website right now.',
+      'graphics.label': 'Graphic Design',
+      'graphics.title': 'My graphic design work',
+      'graphics.desc': 'Promotional materials and custom graphics for your website, campaigns or social media. Take a look at some of my completed work.',
+      'graphics.open': 'View larger',
+      'graphics.close': 'Close',
+      'graphics.original': 'Open original image in a new tab',
+      'graphics.cs.tag': 'Promotional material',
+      'graphics.cs.desc': 'A promotional graphic featuring CarSystem Hungária products and webshop, using the brand\'s red and white colours.',
+      'graphics.bmw.tag': 'Photo editing',
+      'graphics.bmw.title': 'BMW – photo and typography',
+      'graphics.bmw.desc': 'A graphic built around a car photo, with the BMW lettering integrated into the image.',
+      'graphics.quote.title': 'Get a quote for your graphics',
+      'graphics.quote.desc': 'Tell me what graphics you need, where you will use them and your deadline. I will prepare a custom quote based on the details.',
+      'graphics.quote.cta': 'Get a graphic design quote',
       'pricing.label': 'Packages',
       'pricing.title': 'Transparent pricing',
       'pricing.desc': 'Choose the package that fits you – or request a custom quote.',
@@ -1496,7 +1630,7 @@
       'pricing.note': 'Prices are net estimates, final quote is based on specification.',
       'about.label': 'About',
       'about.title': 'Behind FORGRIT',
-      'about.text': 'A developer who loves thoughtful, fast and clean solutions. WordPress, React, Tailwind – I use the best tool where the project demands it. My goal is to give your business a measurably stronger online presence.',
+      'about.text': 'I am Richárd Tompos, the developer behind FORGRIT. I create websites, webshops and graphics to support your business online. You work directly with me from planning to delivery.',
       'about.f1': 'SEO-friendly architecture, analytics',
       'about.f2': 'Integrations: payments, invoicing, logistics',
       'about.f3': 'Fast support, transparent communication',
@@ -1509,6 +1643,12 @@
       'contact.phone': 'Phone',
       'contact.hq': 'Headquarters',
       'contact.form.name': 'Name',
+      'contact.form.service': 'How can I help?',
+      'contact.service.general': 'General enquiry',
+      'contact.service.website': 'Website design',
+      'contact.service.webshop': 'Webshop development',
+      'contact.service.graphics': 'Graphic design',
+      'contact.service.support': 'Maintenance and IT support',
       'contact.form.message': 'Message',
       'contact.form.submit': 'Send via email',
       'contact.form.note': 'Clicking send will open your email client with a pre-filled message.',
@@ -1544,6 +1684,9 @@
 
     document.querySelectorAll('[data-placeholder-' + lang + ']').forEach(function(el) {
       el.placeholder = el.getAttribute('data-placeholder-' + lang);
+    });
+    document.querySelectorAll('[data-alt-' + lang + ']').forEach(function(el) {
+      el.alt = el.getAttribute('data-alt-' + lang);
     });
 
     var featured = document.querySelector('.pricing-card.featured');
@@ -1590,10 +1733,43 @@
   document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
     var fd = new FormData(this);
-    var subject = encodeURIComponent('Új érdeklődés – FORGRIT');
-    var body = encodeURIComponent('Név: ' + fd.get('name') + '\nEmail: ' + fd.get('email') + '\n\nÜzenet:\n' + fd.get('message'));
+    var service = document.getElementById('contactService').selectedOptions[0].textContent;
+    var subject = encodeURIComponent('FORGRIT – ' + service);
+    var body = encodeURIComponent((currentLang === 'en' ? 'Name: ' : 'Név: ') + fd.get('name') + '\nEmail: ' + fd.get('email') + '\n' + (currentLang === 'en' ? 'Service: ' : 'Szolgáltatás: ') + service + '\n\n' + fd.get('message'));
     window.location.href = 'mailto:shdwtrggr@gmail.com?subject=' + subject + '&body=' + body;
   });
+
+  /* Select the requested service without overwriting a drafted message. */
+  document.querySelectorAll('[data-service]').forEach(function(link) {
+    link.addEventListener('click', function() {
+      document.getElementById('contactService').value = link.getAttribute('data-service');
+    });
+  });
+
+  /* Native dialog provides keyboard focus containment and Escape to close.
+     The original image links remain usable when JavaScript is unavailable. */
+  var graphicDialog = document.getElementById('graphicDialog');
+  if (typeof graphicDialog.showModal === 'function') {
+    document.querySelectorAll('[data-graphic]').forEach(function(link) {
+      link.addEventListener('click', function(event) {
+        if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || event.button !== 0) return;
+        event.preventDefault();
+        var preview = link.querySelector('img');
+        document.getElementById('graphicDialogImage').src = link.href;
+        document.getElementById('graphicDialogImage').alt = preview.alt;
+        document.getElementById('graphicDialogTitle').textContent = document.getElementById(link.getAttribute('data-graphic')).textContent;
+        document.getElementById('graphicDialogOriginal').href = link.href;
+        graphicDialog.showModal();
+        document.body.classList.add('gallery-open');
+      });
+    });
+    document.getElementById('graphicDialogClose').addEventListener('click', function() { graphicDialog.close(); });
+    graphicDialog.addEventListener('close', function() { document.body.classList.remove('gallery-open'); });
+    graphicDialog.addEventListener('click', function(event) {
+      var rect = graphicDialog.getBoundingClientRect();
+      if (event.target === graphicDialog && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) graphicDialog.close();
+    });
+  }
 
   /* Scroll progress */
   var progressBar = document.getElementById('scrollProgress');
@@ -1615,19 +1791,27 @@
   mobileToggle.addEventListener('click', function() {
     mobileMenu.classList.toggle('open');
     mobileToggle.innerHTML = mobileMenu.classList.contains('open') ? '&#x2715;' : '&#9776;';
+    mobileToggle.setAttribute('aria-expanded', String(mobileMenu.classList.contains('open')));
   });
 
   window.closeMobile = function() {
     mobileMenu.classList.remove('open');
     mobileToggle.innerHTML = '&#9776;';
+    mobileToggle.setAttribute('aria-expanded', 'false');
   };
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape' && mobileMenu.classList.contains('open')) {
+      closeMobile();
+      mobileToggle.focus();
+    }
+  });
 
   /* Cursor glow */
   var cursorGlow = document.getElementById('cursorGlow');
   var mouseX = 0, mouseY = 0, glowX = 0, glowY = 0;
   var isMobile = window.matchMedia('(max-width: 900px)').matches;
 
-  if (!isMobile) {
+  if (!isMobile && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     document.addEventListener('mousemove', function(e) { mouseX = e.clientX; mouseY = e.clientY; });
     (function animateGlow() {
       glowX += (mouseX - glowX) * 0.08;
