@@ -74,14 +74,14 @@ export async function onRequestPost(context) {
     return json({ ok: false, error: "message_too_short" }, 400);
   }
 
-  if (!env.EMAIL) {
-    console.error("Missing EMAIL binding");
+  if (!env.RESEND_API_KEY) {
+    console.error("Missing RESEND_API_KEY");
     return json({ ok: false, error: "email_not_configured" }, 500);
   }
 
   const service = services[serviceKey] || services.general;
   const to = env.CONTACT_TO || "shdwtrggr@gmail.com";
-  const from = env.CONTACT_FROM || "website@forgrit.hu";
+  const from = env.CONTACT_FROM || "FORGRIT <hello@forgrit.hu>";
 
   const subject = `FORGRIT weboldal – ${service} – ${name}`;
 
@@ -106,18 +106,33 @@ export async function onRequestPost(context) {
   `;
 
   try {
-    await env.EMAIL.send({
-      to,
-      from,
-      replyTo: email,
-      subject,
-      text,
-      html,
+    const response = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        "Authorization": "Bearer " + env.RESEND_API_KEY,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from,
+        to: [to],
+        reply_to: email,
+        subject,
+        html,
+        text,
+      }),
     });
+
+    const result = await response.json().catch(function() { return {}; });
+
+    if (!response.ok) {
+      console.error("Resend email failed", result);
+      return json({ ok: false, error: "send_failed" }, 502);
+    }
   } catch (error) {
     console.error("Contact email failed", error);
     return json({ ok: false, error: "send_failed" }, 502);
   }
+
 
   return json({ ok: true });
 }
