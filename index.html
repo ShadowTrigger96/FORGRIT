@@ -742,6 +742,33 @@
     .form-group select option { background: var(--bg); color: var(--text); }
     .form-group select:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
 
+    .form-honeypot {
+      position: absolute !important;
+      left: -9999px !important;
+      width: 1px !important;
+      height: 1px !important;
+      overflow: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+    }
+
+    .form-submit[disabled] {
+      opacity: 0.65;
+      cursor: wait;
+      transform: none;
+    }
+
+    .form-status {
+      min-height: 1.4em;
+      margin-top: 0.9rem;
+      font-size: 0.82rem;
+      line-height: 1.5;
+      color: var(--text-muted);
+    }
+
+    .form-status.success { color: var(--green); }
+    .form-status.error { color: #ef4444; }
+
     @media (max-width: 1100px) {
       .nav-center, .nav-right .nav-cta-btn { display: none; }
       .mobile-toggle { display: block; }
@@ -1003,7 +1030,92 @@
       .services-grid { grid-template-columns: 1fr; }
     }
   
-    /* ===== EDITORIAL PORTFOLIO ===== */
+    /* ===== AMBIENT SECTION GEOMETRY ===== */
+    .section { isolation: isolate; }
+    .section > .section-inner { position: relative; z-index: 2; }
+
+    .section-geo {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .section-geo-shape {
+      position: absolute;
+      opacity: 0.13;
+      will-change: transform;
+      animation: sectionGeoFloat 12s ease-in-out infinite;
+    }
+
+    [data-theme="dark"] .section-geo-shape { opacity: 0.2; }
+
+    .section-geo-shape.square {
+      width: 48px; height: 48px;
+      border: 1.5px solid var(--cyan);
+      transform: rotate(14deg);
+    }
+
+    .section-geo-shape.circle {
+      width: 34px; height: 34px;
+      border: 1.5px solid var(--purple);
+      border-radius: 50%;
+    }
+
+    .section-geo-shape.diamond {
+      width: 16px; height: 16px;
+      background: var(--cyan);
+      transform: rotate(45deg);
+      border-radius: 2px;
+      opacity: 0.08;
+    }
+
+    .section-geo-shape.triangle {
+      width: 0; height: 0;
+      border-left: 18px solid transparent;
+      border-right: 18px solid transparent;
+      border-bottom: 31px solid var(--amber);
+      opacity: 0.1;
+    }
+
+    .section-geo-shape.plus { width: 24px; height: 24px; }
+
+    .section-geo-shape.plus::before,
+    .section-geo-shape.plus::after {
+      content: '';
+      position: absolute;
+      background: var(--cyan);
+      border-radius: 2px;
+    }
+
+    .section-geo-shape.plus::before { width: 24px; height: 3px; top: 10px; left: 0; }
+    .section-geo-shape.plus::after { width: 3px; height: 24px; top: 0; left: 10px; }
+
+    .section-geo-a .section-geo-shape:nth-child(1) { top: 14%; left: 4%; animation-delay: -2s; }
+    .section-geo-a .section-geo-shape:nth-child(2) { top: 68%; right: 5%; animation-delay: -7s; }
+    .section-geo-a .section-geo-shape:nth-child(3) { top: 38%; right: 14%; animation-delay: -4s; }
+
+    .section-geo-b .section-geo-shape:nth-child(1) { top: 20%; right: 5%; animation-delay: -5s; }
+    .section-geo-b .section-geo-shape:nth-child(2) { top: 72%; left: 6%; animation-delay: -9s; }
+    .section-geo-b .section-geo-shape:nth-child(3) { top: 44%; left: 13%; animation-delay: -1s; }
+
+    .section-geo-c .section-geo-shape:nth-child(1) { top: 12%; left: 7%; animation-delay: -8s; }
+    .section-geo-c .section-geo-shape:nth-child(2) { top: 62%; right: 7%; animation-delay: -3s; }
+    .section-geo-c .section-geo-shape:nth-child(3) { top: 30%; right: 18%; animation-delay: -6s; }
+
+    @keyframes sectionGeoFloat {
+      0%, 100% { translate: 0 0; }
+      35% { translate: 10px -16px; }
+      70% { translate: -7px 9px; }
+    }
+
+    @media (max-width: 700px) {
+      .section-geo-shape { opacity: 0.08; }
+      [data-theme="dark"] .section-geo-shape { opacity: 0.12; }
+    }
+
+/* ===== EDITORIAL PORTFOLIO ===== */
     .work-section { overflow: hidden; }
     .work-heading { max-width: 720px; }
 
@@ -1614,7 +1726,7 @@
         </div>
       </div>
       <div class="reveal-right">
-        <form id="contactForm" class="contact-form">
+        <form id="contactForm" class="contact-form" novalidate>
           <div class="form-group">
             <label for="contactName" data-i18n="contact.form.name">Név</label>
             <input id="contactName" name="name" autocomplete="name" required data-placeholder-hu="Teljes név" data-placeholder-en="Full name" placeholder="Teljes név">
@@ -1637,8 +1749,13 @@
             <label for="contactMessage" data-i18n="contact.form.message">Üzenet</label>
             <textarea id="contactMessage" name="message" rows="5" required data-placeholder-hu="Pár mondat a célokról, felületről, méretről és határidőről..." data-placeholder-en="A few words about your goals, platform, dimensions and timeline..." placeholder="Pár mondat a célokról, felületről, méretről és határidőről..."></textarea>
           </div>
-          <button type="submit" class="form-submit" data-i18n="contact.form.submit">Küldés emailben</button>
-          <p class="form-note" data-i18n="contact.form.note">Beküldéskor a leveleződ nyílik meg előre kitöltött üzenettel.</p>
+          <div class="form-honeypot" aria-hidden="true">
+            <label for="contactWebsite">Weboldal</label>
+            <input id="contactWebsite" name="website" type="text" tabindex="-1" autocomplete="off">
+          </div>
+          <button type="submit" class="form-submit" data-i18n="contact.form.submit">Üzenet küldése</button>
+          <p class="form-note" data-i18n="contact.form.note">Az üzenetet közvetlenül innen küldheted el, nem nyílik meg külön levelező.</p>
+          <p id="contactStatus" class="form-status" role="status" aria-live="polite"></p>
         </form>
       </div>
     </div>
@@ -1778,8 +1895,8 @@
       'contact.service.graphics': 'Graphic design',
       'contact.service.support': 'Maintenance and IT support',
       'contact.form.message': 'Message',
-      'contact.form.submit': 'Send via email',
-      'contact.form.note': 'Clicking send will open your email client with a pre-filled message.',
+      'contact.form.submit': 'Send message',
+      'contact.form.note': 'Send your message directly from here — no email app will open.',
       'footer.rights': 'All rights reserved.',
       'footer.imprint': 'Imprint',
       'footer.privacy': 'Privacy',
@@ -1858,13 +1975,61 @@
   document.getElementById('langToggle').addEventListener('click', toggleLang);
 
   /* Contact form */
-  document.getElementById('contactForm').addEventListener('submit', function(e) {
+  var contactForm = document.getElementById('contactForm');
+  var contactStatus = document.getElementById('contactStatus');
+  var contactSubmit = contactForm.querySelector('.form-submit');
+
+  contactForm.addEventListener('submit', async function(e) {
     e.preventDefault();
-    var fd = new FormData(this);
-    var service = document.getElementById('contactService').selectedOptions[0].textContent;
-    var subject = encodeURIComponent('FORGRIT – ' + service);
-    var body = encodeURIComponent((currentLang === 'en' ? 'Name: ' : 'Név: ') + fd.get('name') + '\nEmail: ' + fd.get('email') + '\n' + (currentLang === 'en' ? 'Service: ' : 'Szolgáltatás: ') + service + '\n\n' + fd.get('message'));
-    window.location.href = 'mailto:shdwtrggr@gmail.com?subject=' + subject + '&body=' + body;
+
+    if (!contactForm.checkValidity()) {
+      contactForm.reportValidity();
+      contactStatus.className = 'form-status error';
+      contactStatus.textContent = currentLang === 'en'
+        ? 'Please fill in your name, email address and message.'
+        : 'Kérlek, töltsd ki a nevedet, az email címedet és az üzenetet.';
+      return;
+    }
+
+    var fd = new FormData(contactForm);
+    var payload = {
+      name: String(fd.get('name') || '').trim(),
+      email: String(fd.get('email') || '').trim(),
+      service: String(fd.get('service') || 'general'),
+      message: String(fd.get('message') || '').trim(),
+      website: String(fd.get('website') || '').trim()
+    };
+
+    contactSubmit.disabled = true;
+    contactStatus.className = 'form-status';
+    contactStatus.textContent = currentLang === 'en' ? 'Sending…' : 'Küldés…';
+
+    try {
+      var response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+
+      var result = await response.json().catch(function() { return {}; });
+      if (!response.ok || !result.ok) throw new Error('send_failed');
+
+      contactForm.reset();
+      contactStatus.className = 'form-status success';
+      contactStatus.textContent = currentLang === 'en'
+        ? 'Thanks — your message has arrived. I will get back to you within 1 business day.'
+        : 'Köszönöm — az üzeneted megérkezett. 1 munkanapon belül válaszolok.';
+    } catch (error) {
+      contactStatus.className = 'form-status error';
+      contactStatus.textContent = currentLang === 'en'
+        ? 'Something went wrong while sending. Please try again in a moment.'
+        : 'Valami hiba történt a küldés közben. Kérlek, próbáld újra egy pillanat múlva.';
+    } finally {
+      contactSubmit.disabled = false;
+    }
   });
 
   /* Select the requested service without overwriting a drafted message. */
@@ -1902,6 +2067,29 @@
       if (event.target === graphicDialog && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) graphicDialog.close();
     });
   }
+
+  /* Subtle geometric accents across the full page. */
+  var geoPatterns = [
+    ['square', 'circle', 'diamond'],
+    ['triangle', 'plus', 'circle'],
+    ['circle', 'square', 'plus']
+  ];
+
+  document.querySelectorAll('.section:not(.hero)').forEach(function(section, index) {
+    if (section.querySelector(':scope > .section-geo')) return;
+
+    var decor = document.createElement('div');
+    decor.className = 'section-geo section-geo-' + ['a', 'b', 'c'][index % 3];
+    decor.setAttribute('aria-hidden', 'true');
+
+    geoPatterns[index % geoPatterns.length].forEach(function(type) {
+      var shape = document.createElement('span');
+      shape.className = 'section-geo-shape ' + type;
+      decor.appendChild(shape);
+    });
+
+    section.insertBefore(decor, section.firstChild);
+  });
 
   /* Scroll progress */
   var progressBar = document.getElementById('scrollProgress');
