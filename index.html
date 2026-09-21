@@ -1002,6 +1002,219 @@
       .pricing-grid { grid-template-columns: 1fr; }
       .services-grid { grid-template-columns: 1fr; }
     }
+  
+    /* ===== COMPACT WORK / PORTFOLIO GRID ===== */
+    .work-section { overflow: hidden; }
+    .work-heading-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem; }
+    .work-heading-row .section-desc { max-width: 680px; }
+
+    .work-filters {
+      display: flex; flex-wrap: wrap; gap: 0.6rem;
+      margin-top: 2rem;
+    }
+
+    .work-filter {
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      color: var(--text-secondary);
+      border-radius: 999px;
+      padding: 0.55rem 0.95rem;
+      font: inherit;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .work-filter:hover {
+      color: var(--text);
+      border-color: var(--border-hover);
+      transform: translateY(-1px);
+    }
+
+    .work-filter.active {
+      color: #fff;
+      border-color: transparent;
+      background: linear-gradient(135deg, var(--cyan), var(--cyan-dark));
+      box-shadow: 0 8px 22px rgba(14,165,233,0.2);
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    .work-card {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--bg-card);
+      box-shadow: var(--shadow-card);
+      color: inherit;
+      text-decoration: none;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s, box-shadow 0.35s;
+    }
+
+    .work-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--border-hover);
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    .work-card[hidden] { display: none !important; }
+
+    .work-media {
+      position: relative;
+      display: block;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: var(--bg-alt);
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .work-media img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .work-media.contain img {
+      object-fit: contain;
+      padding: 0.35rem;
+    }
+
+    .work-card:hover .work-media img { transform: scale(1.045); }
+
+    .work-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: flex-end;
+      padding: 1rem;
+      background: linear-gradient(to top, rgba(3,7,18,0.72), transparent 62%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .work-card:hover .work-overlay,
+    .work-media:focus-visible .work-overlay { opacity: 1; }
+
+    .work-overlay span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      color: #fff;
+      font-size: 0.76rem;
+      font-weight: 700;
+    }
+
+    .work-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 1rem 1.05rem 1.1rem;
+    }
+
+    .work-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .work-kind,
+    .work-category {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      border-radius: 999px;
+      padding: 0.25rem 0.55rem;
+      font-size: 0.61rem;
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .work-kind {
+      color: var(--cyan);
+      background: var(--icon-bg);
+      border: 1px solid var(--icon-border);
+    }
+
+    .work-kind.own {
+      color: var(--purple);
+      background: rgba(139,92,246,0.09);
+      border-color: rgba(139,92,246,0.18);
+    }
+
+    .work-category {
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      background: transparent;
+    }
+
+    .work-title {
+      margin-top: 0.72rem;
+      font-size: 1.03rem;
+      line-height: 1.3;
+      font-weight: 700;
+    }
+
+    .work-desc {
+      margin-top: 0.45rem;
+      color: var(--text-secondary);
+      font-size: 0.82rem;
+      line-height: 1.55;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      overflow: hidden;
+    }
+
+    .work-link {
+      margin-top: auto;
+      padding-top: 0.9rem;
+      color: var(--text-muted);
+      font-size: 0.74rem;
+      font-weight: 600;
+    }
+
+    .work-quote {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+      padding: 1.15rem 1.35rem;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--bg-card);
+    }
+
+    .work-quote h3 { font-size: 1rem; }
+    .work-quote p { margin-top: 0.3rem; color: var(--text-secondary); font-size: 0.82rem; max-width: 680px; }
+    .work-quote .btn-primary { flex-shrink: 0; padding: 0.7rem 1.25rem; font-size: 0.82rem; }
+
+    @media (max-width: 1100px) {
+      .work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 700px) {
+      .work-heading-row { align-items: flex-start; flex-direction: column; gap: 1rem; }
+      .work-grid { grid-template-columns: 1fr; }
+      .work-quote { align-items: flex-start; flex-direction: column; }
+      .work-quote .btn-primary { width: 100%; justify-content: center; }
+    }
+
   </style>
 </head>
 <body>
@@ -1020,8 +1233,8 @@
     <ul class="nav-center">
       <li><a href="#szolgaltatasok" data-i18n="nav.services">Szolgáltatások</a></li>
       <li><a href="#folyamat" data-i18n="nav.process">Folyamat</a></li>
-      <li><a href="#portfolio" data-i18n="nav.portfolio">Portfólió</a></li>
-      <li><a href="#grafika" data-i18n="nav.graphics">Grafika</a></li>
+      <li><a href="#portfolio" data-work-filter="all" data-i18n="nav.portfolio">Portfólió</a></li>
+      <li><a href="#portfolio" data-work-filter="graphics" data-i18n="nav.graphics">Grafika</a></li>
       <li><a href="#csomagok" data-i18n="nav.packages">Csomagok</a></li>
       <li><a href="#rolam" data-i18n="nav.about">Rólam</a></li>
     </ul>
@@ -1182,7 +1395,7 @@
         </div>
         <h3 data-i18n="services.graphics.title">Grafikai tervezés</h3>
         <p data-i18n="services.graphics.desc">Reklámanyagok, bannerek és közösségi média grafikák – a vállalkozásod arculatához igazítva.</p>
-        <a class="service-link" href="#grafika"><span data-i18n="services.graphics.link">Grafikai munkáim</span> <span aria-hidden="true">↗</span></a>
+        <a class="service-link" href="#portfolio" data-work-filter="graphics"><span data-i18n="services.graphics.link">Grafikai munkáim</span> <span aria-hidden="true">↗</span></a>
       </div>
     </div>
   </div>
@@ -1247,89 +1460,93 @@
   </div>
 </section>
 
-<!-- PORTFOLIO -->
-<section id="portfolio" class="section parallax-section">
+<!-- PORTFOLIO / SELECTED WORK -->
+<section id="portfolio" class="section parallax-section work-section" aria-labelledby="portfolio-title">
   <div class="parallax-bg" data-parallax="0.12">
     <div style="position:absolute; bottom:20%; right:15%; width:350px; height:350px; border-radius:50%; background:radial-gradient(circle, var(--hero-gradient-1), transparent 70%);"></div>
   </div>
   <div class="section-inner" style="position:relative; z-index:1;">
-    <div class="reveal">
-      <div class="section-label"><span class="line"></span> <span data-i18n="portfolio.label">Portfólió</span></div>
-      <h2 class="section-title" data-i18n="portfolio.title">Webes munkáim</h2>
-      <p class="section-desc" data-i18n="portfolio.desc">Válogatás az elkészült webes munkáimból.</p>
-    </div>
-    <div class="portfolio-grid stagger">
-      <a href="https://carsystemshop.hu/" target="_blank" rel="noopener" class="portfolio-card reveal" style="--i:0;">
-        <div class="portfolio-img project-preview">
-          <img src="cs%20portfolio.png" alt="A CarSystem Hungária webes felületének részlete" loading="lazy" decoding="async" width="1191" height="558">
-          <div class="overlay">
-            <span class="overlay-text">
-              <span data-i18n="portfolio.view">Megtekintés</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-            </span>
-          </div>
-        </div>
-        <div class="portfolio-info">
-          <span class="portfolio-tag">Webshop</span>
-          <div class="portfolio-name">Carsystemshop – B2B/B2C</div>
-          <p class="project-description" data-i18n="portfolio.carsystem.desc">Webshop autófényezési és járműjavítási termékekhez, lakossági és üzleti vásárlóknak.</p>
-          <span class="project-note">carsystemshop.hu ↗</span>
-        </div>
-      </a>
-      <article class="portfolio-card reveal" style="--i:1;">
-        <div class="portfolio-img project-preview">
-          <img src="FORGRIT.png" alt="FORGRIT logó és szlogen" loading="lazy" decoding="async">
-        </div>
-        <div class="portfolio-info">
-          <span class="portfolio-tag" data-i18n="portfolio.own.tag">Saját projekt</span>
-          <div class="portfolio-name">FORGRIT Landing Page</div>
-          <p class="project-description" data-i18n="portfolio.own.desc">A FORGRIT bemutatkozó oldala – szolgáltatások, referenciák és ajánlatkérés egy helyen.</p>
-          <span class="project-note" data-i18n="portfolio.own.note">Jelenleg ezt az oldalt nézed.</span>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- GRAPHIC DESIGN -->
-<section id="grafika" class="section graphics-section" aria-labelledby="graphics-title">
-  <div class="section-inner">
-    <div class="graphics-heading reveal">
+    <div class="work-heading-row reveal">
       <div>
-        <div class="section-label"><span class="line"></span> <span data-i18n="graphics.label">Grafikai tervezés</span></div>
-        <h2 id="graphics-title" class="section-title" data-i18n="graphics.title">Grafikai munkáim</h2>
-        <p class="section-desc" data-i18n="graphics.desc">Reklámanyagok és egyedi grafikák a weboldaladhoz, kampányaidhoz vagy közösségi felületeidre. Nézd meg néhány elkészült munkámat.</p>
+        <div class="section-label"><span class="line"></span> <span data-i18n="portfolio.label">Portfólió</span></div>
+        <h2 id="portfolio-title" class="section-title" data-i18n="portfolio.title">Munkáim</h2>
+        <p class="section-desc" data-i18n="portfolio.desc">Webes, webshopos és grafikai munkák egy helyen – valódi ügyfélmunkák és saját projektek.</p>
       </div>
     </div>
-    <div class="graphics-grid">
-      <article class="graphic-card reveal">
-        <a class="graphic-preview" href="assets/graphics/carsystem-reklamanyag.png" data-graphic="cs-graphic-title" aria-labelledby="cs-graphic-title cs-graphic-open">
-          <div class="graphic-visual">
-            <img src="assets/graphics/carsystem-reklamanyag.png" alt="Piros CarSystem reklámgrafika fehér BMW-vel, termékfotókkal és a webshop elérhetőségével" width="2658" height="984" loading="lazy" decoding="async" data-alt-hu="Piros CarSystem reklámgrafika fehér BMW-vel, termékfotókkal és a webshop elérhetőségével" data-alt-en="Red CarSystem promotional graphic with a white BMW, product images and webshop details">
+
+    <div class="work-filters reveal" role="group" aria-label="Portfólió szűrése">
+      <button type="button" class="work-filter active" data-work-filter-button="all" aria-pressed="true" data-i18n="portfolio.filter.all">Összes</button>
+      <button type="button" class="work-filter" data-work-filter-button="web" aria-pressed="false" data-i18n="portfolio.filter.web">Web</button>
+      <button type="button" class="work-filter" data-work-filter-button="webshop" aria-pressed="false" data-i18n="portfolio.filter.webshop">Webshop</button>
+      <button type="button" class="work-filter" data-work-filter-button="graphics" aria-pressed="false" data-i18n="portfolio.filter.graphics">Grafika</button>
+    </div>
+
+    <div class="work-grid" id="workGrid">
+      <a href="https://carsystemshop.hu/" target="_blank" rel="noopener" class="work-card reveal" data-work-categories="web webshop">
+        <div class="work-media contain">
+          <img src="cs%20portfolio.png" alt="A CarSystem Hungária webes felületének részlete" loading="lazy" decoding="async" width="1191" height="558">
+          <div class="work-overlay"><span><span data-i18n="portfolio.view">Megtekintés</span> ↗</span></div>
+        </div>
+        <div class="work-body">
+          <div class="work-meta">
+            <span class="work-kind" data-i18n="portfolio.client.tag">Ügyfélmunka</span>
+            <span class="work-category" data-i18n="portfolio.category.webshop">Webshop</span>
           </div>
-          <span class="graphic-open"><span id="cs-graphic-open" data-i18n="graphics.open">Megnyitás nagyban</span><span aria-hidden="true">↗</span></span>
-        </a>
-        <div class="graphic-info">
-          <span class="portfolio-tag" data-i18n="graphics.cs.tag">Reklámanyag</span>
-          <h3 id="cs-graphic-title">CarSystem Hungária</h3>
-          <p data-i18n="graphics.cs.desc">A CarSystem Hungária termékeit és webshopját bemutató reklámgrafika, a márka piros-fehér színeivel.</p>
+          <h3 class="work-title">Carsystemshop – B2B/B2C</h3>
+          <p class="work-desc" data-i18n="portfolio.carsystem.desc">Webshop autófényezési és járműjavítási termékekhez, lakossági és üzleti vásárlóknak.</p>
+          <span class="work-link">carsystemshop.hu ↗</span>
+        </div>
+      </a>
+
+      <article class="work-card reveal" data-work-categories="web">
+        <div class="work-media contain">
+          <img src="FORGRIT.png" alt="FORGRIT logó és szlogen" loading="lazy" decoding="async">
+        </div>
+        <div class="work-body">
+          <div class="work-meta">
+            <span class="work-kind own" data-i18n="portfolio.own.tag">Saját projekt</span>
+            <span class="work-category" data-i18n="portfolio.category.web">Weboldal</span>
+          </div>
+          <h3 class="work-title">FORGRIT Landing Page</h3>
+          <p class="work-desc" data-i18n="portfolio.own.desc">A FORGRIT bemutatkozó oldala – szolgáltatások, referenciák és ajánlatkérés egy helyen.</p>
+          <span class="work-link" data-i18n="portfolio.own.note">Jelenleg ezt az oldalt nézed.</span>
         </div>
       </article>
-      <article class="graphic-card reveal">
-        <a class="graphic-preview" href="assets/graphics/bmw-tipografia.png" data-graphic="bmw-graphic-title" aria-labelledby="bmw-graphic-title bmw-graphic-open">
-          <div class="graphic-visual">
-            <img src="assets/graphics/bmw-tipografia.png" alt="Türkiz BMW őszi erdei környezetben, nagyméretű fehér BMW betűkompozícióval" width="2250" height="1410" loading="lazy" decoding="async" data-alt-hu="Türkiz BMW őszi erdei környezetben, nagyméretű fehér BMW betűkompozícióval" data-alt-en="Turquoise BMW in an autumn forest with a large white BMW typographic composition">
-          </div>
-          <span class="graphic-open"><span id="bmw-graphic-open" data-i18n="graphics.open">Megnyitás nagyban</span><span aria-hidden="true">↗</span></span>
+
+      <article class="work-card reveal" data-work-categories="graphics">
+        <a class="work-media contain" href="assets/graphics/carsystem-reklamanyag.png" data-graphic="cs-graphic-title" aria-labelledby="cs-graphic-title">
+          <img src="assets/graphics/carsystem-reklamanyag.png" alt="Piros CarSystem reklámgrafika fehér BMW-vel, termékfotókkal és a webshop elérhetőségével" width="2658" height="984" loading="lazy" decoding="async" data-alt-hu="Piros CarSystem reklámgrafika fehér BMW-vel, termékfotókkal és a webshop elérhetőségével" data-alt-en="Red CarSystem promotional graphic with a white BMW, product images and webshop details">
+          <div class="work-overlay"><span><span data-i18n="graphics.open">Megnyitás nagyban</span> ↗</span></div>
         </a>
-        <div class="graphic-info">
-          <span class="portfolio-tag" data-i18n="graphics.bmw.tag">Képszerkesztés</span>
-          <h3 id="bmw-graphic-title" data-i18n="graphics.bmw.title">BMW – fotó és tipográfia</h3>
-          <p data-i18n="graphics.bmw.desc">Autós fotóra épülő grafika, ahol a BMW felirat a kép részeként jelenik meg.</p>
+        <div class="work-body">
+          <div class="work-meta">
+            <span class="work-kind" data-i18n="portfolio.client.tag">Ügyfélmunka</span>
+            <span class="work-category" data-i18n="portfolio.category.graphics">Grafika</span>
+          </div>
+          <h3 class="work-title" id="cs-graphic-title">CarSystem Hungária</h3>
+          <p class="work-desc" data-i18n="graphics.cs.desc">A CarSystem Hungária termékeit és webshopját bemutató reklámgrafika, a márka piros-fehér színeivel.</p>
+          <span class="work-link" data-i18n="graphics.cs.tag">Reklámanyag</span>
+        </div>
+      </article>
+
+      <article class="work-card reveal" data-work-categories="graphics">
+        <a class="work-media contain" href="assets/graphics/bmw-tipografia.png" data-graphic="bmw-graphic-title" aria-labelledby="bmw-graphic-title">
+          <img src="assets/graphics/bmw-tipografia.png" alt="Türkiz BMW őszi erdei környezetben, nagyméretű fehér BMW betűkompozícióval" width="2250" height="1410" loading="lazy" decoding="async" data-alt-hu="Türkiz BMW őszi erdei környezetben, nagyméretű fehér BMW betűkompozícióval" data-alt-en="Turquoise BMW in an autumn forest with a large white BMW typographic composition">
+          <div class="work-overlay"><span><span data-i18n="graphics.open">Megnyitás nagyban</span> ↗</span></div>
+        </a>
+        <div class="work-body">
+          <div class="work-meta">
+            <span class="work-kind own" data-i18n="portfolio.own.tag">Saját projekt</span>
+            <span class="work-category" data-i18n="portfolio.category.graphics">Grafika</span>
+          </div>
+          <h3 class="work-title" id="bmw-graphic-title" data-i18n="graphics.bmw.title">BMW – fotó és tipográfia</h3>
+          <p class="work-desc" data-i18n="graphics.bmw.desc">Autós fotóra épülő grafika, ahol a BMW felirat a kép részeként jelenik meg.</p>
+          <span class="work-link" data-i18n="graphics.bmw.tag">Képszerkesztés</span>
         </div>
       </article>
     </div>
-    <div class="graphics-quote reveal">
+
+    <div class="work-quote reveal">
       <div>
         <h3 data-i18n="graphics.quote.title">Kérj ajánlatot a grafikádra</h3>
         <p data-i18n="graphics.quote.desc">Írd meg, milyen grafikára van szükséged, hol használnád és mikorra készüljön el. A részletek alapján egyedi ajánlatot készítek.</p>
@@ -1587,9 +1804,17 @@
       'process.s4.title': 'Launch & Support',
       'process.s4.desc': 'Go-live, analytics setup, SEO basics, training – and I won\'t leave you on your own after.',
       'portfolio.label': 'Portfolio',
-      'portfolio.title': 'Web projects',
-      'portfolio.desc': 'A selection of my completed web projects.',
+      'portfolio.title': 'Selected work',
+      'portfolio.desc': 'Web, webshop and graphic design work in one place – real client work and personal projects.',
       'portfolio.view': 'View',
+      'portfolio.filter.all': 'All',
+      'portfolio.filter.web': 'Web',
+      'portfolio.filter.webshop': 'Webshop',
+      'portfolio.filter.graphics': 'Graphics',
+      'portfolio.client.tag': 'Client work',
+      'portfolio.category.web': 'Website',
+      'portfolio.category.webshop': 'Webshop',
+      'portfolio.category.graphics': 'Graphics',
       'portfolio.carsystem.desc': 'A webshop for automotive refinishing and repair products, serving retail and business customers.',
       'portfolio.own.tag': 'Own project',
       'portfolio.own.desc': 'The FORGRIT business website – services, portfolio and quote requests in one place.',
@@ -1743,6 +1968,35 @@
   document.querySelectorAll('[data-service]').forEach(function(link) {
     link.addEventListener('click', function() {
       document.getElementById('contactService').value = link.getAttribute('data-service');
+    });
+  });
+
+  /* Portfolio filters and direct links to filtered views. */
+  var workFilterButtons = document.querySelectorAll('[data-work-filter-button]');
+  var workCards = document.querySelectorAll('[data-work-categories]');
+
+  function setWorkFilter(filter) {
+    workFilterButtons.forEach(function(button) {
+      var active = button.getAttribute('data-work-filter-button') === filter;
+      button.classList.toggle('active', active);
+      button.setAttribute('aria-pressed', String(active));
+    });
+
+    workCards.forEach(function(card) {
+      var categories = (card.getAttribute('data-work-categories') || '').split(/\s+/);
+      card.hidden = filter !== 'all' && categories.indexOf(filter) === -1;
+    });
+  }
+
+  workFilterButtons.forEach(function(button) {
+    button.addEventListener('click', function() {
+      setWorkFilter(button.getAttribute('data-work-filter-button'));
+    });
+  });
+
+  document.querySelectorAll('[data-work-filter]').forEach(function(link) {
+    link.addEventListener('click', function() {
+      setWorkFilter(link.getAttribute('data-work-filter'));
     });
   });
 
