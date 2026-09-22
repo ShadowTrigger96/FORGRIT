@@ -2968,6 +2968,22 @@
     }
 
 
+    /* Desktop design preview: keep the full sample visible instead of clipping its lower rail */
+    @media (min-width: 701px) {
+      .feature-viewport.design-mode {
+        max-height: none !important;
+        height: auto !important;
+        overflow: visible !important;
+        align-items: stretch !important;
+      }
+
+      .feature-viewport.design-mode .fake-site {
+        height: auto !important;
+        max-height: none !important;
+      }
+    }
+
+
     /* ===== MOBILE PHONE PREVIEW FIX ===== */
     @media (max-width: 700px) {
       .feature-stage:has(.feature-viewport.phone-mode) {
@@ -3821,7 +3837,7 @@
     copy.classList.remove('demo-swap');void copy.offsetWidth;copy.classList.add('demo-swap');
     copy.innerHTML='<h3>'+f.title+'</h3><p>'+f.text+'</p><ul>'+list+'</ul>';
     var vp=document.getElementById('featureViewport');
-    vp.className='feature-viewport'+(key==='mobile'?' phone-mode':'');
+    vp.className='feature-viewport'+(key==='mobile'?' phone-mode':key==='design'?' design-mode':'');
     if(key==='design') vp.innerHTML=designHtml();
     else if(key==='mobile') vp.innerHTML=fakeSiteHtml(fakeSites.start[lang],'');
     else if(key==='contact') vp.innerHTML=contactHtml();
