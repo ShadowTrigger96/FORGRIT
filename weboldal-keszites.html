@@ -480,16 +480,6 @@
       50% { opacity: calc(var(--geo-opacity) * 0.8); transform: translateX(30px); }
     }
 
-    .grid-overlay {
-      position: absolute; inset: 0; z-index: 1;
-      background-image:
-        linear-gradient(var(--grid-line) 1px, transparent 1px),
-        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-      background-size: 60px 60px;
-      mask-image: radial-gradient(ellipse 85% 70% at 50% 40%, black 20%, transparent 75%);
-      -webkit-mask-image: radial-gradient(ellipse 85% 70% at 50% 40%, black 20%, transparent 75%);
-    }
-
     .hero-content {
       position: relative; z-index: 2;
       text-align: center; max-width: 900px; padding: 0 2rem;
@@ -660,14 +650,6 @@
     }
 
     .parallax-banner-bg { position: absolute; inset: 0; background: var(--bg-alt); z-index: 0; }
-
-    .parallax-banner-grid {
-      position: absolute; inset: 0; z-index: 1;
-      background-image:
-        linear-gradient(var(--grid-line) 1px, transparent 1px),
-        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-      background-size: 80px 80px; will-change: transform;
-    }
 
     .parallax-banner .content { position: relative; z-index: 2; max-width: 700px; margin: 0 auto; }
 
@@ -2189,13 +2171,14 @@
     .spb-2{width:620px;height:620px;right:-220px;top:28%;background:radial-gradient(circle,var(--hero-gradient-2),transparent 67%);animation-delay:-4s;animation-duration:16s;}
     .spb-3{width:520px;height:520px;left:18%;bottom:-160px;background:radial-gradient(circle,var(--hero-gradient-3),transparent 68%);animation-delay:-8s;animation-duration:15s;}
     .spb-4{width:420px;height:420px;right:18%;bottom:18%;background:radial-gradient(circle,var(--hero-gradient-1),transparent 70%);animation-delay:-6s;animation-duration:18s;opacity:.42;}
-    .spb-grid{position:absolute;inset:0;background-image:linear-gradient(var(--grid-line) 1px,transparent 1px),linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 110% 95% at 50% 48%,#000 30%,transparent 88%);-webkit-mask-image:radial-gradient(ellipse 110% 95% at 50% 48%,#000 30%,transparent 88%);}
     .spb-shape{position:absolute;opacity:var(--geo-opacity);}
     .spb-square{width:76px;height:76px;border:2px solid var(--cyan);left:5%;top:34%;animation:spbSpin 24s linear infinite;}
     .spb-circle{width:42px;height:42px;border:2px solid var(--purple);border-radius:50%;right:8%;top:56%;animation:spbFloat 10s ease-in-out infinite reverse;}
     .spb-triangle{width:0;height:0;border-left:28px solid transparent;border-right:28px solid transparent;border-bottom:48px solid var(--amber);right:14%;bottom:14%;opacity:calc(var(--geo-opacity)*.7);animation:spbFloat 12s ease-in-out infinite;}
     .spb-cross{position:absolute;width:28px;height:28px;left:9%;bottom:24%;animation:spbFloat 9s ease-in-out infinite;opacity:var(--geo-opacity);}
     .spb-cross:before,.spb-cross:after{content:'';position:absolute;background:var(--cyan);border-radius:2px}.spb-cross:before{width:28px;height:3px;top:12px}.spb-cross:after{width:3px;height:28px;left:12px}
+    .spb-diamond{width:34px;height:34px;border:2px solid var(--purple);right:24%;top:16%;transform:rotate(45deg);animation:spbSpin 28s linear infinite reverse;opacity:calc(var(--geo-opacity)*.75);}
+    .spb-ring{width:30px;height:30px;border:2px solid var(--cyan);border-radius:50%;left:28%;bottom:13%;animation:spbFloat 11s ease-in-out infinite reverse;opacity:calc(var(--geo-opacity)*.7);}
     @keyframes spbFloat{0%,100%{transform:translate(0,0) scale(1)}35%{transform:translate(28px,-32px) scale(1.05)}70%{transform:translate(-20px,18px) scale(.96)}}
     @keyframes spbSpin{to{transform:rotate(360deg)}}
 
@@ -2995,11 +2978,12 @@
   <div class="spb-orb spb-2"></div>
   <div class="spb-orb spb-3"></div>
   <div class="spb-orb spb-4"></div>
-  <div class="spb-grid"></div>
   <span class="spb-shape spb-square"></span>
   <span class="spb-shape spb-circle"></span>
   <span class="spb-shape spb-triangle"></span>
   <span class="spb-cross"></span>
+  <span class="spb-shape spb-diamond"></span>
+  <span class="spb-shape spb-ring"></span>
 </div>
 
 <header class="navbar" id="navbar">
@@ -3049,7 +3033,6 @@
     <div class="hero-gradient-orb orb-4"></div>
     <div class="hero-gradient-orb orb-5"></div>
   </div>
-  <div class="grid-overlay"></div>
   <div class="hero-lines"><div class="hero-line"></div><div class="hero-line"></div><div class="hero-line"></div></div>
   <div class="geo-shapes">
     <div class="geo geo-1"></div><div class="geo geo-2"></div><div class="geo geo-3"></div><div class="geo geo-4"></div>

@@ -225,16 +225,6 @@
       80% { transform: translate(-40px,-20px) scale(0.92); }
     }
 
-    .legal-grid {
-      position: absolute; inset: 0;
-      background-image:
-        linear-gradient(var(--grid-line) 1px, transparent 1px),
-        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-      background-size: 60px 60px;
-      mask-image: radial-gradient(ellipse 90% 85% at 50% 35%, black 25%, transparent 80%);
-      -webkit-mask-image: radial-gradient(ellipse 90% 85% at 50% 35%, black 25%, transparent 80%);
-    }
-
     .legal-geo { position: absolute; opacity: var(--geo-opacity); }
     .legal-geo.g1 { width:70px; height:70px; border:2px solid var(--cyan); top:12%; left:6%; animation:legalSpin 22s linear infinite; }
     .legal-geo.g2 { width:45px; height:45px; border:2px solid var(--cyan); bottom:18%; right:10%; animation:legalSpin 30s linear infinite reverse; opacity:calc(var(--geo-opacity)*0.7); }
@@ -290,7 +280,6 @@
 
 <div class="legal-bg" aria-hidden="true">
   <div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div><div class="orb orb-4"></div><div class="orb orb-5"></div>
-  <div class="legal-grid"></div>
   <span class="legal-geo g1"></span><span class="legal-geo g2"></span><span class="legal-geo g3"></span><span class="legal-geo g4"></span>
   <span class="legal-geo g5"></span><span class="legal-geo g6"></span><span class="legal-geo g7"></span><span class="legal-geo g8"></span>
   <span class="legal-geo g9"></span><span class="legal-geo g10"></span>

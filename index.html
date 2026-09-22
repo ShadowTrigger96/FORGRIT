@@ -529,16 +529,6 @@
       50% { opacity: calc(var(--geo-opacity) * 0.8); transform: translateX(30px); }
     }
 
-    .grid-overlay {
-      position: absolute; inset: 0; z-index: 1;
-      background-image:
-        linear-gradient(var(--grid-line) 1px, transparent 1px),
-        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-      background-size: 60px 60px;
-      mask-image: radial-gradient(ellipse 85% 70% at 50% 40%, black 20%, transparent 75%);
-      -webkit-mask-image: radial-gradient(ellipse 85% 70% at 50% 40%, black 20%, transparent 75%);
-    }
-
     .hero-content {
       position: relative; z-index: 2;
       text-align: center; max-width: 900px; padding: 0 2rem;
@@ -686,15 +676,19 @@
     .service-card-link { display: block; color: inherit; text-decoration: none; cursor: pointer; }
     .service-card-more {
       display: inline-flex; align-items: center; gap: 0.45rem;
-      margin-top: 1.2rem; color: var(--cyan);
+      width: fit-content; margin-top: 1.2rem;
+      padding: 0.5rem 0.72rem;
+      color: var(--cyan); background: var(--icon-bg);
+      border: 1px solid var(--icon-border); border-radius: 999px;
       font-size: 0.82rem; font-weight: 700;
-      transition: gap 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s;
+      box-shadow: 0 4px 14px rgba(14,165,233,0.06);
+      transition: gap 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s, background 0.3s, transform 0.3s;
     }
     .service-card-more::after {
       content: '→'; font-size: 1rem; line-height: 1;
       transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .service-card-link:hover .service-card-more { gap: 0.65rem; }
+    .service-card-link:hover .service-card-more { gap: 0.65rem; border-color: rgba(14,165,233,0.30); transform: translateY(-1px); }
     .service-card-link:hover .service-card-more::after { transform: translateX(2px); }
 
     .service-icon {
@@ -723,14 +717,6 @@
     }
 
     .parallax-banner-bg { position: absolute; inset: 0; background: var(--bg-alt); z-index: 0; }
-
-    .parallax-banner-grid {
-      position: absolute; inset: 0; z-index: 1;
-      background-image:
-        linear-gradient(var(--grid-line) 1px, transparent 1px),
-        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-      background-size: 80px 80px; will-change: transform;
-    }
 
     .parallax-banner .content { position: relative; z-index: 2; max-width: 700px; margin: 0 auto; }
 
@@ -1462,7 +1448,6 @@
     <div class="hero-gradient-orb orb-4"></div>
     <div class="hero-gradient-orb orb-5"></div>
   </div>
-  <div class="grid-overlay"></div>
   <div class="hero-lines">
     <div class="hero-line"></div>
     <div class="hero-line"></div>
@@ -1589,7 +1574,6 @@
 <!-- PARALLAX BANNER -->
 <div class="parallax-banner">
   <div class="parallax-banner-bg"></div>
-  <div class="parallax-banner-grid" data-parallax="0.3"></div>
   <div class="content reveal-scale">
     <div class="big-number" data-count="100">0</div>
     <p style="font-size:1.3rem; font-weight:600; margin-top:0.5rem; color:var(--text-secondary);" data-i18n="banner.title">százalékos ügyfél-elégedettség</p>
