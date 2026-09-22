@@ -2169,12 +2169,96 @@
       .case-shop-image{left:1.3rem;right:1.3rem;height:145px}
     }
 
+
+    /* ===== PAGE-WIDE FORGRIT BACKGROUND ===== */
+    .service-page-bg{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;background:var(--bg);}
+    .navbar,.hero,.marquee-section,.section,.footer{position:relative;z-index:2;}
+    .section{background:transparent!important;}
+    .spb-orb{position:absolute;border-radius:50%;opacity:.68;animation:spbFloat 13s ease-in-out infinite;}
+    .spb-1{width:650px;height:650px;left:-220px;top:-180px;background:radial-gradient(circle,var(--hero-gradient-1),transparent 67%);}
+    .spb-2{width:620px;height:620px;right:-220px;top:28%;background:radial-gradient(circle,var(--hero-gradient-2),transparent 67%);animation-delay:-4s;animation-duration:16s;}
+    .spb-3{width:520px;height:520px;left:18%;bottom:-160px;background:radial-gradient(circle,var(--hero-gradient-3),transparent 68%);animation-delay:-8s;animation-duration:15s;}
+    .spb-4{width:420px;height:420px;right:18%;bottom:18%;background:radial-gradient(circle,var(--hero-gradient-1),transparent 70%);animation-delay:-6s;animation-duration:18s;opacity:.42;}
+    .spb-grid{position:absolute;inset:0;background-image:linear-gradient(var(--grid-line) 1px,transparent 1px),linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 110% 95% at 50% 48%,#000 30%,transparent 88%);-webkit-mask-image:radial-gradient(ellipse 110% 95% at 50% 48%,#000 30%,transparent 88%);}
+    .spb-shape{position:absolute;opacity:var(--geo-opacity);}
+    .spb-square{width:76px;height:76px;border:2px solid var(--cyan);left:5%;top:34%;animation:spbSpin 24s linear infinite;}
+    .spb-circle{width:42px;height:42px;border:2px solid var(--purple);border-radius:50%;right:8%;top:56%;animation:spbFloat 10s ease-in-out infinite reverse;}
+    .spb-triangle{width:0;height:0;border-left:28px solid transparent;border-right:28px solid transparent;border-bottom:48px solid var(--amber);right:14%;bottom:14%;opacity:calc(var(--geo-opacity)*.7);animation:spbFloat 12s ease-in-out infinite;}
+    .spb-cross{position:absolute;width:28px;height:28px;left:9%;bottom:24%;animation:spbFloat 9s ease-in-out infinite;opacity:var(--geo-opacity);}
+    .spb-cross:before,.spb-cross:after{content:'';position:absolute;background:var(--cyan);border-radius:2px}.spb-cross:before{width:28px;height:3px;top:12px}.spb-cross:after{width:3px;height:28px;left:12px}
+    @keyframes spbFloat{0%,100%{transform:translate(0,0) scale(1)}35%{transform:translate(28px,-32px) scale(1.05)}70%{transform:translate(-20px,18px) scale(.96)}}
+    @keyframes spbSpin{to{transform:rotate(360deg)}}
+
+    /* Less boxed / more visual decision area */
+    .decision-card{min-height:190px;padding:2rem 1.65rem;}
+    .decision-card p{line-height:1.62;}
+    .decision-result{display:none!important;}
+    .decision-stage{min-height:430px;}
+    .site-demo{padding:1.1rem;}
+    .site-demo>.fake-site{min-height:100%;}
+    .fake-site{border:1px solid rgba(15,23,42,.08);}
+    [data-theme="dark"] .fake-site{border-color:rgba(255,255,255,.08);}
+    .fake-art{background-size:cover!important;background-position:center!important;}
+    .fake-art:before{background:linear-gradient(180deg,transparent 30%,rgba(15,23,42,.42));inset:0;width:auto;height:auto;border-radius:0;}
+    .fake-art:after{display:none;}
+    .fake-photo-tag{position:absolute;left:.8rem;bottom:.7rem;color:#fff;font-size:.56rem;font-weight:700;letter-spacing:.05em;text-shadow:0 1px 8px rgba(0,0,0,.35);}
+    .fake-label{display:none;}
+
+    /* Compact feature preview */
+    .feature-layout{grid-template-columns:300px minmax(0,1fr);gap:1.5rem;}
+    .feature-stage{min-height:390px;padding:1.15rem;grid-template-columns:minmax(0,1.25fr) minmax(220px,.75fr);gap:1.2rem;}
+    .feature-visual{min-height:320px;padding:.8rem;}
+    .feature-browser{min-height:300px;height:auto;}
+    .feature-viewport{min-height:255px;max-height:315px;padding:.75rem;overflow:auto;}
+    .feature-viewport .fake-site{max-width:620px;margin:auto;}
+    .feature-copy h3{font-size:1.25rem;}
+    .feature-copy p{font-size:.88rem;line-height:1.65;}
+    .feature-copy ul{margin-top:.75rem;gap:.42rem;}
+    .feature-copy li{font-size:.8rem;}
+    .design-demo{display:block;width:100%;}
+    .design-panel{display:none!important;}
+
+    /* Case study visual higher and in normal document flow */
+    .case-stage{min-height:0;padding:1.2rem;}
+    .case-stage-inner{min-height:0;padding:1.6rem;}
+    .case-shop-image{position:relative;left:auto;right:auto;bottom:auto;height:185px;margin-top:1.15rem;border-radius:14px;overflow:hidden;}
+    .case-shop-image img{object-fit:cover;object-position:center top;}
+    .case-admin{margin-top:1.15rem;border:1px solid var(--border);border-radius:14px;overflow:hidden;background:#f8fafc;color:#0f172a;}
+    .case-admin-head{display:flex;justify-content:space-between;align-items:center;padding:.75rem 1rem;border-bottom:1px solid #e2e8f0;font-size:.65rem;}
+    .case-admin-table{display:grid;grid-template-columns:1.2fr .8fr .7fr;padding:.65rem .9rem;gap:.45rem;font-size:.58rem;}
+    .case-admin-table div{padding:.45rem .5rem;border-radius:7px;background:#fff;border:1px solid #e2e8f0;}
+    .case-admin-table b{font-weight:700;}
+    .case-shop-link{margin-top:.7rem;}
+
+    @media(max-width:1000px){
+      .feature-layout{grid-template-columns:1fr;}
+      .feature-stage{grid-template-columns:1fr;}
+      .feature-tabs{grid-template-columns:repeat(2,minmax(0,1fr));}
+    }
+    @media(max-width:700px){
+      .feature-tabs{grid-template-columns:1fr;}
+      .feature-viewport{max-height:none;}
+      .decision-card{min-height:auto;}
+      .case-shop-image{height:155px;}
+    }
+
 </style>
 </head>
 <body>
 <div class="noise"></div>
 <div class="cursor-glow" id="cursorGlow"></div>
 <div class="scroll-progress" id="scrollProgress"></div>
+<div class="service-page-bg" aria-hidden="true">
+  <div class="spb-orb spb-1"></div>
+  <div class="spb-orb spb-2"></div>
+  <div class="spb-orb spb-3"></div>
+  <div class="spb-orb spb-4"></div>
+  <div class="spb-grid"></div>
+  <span class="spb-shape spb-square"></span>
+  <span class="spb-shape spb-circle"></span>
+  <span class="spb-shape spb-triangle"></span>
+  <span class="spb-cross"></span>
+</div>
 
 <header class="navbar" id="navbar">
   <div class="nav-inner">
@@ -2239,7 +2323,7 @@
       <span class="gradient-text">vállalkozásodhoz</span>
       <span>igazítva</span>
     </h1>
-    <p class="hero-sub">Bemutatkozó oldal, céges weboldal vagy külön landing page. A tervezéstől az élesítésig egy helyen kezeljük a projektet.</p>
+    <p class="hero-sub">Bemutatkozó oldal, céges weboldal vagy külön landing page. A tervezéstől az élesítésig közvetlenül velem egyeztetsz.</p>
     <div class="hero-buttons">
       <a href="#elso-kerdes" class="btn-primary">Nézzük meg, mire van szükséged
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -2284,7 +2368,7 @@
     <div class="reveal">
       <div class="section-label"><span class="line"></span> Első kérdés</div>
       <h2 class="section-title">Mire van szükséged?</h2>
-      <p class="section-desc">Válaszd ki azt a helyzetet, amelyik a legközelebb áll hozzád. A minta rögtön mutat egy ésszerű kiindulási irányt.</p>
+      <p class="section-desc">Válaszd ki, melyik áll hozzád a legközelebb. Jobb oldalon rögtön mutatom, milyen oldalból indulnék.</p>
     </div>
 
     <div class="decision-layout">
@@ -2293,25 +2377,25 @@
           <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 20h10M12 18v2"/></svg></div>
           <h3>Még nincs weboldalam</h3>
           <p>Most indul a vállalkozás, vagy eddig nem volt saját oldalad.</p>
-          <span class="card-small">Mutasd a javaslatot →</span>
+          
         </button>
         <button class="service-card decision-card reveal" style="--i:1;--card-accent:var(--amber);" data-decision="replace">
           <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M20 7h-9M14 3l-4 4 4 4"/><path d="M4 17h9M10 13l4 4-4 4"/></svg></div>
           <h3>Van oldalam, de cserélném</h3>
           <p>A jelenlegi oldal elavult, lassú, vagy egyszerűen már nem azt mutatja, amit szeretnél.</p>
-          <span class="card-small">Mutasd a javaslatot →</span>
+          
         </button>
         <button class="service-card decision-card reveal" style="--i:2;--card-accent:var(--purple);" data-decision="multi">
           <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
           <h3>Több szolgáltatásom van</h3>
           <p>Külön szeretnéd bemutatni a szolgáltatásokat, referenciákat és a fontos információkat.</p>
-          <span class="card-small">Mutasd a javaslatot →</span>
+          
         </button>
         <button class="service-card decision-card reveal" style="--i:3;--card-accent:var(--green);" data-decision="campaign">
           <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M4 13V6a2 2 0 0 1 2-2h6l8 8-8 8H6a2 2 0 0 1-2-2v-5"/><circle cx="9" cy="9" r="1"/></svg></div>
           <h3>Egy dolgot szeretnék hirdetni</h3>
           <p>Egy szolgáltatásnak, kampánynak vagy ajánlatnak kell külön, fókuszált oldal.</p>
-          <span class="card-small">Mutasd a javaslatot →</span>
+          
         </button>
       </div>
 
@@ -2333,7 +2417,7 @@
     <div class="reveal">
       <div class="section-label"><span class="line"></span> Nem csak egy HTML fájl</div>
       <h2 class="section-title">Mi kerül bele a weboldalba?</h2>
-      <p class="section-desc">Ugyanannak a projektnek több része van. Kattints végig rajtuk, a minta megmutatja, mire gondolok.</p>
+      <p class="section-desc">Kattints végig a részeken. A jobb oldali nézet mindig azt mutatja, miről van szó.</p>
     </div>
 
     <div class="feature-layout">
@@ -2381,7 +2465,7 @@
     <div class="reveal">
       <div class="section-label"><span class="line"></span> Mini esettanulmány</div>
       <h2 class="section-title">Carsystemshop.hu – egy működő webshop a háttérben</h2>
-      <p class="section-desc">Itt nem egy fiktív mintát látsz. A Carsystemshop egy valós B2B/B2C webshop, amelyen több fejlesztési és üzemeltetési feladat is összeér.</p>
+      <p class="section-desc">A Carsystemshopon nem csak a megjelenéssel foglalkozom. A webshop működéséhez kapcsolódó fejlesztések és napi módosítások is ide tartoznak.</p>
     </div>
 
     <div class="case-layout">
@@ -2581,6 +2665,13 @@
     'Impresszum':'Imprint','Adatkezelés':'Privacy','Sütikezelés':'Cookies'
   };
 
+  Object.assign(en,{
+    'Bemutatkozó oldal, céges weboldal vagy külön landing page. A tervezéstől az élesítésig közvetlenül velem egyeztetsz.':'A company website, business site or dedicated landing page. From planning to launch, you work directly with me.',
+    'Válaszd ki, melyik áll hozzád a legközelebb. Jobb oldalon rögtön mutatom, milyen oldalból indulnék.':'Choose the situation closest to yours. On the right I will immediately show the kind of site I would start from.',
+    'Kattints végig a részeken. A jobb oldali nézet mindig azt mutatja, miről van szó.':'Click through the sections. The view on the right changes to show exactly what each part means.',
+    'A Carsystemshopon nem csak a megjelenéssel foglalkozom. A webshop működéséhez kapcsolódó fejlesztések és napi módosítások is ide tartoznak.':'On Carsystemshop, the work goes beyond appearance. Development and day-to-day changes required by the live webshop are part of the job as well.'
+  });
+
   var originalText=[];
   var walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
   while(walker.nextNode()){
@@ -2598,28 +2689,28 @@
 
   var fakeSites={
     start:{
-      hu:{brand:'BORÓKA STÚDIÓ',links:['Szolgáltatások','Rólam','Kapcsolat'],eyebrow:'Lakberendezés · Győr',title:'Otthon, ami tényleg rólad szól.',copy:'Lakberendezési tervezés és személyes tanácsadás az első ötlettől a kész térig.',cta:'Időpontot kérek',ghost:'Munkáim',services:[['Lakberendezés','Teljes koncepció és tértervezés.'],['3D látványterv','Lásd előre, hogyan áll össze a tér.'],['Tanácsadás','Konkrét kérdésekre, személyesen.']]},
-      en:{brand:'BORÓKA STUDIO',links:['Services','About','Contact'],eyebrow:'Interior design · Győr',title:'A home that actually feels like yours.',copy:'Interior planning and personal consultation from the first idea to the finished space.',cta:'Book a consultation',ghost:'Projects',services:[['Interior design','Full concept and space planning.'],['3D visualisation','See the space before it is built.'],['Consultation','Practical help for specific questions.']]}
+      hu:{brand:'NORTH DETAIL',links:['Szolgáltatások','Munkáink','Kapcsolat'],eyebrow:'Autókozmetika · Győr',title:'Tiszta részletek. Látványos végeredmény.',copy:'Külső-belső autókozmetika, polírozás és kerámia bevonat időpontfoglalással.',cta:'Időpontot kérek',ghost:'Munkáink',image:'assets/graphics/bmw-tipografia.png',imagePos:'center 54%',tag:'Polírozás · Kerámia'},
+      en:{brand:'NORTH DETAIL',links:['Services','Projects','Contact'],eyebrow:'Car detailing · Győr',title:'Clean details. Visible results.',copy:'Exterior and interior detailing, polishing and ceramic coating with appointment booking.',cta:'Book a slot',ghost:'Projects',image:'assets/graphics/bmw-tipografia.png',imagePos:'center 54%',tag:'Polishing · Ceramic'}
     },
     replace:{
-      hu:{brand:'VARGA KLÍMA',links:['Klímák','Telepítés','Karbantartás','Kapcsolat'],eyebrow:'Klíma · Hőszivattyú',title:'Telepítés és karbantartás, érthetően.',copy:'Lakossági klímatelepítés, tisztítás és karbantartás Győr és környékén.',cta:'Árajánlatot kérek',ghost:'Szolgáltatások',services:[['Klímatelepítés','Felméréstől a beüzemelésig.'],['Karbantartás','Rendszeres tisztítás és ellenőrzés.'],['Hőszivattyú','Tervezés és kivitelezés.']]},
-      en:{brand:'VARGA AIR',links:['AC units','Installation','Maintenance','Contact'],eyebrow:'Air conditioning · Heat pumps',title:'Installation and maintenance, without the jargon.',copy:'Residential AC installation, cleaning and maintenance in Győr and the surrounding area.',cta:'Request a quote',ghost:'Services',services:[['AC installation','From survey to commissioning.'],['Maintenance','Regular cleaning and inspection.'],['Heat pumps','Planning and installation.']]}
+      hu:{brand:'AUTO COLOR PRO',links:['Termékek','Akciók','Rólunk','Kapcsolat'],eyebrow:'Autófényezési megoldások',title:'A régi oldal helyett átlátható termékkínálat.',copy:'Termékek, kategóriák, akciók és kapcsolat egy modernebb, könnyebben kezelhető felületen.',cta:'Termékek',ghost:'Kapcsolat',image:'assets/graphics/carsystem-reklamanyag.png',imagePos:'center',tag:'Termékek · Akciók'},
+      en:{brand:'AUTO COLOR PRO',links:['Products','Offers','About','Contact'],eyebrow:'Refinish solutions',title:'A clearer product range instead of an outdated site.',copy:'Products, categories, offers and contact details in a cleaner, easier-to-use interface.',cta:'Products',ghost:'Contact',image:'assets/graphics/carsystem-reklamanyag.png',imagePos:'center',tag:'Products · Offers'}
     },
     multi:{
-      hu:{brand:'NEXA CONSULTING',links:['Pénzügy','HR','Folyamatok','Referenciák'],eyebrow:'Üzleti tanácsadás',title:'Külön terület. Külön oldal. Egy rendszer.',copy:'Több szolgáltatás átláthatóan, külön aloldalakkal és egyértelmű útvonalakkal.',cta:'Szolgáltatások',ghost:'Referenciák',services:[['Pénzügyi tervezés','Döntéstámogató riportok és tervezés.'],['HR tanácsadás','Folyamatok és működési keretek.'],['Folyamatfejlesztés','Egyszerűbb, mérhetőbb működés.']]},
-      en:{brand:'NEXA CONSULTING',links:['Finance','HR','Processes','References'],eyebrow:'Business consulting',title:'Separate expertise. Separate pages. One system.',copy:'Multiple services organised into a clear structure with dedicated pages.',cta:'Services',ghost:'References',services:[['Financial planning','Decision support and planning.'],['HR consulting','Processes and operating frameworks.'],['Process improvement','Simpler, measurable operations.']]}
+      hu:{brand:'FORGRIT',links:['Weboldal','Webshop','Grafika','IT'],eyebrow:'Több szolgáltatás egy helyen',title:'Külön terület, külön tartalom.',copy:'Ha több szolgáltatásod van, külön aloldalakkal könnyebb rendesen bemutatni őket.',cta:'Szolgáltatások',ghost:'Munkák',image:'FORGRIT.png',imagePos:'center',tag:'Web · Shop · Grafika'},
+      en:{brand:'FORGRIT',links:['Website','Webshop','Graphics','IT'],eyebrow:'Multiple services in one place',title:'Separate areas, separate content.',copy:'If you offer several services, dedicated pages make them much easier to explain properly.',cta:'Services',ghost:'Work',image:'FORGRIT.png',imagePos:'center',tag:'Web · Shop · Graphics'}
     },
     campaign:{
-      hu:{brand:'SHINE DETAIL',links:['Kezelés','Előnyök','GYIK'],eyebrow:'Kerámia bevonat · Őszi ajánlat',title:'Tartós védelem az autónak.',copy:'Prémium kerámia bevonat előkészítéssel, polírozással és 24 hónapos védelemmel.',cta:'Időpontot foglalok',ghost:'Mit tartalmaz?',services:[['Előkészítés','Alapos mosás és felület-előkészítés.'],['Polírozás','A fényezés állapotához igazítva.'],['Kerámia bevonat','Hidrofób védelem és könnyebb tisztítás.']]},
-      en:{brand:'SHINE DETAIL',links:['Treatment','Benefits','FAQ'],eyebrow:'Ceramic coating · Autumn offer',title:'Long-lasting protection for your car.',copy:'Premium ceramic coating with preparation, polishing and up to 24 months of protection.',cta:'Book a slot',ghost:'What is included?',services:[['Preparation','Thorough wash and surface preparation.'],['Polishing','Matched to the condition of the paint.'],['Ceramic coating','Hydrophobic protection and easier cleaning.']]}
+      hu:{brand:'SHINE DETAIL',links:['Ajánlat','Előnyök','GYIK'],eyebrow:'Kerámia bevonat · Őszi ajánlat',title:'Egy szolgáltatás. Egy külön oldal.',copy:'A landing page egy konkrét ajánlatra koncentrál, kevés kerülővel és egyértelmű kapcsolatfelvétellel.',cta:'Időpontot foglalok',ghost:'Mit tartalmaz?',image:'assets/graphics/bmw-tipografia.png',imagePos:'center 58%',tag:'Kerámia bevonat'},
+      en:{brand:'SHINE DETAIL',links:['Offer','Benefits','FAQ'],eyebrow:'Ceramic coating · Autumn offer',title:'One service. One dedicated page.',copy:'A landing page focuses on one specific offer, with fewer distractions and a clear next step.',cta:'Book a slot',ghost:'What is included?',image:'assets/graphics/bmw-tipografia.png',imagePos:'center 58%',tag:'Ceramic coating'}
     }
   };
 
   function fakeSiteHtml(data,theme){
-    var links='',cards='';
+    var links='';
     data.links.forEach(function(x){links+='<span>'+x+'</span>';});
-    data.services.forEach(function(x){cards+='<div class="fake-service"><b>'+x[0]+'</b><span>'+x[1]+'</span></div>';});
-    return '<div class="fake-site '+(theme||'')+'"><div class="fake-topnav"><span class="fake-brand">'+data.brand+'</span><div class="fake-links">'+links+'</div><span class="fake-nav-cta">'+data.cta+'</span></div><div class="fake-hero"><div><div class="fake-eyebrow">'+data.eyebrow+'</div><div class="fake-title">'+data.title+'</div><p class="fake-copy">'+data.copy+'</p><div class="fake-actions"><span class="fake-btn">'+data.cta+'</span><span class="fake-btn ghost">'+data.ghost+'</span></div></div><div class="fake-art"></div></div><div class="fake-services">'+cards+'</div><span class="fake-label">'+(currentLang==='hu'?'Fiktív demó':'Fictional demo')+'</span></div>';
+    var imgStyle='background-image:linear-gradient(180deg,rgba(15,23,42,.02),rgba(15,23,42,.12)),url(&quot;'+data.image+'&quot;);background-position:'+data.imagePos+';';
+    return '<div class="fake-site '+(theme||'')+'"><div class="fake-topnav"><span class="fake-brand">'+data.brand+'</span><div class="fake-links">'+links+'</div><span class="fake-nav-cta">'+data.cta+'</span></div><div class="fake-hero"><div><div class="fake-eyebrow">'+data.eyebrow+'</div><div class="fake-title">'+data.title+'</div><p class="fake-copy">'+data.copy+'</p><div class="fake-actions"><span class="fake-btn">'+data.cta+'</span><span class="fake-btn ghost">'+data.ghost+'</span></div></div><div class="fake-art" style="'+imgStyle+'"><span class="fake-photo-tag">'+data.tag+'</span></div></div></div>';
   }
 
   var decisions={
@@ -2634,31 +2725,46 @@
     var lang=currentLang==='hu'?'hu':'en',d=decisions[key][lang],site=fakeSites[key][lang];
     var demo=document.getElementById('decisionDemo');
     demo.classList.remove('demo-swap');void demo.offsetWidth;demo.classList.add('demo-swap');
-    demo.innerHTML=fakeSiteHtml(site,decisions[key].theme)+'<div class="decision-result"><small>'+(lang==='hu'?'Javasolt irány':'Suggested direction')+'</small><strong>'+d.title+'</strong><p>'+d.result+'</p></div>';
+    demo.innerHTML=fakeSiteHtml(site,decisions[key].theme);
   }
 
   var featureText={
-    design:{hu:{title:'A megjelenés a vállalkozáshoz igazodik',text:'Színek, betűk, képek és elrendezés egy rendszerben. A bal oldali minta most ugyanazt a fiktív oldalt mutatja teljes desktop nézetben.',list:['egyedi színek és tipográfia','átlátható oldalszerkezet','a tartalomhoz illő animációk']},en:{title:'The design follows the business',text:'Colours, type, imagery and layout work as one system. The demo now shows the same fictional site in a full desktop view.',list:['custom colours and typography','clear page structure','motion that supports the content']}},
-    mobile:{hu:{title:'Ugyanaz az oldal mobilnézetben',text:'Kattintásra ténylegesen telefon szélességre vált a demó. A navigáció eltűnik, a tartalom egy oszlopba rendeződik és a gombok nagyobb érintési felületet kapnak.',list:['mobil menü','érintésre kényelmes gombok','külön tördelés']},en:{title:'The same site in mobile view',text:'The demo actually switches to a phone-width viewport. Navigation collapses, content stacks into one column and controls become easier to tap.',list:['mobile navigation','touch-friendly controls','separate responsive layout']}},
-    contact:{hu:{title:'A kapcsolatfelvétel egy működő felület',text:'A demó most egy valódi űrlapnézetet mutat: név, e-mail, üzenet és küldési gomb. Az éles oldalon ehhez tartozik az e-mail kézbesítés és a visszajelzés is.',list:['kapcsolati űrlap','e-mail továbbítás','sikeres / hibás küldés visszajelzése']},en:{title:'Contact is a working interface',text:'The demo switches to a realistic contact form with name, email, message and submit button. On a live site this also includes delivery and user feedback.',list:['contact form','email delivery','success / error feedback']}},
-    seo:{hu:{title:'Így néz ki a technikai SEO a gyakorlatban',text:'A minta keresési találatot, oldalcímet, leírást és technikai elemeket mutat. Ezek kerülnek rendbe az indulás előtt.',list:['title és meta description','sitemap és indexelés','Search Console alapok']},en:{title:'What technical SEO looks like in practice',text:'The demo shows a search result, page title, description and technical elements that are prepared before launch.',list:['title and meta description','sitemap and indexing','Search Console basics']}},
-    launch:{hu:{title:'Az élesítés több mint egy feltöltés',text:'A demó az éles környezetet mutatja: domain, HTTPS, DNS és deploy állapot. Ezeket a végén ugyanúgy ellenőrizni kell.',list:['domain és DNS','HTTPS tanúsítvány','élesítés és végső ellenőrzés']},en:{title:'Launch is more than uploading files',text:'The demo shows the live environment: domain, HTTPS, DNS and deployment status. These still need to be checked at the end.',list:['domain and DNS','HTTPS certificate','deployment and final check']}}
+    design:{
+      hu:{title:'Megjelenés',text:'A színeket, betűket, képeket és az elrendezést a vállalkozáshoz igazítom. Nem egy kész sablont húzok rá minden oldalra.',list:['színek és tipográfia','desktop elrendezés','animációk, ha indokolt']},
+      en:{title:'Design',text:'Colours, typography, imagery and layout are matched to the business. I do not put the same ready-made template on every site.',list:['colours and typography','desktop layout','motion where it makes sense']}
+    },
+    mobile:{
+      hu:{title:'Mobilnézet',text:'Telefonon külön átnézem az oldalt. A menü, a gombok és a tördelés nem marad desktop méreten.',list:['mobil menü','kényelmes gombméret','külön ellenőrzött tördelés']},
+      en:{title:'Mobile view',text:'The site is checked separately on a phone. Navigation, buttons and layout are adjusted instead of simply shrinking the desktop version.',list:['mobile navigation','comfortable tap targets','responsive layout checked separately']}
+    },
+    contact:{
+      hu:{title:'Kapcsolat',text:'Beállítom az űrlapot és az e-mail küldést, hogy az üzenet tényleg megérkezzen. A látogató sikeres vagy hibás küldésnél is kap visszajelzést.',list:['név, e-mail, üzenet mezők','e-mail továbbítás','küldési visszajelzés']},
+      en:{title:'Contact',text:'I set up the form and email delivery so messages actually arrive. Visitors also get clear feedback after a successful or failed submission.',list:['name, email and message fields','email delivery','submission feedback']}
+    },
+    seo:{
+      hu:{title:'SEO alapok',text:'Beállítom az oldalcímeket, leírásokat, sitemapet és a Search Console-t. Ezek az alapok kellenek ahhoz, hogy a Google rendesen lássa az oldalt.',list:['title és meta leírás','sitemap','Search Console']},
+      en:{title:'SEO basics',text:'Page titles, descriptions, sitemap and Search Console are set up so Google can properly understand and index the site.',list:['title and meta description','sitemap','Search Console']}
+    },
+    launch:{
+      hu:{title:'Élesítés',text:'Domain, DNS, HTTPS, tárhely és egy végső ellenőrzés. Élesítés után is megnézem, hogy minden ugyanúgy működik-e.',list:['domain és DNS','HTTPS','végső ellenőrzés']},
+      en:{title:'Launch',text:'Domain, DNS, HTTPS, hosting and a final check. After launch I also verify that everything works the same way in production.',list:['domain and DNS','HTTPS','final checks']}
+    }
   };
 
   function contactHtml(){
     var enL=currentLang==='en';
-    return '<div class="demo-contact"><div class="demo-contact-head"><b>BORÓKA STÚDIÓ</b><span style="font-size:.55rem;color:#64748b">'+(enL?'Contact':'Kapcsolat')+'</span></div><div class="demo-contact-grid"><div class="demo-contact-copy"><div class="fake-eyebrow">'+(enL?'GET IN TOUCH':'KAPCSOLAT')+'</div><h4>'+(enL?'Tell us about your project.':'Mesélj a projektről.')+'</h4><p>'+(enL?'A short message is enough to get started.':'Kezdésnek elég néhány mondat arról, mire van szükséged.')+'</p></div><div class="demo-form"><div class="demo-field">'+(enL?'Name':'Név')+'</div><div class="demo-field">'+(enL?'Email address':'E-mail cím')+'</div><div class="demo-field message">'+(enL?'Message':'Üzenet')+'</div><button class="demo-send">'+(enL?'Send message':'Üzenet küldése')+'</button></div></div></div>';
+    return '<div class="demo-contact"><div class="demo-contact-head"><b>NORTH DETAIL</b><span style="font-size:.55rem;color:#64748b">'+(enL?'Contact':'Kapcsolat')+'</span></div><div class="demo-contact-grid"><div class="demo-contact-copy"><div class="fake-eyebrow">'+(enL?'CONTACT':'KAPCSOLAT')+'</div><h4>'+(enL?'Ask for an appointment.':'Kérj időpontot.')+'</h4><p>'+(enL?'A few details are enough to start.':'Kezdésnek elég néhány alapadat és egy rövid üzenet.')+'</p></div><div class="demo-form"><div class="demo-field">'+(enL?'Name':'Név')+'</div><div class="demo-field">'+(enL?'Email address':'E-mail cím')+'</div><div class="demo-field message">'+(enL?'Message':'Üzenet')+'</div><button class="demo-send">'+(enL?'Send':'Küldés')+'</button></div></div></div>';
   }
   function seoHtml(){
     var enL=currentLang==='en';
-    return '<div class="seo-demo"><div class="seo-browserline">◉ '+(enL?'Search preview':'Keresési előnézet')+'</div><div class="seo-search">'+(enL?'interior designer győr':'lakberendező győr')+'</div><div class="seo-result"><div class="seo-url">https://borokastudio.hu/</div><div class="seo-title">'+(enL?'Interior design in Győr | Boróka Studio':'Lakberendezés Győrben | Boróka Stúdió')+'</div><div class="seo-desc">'+(enL?'Interior planning, 3D visualisation and personal consultation in Győr and the surrounding area.':'Lakberendezési tervezés, 3D látványterv és személyes tanácsadás Győrben és környékén.')+'</div></div><div class="seo-meta"><div><b>Title</b><span>56 '+(enL?'characters':'karakter')+'</span></div><div><b>Meta description</b><span>148 '+(enL?'characters':'karakter')+'</span></div><div><b>Sitemap</b><span>✓ '+(enL?'ready':'kész')+'</span></div></div></div>';
+    return '<div class="seo-demo"><div class="seo-browserline">◉ '+(enL?'Search preview':'Keresési előnézet')+'</div><div class="seo-search">'+(enL?'car detailing győr':'autókozmetika győr')+'</div><div class="seo-result"><div class="seo-url">https://northdetail.hu/</div><div class="seo-title">'+(enL?'Car detailing in Győr | North Detail':'Autókozmetika Győrben | North Detail')+'</div><div class="seo-desc">'+(enL?'Interior and exterior detailing, polishing and ceramic coating in Győr.':'Külső-belső autókozmetika, polírozás és kerámia bevonat Győrben.')+'</div></div><div class="seo-meta"><div><b>Title</b><span>54 '+(enL?'characters':'karakter')+'</span></div><div><b>Meta description</b><span>142 '+(enL?'characters':'karakter')+'</span></div><div><b>Sitemap</b><span>✓ '+(enL?'ready':'kész')+'</span></div></div></div>';
   }
   function deployHtml(){
     var enL=currentLang==='en';
-    return '<div class="deploy-demo"><div class="deploy-head"><span>BORÓKA STÚDIÓ · production</span><span class="deploy-status">● '+(enL?'LIVE':'ÉLES')+'</span></div><div class="deploy-url">🔒 https://borokastudio.hu</div><div class="deploy-list"><div class="deploy-row"><span>DNS</span><b>'+ (enL?'configured':'beállítva') +'</b></div><div class="deploy-row"><span>HTTPS / SSL</span><b>'+ (enL?'active':'aktív') +'</b></div><div class="deploy-row"><span>www redirect</span><b>301 → apex</b></div><div class="deploy-row"><span>'+ (enL?'Last deploy':'Utolsó deploy') +'</span><b>success · 42s</b></div><div class="deploy-row"><span>robots.txt</span><b>200 OK</b></div></div></div>';
+    return '<div class="deploy-demo"><div class="deploy-head"><span>NORTH DETAIL · production</span><span class="deploy-status">● '+(enL?'LIVE':'ÉLES')+'</span></div><div class="deploy-url">🔒 https://northdetail.hu</div><div class="deploy-list"><div class="deploy-row"><span>DNS</span><b>'+(enL?'configured':'beállítva')+'</b></div><div class="deploy-row"><span>HTTPS / SSL</span><b>'+(enL?'active':'aktív')+'</b></div><div class="deploy-row"><span>www redirect</span><b>301 → apex</b></div><div class="deploy-row"><span>'+(enL?'Deployment':'Élesítés')+'</span><b>success</b></div></div></div>';
   }
   function designHtml(){
-    return '<div class="design-demo">'+fakeSiteHtml(fakeSites.start[currentLang==='hu'?'hu':'en'],'theme-warm')+'<aside class="design-panel"><h4>'+(currentLang==='hu'?'Arculati minta':'Design system')+'</h4><div class="swatches"><i></i><i></i><i></i></div><div class="type-sample"><b>Space Grotesk</b><span>Headings · 700</span></div><div class="type-sample"><b>Inter</b><span>Body · 400 / 600</span></div></aside></div>';
+    return fakeSiteHtml(fakeSites.start[currentLang==='hu'?'hu':'en'],'');
   }
 
   function renderFeature(key){
@@ -2671,25 +2777,39 @@
     var vp=document.getElementById('featureViewport');
     vp.className='feature-viewport'+(key==='mobile'?' phone-mode':'');
     if(key==='design') vp.innerHTML=designHtml();
-    else if(key==='mobile') vp.innerHTML=fakeSiteHtml(fakeSites.start[lang],'theme-warm');
+    else if(key==='mobile') vp.innerHTML=fakeSiteHtml(fakeSites.start[lang],'');
     else if(key==='contact') vp.innerHTML=contactHtml();
     else if(key==='seo') vp.innerHTML=seoHtml();
     else vp.innerHTML=deployHtml();
   }
 
   var cases={
-    base:{hu:{title:'Carsystemshop.hu – B2B/B2C webshop',text:'Autófényezési és járműjavítási termékeket kiszolgáló webshop lakossági és üzleti vásárlóknak. Itt a napi működés és a fejlesztés ugyanazon a felületen találkozik.',tech:['B2B / B2C','termékkatalógus','online rendelés','WooCommerce']},en:{title:'Carsystemshop.hu – B2B/B2C webshop',text:'A webshop for automotive refinishing and repair products, serving both retail and business customers. Development and day-to-day operation meet on the same platform.',tech:['B2B / B2C','product catalogue','online orders','WooCommerce']}},
-    build:{hu:{title:'Nem csak a kinézeten kellett dolgozni',text:'A webshopon egyedi ár- és termékkezelési feladatok, akciós szabályok, új termékek, valamint a K&H bankkártyás fizetés integrációja is megjelent.',tech:['K&H bankkártya','árkezelés','akciós szabályok','termékfeltöltés']},en:{title:'The work went beyond the visual layer',text:'The webshop also required custom pricing and product-management tasks, promotion rules, new product handling and K&H card-payment integration.',tech:['K&H card payment','pricing','promotion rules','product uploads']}},
-    tune:{hu:{title:'Egy webshop élesítés után sem marad magára',text:'A napi használat során folyamatosan jönnek új termékek, árfrissítések, kisebb fejlesztések és optimalizálási feladatok. Ezeket már a működő oldal mellett kell biztonságosan kezelni.',tech:['karbantartás','árfrissítés','új termékek','optimalizálás']},en:{title:'A webshop still needs work after launch',text:'Day-to-day operation brings new products, price changes, smaller improvements and optimisation tasks. These have to be handled safely while the live store keeps running.',tech:['maintenance','price updates','new products','optimisation']}}
+    base:{
+      hu:{title:'Carsystemshop.hu – B2B/B2C webshop',text:'Autófényezési és járműjavítási termékeket kezelünk rajta lakossági és üzleti vásárlóknak is. A lényeg az volt, hogy sok termék mellett is átlátható maradjon a rendelés.',tech:['B2B / B2C','termékkatalógus','online rendelés'],visual:'image',image:'cs%20portfolio.png'},
+      en:{title:'Carsystemshop.hu – B2B/B2C webshop',text:'It serves automotive refinishing and repair products for both retail and business customers. The main goal is to keep ordering clear even with a large product range.',tech:['B2B / B2C','product catalogue','online orders'],visual:'image',image:'cs%20portfolio.png'}
+    },
+    build:{
+      hu:{title:'Fejlesztések a működő webshopon',text:'Itt már nem csak arról van szó, hogy jól nézzen ki az oldal. Készült K&H bankkártyás fizetés, egyedi árkezelés, akciós szabályok és több olyan módosítás, ami a napi munkát egyszerűsíti.',tech:['K&H bankkártya','árkezelés','akciós szabályok'],visual:'image',image:'assets/graphics/carsystem-reklamanyag.png'},
+      en:{title:'Development on the live webshop',text:'At this point the work is not only about appearance. K&H card payment, custom pricing, promotion rules and several day-to-day workflow improvements were added.',tech:['K&H card payment','pricing','promotion rules'],visual:'image',image:'assets/graphics/carsystem-reklamanyag.png'}
+    },
+    tune:{
+      hu:{title:'A napi működéshez folyamatosan hozzá kell nyúlni',text:'Új termékek, árfrissítések, akciók és kisebb fejlesztések folyamatosan jönnek. Ezeket úgy kell megcsinálni, hogy közben a webshop ugyanúgy használható maradjon.',tech:['árfrissítés','új termékek','karbantartás'],visual:'admin'},
+      en:{title:'A live webshop needs ongoing work',text:'New products, price updates, offers and smaller improvements keep coming. The key is to make these changes without disrupting the store customers are already using.',tech:['price updates','new products','maintenance'],visual:'admin'}
+    }
   };
 
   function renderCase(key){
     activeCase=key;
-    var lang=currentLang==='hu'?'hu':'en',d=cases[key][lang],tech='';
+    var lang=currentLang==='hu'?'hu':'en',d=cases[key][lang],tech='',visual='';
     d.tech.forEach(function(x){tech+='<span>'+x+'</span>';});
+    if(d.visual==='image'){
+      visual='<div class="case-shop-image"><img src="'+d.image+'" alt="Carsystemshop project visual" loading="lazy" decoding="async"></div>';
+    }else{
+      visual='<div class="case-admin"><div class="case-admin-head"><b>Carsystemshop</b><span>'+(lang==='hu'?'Termék- és árfrissítés':'Product & price update')+'</span></div><div class="case-admin-table"><div><b>F.294/2 Primer</b></div><div>12 490 Ft</div><div>aktív</div><div><b>UHS Clear</b></div><div>18 990 Ft</div><div>akció</div><div><b>CS Sanding P320</b></div><div>8 240 Ft</div><div>aktív</div></div></div>';
+    }
     var stage=document.getElementById('caseStage');
     stage.classList.remove('demo-swap');void stage.offsetWidth;stage.classList.add('demo-swap');
-    stage.innerHTML='<h3>'+d.title+'</h3><p>'+d.text+'</p><div class="case-tech">'+tech+'</div><a class="case-shop-link" href="https://carsystemshop.hu/" target="_blank" rel="noopener">'+(lang==='hu'?'Webshop megnyitása ↗':'Open webshop ↗')+'</a><div class="case-shop-image"><img src="cs%20portfolio.png" alt="Carsystemshop webshop preview" loading="lazy" decoding="async"></div>';
+    stage.innerHTML='<h3>'+d.title+'</h3><p>'+d.text+'</p><div class="case-tech">'+tech+'</div><a class="case-shop-link" href="https://carsystemshop.hu/" target="_blank" rel="noopener">'+(lang==='hu'?'Webshop megnyitása ↗':'Open webshop ↗')+'</a>'+visual;
   }
 
   function updateEstimate(){
