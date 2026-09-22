@@ -2968,26 +2968,99 @@
     }
 
 
-    /* Desktop design preview: keep the full sample visible instead of clipping its lower rail */
+    /* Compact desktop feature previews: keep the outer cards at the standard size
+       and fit only the inner demo content to them. */
     @media (min-width: 701px) {
-      .feature-viewport.design-mode {
-        max-height: none !important;
-        height: auto !important;
-        overflow: visible !important;
-        align-items: stretch !important;
-      }
-
-      .feature-viewport.design-mode .fake-site {
-        height: auto !important;
-        max-height: none !important;
-      }
-
-      /* Contact demo is taller than the shared 275px preview viewport.
-         Give only this preview enough height so the Send button is not clipped. */
+      .feature-viewport.design-mode,
       .feature-viewport.contact-mode {
-        min-height: 322px !important;
-        max-height: 322px !important;
+        min-height: 225px !important;
+        max-height: 275px !important;
+        height: auto !important;
         overflow: hidden !important;
+      }
+
+      /* Design preview: compact the Boróka sample itself instead of enlarging its card. */
+      .feature-viewport.design-mode .fake-topnav {
+        min-height: 40px !important;
+        padding: .5rem .65rem !important;
+      }
+
+      .feature-viewport.design-mode .fake-editorial .editorial-grid {
+        padding: .6rem !important;
+        gap: .55rem !important;
+      }
+
+      .feature-viewport.design-mode .fake-editorial .editorial-copy {
+        padding: .1rem !important;
+      }
+
+      .feature-viewport.design-mode .fake-editorial .fake-title {
+        font-size: 1.25rem !important;
+        line-height: 1.02 !important;
+      }
+
+      .feature-viewport.design-mode .fake-editorial .fake-copy {
+        margin-top: .35rem !important;
+        font-size: .55rem !important;
+        line-height: 1.4 !important;
+      }
+
+      .feature-viewport.design-mode .fake-editorial .fake-actions {
+        margin-top: .45rem !important;
+      }
+
+      .feature-viewport.design-mode .fake-editorial .editorial-image {
+        min-height: 128px !important;
+        height: 128px !important;
+      }
+
+      .feature-viewport.design-mode .fake-editorial .editorial-bottom {
+        gap: .35rem !important;
+        padding: .4rem .6rem .55rem !important;
+      }
+
+      .feature-viewport.design-mode .fake-editorial .editorial-bottom > div {
+        padding: .38rem .45rem !important;
+      }
+
+      .feature-viewport.design-mode .fake-editorial .editorial-bottom b,
+      .feature-viewport.design-mode .fake-editorial .editorial-bottom span {
+        font-size: .48rem !important;
+      }
+
+      /* Contact preview: keep the standard card height and tighten only its form. */
+      .feature-viewport.contact-mode .demo-contact-head {
+        padding: .72rem .95rem !important;
+      }
+
+      .feature-viewport.contact-mode .demo-contact-grid {
+        gap: .85rem !important;
+        padding: .9rem 1rem !important;
+      }
+
+      .feature-viewport.contact-mode .demo-contact-copy h4 {
+        font-size: 1.25rem !important;
+      }
+
+      .feature-viewport.contact-mode .demo-contact-copy p {
+        margin-top: .4rem !important;
+        line-height: 1.4 !important;
+      }
+
+      .feature-viewport.contact-mode .demo-form {
+        gap: .4rem !important;
+      }
+
+      .feature-viewport.contact-mode .demo-field {
+        padding: .48rem .62rem !important;
+      }
+
+      .feature-viewport.contact-mode .demo-field.message {
+        height: 58px !important;
+      }
+
+      .feature-viewport.contact-mode .demo-send {
+        padding: .5rem !important;
       }
     }
 
