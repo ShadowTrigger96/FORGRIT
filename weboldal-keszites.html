@@ -2172,7 +2172,8 @@
 
     /* ===== PAGE-WIDE FORGRIT BACKGROUND ===== */
     .service-page-bg{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;background:var(--bg);}
-    .navbar,.hero,.marquee-section,.section,.footer{position:relative;z-index:2;}
+    .hero,.marquee-section,.section,.footer{position:relative;z-index:2;}
+    .navbar{position:fixed!important;top:0!important;left:0!important;right:0!important;width:100%!important;z-index:1000!important;}
     .section{background:transparent!important;}
     .spb-orb{position:absolute;border-radius:50%;opacity:.68;animation:spbFloat 13s ease-in-out infinite;}
     .spb-1{width:650px;height:650px;left:-220px;top:-180px;background:radial-gradient(circle,var(--hero-gradient-1),transparent 67%);}
@@ -2359,6 +2360,236 @@
       .service-cover-copy,.campaign-overlay{max-width:90%;}
       .service-strip,.consulting-cards,.campaign-proof{grid-template-columns:1fr;}
       .case-dashboard-grid{grid-template-columns:1fr;}
+    }
+
+
+    /* ===== MORE NATURAL / LESS CONCEPT-LIKE MINI SITES ===== */
+    .fake-site{
+      box-shadow:none!important;
+      border-radius:8px!important;
+    }
+    .fake-topnav{
+      min-height:52px;
+      padding:.8rem 1rem!important;
+    }
+    .fake-brand{
+      font-size:.76rem!important;
+      letter-spacing:.07em!important;
+    }
+    .fake-links{
+      gap:.72rem!important;
+      font-size:.54rem!important;
+    }
+    .fake-nav-cta{
+      border-radius:6px!important;
+      padding:.38rem .58rem!important;
+      box-shadow:none!important;
+    }
+
+    /* Boroka: editorial/interior layout */
+    .fake-editorial .editorial-grid{
+      grid-template-columns:.85fr 1.15fr;
+      padding:1rem;
+      gap:.85rem;
+    }
+    .fake-editorial .editorial-copy{
+      padding:.55rem .15rem;
+    }
+    .fake-editorial .fake-title{
+      font-size:1.85rem;
+      line-height:1.02;
+      letter-spacing:-.035em;
+    }
+    .fake-editorial .editorial-image{
+      min-height:245px;
+      border-radius:6px;
+    }
+    .fake-editorial .editorial-bottom{
+      gap:0;
+      padding:0 1rem 1rem;
+      border-top:1px solid var(--demo-border);
+    }
+    .fake-editorial .editorial-bottom>div{
+      border:0!important;
+      border-right:1px solid var(--demo-border)!important;
+      border-radius:0!important;
+      padding:.75rem .8rem;
+      background:transparent!important;
+    }
+    .fake-editorial .editorial-bottom>div:last-child{border-right:0!important;}
+
+    /* Varga: service/trade website */
+    .fake-service-layout .service-cover{
+      min-height:270px;
+      border-radius:0;
+    }
+    .fake-service-layout .service-cover-copy{
+      max-width:60%;
+      padding:1.35rem 1.1rem;
+    }
+    .fake-service-layout .service-strip{
+      gap:0;
+      padding:0;
+      border-top:1px solid var(--demo-border);
+    }
+    .fake-service-layout .service-strip>div{
+      border:0!important;
+      border-right:1px solid var(--demo-border)!important;
+      border-radius:0!important;
+      padding:.8rem 1rem;
+      background:var(--demo-bg)!important;
+    }
+    .fake-service-layout .service-strip>div:last-child{border-right:0!important;}
+
+    /* Nexa: consulting site */
+    .fake-consulting .consulting-hero{
+      grid-template-columns:1.15fr .85fr;
+      padding:1.1rem;
+      gap:1.1rem;
+    }
+    .fake-consulting .consulting-photo{
+      border-radius:4px;
+      min-height:215px;
+    }
+    .fake-consulting .consulting-cards{
+      gap:0;
+      padding:0 1.1rem 1rem;
+    }
+    .fake-consulting .consulting-cards>div{
+      border-radius:0!important;
+      border-top:1px solid var(--demo-border)!important;
+      border-left:0!important;
+      border-right:0!important;
+      border-bottom:0!important;
+      background:transparent!important;
+      padding:.75rem .5rem;
+    }
+
+    /* Shine: strong landing page */
+    .fake-campaign .campaign-photo{
+      min-height:360px;
+    }
+    .fake-campaign .campaign-overlay{
+      max-width:56%;
+      padding:1.45rem;
+    }
+    .fake-campaign .campaign-proof{
+      gap:0;
+      padding:0;
+      border-top:1px solid var(--demo-border);
+    }
+    .fake-campaign .campaign-proof span{
+      padding:.7rem .5rem;
+    }
+
+    /* Buttons inside mini sites should look like normal site buttons */
+    .fake-btn{
+      border-radius:6px!important;
+      box-shadow:none!important;
+      padding:.48rem .7rem!important;
+    }
+
+    /* Dark mobile mockup: clearly separated device from page background */
+    .feature-viewport.phone-mode{
+      background:
+        radial-gradient(circle at 50% 35%, rgba(14,165,233,.10), transparent 55%),
+        var(--bg);
+      border-radius:12px;
+      padding:1rem!important;
+    }
+    .feature-viewport.phone-mode .fake-site{
+      width:248px!important;
+      border:8px solid #111827!important;
+      border-radius:30px!important;
+      box-shadow:0 22px 44px rgba(0,0,0,.30)!important;
+      overflow:hidden;
+    }
+    [data-theme="dark"] .feature-viewport.phone-mode{
+      background:
+        radial-gradient(circle at 50% 35%, rgba(56,189,248,.16), transparent 52%),
+        #0a0e1d;
+      border:1px solid rgba(255,255,255,.08);
+    }
+    [data-theme="dark"] .feature-viewport.phone-mode .fake-site{
+      border-color:#020617!important;
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,.10),
+        0 24px 48px rgba(0,0,0,.55)!important;
+    }
+
+    /* Carsystem: utilitarian, less "generated dashboard" */
+    .case-dashboard,
+    .case-maintenance{
+      border-radius:8px!important;
+      box-shadow:none!important;
+    }
+    .case-dashboard-top,
+    .case-maintenance-top{
+      background:var(--bg);
+      padding:.7rem .9rem!important;
+    }
+    .case-dashboard-grid{
+      grid-template-columns:1fr 1fr;
+      gap:0;
+      padding:0;
+    }
+    .dash-card{
+      border:0!important;
+      border-right:1px solid var(--border)!important;
+      border-bottom:1px solid var(--border)!important;
+      border-radius:0!important;
+      background:var(--bg-card)!important;
+      padding:.9rem!important;
+      grid-template-columns:32px 1fr!important;
+    }
+    .dash-card:nth-child(even){border-right:0!important;}
+    .dash-card:nth-last-child(-n+2){border-bottom:0!important;}
+    .dash-state{display:none!important;}
+    .dash-icon{
+      width:30px!important;
+      height:30px!important;
+      border-radius:6px!important;
+    }
+    .case-maintenance-grid{
+      gap:0!important;
+      padding:0!important;
+    }
+    .case-maintenance-grid>div{
+      border:0!important;
+      border-right:1px solid var(--border)!important;
+      border-bottom:1px solid var(--border)!important;
+      border-radius:0!important;
+      background:var(--bg-card)!important;
+      min-height:88px!important;
+    }
+    .case-maintenance-grid>div:nth-child(4n){border-right:0!important;}
+    .case-maintenance-grid>div:nth-last-child(-n+4){border-bottom:0!important;}
+    .maint-icon{border-radius:6px!important;}
+
+    @media(max-width:700px){
+      .fake-editorial .editorial-grid,
+      .fake-consulting .consulting-hero{
+        grid-template-columns:1fr!important;
+      }
+      .fake-editorial .editorial-image,
+      .fake-consulting .consulting-photo{
+        order:-1;
+        min-height:150px!important;
+      }
+      .fake-service-layout .service-cover-copy,
+      .fake-campaign .campaign-overlay{
+        max-width:86%!important;
+      }
+      .case-dashboard-grid{
+        grid-template-columns:1fr;
+      }
+      .dash-card,
+      .dash-card:nth-child(even),
+      .dash-card:nth-last-child(-n+2){
+        border-right:0!important;
+        border-bottom:1px solid var(--border)!important;
+      }
+      .dash-card:last-child{border-bottom:0!important;}
     }
 
 </style>
@@ -3013,11 +3244,11 @@
       en:{title:'Carsystemshop.hu – B2B/B2C webshop',text:'The webshop serves both retail and business customers with hundreds of automotive refinishing and repair products. The job is not only visual: the large catalogue also has to stay easy to browse and order from.',visual:'image',image:'cs%20portfolio.png'}
     },
     build:{
-      hu:{title:'Fejlesztések a működő webshopon',text:'A használat közben több egyedi igény is felmerült. Ide tartozott többek között a K&H bankkártyás fizetés bekötése, az ár- és akciókezelés fejlesztése, valamint több kisebb módosítás, ami egyszerűbbé teszi a napi használatot.',visual:'development'},
+      hu:{title:'Fejlesztések a működő webshopon',text:'A webshop használata közben több egyedi fejlesztés is szükségessé vált. Ilyen volt a K&H bankkártyás fizetés bekötése, az akciók kezelése és néhány, a napi munkát egyszerűsítő módosítás.',visual:'development'},
       en:{title:'Development on the live webshop',text:'As the webshop was used, several custom requirements came up. These included K&H card payment, improvements to pricing and promotion handling, plus smaller changes that make everyday use easier.',visual:'development'}
     },
     tune:{
-      hu:{title:'Folyamatos karbantartás és frissítés',text:'Egy működő webshop folyamatosan változik: új termékek kerülnek fel, módosulnak tartalmak, akciók indulnak, és időnként kisebb fejlesztésekre is szükség van. Ezeket úgy kell elvégezni, hogy közben az oldal végig használható maradjon.',visual:'maintenance'},
+      hu:{title:'Folyamatos karbantartás és frissítés',text:'Egy webshop nem készül el egyszer és marad úgy. Új termékek, tartalmi változások, akciók és kisebb fejlesztések rendszeresen előjönnek, ezeket pedig úgy kell kezelni, hogy közben a rendelés zavartalanul működjön.',visual:'maintenance'},
       en:{title:'Ongoing maintenance and updates',text:'A live webshop keeps changing: new products are added, content is updated, promotions start and smaller improvements are needed from time to time. These changes have to be made without disrupting the live store.',visual:'maintenance'}
     }
   };
@@ -3028,7 +3259,7 @@
     if(d.visual==='image'){
       visual='<div class="case-shop-image"><img src="'+d.image+'" alt="Carsystemshop project visual" loading="lazy" decoding="async"></div>';
     }else if(d.visual==='development'){
-      visual='<div class="case-dashboard"><div class="case-dashboard-top"><b>Carsystemshop</b><span>'+(lang==='hu'?'Fejlesztési területek':'Development areas')+'</span></div>'+
+      visual='<div class="case-dashboard"><div class="case-dashboard-top"><b>Carsystemshop</b><span>'+(lang==='hu'?'Webshop funkciók':'Development areas')+'</span></div>'+
         '<div class="case-dashboard-grid">'+
           '<div class="dash-card"><span class="dash-icon">▣</span><div><b>K&H</b><small>'+(lang==='hu'?'bankkártyás fizetés':'card payment')+'</small></div><i class="dash-state on"></i></div>'+
           '<div class="dash-card"><span class="dash-icon">%</span><div><b>'+(lang==='hu'?'Akciók':'Promotions')+'</b><small>'+(lang==='hu'?'szabályok és időzítés':'rules and scheduling')+'</small></div><i class="dash-state"></i></div>'+
@@ -3036,7 +3267,7 @@
           '<div class="dash-card"><span class="dash-icon">↗</span><div><b>'+(lang==='hu'?'Webshop':'Webshop')+'</b><small>'+(lang==='hu'?'folyamatos fejlesztés':'ongoing improvements')+'</small></div><i class="dash-state on"></i></div>'+
         '</div></div>';
     }else{
-      visual='<div class="case-maintenance"><div class="case-maintenance-top"><b>Carsystemshop</b><span>'+(lang==='hu'?'Folyamatos frissítés':'Ongoing updates')+'</span></div><div class="case-maintenance-grid"><div><span class="maint-icon">+</span><b>'+(lang==='hu'?'Új termékek':'New products')+'</b></div><div><span class="maint-icon">↻</span><b>'+(lang==='hu'?'Tartalmi frissítések':'Content updates')+'</b></div><div><span class="maint-icon">%</span><b>'+(lang==='hu'?'Akciók':'Promotions')+'</b></div><div><span class="maint-icon">⚙</span><b>'+(lang==='hu'?'Karbantartás':'Maintenance')+'</b></div></div></div>';
+      visual='<div class="case-maintenance"><div class="case-maintenance-top"><b>Carsystemshop</b><span>'+(lang==='hu'?'Karbantartás':'Ongoing updates')+'</span></div><div class="case-maintenance-grid"><div><span class="maint-icon">+</span><b>'+(lang==='hu'?'Új termékek':'New products')+'</b></div><div><span class="maint-icon">↻</span><b>'+(lang==='hu'?'Tartalmi frissítések':'Content updates')+'</b></div><div><span class="maint-icon">%</span><b>'+(lang==='hu'?'Akciók':'Promotions')+'</b></div><div><span class="maint-icon">⚙</span><b>'+(lang==='hu'?'Karbantartás':'Maintenance')+'</b></div></div></div>';
     }
     var stage=document.getElementById('caseStage');
     stage.classList.remove('demo-swap');void stage.offsetWidth;stage.classList.add('demo-swap');
