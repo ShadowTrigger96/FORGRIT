@@ -11,125 +11,132 @@
     @font-face{font-family:'Space Grotesk';font-style:normal;font-display:swap;font-weight:300 700;src:url('/assets/fonts/space-grotesk-latin-ext-wght-normal.woff2') format('woff2-variations')}
     @font-face{font-family:'Space Grotesk';font-style:normal;font-display:swap;font-weight:300 700;src:url('/assets/fonts/space-grotesk-latin-wght-normal.woff2') format('woff2-variations')}
     *{box-sizing:border-box;margin:0;padding:0}
-    :root{--cyan:#0ea5e9;--cyan2:#38bdf8;--purple:#8b5cf6;--amber:#f59e0b;--bg:#eef2f7;--card:rgba(255,255,255,.82);--text:#0f172a;--muted:#475569;--border:rgba(15,23,42,.09);--nav:rgba(238,242,247,.86);--grid:rgba(14,165,233,.09)}
-    [data-theme="dark"]{--bg:#0f1225;--card:rgba(255,255,255,.06);--text:#e2e8f0;--muted:#94a3b8;--border:rgba(255,255,255,.09);--nav:rgba(15,18,37,.86);--grid:rgba(56,189,248,.07)}
+    :root{
+      --cyan:#0ea5e9;--cyan2:#38bdf8;--purple:#8b5cf6;--amber:#f59e0b;--green:#10b981;
+      --bg:#eef2f7;--card:rgba(255,255,255,.82);--card-solid:#fff;--text:#0f172a;--muted:#5b6b82;
+      --border:rgba(15,23,42,.09);--nav:rgba(238,242,247,.86);--grid:rgba(14,165,233,.09);
+      --shadow:0 20px 55px rgba(15,23,42,.08)
+    }
+    [data-theme="dark"]{
+      --bg:#0f1225;--card:rgba(255,255,255,.055);--card-solid:#171a31;--text:#e2e8f0;--muted:#94a3b8;
+      --border:rgba(255,255,255,.09);--nav:rgba(15,18,37,.86);--grid:rgba(56,189,248,.07);
+      --shadow:0 22px 65px rgba(0,0,0,.24)
+    }
     html{scroll-behavior:smooth}
     body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden}
     h1,h2,h3{font-family:'Space Grotesk',sans-serif}
+    button,input{font:inherit}
+    .scroll-progress{position:fixed;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--cyan),var(--purple));transform:scaleX(0);transform-origin:left;z-index:100}
     .bg{position:fixed;inset:0;z-index:-2;overflow:hidden;background:var(--bg)}
     .orb{position:absolute;border-radius:50%;opacity:.72;animation:float 12s ease-in-out infinite}
-    .o1{width:680px;height:680px;left:-220px;top:-180px;background:radial-gradient(circle,rgba(14,165,233,.24),transparent 65%)}
-    .o2{width:620px;height:620px;right:-180px;top:20%;background:radial-gradient(circle,rgba(139,92,246,.20),transparent 65%);animation-delay:-4s}
-    .o3{width:420px;height:420px;left:20%;bottom:-100px;background:radial-gradient(circle,rgba(245,158,11,.16),transparent 65%);animation-delay:-7s}
-    @keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(36px,-28px) scale(1.06)}}
-    .grid{position:absolute;inset:0;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 90% 80% at 50% 35%,#000 25%,transparent 80%)}
-    .shape{position:absolute;opacity:.28;animation:bob 8s ease-in-out infinite}
+    .o1{width:700px;height:700px;left:-240px;top:-210px;background:radial-gradient(circle,rgba(14,165,233,.23),transparent 65%)}
+    .o2{width:640px;height:640px;right:-190px;top:20%;background:radial-gradient(circle,rgba(139,92,246,.19),transparent 65%);animation-delay:-4s;animation-duration:15s}
+    .o3{width:440px;height:440px;left:22%;bottom:-120px;background:radial-gradient(circle,rgba(245,158,11,.15),transparent 65%);animation-delay:-7s;animation-duration:13s}
+    @keyframes float{0%,100%{transform:translate(0,0) scale(1)}25%{transform:translate(28px,-34px) scale(1.04)}60%{transform:translate(-20px,22px) scale(.96)}}
+    .grid{position:absolute;inset:0;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 90% 82% at 50% 35%,#000 25%,transparent 80%);-webkit-mask-image:radial-gradient(ellipse 90% 82% at 50% 35%,#000 25%,transparent 80%)}
+    .shape{position:absolute;opacity:.24;animation:bob 8s ease-in-out infinite}
     .s1{width:72px;height:72px;border:2px solid var(--cyan);left:6%;top:16%;transform:rotate(14deg)}
     .s2{width:46px;height:46px;border:2px solid var(--purple);border-radius:50%;right:8%;top:28%;animation-delay:-3s}
     .s3{width:0;height:0;border-left:28px solid transparent;border-right:28px solid transparent;border-bottom:48px solid var(--amber);right:12%;bottom:22%;opacity:.18;animation-delay:-5s}
-    @keyframes bob{0%,100%{translate:0 0}50%{translate:10px -24px}}
-    .nav{position:sticky;top:0;z-index:20;background:var(--nav);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
-    .navin{max-width:1180px;margin:auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);font-family:'Space Grotesk';font-weight:700;letter-spacing:.12em}
-    .brand img{width:42px;height:auto}
-    .navlinks{display:flex;gap:20px;align-items:center}.navlinks a{color:var(--muted);text-decoration:none;font-size:.9rem}.navlinks a:hover{color:var(--text)}
-    .toggle{border:1px solid var(--border);background:var(--card);color:var(--text);border-radius:10px;padding:8px 10px;cursor:pointer}
-    .hero{min-height:82vh;display:grid;place-items:center;padding:110px 22px 70px}
-    .hero-inner{max-width:980px;text-align:center}
-    .eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--cyan);font-weight:700;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase}
-    .eyebrow:before,.eyebrow:after{content:'';width:34px;height:1px;background:currentColor}
-    h1{font-size:clamp(2.8rem,7vw,5.8rem);line-height:.98;letter-spacing:-.05em;margin:24px 0}
-    .grad{background:linear-gradient(135deg,var(--cyan),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent}
-    .hero p{max-width:720px;margin:auto;color:var(--muted);font-size:1.12rem}
-    .cta{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:32px}
-    .btn{padding:14px 22px;border-radius:999px;text-decoration:none;font-weight:700;border:1px solid var(--border)}
-    .primary{background:linear-gradient(135deg,var(--cyan),#0284c7);color:#fff;box-shadow:0 14px 34px rgba(14,165,233,.22)}
-    .secondary{background:var(--card);color:var(--text)}
-    .section{padding:84px 22px}.wrap{max-width:1120px;margin:auto}
-    .section-head{max-width:760px;margin-bottom:34px}.kicker{color:var(--cyan);font-size:.82rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
-    h2{font-size:clamp(2rem,4vw,3.2rem);line-height:1.08;margin-top:10px;letter-spacing:-.03em}.lead{color:var(--muted);margin-top:14px}
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:22px;padding:26px;box-shadow:0 18px 50px rgba(15,23,42,.05)}
-    .num{font-family:'Space Grotesk';font-size:2.2rem;font-weight:700;color:var(--cyan);opacity:.9}
-    .card h3{font-size:1.25rem;margin:10px 0}.card p{color:var(--muted);font-size:.95rem}
-    .process{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-    .step{padding:22px;border-top:2px solid var(--border)}.step strong{display:block;font-family:'Space Grotesk';font-size:1.15rem;margin:10px 0}.step p{color:var(--muted);font-size:.93rem}
-    .showcase{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}.mock{background:linear-gradient(160deg,rgba(14,165,233,.12),rgba(139,92,246,.10));border:1px solid var(--border);border-radius:28px;padding:24px;min-height:360px;display:grid;place-items:center}
-    .browser{width:100%;background:var(--card);border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:0 24px 60px rgba(15,23,42,.12)}
-    .bar{height:38px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:6px;padding:0 12px}.dot{width:8px;height:8px;border-radius:50%;background:var(--muted);opacity:.45}
-    .screen{padding:28px}.screen .mini{height:8px;width:36%;background:var(--cyan);border-radius:99px;margin-bottom:18px}.screen h3{font-size:2rem;line-height:1.05}.screen p{margin-top:12px;color:var(--muted)}.pill{display:inline-block;margin-top:18px;background:var(--cyan);color:#fff;padding:10px 16px;border-radius:999px;font-weight:700}
-    .price{background:var(--card);border:1px solid var(--border);border-radius:28px;padding:34px}.price .big{font-family:'Space Grotesk';font-size:2.5rem;font-weight:700;margin:12px 0}.price ul{list-style:none;display:grid;gap:10px;color:var(--muted)}.price li:before{content:'✓';color:#10b981;margin-right:10px;font-weight:800}
-    .faq{display:grid;gap:12px}.faq details{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px 20px}.faq summary{cursor:pointer;font-weight:700}.faq p{color:var(--muted);margin-top:10px}
-    .final{padding:90px 22px 110px;text-align:center}.finalbox{max-width:900px;margin:auto;background:linear-gradient(135deg,rgba(14,165,233,.12),rgba(139,92,246,.12));border:1px solid var(--border);border-radius:30px;padding:54px 26px}
-    footer{border-top:1px solid var(--border);padding:26px 22px;color:var(--muted);font-size:.85rem}.foot{max-width:1120px;margin:auto;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
-
-    /* Main-site motion language */
-    .scroll-progress{position:fixed;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--cyan),var(--purple));transform:scaleX(0);transform-origin:left;z-index:50}
-    .hero-logo{display:block;width:150px;height:auto;margin:0 auto 1.6rem;opacity:0;transform:scale(.82);animation:heroLogoIn .9s .2s cubic-bezier(.16,1,.3,1) forwards}
-    @keyframes heroLogoIn{to{opacity:1;transform:scale(1)}}
-    .hero .eyebrow{opacity:0;transform:translateY(18px);animation:fadeUp .8s .45s cubic-bezier(.16,1,.3,1) forwards}
-    .hero h1{opacity:0;transform:translateY(28px);animation:fadeUp .9s .62s cubic-bezier(.16,1,.3,1) forwards}
-    .hero p{opacity:0;transform:translateY(24px);animation:fadeUp .9s .78s cubic-bezier(.16,1,.3,1) forwards}
-    .hero .cta{opacity:0;transform:translateY(22px);animation:fadeUp .9s .94s cubic-bezier(.16,1,.3,1) forwards}
-    @keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
-
-    .reveal,.reveal-left,.reveal-right,.reveal-scale{opacity:0;transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
-    .reveal{transform:translateY(44px)}
-    .reveal-left{transform:translateX(-42px)}
-    .reveal-right{transform:translateX(42px)}
-    .reveal-scale{transform:scale(.9)}
-    .reveal.visible,.reveal-left.visible,.reveal-right.visible,.reveal-scale.visible{opacity:1;transform:none}
-    .stagger>*{transition-delay:calc(var(--i,0)*.12s)}
-
-    .marquee{overflow:hidden;border-block:1px solid var(--border);background:rgba(255,255,255,.025)}
-    .marquee-track{display:flex;width:max-content;gap:2.2rem;padding:15px 0;animation:marqueeMove 28s linear infinite}
-    .marquee-item{font-family:'Space Grotesk';font-weight:700;color:var(--muted);white-space:nowrap;font-size:.88rem;letter-spacing:.04em}
-    .marquee-item .sep{color:var(--cyan);margin-left:2.2rem}
-    @keyframes marqueeMove{to{transform:translateX(-50%)}}
-
+    .s4{width:20px;height:20px;background:var(--cyan);left:8%;bottom:20%;animation:spin 16s linear infinite;opacity:.20}
+    .s5{width:14px;height:14px;background:var(--purple);right:18%;bottom:10%;animation:spin 19s linear infinite reverse;opacity:.20}
+    .s6{width:30px;height:30px;right:4%;top:49%;animation:bob 10s ease-in-out infinite}
+    .s6:before,.s6:after{content:'';position:absolute;background:var(--cyan);border-radius:2px}.s6:before{width:30px;height:3px;top:13px}.s6:after{width:3px;height:30px;left:13px}
+    .s7{width:34px;height:34px;border:2px solid var(--amber);left:23%;top:68%;transform:rotate(45deg);animation:spin 24s linear infinite}
+    @keyframes bob{0%,100%{translate:0 0}50%{translate:10px -24px}} @keyframes spin{to{transform:rotate(360deg)}}
     .ambient-line{position:absolute;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);opacity:.22;animation:lineSweep 9s ease-in-out infinite}
     .al1{width:210px;top:36%;left:4%}.al2{width:160px;top:58%;right:6%;animation-delay:-3s}.al3{width:190px;bottom:18%;left:24%;animation-delay:-6s}
     @keyframes lineSweep{0%,100%{opacity:0;transform:translateX(-28px)}40%,65%{opacity:.28}50%{transform:translateX(28px)}}
 
-    .shape.s4{width:20px;height:20px;background:var(--cyan);left:8%;bottom:20%;animation:spin 16s linear infinite;opacity:.22}
-    .shape.s5{width:14px;height:14px;background:var(--purple);right:18%;bottom:10%;animation:spin 19s linear infinite reverse;opacity:.20}
-    .shape.s6{width:30px;height:30px;right:4%;top:49%;animation:bob 10s ease-in-out infinite}
-    .shape.s6:before,.shape.s6:after{content:'';position:absolute;background:var(--cyan);border-radius:2px}
-    .shape.s6:before{width:30px;height:3px;top:13px}.shape.s6:after{width:3px;height:30px;left:13px}
-    .shape.s7{width:34px;height:34px;border:2px solid var(--amber);left:23%;top:68%;transform:rotate(45deg);animation:spin 24s linear infinite}
-    @keyframes spin{to{transform:rotate(360deg)}}
+    .nav{position:sticky;top:0;z-index:40;background:var(--nav);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+    .navin{max-width:1180px;margin:auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);font-family:'Space Grotesk';font-weight:700;letter-spacing:.12em}
+    .brand img{width:42px;height:auto}.navlinks{display:flex;gap:20px;align-items:center}.navlinks a{color:var(--muted);text-decoration:none;font-size:.9rem}.navlinks a:hover{color:var(--text)}
+    .toggle{border:1px solid var(--border);background:var(--card);color:var(--text);border-radius:10px;padding:8px 10px;cursor:pointer}
+    .hero{min-height:84vh;display:grid;place-items:center;padding:108px 22px 72px;position:relative}
+    .hero-inner{max-width:990px;text-align:center}
+    .hero-logo{display:block;width:150px;height:auto;margin:0 auto 1.5rem;opacity:0;transform:scale(.82);animation:heroLogoIn .9s .18s cubic-bezier(.16,1,.3,1) forwards}
+    @keyframes heroLogoIn{to{opacity:1;transform:scale(1)}}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--cyan);font-weight:750;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase}
+    .eyebrow:before,.eyebrow:after{content:'';width:34px;height:1px;background:currentColor}
+    h1{font-size:clamp(2.8rem,7vw,5.7rem);line-height:.98;letter-spacing:-.05em;margin:24px 0}
+    .grad{background:linear-gradient(135deg,var(--cyan),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero p{max-width:730px;margin:auto;color:var(--muted);font-size:1.1rem}
+    .hero .eyebrow,.hero h1,.hero p,.hero .cta{opacity:0;transform:translateY(25px);animation:fadeUp .85s cubic-bezier(.16,1,.3,1) forwards}
+    .hero .eyebrow{animation-delay:.42s}.hero h1{animation-delay:.58s}.hero p{animation-delay:.75s}.hero .cta{animation-delay:.92s}
+    @keyframes fadeUp{to{opacity:1;transform:none}}
+    .cta{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:32px}
+    .btn{padding:14px 22px;border-radius:999px;text-decoration:none;font-weight:750;border:1px solid var(--border);transition:.3s transform,.3s box-shadow}
+    .btn:hover{transform:translateY(-2px)}.primary{background:linear-gradient(135deg,var(--cyan),#0284c7);color:#fff;box-shadow:0 14px 34px rgba(14,165,233,.22)}.secondary{background:var(--card);color:var(--text)}
+    .hero-points{display:flex;justify-content:center;gap:18px 30px;flex-wrap:wrap;margin-top:28px;color:var(--muted);font-size:.88rem}.hero-points span:before{content:'✓';color:var(--green);font-weight:850;margin-right:7px}
+    .marquee{overflow:hidden;border-block:1px solid var(--border);background:rgba(255,255,255,.02)}
+    .marquee-track{display:flex;width:max-content;gap:2.2rem;padding:15px 0;animation:marqueeMove 30s linear infinite}
+    .marquee-item{font-family:'Space Grotesk';font-weight:700;color:var(--muted);white-space:nowrap;font-size:.85rem;letter-spacing:.04em}.marquee-item .sep{color:var(--cyan);margin-left:2.2rem}
+    @keyframes marqueeMove{to{transform:translateX(-50%)}}
 
-    .section{position:relative}
-    .section:before{content:'';position:absolute;inset:8% auto auto -120px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(14,165,233,.10),transparent 70%);pointer-events:none;animation:sectionFloat 14s ease-in-out infinite}
-    .section:nth-of-type(even):before{left:auto;right:-130px;background:radial-gradient(circle,rgba(139,92,246,.09),transparent 70%);animation-delay:-5s}
-    @keyframes sectionFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-34px)}}
+    .section{padding:88px 22px;position:relative}.wrap{max-width:1120px;margin:auto}
+    .section-head{max-width:770px;margin-bottom:36px}.kicker{color:var(--cyan);font-size:.8rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+    h2{font-size:clamp(2rem,4vw,3.25rem);line-height:1.08;margin-top:10px;letter-spacing:-.03em}.lead{color:var(--muted);margin-top:14px}
+    .reveal,.reveal-left,.reveal-right,.reveal-scale{opacity:0;transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+    .reveal{transform:translateY(42px)}.reveal-left{transform:translateX(-42px)}.reveal-right{transform:translateX(42px)}.reveal-scale{transform:scale(.92)}
+    .visible{opacity:1!important;transform:none!important}.stagger>*{transition-delay:calc(var(--i,0)*.10s)}
 
-    .card,.step,.price,.faq details,.mock{transition:transform .35s cubic-bezier(.16,1,.3,1),border-color .35s,box-shadow .35s}
-    @media (hover:hover){
-      .card:hover,.price:hover,.mock:hover{transform:translateY(-5px);border-color:rgba(14,165,233,.28);box-shadow:0 20px 55px rgba(15,23,42,.10)}
-      .faq details:hover{border-color:rgba(14,165,233,.25)}
-    }
+    /* Website-type chooser */
+    .chooser{display:grid;grid-template-columns:300px 1fr;gap:22px;align-items:stretch}
+    .choice-list{display:grid;gap:10px}
+    .choice{width:100%;text-align:left;padding:18px;border-radius:16px;border:1px solid var(--border);background:var(--card);color:var(--text);cursor:pointer;transition:.3s}
+    .choice strong{display:block;font-family:'Space Grotesk';font-size:1.02rem}.choice span{display:block;color:var(--muted);font-size:.84rem;margin-top:4px}
+    .choice.active{border-color:rgba(14,165,233,.45);box-shadow:0 12px 32px rgba(14,165,233,.10);transform:translateX(4px)}
+    .preview-window{background:linear-gradient(155deg,rgba(14,165,233,.09),rgba(139,92,246,.08));border:1px solid var(--border);border-radius:26px;padding:24px;min-height:430px;display:flex}
+    .browser{width:100%;background:var(--card-solid);border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);align-self:stretch}
+    .browserbar{height:42px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:6px;padding:0 14px}.dot{width:8px;height:8px;border-radius:50%;background:var(--muted);opacity:.35}.url{margin-left:10px;width:42%;height:8px;border-radius:99px;background:var(--border)}
+    .browserbody{padding:28px}.mock-tag{font-size:.72rem;color:var(--cyan);font-weight:800;letter-spacing:.1em;text-transform:uppercase}.browserbody h3{font-size:clamp(1.6rem,4vw,2.8rem);line-height:1.03;margin:10px 0}.browserbody p{color:var(--muted);max-width:520px}.mock-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:26px}.mockbox{height:90px;border:1px solid var(--border);border-radius:12px;background:linear-gradient(145deg,rgba(14,165,233,.07),transparent)}.mock-cta{display:inline-block;margin-top:20px;background:var(--cyan);color:#fff;border-radius:999px;padding:10px 15px;font-weight:750;font-size:.86rem}
 
-    @media(prefers-reduced-motion:reduce){
-      *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
-      .hero-logo,.hero .eyebrow,.hero h1,.hero p,.hero .cta,.reveal,.reveal-left,.reveal-right,.reveal-scale{opacity:1!important;transform:none!important}
-    }
+    /* Anatomy */
+    .anatomy{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center}
+    .site-stack{position:relative;background:var(--card);border:1px solid var(--border);border-radius:26px;padding:22px;box-shadow:var(--shadow)}
+    .mini-site{border:1px solid var(--border);border-radius:18px;overflow:hidden;background:var(--card-solid)}.mini-nav{height:38px;border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 14px;gap:8px}.mini-logo{width:58px;height:7px;border-radius:99px;background:var(--text);opacity:.8}.mini-nav i{width:30px;height:5px;border-radius:99px;background:var(--muted);opacity:.35;margin-left:auto}.mini-nav i+i{margin-left:4px}
+    .mini-hero{padding:34px 24px 28px}.mini-k{width:72px;height:6px;border-radius:99px;background:var(--cyan);margin-bottom:12px}.mini-title{width:72%;height:18px;border-radius:6px;background:var(--text);opacity:.88}.mini-title.t2{width:52%;margin-top:7px}.mini-copy{width:82%;height:7px;border-radius:99px;background:var(--muted);opacity:.35;margin-top:18px}.mini-copy.c2{width:66%;margin-top:6px}.mini-button{width:92px;height:28px;border-radius:99px;background:var(--cyan);margin-top:18px}.mini-cards{padding:0 24px 30px;display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.mini-card{height:74px;border:1px solid var(--border);border-radius:10px}
+    .hotspot{position:absolute;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--cyan);color:#fff;font-weight:800;box-shadow:0 0 0 8px rgba(14,165,233,.12);animation:pulseSpot 2.4s ease-in-out infinite}.h1{top:72px;right:28px}.h2{top:180px;left:12px;animation-delay:-.8s}.h3{bottom:42px;right:30px;animation-delay:-1.4s}@keyframes pulseSpot{50%{box-shadow:0 0 0 14px rgba(14,165,233,.03)}}
+    .feature-list{display:grid;gap:12px}.feature{display:grid;grid-template-columns:44px 1fr;gap:14px;padding:14px 0;border-bottom:1px solid var(--border)}.feature:last-child{border-bottom:0}.fnum{width:38px;height:38px;border-radius:12px;background:rgba(14,165,233,.1);display:grid;place-items:center;color:var(--cyan);font-family:'Space Grotesk';font-weight:800}.feature h3{font-size:1.02rem}.feature p{color:var(--muted);font-size:.9rem;margin-top:3px}
 
-    @media(max-width:850px){.navlinks a{display:none}.cards{grid-template-columns:1fr}.process{grid-template-columns:1fr 1fr}.showcase{grid-template-columns:1fr}.hero{min-height:auto;padding-top:90px}}
-    @media(max-width:560px){h1{font-size:2.85rem}.process{grid-template-columns:1fr}.section{padding:64px 18px}.hero p{font-size:1rem}.price{padding:26px}}
+    /* Proof */
+    .proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.score{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:24px;text-align:center}.score .n{font-family:'Space Grotesk';font-size:2.8rem;font-weight:800;line-height:1;color:var(--green)}.score strong{display:block;margin-top:10px;font-size:.92rem}.score span{display:block;color:var(--muted);font-size:.78rem;margin-top:4px}
+    .proof-note{margin-top:18px;color:var(--muted);font-size:.83rem}
+
+    /* Case */
+    .case{display:grid;grid-template-columns:.9fr 1.1fr;gap:30px;align-items:center}.case-visual{background:linear-gradient(145deg,rgba(14,165,233,.10),rgba(139,92,246,.08));border:1px solid var(--border);border-radius:26px;padding:24px}.case-screen{background:var(--card-solid);border:1px solid var(--border);border-radius:18px;padding:26px;box-shadow:var(--shadow)}.case-screen img{width:110px;height:auto;display:block;margin-bottom:22px}.case-screen .line{height:10px;border-radius:99px;background:var(--text);opacity:.78;width:72%;margin-top:8px}.case-screen .line.small{height:6px;background:var(--muted);opacity:.3;width:88%;margin-top:14px}.case-screen .line.small.s2{width:67%;margin-top:6px}.case-badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}.badge{padding:7px 10px;border:1px solid var(--border);border-radius:999px;color:var(--muted);font-size:.76rem}
+    .case-copy ul{list-style:none;display:grid;gap:11px;margin-top:20px}.case-copy li{color:var(--muted);padding-left:24px;position:relative}.case-copy li:before{content:'→';position:absolute;left:0;color:var(--cyan);font-weight:800}
+
+    /* Process */
+    .process{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.step{padding:22px;border-top:2px solid var(--border)}.step .num{font-family:'Space Grotesk';font-size:1.8rem;color:var(--cyan);font-weight:800}.step strong{display:block;font-family:'Space Grotesk';font-size:1.08rem;margin:7px 0}.step p{color:var(--muted);font-size:.9rem}
+
+    /* Estimator */
+    .estimator{display:grid;grid-template-columns:1fr 360px;gap:24px}.estimate-form{background:var(--card);border:1px solid var(--border);border-radius:24px;padding:26px}.q{padding:18px 0;border-bottom:1px solid var(--border)}.q:first-child{padding-top:0}.q:last-child{border-bottom:0;padding-bottom:0}.q-title{font-family:'Space Grotesk';font-weight:750;margin-bottom:11px}.options{display:flex;gap:9px;flex-wrap:wrap}.opt{cursor:pointer}.opt input{position:absolute;opacity:0;pointer-events:none}.opt span{display:block;padding:10px 13px;border:1px solid var(--border);border-radius:12px;color:var(--muted);font-size:.86rem;transition:.25s;background:rgba(255,255,255,.02)}.opt input:checked+span{border-color:rgba(14,165,233,.48);background:rgba(14,165,233,.09);color:var(--text)}
+    .estimate-result{position:sticky;top:90px;align-self:start;background:linear-gradient(145deg,rgba(14,165,233,.12),rgba(139,92,246,.09));border:1px solid var(--border);border-radius:24px;padding:28px}.result-label{color:var(--muted);font-size:.82rem}.result-tier{font-family:'Space Grotesk';font-size:1.7rem;font-weight:800;margin-top:7px}.result-price{font-family:'Space Grotesk';font-size:2rem;font-weight:800;color:var(--cyan);margin-top:3px}.result-text{color:var(--muted);font-size:.86rem;margin-top:12px}.result-note{font-size:.72rem;color:var(--muted);margin-top:18px;border-top:1px solid var(--border);padding-top:14px}
+
+    .faq{display:grid;gap:10px}.faq details{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px 20px}.faq summary{cursor:pointer;font-weight:750}.faq p{color:var(--muted);margin-top:10px;font-size:.92rem}
+    .final{padding:90px 22px 110px;text-align:center}.finalbox{max-width:900px;margin:auto;background:linear-gradient(135deg,rgba(14,165,233,.12),rgba(139,92,246,.12));border:1px solid var(--border);border-radius:30px;padding:54px 26px}
+    footer{border-top:1px solid var(--border);padding:26px 22px;color:var(--muted);font-size:.82rem}.foot{max-width:1120px;margin:auto;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+    @media(hover:hover){.score,.preview-window,.site-stack,.case-visual,.estimate-form,.estimate-result{transition:.35s transform,.35s box-shadow}.score:hover{transform:translateY(-4px);box-shadow:var(--shadow)}}
+    @media(max-width:900px){.navlinks a{display:none}.chooser,.anatomy,.case,.estimator{grid-template-columns:1fr}.proof-grid{grid-template-columns:1fr 1fr}.process{grid-template-columns:1fr 1fr}.estimate-result{position:relative;top:auto}.choice-list{grid-template-columns:repeat(3,1fr)}.choice.active{transform:translateY(-3px)}}
+    @media(max-width:620px){h1{font-size:2.75rem}.section{padding:66px 18px}.hero{min-height:auto;padding-top:88px}.hero p{font-size:1rem}.choice-list{grid-template-columns:1fr}.proof-grid,.process{grid-template-columns:1fr}.mock-grid{grid-template-columns:1fr}.mockbox{height:55px}.browserbody{padding:22px}.anatomy{gap:24px}.hotspot{width:30px;height:30px}.options{display:grid}.opt span{text-align:center}.hero-points{display:grid;gap:8px}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.hero-logo,.hero .eyebrow,.hero h1,.hero p,.hero .cta,.reveal,.reveal-left,.reveal-right,.reveal-scale{opacity:1!important;transform:none!important}}
   </style>
 </head>
 <body>
 <div class="scroll-progress" id="scrollProgress"></div>
 <div class="bg" aria-hidden="true">
-  <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
-  <div class="grid"></div><span class="shape s1"></span><span class="shape s2"></span><span class="shape s3"></span><span class="shape s4"></span><span class="shape s5"></span><span class="shape s6"></span><span class="shape s7"></span><span class="ambient-line al1"></span><span class="ambient-line al2"></span><span class="ambient-line al3"></span>
+  <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div><div class="grid"></div>
+  <span class="shape s1"></span><span class="shape s2"></span><span class="shape s3"></span><span class="shape s4"></span><span class="shape s5"></span><span class="shape s6"></span><span class="shape s7"></span>
+  <span class="ambient-line al1"></span><span class="ambient-line al2"></span><span class="ambient-line al3"></span>
 </div>
+
 <nav class="nav">
   <div class="navin">
     <a class="brand" href="index.html"><img src="logo2.png" alt="FORGRIT"><span>FORGRIT</span></a>
     <div class="navlinks">
-      <a href="#mit-kapsz">Mit kapsz?</a><a href="#folyamat">Folyamat</a><a href="#ar">Árazás</a><a href="#gyik">GYIK</a>
+      <a href="#tipusok">Milyen oldal?</a><a href="#mit-kapsz">Mit kapsz?</a><a href="#eredmeny">Eredmény</a><a href="#arbecslo">Árbecslő</a>
       <button class="toggle" id="themeToggle" aria-label="Téma váltása">◐</button>
     </div>
   </div>
@@ -139,85 +146,132 @@
   <div class="hero-inner">
     <img src="logo2.png" alt="FORGRIT" class="hero-logo" width="558" height="298" decoding="async">
     <div class="eyebrow">Weboldal készítés</div>
-    <h1>Weboldal, ami nem csak <span class="grad">jól néz ki</span>.</h1>
-    <p>Gyors, reszponzív és átgondolt weboldalt készítek, ami illik a márkádhoz, érthető a látogatóknak és technikailag is rendben van.</p>
-    <div class="cta">
-      <a class="btn primary" href="#ajanlat">Kérek egyedi ajánlatot</a>
-      <a class="btn secondary" href="#mit-kapsz">Mutasd, mit kapok</a>
-    </div>
+    <h1>Legyen végre egy oldalad, amit <span class="grad">szívesen küldesz tovább.</span></h1>
+    <p>Bemutatkozó oldal, céges weboldal vagy külön landing page. Megtervezem, elkészítem, beállítom és élesítem – neked nem kell a technikai részletekkel külön embereket keresned.</p>
+    <div class="cta"><a class="btn primary" href="#arbecslo">Megnézem, mire van szükségem</a><a class="btn secondary" href="#mit-kapsz">Mit tartalmaz?</a></div>
+    <div class="hero-points"><span>mobilra is rendesen elkészítve</span><span>domain és tárhely beállítással</span><span>SEO alapokkal</span></div>
   </div>
 </header>
 
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track">
-    <span class="marquee-item">RESPONZÍV DESIGN <span class="sep">•</span></span>
-    <span class="marquee-item">TECHNIKAI SEO <span class="sep">•</span></span>
-    <span class="marquee-item">GYORS BETÖLTÉS <span class="sep">•</span></span>
-    <span class="marquee-item">EGYEDI MEGJELENÉS <span class="sep">•</span></span>
-    <span class="marquee-item">MOBILRA TERVEZVE <span class="sep">•</span></span>
-    <span class="marquee-item">RESPONZÍV DESIGN <span class="sep">•</span></span>
-    <span class="marquee-item">TECHNIKAI SEO <span class="sep">•</span></span>
-    <span class="marquee-item">GYORS BETÖLTÉS <span class="sep">•</span></span>
-    <span class="marquee-item">EGYEDI MEGJELENÉS <span class="sep">•</span></span>
-    <span class="marquee-item">MOBILRA TERVEZVE <span class="sep">•</span></span>
-  </div>
-</div>
+<div class="marquee" aria-hidden="true"><div class="marquee-track">
+  <span class="marquee-item">EGYEDI DESIGN <span class="sep">•</span></span><span class="marquee-item">MOBILNÉZET <span class="sep">•</span></span><span class="marquee-item">TECHNIKAI SEO <span class="sep">•</span></span><span class="marquee-item">DOMAIN + TÁRHELY <span class="sep">•</span></span><span class="marquee-item">SEBESSÉGOPTIMALIZÁLÁS <span class="sep">•</span></span>
+  <span class="marquee-item">EGYEDI DESIGN <span class="sep">•</span></span><span class="marquee-item">MOBILNÉZET <span class="sep">•</span></span><span class="marquee-item">TECHNIKAI SEO <span class="sep">•</span></span><span class="marquee-item">DOMAIN + TÁRHELY <span class="sep">•</span></span><span class="marquee-item">SEBESSÉGOPTIMALIZÁLÁS <span class="sep">•</span></span>
+</div></div>
 
-<section class="section" id="mit-kapsz">
+<section class="section" id="tipusok">
   <div class="wrap">
-    <div class="section-head reveal"><div class="kicker">Nem sablonmunka</div><h2>Az első benyomástól az utolsó technikai részletig.</h2><p class="lead">Nem csak összerakom az oldalakat. A cél az, hogy az egész egységes legyen: gyors, átlátható, mobilon is kényelmes és könnyen továbbfejleszthető.</p></div>
-    <div class="cards stagger">
-      <article class="card reveal" style="--i:0"><div class="num">01</div><h3>Egyedi megjelenés</h3><p>A vizuális irányt a márkádhoz igazítom, nem egy kész sablont húzok rá minden projektre.</p></article>
-      <article class="card reveal" style="--i:1"><div class="num">02</div><h3>Mobilra tervezve</h3><p>Telefonon, tableten és asztali gépen is használható felület, nem csak „összenyomott desktop”.</p></article>
-      <article class="card reveal" style="--i:2"><div class="num">03</div><h3>Technikai alapok</h3><p>Gyors betöltés, SEO alapok, helyes struktúra, kapcsolatfelvétel és szükséges biztonsági beállítások.</p></article>
+    <div class="section-head reveal"><div class="kicker">Első kérdés</div><h2>Milyen weboldalra van szükséged?</h2><p class="lead">Nem mindenkinek kell ugyanaz. Válassz egy típust, és a jobb oldalon látszik, nagyjából mire való.</p></div>
+    <div class="chooser">
+      <div class="choice-list reveal-left">
+        <button class="choice active" data-type="intro"><strong>Bemutatkozó oldal</strong><span>Ha röviden és normálisan be kell mutatni, mivel foglalkozol.</span></button>
+        <button class="choice" data-type="business"><strong>Céges weboldal</strong><span>Több szolgáltatás, aloldalak, referenciák, kapcsolat.</span></button>
+        <button class="choice" data-type="landing"><strong>Landing page</strong><span>Egy konkrét szolgáltatás vagy kampány külön oldalra.</span></button>
+      </div>
+      <div class="preview-window reveal-right">
+        <div class="browser"><div class="browserbar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url"></span></div>
+          <div class="browserbody" id="typePreview">
+            <div class="mock-tag">Bemutatkozó weboldal</div><h3>Rövid, átlátható,<br>egyértelmű.</h3><p>Főoldal, szolgáltatások, rólad/cégről, kapcsolat – annyi tartalommal, amennyi tényleg kell.</p><div class="mock-grid"><div class="mockbox"></div><div class="mockbox"></div><div class="mockbox"></div></div><span class="mock-cta">Kapcsolat</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="section" id="folyamat">
+<section class="section" id="mit-kapsz">
   <div class="wrap">
-    <div class="section-head reveal"><div class="kicker">Folyamat</div><h2>Átlátható lépések, fölösleges körök nélkül.</h2></div>
-    <div class="process stagger">
-      <div class="step reveal" style="--i:0"><span class="num">01</span><strong>Felmérés</strong><p>Célok, funkciók, célközönség és az oldal szerepe.</p></div>
-      <div class="step reveal" style="--i:1"><span class="num">02</span><strong>Tervezés</strong><p>Struktúra, vizuális irány, tartalmi logika és főbb oldalak.</p></div>
-      <div class="step reveal" style="--i:2"><span class="num">03</span><strong>Fejlesztés</strong><p>Reszponzív megvalósítás, finomhangolás és tesztelés.</p></div>
-      <div class="step reveal" style="--i:3"><span class="num">04</span><strong>Indítás</strong><p>Élesítés, alap SEO, mérés és szükség esetén további támogatás.</p></div>
+    <div class="section-head reveal"><div class="kicker">Nem csak egy HTML fájl</div><h2>Mit kapsz a végén?</h2><p class="lead">A weboldal elkészítése nálam nem áll meg ott, hogy „kész a design”. A működéshez szükséges alapbeállításokat is összerakom.</p></div>
+    <div class="anatomy">
+      <div class="site-stack reveal-left">
+        <div class="mini-site"><div class="mini-nav"><span class="mini-logo"></span><i></i><i></i><i></i></div><div class="mini-hero"><div class="mini-k"></div><div class="mini-title"></div><div class="mini-title t2"></div><div class="mini-copy"></div><div class="mini-copy c2"></div><div class="mini-button"></div></div><div class="mini-cards"><div class="mini-card"></div><div class="mini-card"></div><div class="mini-card"></div></div></div>
+        <span class="hotspot h1">1</span><span class="hotspot h2">2</span><span class="hotspot h3">3</span>
+      </div>
+      <div class="feature-list reveal-right">
+        <div class="feature"><div class="fnum">01</div><div><h3>Design és mobilnézet</h3><p>Nem csak asztali gépen rakom össze. Telefonon is külön átnézem a tördelést, gombokat és olvashatóságot.</p></div></div>
+        <div class="feature"><div class="fnum">02</div><div><h3>Technikai beállítások</h3><p>Domain, tárhely, SSL, űrlap, e-mail küldés és az élesítéshez szükséges alapok.</p></div></div>
+        <div class="feature"><div class="fnum">03</div><div><h3>SEO alapok</h3><p>Oldalcímek, leírások, sitemap, indexelési alapok és Search Console beállítás, ahol szükséges.</p></div></div>
+        <div class="feature"><div class="fnum">04</div><div><h3>Sebesség és böngészőteszt</h3><p>Nem csak Chrome-ban nézem meg. Mobilon és több böngészőben is ellenőrzöm, mielőtt átadom.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="eredmeny">
+  <div class="wrap">
+    <div class="section-head reveal"><div class="kicker">Konkrét példa</div><h2>A FORGRIT oldal jelenlegi mobil mérése</h2><p class="lead">Nem azt szeretném írni, hogy „gyors oldalakat készítek”, hanem inkább megmutatni egy tényleges mérést.</p></div>
+    <div class="proof-grid stagger">
+      <div class="score reveal" style="--i:0"><div class="n">98</div><strong>Performance</strong><span>PageSpeed · mobil</span></div>
+      <div class="score reveal" style="--i:1"><div class="n">100</div><strong>Accessibility</strong><span>PageSpeed · mobil</span></div>
+      <div class="score reveal" style="--i:2"><div class="n">100</div><strong>Best Practices</strong><span>PageSpeed · mobil</span></div>
+      <div class="score reveal" style="--i:3"><div class="n">100</div><strong>SEO</strong><span>PageSpeed · mobil</span></div>
+    </div>
+    <p class="proof-note reveal">Mérés: forgrit.hu, Google PageSpeed Insights mobil teszt. A pontszámok idővel és mérésenként kis mértékben változhatnak.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap case">
+    <div class="case-visual reveal-left"><div class="case-screen"><img src="logo2.png" alt="FORGRIT"><div class="line"></div><div class="line" style="width:54%"></div><div class="line small"></div><div class="line small s2"></div><div class="case-badges"><span class="badge">Cloudflare</span><span class="badge">Search Console</span><span class="badge">Resend</span><span class="badge">Local fonts</span></div></div></div>
+    <div class="case-copy reveal-right"><div class="kicker">Mini esettanulmány</div><h2>Mit kellett megoldani ezen az oldalon?</h2><p class="lead">A FORGRIT saját oldalán ugyanazokat a dolgokat kellett végigvenni, amik egy ügyféloldalnál is előjönnek.</p>
+      <ul><li>egyedi design és mobilos tördelés</li><li>kapcsolati űrlap és e-mail küldés</li><li>domain, Cloudflare és HTTPS</li><li>Search Console, sitemap és strukturált adatok</li><li>Safari-specifikus teljesítményhiba felderítése és javítása</li><li>helyi fontbetöltés a gyorsabb első megjelenéshez</li></ul>
     </div>
   </div>
 </section>
 
 <section class="section">
-  <div class="wrap showcase">
-    <div class="mock reveal-left">
-      <div class="browser"><div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div><div class="screen"><div class="mini"></div><h3>Nem csak szép.<br><span class="grad">Használható is.</span></h3><p>Gyors betöltés, tiszta hierarchia, erős CTA-k és mobilon is kényelmes kezelhetőség.</p><span class="pill">Kapcsolatfelvétel</span></div></div>
-    </div>
-    <div class="reveal-right">
-      <div class="kicker">A háttérben</div><h2>Technikailag is rendben rakva.</h2>
-      <p class="lead">Teljesítmény, meta adatok, sitemap, strukturált tartalom, biztonságos kapcsolatfelvétel és olyan megoldások, amik nem csak a Lighthouse pontszám miatt léteznek.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="ar">
   <div class="wrap">
-    <div class="section-head reveal"><div class="kicker">Árazás</div><h2>Kiindulási pont, nem zsákbamacska.</h2><p class="lead">A végleges ár mindig a tartalomtól és funkcióktól függ, de már az elején kapsz egy reális keretet.</p></div>
-    <div class="price reveal-scale"><div class="kicker">Egyedi weboldal</div><div class="big">249.000 Ft-tól</div><ul><li>egyedi vizuális irány</li><li>reszponzív megvalósítás</li><li>kapcsolatfelvételi lehetőség</li><li>alap technikai SEO</li><li>élesítés és átadás</li></ul></div>
-  </div>
-</section>
-
-<section class="section" id="gyik">
-  <div class="wrap">
-    <div class="section-head reveal"><div class="kicker">GYIK</div><h2>Gyakori kérdések</h2></div>
-    <div class="faq stagger">
-      <details class="reveal"><summary>Mennyi idő alatt készül el egy weboldal?</summary><p>Egy egyszerűbb bemutatkozó oldal jellemzően néhány hét alatt elkészülhet. A pontos idő a tartalom, funkciók és visszajelzési körök számától függ.</p></details>
-      <details class="reveal"><summary>Segítesz a szövegezésben is?</summary><p>Igen, a struktúrában és a webre optimalizált megfogalmazásban is tudok segíteni, hogy ne csak jól nézzen ki az oldal, hanem érthető is legyen.</p></details>
-      <details class="reveal"><summary>Mobilon is rendesen fog működni?</summary><p>Igen. A mobilos használhatóság nem utólagos javítás, hanem a tervezés része.</p></details>
+    <div class="section-head reveal"><div class="kicker">Folyamat</div><h2>Hogyan jutunk el az ötlettől az éles oldalig?</h2></div>
+    <div class="process stagger">
+      <div class="step reveal" style="--i:0"><div class="num">01</div><strong>Átbeszéljük</strong><p>Mit szeretnél, kinek készül az oldal, milyen funkciók kellenek és mi nem kell.</p></div>
+      <div class="step reveal" style="--i:1"><div class="num">02</div><strong>Összerakom az irányt</strong><p>Struktúra, színek, tipográfia, fő blokkok és az oldal működése.</p></div>
+      <div class="step reveal" style="--i:2"><div class="num">03</div><strong>Fejlesztés és teszt</strong><p>Desktop, mobil, űrlapok, böngészők és a technikai beállítások.</p></div>
+      <div class="step reveal" style="--i:3"><div class="num">04</div><strong>Élesítés</strong><p>Felkerül a saját domainre, beállítjuk az indexelést és átadom a kész oldalt.</p></div>
     </div>
   </div>
 </section>
 
-<section class="final" id="ajanlat">
-  <div class="finalbox reveal-scale"><div class="kicker">Van egy ötleted?</div><h2>Beszéljük át, hogyan lehet belőle működő weboldal.</h2><p class="lead">Írd meg röviden, mire van szükséged, és kapsz egy személyre szabott irányt és ajánlatot.</p><div class="cta"><a class="btn primary" href="index.html#kapcsolat">Kapcsolatfelvétel</a></div></div>
+<section class="section" id="arbecslo">
+  <div class="wrap">
+    <div class="section-head reveal"><div class="kicker">Gyors árbecslő</div><h2>Nagyjából melyik kategóriába esik a projekt?</h2><p class="lead">Ez nem automatikus árajánlat. Arra jó, hogy egy perc alatt lásd, inkább egy egyszerűbb vagy egy összetettebb weboldalról beszélünk.</p></div>
+    <div class="estimator">
+      <div class="estimate-form reveal-left">
+        <div class="q"><div class="q-title">Hány oldalra van szükséged?</div><div class="options">
+          <label class="opt"><input type="radio" name="pages" value="one" checked><span>Egy hosszabb oldal</span></label>
+          <label class="opt"><input type="radio" name="pages" value="multi"><span>Több aloldal</span></label>
+        </div></div>
+        <div class="q"><div class="q-title">Kellenek látványosabb animációk / egyedi interakciók?</div><div class="options">
+          <label class="opt"><input type="radio" name="motion" value="no" checked><span>Nem feltétlenül</span></label>
+          <label class="opt"><input type="radio" name="motion" value="yes"><span>Igen</span></label>
+        </div></div>
+        <div class="q"><div class="q-title">Kell valamilyen egyedi integráció?</div><div class="options">
+          <label class="opt"><input type="radio" name="integration" value="no" checked><span>Nem</span></label>
+          <label class="opt"><input type="radio" name="integration" value="yes"><span>Igen / még nem tudom</span></label>
+        </div></div>
+      </div>
+      <aside class="estimate-result reveal-right">
+        <div class="result-label">Becsült kategória</div><div class="result-tier" id="resultTier">Starter</div><div class="result-price" id="resultPrice">249.000 Ft-tól</div>
+        <p class="result-text" id="resultText">Egy egyoldalas bemutatkozó vagy landing oldal ebbe a kategóriába szokott beleférni.</p>
+        <a class="btn primary" style="display:inline-block;margin-top:20px" href="index.html#kapcsolat">Kérek pontos ajánlatot</a>
+        <p class="result-note">Nettó irányár. A végleges ár a tartalom és a pontos funkciók alapján készül.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal"><div class="kicker">Gyakori kérdések</div><h2>Amit általában már az elején megkérdeznek</h2></div>
+    <div class="faq">
+      <details class="reveal"><summary>Nekem kell megírnom az összes szöveget?</summary><p>Nem feltétlenül. Ha van alapanyagod, segítek weboldalra rendezni és érthetőbbre fogalmazni. Teljes szövegírásnál előre egyeztetjük, mi fér bele a projektbe.</p></details>
+      <details class="reveal"><summary>A domain és a tárhely intézésében is segítesz?</summary><p>Igen. Ha még nincs semmid, segítek kiválasztani és beállítani. Ha már van domain vagy tárhely, megnézzük, használható-e a projekthez.</p></details>
+      <details class="reveal"><summary>Utána tudom módosítani az oldalt?</summary><p>Ez attól függ, milyen rendszerben készül. A projekt elején érdemes eldönteni, hogy később te szeretnéd-e szerkeszteni a tartalmat, vagy inkább rám bíznád a módosításokat.</p></details>
+      <details class="reveal"><summary>Mennyi idő alatt készül el?</summary><p>Egy egyszerűbb oldal jellemzően néhány hét. A pontos időt főleg az oldalszám, a funkciók és az anyagok rendelkezésre állása határozza meg.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="finalbox reveal-scale"><div class="kicker">Ha már van elképzelésed</div><h2>Írd le pár mondatban, mit szeretnél.</h2><p class="lead">Nem kell műszaki specifikáció. Elég, ha leírod, mivel foglalkozol, milyen oldalra gondoltál és van-e már domain vagy meglévő weboldal.</p><div class="cta"><a class="btn primary" href="index.html#kapcsolat">Kapcsolatfelvétel</a></div></div>
 </section>
 
 <footer><div class="foot"><span>FORGRIT – Tompos Richárd</span><span>Preview oldal · nem indexelendő</span></div></footer>
@@ -229,28 +283,38 @@
   apply(theme);
   document.getElementById('themeToggle').addEventListener('click',function(){apply(theme==='light'?'dark':'light')});
 
-  var progress=document.getElementById('scrollProgress');
-  var revealObserver=new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if(entry.isIntersecting){
-        entry.target.classList.add('visible');
-        revealObserver.unobserve(entry.target);
-      }
+  var previews={
+    intro:{tag:'Bemutatkozó weboldal',title:'Rövid, átlátható,<br>egyértelmű.',copy:'Főoldal, szolgáltatások, rólad/cégről, kapcsolat – annyi tartalommal, amennyi tényleg kell.',boxes:3,cta:'Kapcsolat'},
+    business:{tag:'Céges weboldal',title:'Több tartalom,<br>rendes struktúrában.',copy:'Külön szolgáltatásoldalak, referenciák, kapcsolat, céges információk és bővíthető felépítés.',boxes:6,cta:'Szolgáltatások'},
+    landing:{tag:'Landing page',title:'Egy ajánlat.<br>Egy konkrét cél.',copy:'Kampányhoz, új szolgáltatáshoz vagy hirdetéshez készülő fókuszált oldal, egyértelmű következő lépéssel.',boxes:2,cta:'Ajánlatot kérek'}
+  };
+  var preview=document.getElementById('typePreview');
+  document.querySelectorAll('.choice').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      document.querySelectorAll('.choice').forEach(function(x){x.classList.remove('active')});btn.classList.add('active');
+      var p=previews[btn.dataset.type], boxes='';
+      for(var i=0;i<p.boxes;i++) boxes+='<div class="mockbox"></div>';
+      preview.innerHTML='<div class="mock-tag">'+p.tag+'</div><h3>'+p.title+'</h3><p>'+p.copy+'</p><div class="mock-grid">'+boxes+'</div><span class="mock-cta">'+p.cta+'</span>';
     });
-  },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
-  document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale').forEach(function(el){revealObserver.observe(el)});
+  });
 
-  var ticking=false;
-  function updateProgress(){
-    var h=document.documentElement.scrollHeight-window.innerHeight;
-    progress.style.transform='scaleX('+(h>0?window.scrollY/h:0)+')';
+  function updateEstimate(){
+    var pages=document.querySelector('input[name="pages"]:checked').value;
+    var motion=document.querySelector('input[name="motion"]:checked').value;
+    var integration=document.querySelector('input[name="integration"]:checked').value;
+    var tier='Starter',price='249.000 Ft-tól',text='Egy egyoldalas bemutatkozó vagy landing oldal ebbe a kategóriába szokott beleférni.';
+    if(pages==='multi'||motion==='yes'){tier='Business';price='349.000 Ft-tól';text='Több aloldal, egyedi design és látványosabb interakciók esetén általában innen érdemes számolni.'}
+    if(integration==='yes'){tier='Egyedi projekt';price='Egyedi árazás';text='Ha speciális integráció vagy egyedi működés kell, előbb át kell beszélni a pontos feladatot.'}
+    document.getElementById('resultTier').textContent=tier;document.getElementById('resultPrice').textContent=price;document.getElementById('resultText').textContent=text;
   }
-  window.addEventListener('scroll',function(){
-    if(ticking)return;
-    ticking=true;
-    requestAnimationFrame(function(){updateProgress();ticking=false});
-  },{passive:true});
-  updateProgress();
+  document.querySelectorAll('.estimate-form input').forEach(function(el){el.addEventListener('change',updateEstimate)});updateEstimate();
+
+  var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}})},{threshold:.12,rootMargin:'0px 0px -35px 0px'});
+  document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale').forEach(function(el){observer.observe(el)});
+
+  var progress=document.getElementById('scrollProgress'),ticking=false;
+  function upd(){var h=document.documentElement.scrollHeight-window.innerHeight;progress.style.transform='scaleX('+(h>0?window.scrollY/h:0)+')'}
+  window.addEventListener('scroll',function(){if(ticking)return;ticking=true;requestAnimationFrame(function(){upd();ticking=false})},{passive:true});upd();
 })();
 </script>
 </body>
