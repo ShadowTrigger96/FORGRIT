@@ -2592,6 +2592,174 @@
       .dash-card:last-child{border-bottom:0!important;}
     }
 
+
+    /* ===== FINAL MINI-SITE POLISH ===== */
+    .editorial-bottom,
+    .service-strip,
+    .consulting-cards,
+    .campaign-proof{
+      position:relative;
+      background:
+        linear-gradient(180deg,rgba(14,165,233,.035),transparent 70%),
+        var(--demo-bg)!important;
+    }
+    [data-theme="dark"] .editorial-bottom,
+    [data-theme="dark"] .service-strip,
+    [data-theme="dark"] .consulting-cards,
+    [data-theme="dark"] .campaign-proof{
+      background:
+        linear-gradient(180deg,rgba(56,189,248,.055),transparent 80%),
+        var(--demo-bg)!important;
+    }
+
+    .editorial-bottom>div,
+    .service-strip>div,
+    .consulting-cards>div{
+      position:relative;
+    }
+    .editorial-bottom>div:before,
+    .service-strip>div:before,
+    .consulting-cards>div:before{
+      content:'';
+      position:absolute;
+      left:.8rem;
+      top:0;
+      width:24px;
+      height:2px;
+      border-radius:10px;
+      background:var(--demo-accent);
+      opacity:.55;
+    }
+    .editorial-bottom b,
+    .consulting-cards span{
+      color:var(--demo-accent)!important;
+      letter-spacing:.05em;
+    }
+    .editorial-bottom span,
+    .service-strip span{
+      color:var(--demo-muted)!important;
+    }
+
+    .campaign-proof{
+      border-top:1px solid var(--demo-border);
+    }
+    .campaign-proof span{
+      position:relative;
+      border-left:0!important;
+      color:var(--demo-muted)!important;
+      font-weight:600;
+    }
+    .campaign-proof span+span:before{
+      content:'';
+      position:absolute;
+      left:0;
+      top:50%;
+      width:3px;
+      height:3px;
+      margin-top:-1px;
+      border-radius:50%;
+      background:var(--demo-accent);
+      opacity:.65;
+    }
+
+    /* Proper phone fit inside the "Mi kerül bele" preview */
+    .feature-viewport.phone-mode{
+      min-height:300px!important;
+      max-height:300px!important;
+      overflow:hidden!important;
+      display:flex!important;
+      align-items:center!important;
+      justify-content:center!important;
+    }
+    .feature-viewport.phone-mode .fake-site{
+      width:214px!important;
+      height:278px!important;
+      max-height:278px!important;
+      border-width:6px!important;
+      border-radius:25px!important;
+      overflow:hidden!important;
+      flex:none!important;
+    }
+    .feature-viewport.phone-mode .fake-topnav{
+      min-height:34px!important;
+      padding:.38rem .48rem!important;
+    }
+    .feature-viewport.phone-mode .fake-brand{
+      font-size:.48rem!important;
+      letter-spacing:.04em!important;
+    }
+    .feature-viewport.phone-mode .fake-nav-cta{
+      padding:.25rem .36rem!important;
+      font-size:.39rem!important;
+      border-radius:5px!important;
+    }
+    .feature-viewport.phone-mode .fake-editorial .editorial-grid{
+      display:grid!important;
+      grid-template-columns:1fr!important;
+      gap:.4rem!important;
+      padding:.48rem!important;
+    }
+    .feature-viewport.phone-mode .fake-editorial .editorial-image{
+      min-height:82px!important;
+      height:82px!important;
+      order:-1!important;
+      border-radius:5px!important;
+    }
+    .feature-viewport.phone-mode .fake-editorial .editorial-copy{
+      padding:.05rem .12rem!important;
+    }
+    .feature-viewport.phone-mode .fake-eyebrow{
+      font-size:.38rem!important;
+      letter-spacing:.08em!important;
+    }
+    .feature-viewport.phone-mode .fake-title{
+      font-size:.93rem!important;
+      line-height:1.02!important;
+      margin-top:.25rem!important;
+    }
+    .feature-viewport.phone-mode .fake-copy{
+      font-size:.42rem!important;
+      line-height:1.4!important;
+      margin-top:.28rem!important;
+      display:-webkit-box;
+      -webkit-line-clamp:2;
+      -webkit-box-orient:vertical;
+      overflow:hidden;
+    }
+    .feature-viewport.phone-mode .fake-actions{
+      margin-top:.35rem!important;
+      gap:.25rem!important;
+    }
+    .feature-viewport.phone-mode .fake-btn{
+      padding:.25rem .36rem!important;
+      font-size:.38rem!important;
+      border-radius:4px!important;
+    }
+    .feature-viewport.phone-mode .editorial-bottom{
+      grid-template-columns:repeat(3,1fr)!important;
+      padding:0 .48rem .42rem!important;
+      gap:0!important;
+    }
+    .feature-viewport.phone-mode .editorial-bottom>div{
+      padding:.34rem .2rem!important;
+      border-right:1px solid var(--demo-border)!important;
+    }
+    .feature-viewport.phone-mode .editorial-bottom>div:last-child{border-right:0!important;}
+    .feature-viewport.phone-mode .editorial-bottom>div:before{display:none!important;}
+    .feature-viewport.phone-mode .editorial-bottom b{font-size:.34rem!important;}
+    .feature-viewport.phone-mode .editorial-bottom span{font-size:.33rem!important;line-height:1.2!important;}
+
+    @media(max-width:700px){
+      .feature-viewport.phone-mode{
+        min-height:290px!important;
+        max-height:290px!important;
+      }
+      .feature-viewport.phone-mode .fake-site{
+        width:205px!important;
+        height:268px!important;
+      }
+    }
+
 </style>
 </head>
 <body>
@@ -2718,7 +2886,6 @@
     <div class="reveal">
       <div class="section-label"><span class="line"></span> Első kérdés</div>
       <h2 class="section-title">Mire van szükséged?</h2>
-      <p class="section-desc">Válaszd ki, melyik áll hozzád a legközelebb. Jobb oldalon rögtön mutatom, milyen oldalból indulnék.</p>
     </div>
 
     <div class="decision-layout">
@@ -2767,7 +2934,6 @@
     <div class="reveal">
       <div class="section-label"><span class="line"></span> Nem csak egy HTML fájl</div>
       <h2 class="section-title">Mi kerül bele a weboldalba?</h2>
-      <p class="section-desc">Kattints végig a részeken. A jobb oldali nézet mindig azt mutatja, miről van szó.</p>
     </div>
 
     <div class="feature-layout">
@@ -2815,7 +2981,6 @@
     <div class="reveal">
       <div class="section-label"><span class="line"></span> Mini esettanulmány</div>
       <h2 class="section-title">Carsystemshop.hu – egy működő webshop a háttérben</h2>
-      <p class="section-desc">A Carsystemshopon nem csak a megjelenéssel foglalkozom. A webshop működéséhez kapcsolódó fejlesztések és napi módosítások is ide tartoznak.</p>
     </div>
 
     <div class="case-layout">
@@ -2840,7 +3005,6 @@
     <div class="reveal">
       <div class="section-label"><span class="line"></span> Gyors árbecslő</div>
       <h2 class="section-title">Melyik kategóriába eshet a projekt?</h2>
-      <p class="section-desc">Nem ajánlatot számol, csak segít eldönteni, melyik kiindulási csomagot érdemes megnézni.</p>
     </div>
 
     <div class="estimator-grid">
@@ -2884,7 +3048,6 @@
     <div class="reveal-scale">
       <div class="section-label"><span class="line"></span> Kapcsolat <span class="line"></span></div>
       <h2 class="section-title">Van már elképzelésed?</h2>
-      <p class="section-desc">Írd le röviden, mire van szükséged. Nem kell technikai specifikációval készülnöd.</p>
       <div class="service-final-actions">
         <a href="index.html#kapcsolat" class="btn-primary">Ajánlatot kérek
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -3025,26 +3188,28 @@
         layout:'editorial',
         links:['Szolgáltatások','Munkák','Rólam','Kapcsolat'],
         eyebrow:'Lakberendezés · Győr',
-        title:'Terek, amikben jó megérkezni.',
-        copy:'Lakberendezési tervezés, 3D látványterv és személyes tanácsadás.',
-        cta:'Időpontot kérek',
+        title:'Otthon, ami hozzád igazodik.',
+        copy:'Lakberendezési tervezés Győrben, az első alaprajztól a berendezési és színjavaslatokig.',
+        cta:'Konzultációt kérek',
         ghost:'Munkák',
         image:'https://images.unsplash.com/photo-1771888703723-01d85da1dae1?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=60&w=1600',
         imagePos:'center 58%',
-        tag:'Lakberendezés · 3D tervezés'
+        tag:'Egyedi lakberendezés',
+        items:[['01','Tértervezés'],['02','3D látványterv'],['03','Anyag és szín']]
       },
       en:{
         brand:'BORÓKA STUDIO',
         layout:'editorial',
         links:['Services','Projects','About','Contact'],
         eyebrow:'Interior design · Győr',
-        title:'Spaces that feel good to come home to.',
-        copy:'Interior planning, 3D visualisation and personal consultation.',
+        title:'A home designed around you.',
+        copy:'Interior planning in Győr, from the first floor plan to furniture, material and colour suggestions.',
         cta:'Book a consultation',
         ghost:'Projects',
         image:'https://images.unsplash.com/photo-1771888703723-01d85da1dae1?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=60&w=1600',
         imagePos:'center 58%',
-        tag:'Interior design · 3D planning'
+        tag:'Interior design',
+        items:[['01','Space planning'],['02','3D visualisation'],['03','Materials & colours']]
       }
     },
     replace:{
@@ -3053,26 +3218,28 @@
         layout:'service',
         links:['Klímák','Telepítés','Karbantartás','Kapcsolat'],
         eyebrow:'Klíma · Hőszivattyú',
-        title:'Átláthatóbb oldal a régi helyett.',
-        copy:'Telepítés, karbantartás és ajánlatkérés egy egyszerűbb, modernebb felületen.',
-        cta:'Ajánlatot kérek',
+        title:'Klímatelepítés otthonra, felesleges körök nélkül.',
+        copy:'Helyszíni felmérés, telepítés és időszakos karbantartás Győrben és környékén.',
+        cta:'Felmérést kérek',
         ghost:'Szolgáltatások',
         image:'https://unsplash.com/photos/JsPkVrHMQoo/download?force=true',
         imagePos:'center 55%',
-        tag:'Telepítés · Karbantartás'
+        tag:'Telepítés · Karbantartás',
+        items:[['Felmérés','Helyszíni egyeztetéssel'],['Telepítés','Beüzemeléssel együtt'],['Karbantartás','Tisztítás és ellenőrzés']]
       },
       en:{
         brand:'VARGA AIR',
         layout:'service',
         links:['AC units','Installation','Maintenance','Contact'],
         eyebrow:'Air conditioning · Heat pumps',
-        title:'A clearer site to replace the old one.',
-        copy:'Installation, maintenance and quote requests in a simpler, more modern interface.',
-        cta:'Request a quote',
+        title:'Home AC installation without unnecessary hassle.',
+        copy:'On-site survey, installation and regular maintenance in Győr and the surrounding area.',
+        cta:'Request a survey',
         ghost:'Services',
         image:'https://unsplash.com/photos/JsPkVrHMQoo/download?force=true',
         imagePos:'center 55%',
-        tag:'Installation · Maintenance'
+        tag:'Installation · Maintenance',
+        items:[['Survey','On-site consultation'],['Installation','Including commissioning'],['Maintenance','Cleaning and inspection']]
       }
     },
     multi:{
@@ -3081,25 +3248,28 @@
         layout:'consulting',
         links:['Pénzügy','HR','Folyamatok','Referenciák'],
         eyebrow:'Üzleti tanácsadás',
-        title:'Több szolgáltatás, külön aloldalakon.',
-        copy:'A külön területek saját oldalt kapnak, így mindegyik rendesen bemutatható.',
+        title:'Pénzügy, HR és folyamatok egy helyen.',
+        copy:'Kis- és középvállalkozások működésének átvilágítása és fejlesztése, külön szakmai területekre bontva.',
         cta:'Szolgáltatások',
         ghost:'Referenciák',
         image:'https://unsplash.com/photos/PhYq704ffdA/download?force=true',
         imagePos:'center 52%',
-        tag:'Pénzügy · HR · Folyamatok'
+        tag:'Üzleti tanácsadás',
+        items:[['01','Pénzügy'],['02','HR'],['03','Folyamatok']]
       },
       en:{
         brand:'NEXA CONSULTING',
+        layout:'consulting',
         links:['Finance','HR','Processes','References'],
         eyebrow:'Business consulting',
-        title:'Several services, with their own pages.',
-        copy:'Each service area gets its own space, so it can be explained properly.',
+        title:'Finance, HR and processes in one place.',
+        copy:'Operational review and development for small and medium-sized businesses, separated into clear areas of expertise.',
         cta:'Services',
         ghost:'References',
         image:'https://unsplash.com/photos/PhYq704ffdA/download?force=true',
         imagePos:'center 52%',
-        tag:'Finance · HR · Processes'
+        tag:'Business consulting',
+        items:[['01','Finance'],['02','HR'],['03','Processes']]
       }
     },
     campaign:{
@@ -3108,25 +3278,28 @@
         layout:'campaign',
         links:['Ajánlat','Előnyök','GYIK'],
         eyebrow:'Kerámia bevonat · Őszi ajánlat',
-        title:'Egy ajánlatnak külön landing page.',
-        copy:'Egyetlen szolgáltatásra fókuszál, kevés eltereléssel és egyértelmű időpontfoglalással.',
+        title:'Kerámia bevonat 24 hónapos védelemmel.',
+        copy:'Fényezéskorrekcióval, teljes előkészítéssel és előre foglalható időpontokkal.',
         cta:'Időpontot foglalok',
         ghost:'Mit tartalmaz?',
         image:'https://images.unsplash.com/photo-1567808291548-fc3ee04dbcf0?ixlib=rb-4.1.0&q=80&fm=jpg&crop=entropy&cs=srgb',
         imagePos:'center 58%',
-        tag:'Polírozás · Kerámia'
+        tag:'Kerámia bevonat',
+        items:['Fényezéskorrekció','Kerámia bevonat','Ápolási útmutató']
       },
       en:{
         brand:'SHINE DETAIL',
+        layout:'campaign',
         links:['Offer','Benefits','FAQ'],
         eyebrow:'Ceramic coating · Autumn offer',
-        title:'A dedicated landing page for one offer.',
-        copy:'Focused on a single service with fewer distractions and a clear booking action.',
+        title:'Ceramic coating with up to 24 months of protection.',
+        copy:'Including paint correction, full preparation and bookable appointment slots.',
         cta:'Book a slot',
         ghost:'What is included?',
         image:'https://images.unsplash.com/photo-1567808291548-fc3ee04dbcf0?ixlib=rb-4.1.0&q=80&fm=jpg&crop=entropy&cs=srgb',
         imagePos:'center 58%',
-        tag:'Polishing · Ceramic'
+        tag:'Ceramic coating',
+        items:['Paint correction','Ceramic coating','Care guide']
       }
     }
   };
@@ -3137,33 +3310,41 @@
     var art='style="background-image:linear-gradient(180deg,rgba(15,23,42,.02),rgba(15,23,42,.18)),url(&quot;'+data.image+'&quot;);background-position:'+data.imagePos+';"';
 
     if(data.layout==='editorial'){
+      var items='';
+      data.items.forEach(function(x){items+='<div><b>'+x[0]+'</b><span>'+x[1]+'</span></div>';});
       return '<div class="fake-site fake-editorial '+(theme||'')+'">'+
         '<div class="fake-topnav"><span class="fake-brand">'+data.brand+'</span><div class="fake-links">'+links+'</div><span class="fake-nav-cta">'+data.cta+'</span></div>'+
         '<div class="editorial-grid"><div class="editorial-copy"><div class="fake-eyebrow">'+data.eyebrow+'</div><div class="fake-title">'+data.title+'</div><p class="fake-copy">'+data.copy+'</p><div class="fake-actions"><span class="fake-btn">'+data.cta+'</span><span class="fake-btn ghost">'+data.ghost+'</span></div></div>'+
         '<div class="editorial-image" '+art+'><span class="fake-photo-tag">'+data.tag+'</span></div></div>'+
-        '<div class="editorial-bottom"><div><b>01</b><span>Tervezés</span></div><div><b>02</b><span>3D látvány</span></div><div><b>03</b><span>Tanácsadás</span></div></div>'+
+        '<div class="editorial-bottom">'+items+'</div>'+
       '</div>';
     }
 
     if(data.layout==='service'){
+      var serviceItems='';
+      data.items.forEach(function(x){serviceItems+='<div><b>'+x[0]+'</b><span>'+x[1]+'</span></div>';});
       return '<div class="fake-site fake-service-layout '+(theme||'')+'">'+
         '<div class="fake-topnav"><span class="fake-brand">'+data.brand+'</span><div class="fake-links">'+links+'</div><span class="fake-nav-cta">'+data.cta+'</span></div>'+
         '<div class="service-cover" '+art+'><div class="service-cover-copy"><div class="fake-eyebrow">'+data.eyebrow+'</div><div class="fake-title">'+data.title+'</div><p class="fake-copy">'+data.copy+'</p><span class="fake-btn">'+data.cta+'</span></div></div>'+
-        '<div class="service-strip"><div><b>Telepítés</b><span>Felméréstől a beüzemelésig</span></div><div><b>Karbantartás</b><span>Tisztítás és ellenőrzés</span></div><div><b>Hőszivattyú</b><span>Tervezés és kivitelezés</span></div></div>'+
+        '<div class="service-strip">'+serviceItems+'</div>'+
       '</div>';
     }
 
     if(data.layout==='consulting'){
+      var consultingItems='';
+      data.items.forEach(function(x){consultingItems+='<div><span>'+x[0]+'</span><b>'+x[1]+'</b></div>';});
       return '<div class="fake-site fake-consulting '+(theme||'')+'">'+
         '<div class="fake-topnav"><span class="fake-brand">'+data.brand+'</span><div class="fake-links">'+links+'</div><span class="fake-nav-cta">'+data.cta+'</span></div>'+
-        '<div class="consulting-hero"><div class="consulting-copy"><div class="fake-eyebrow">'+data.eyebrow+'</div><div class="fake-title">'+data.title+'</div><p class="fake-copy">'+data.copy+'</p></div><div class="consulting-photo" '+art+'></div></div>'+
-        '<div class="consulting-cards"><div><span>01</span><b>Pénzügy</b></div><div><span>02</span><b>HR</b></div><div><span>03</span><b>Folyamatok</b></div></div>'+
+        '<div class="consulting-hero"><div class="consulting-copy"><div class="fake-eyebrow">'+data.eyebrow+'</div><div class="fake-title">'+data.title+'</div><p class="fake-copy">'+data.copy+'</p><div class="fake-actions"><span class="fake-btn">'+data.cta+'</span><span class="fake-btn ghost">'+data.ghost+'</span></div></div><div class="consulting-photo" '+art+'></div></div>'+
+        '<div class="consulting-cards">'+consultingItems+'</div>'+
       '</div>';
     }
 
+    var campaignItems='';
+    data.items.forEach(function(x){campaignItems+='<span>'+x+'</span>';});
     return '<div class="fake-site fake-campaign '+(theme||'')+'">'+
       '<div class="campaign-photo" '+art+'><div class="campaign-overlay"><span class="fake-brand">'+data.brand+'</span><div class="fake-eyebrow">'+data.eyebrow+'</div><div class="fake-title">'+data.title+'</div><p class="fake-copy">'+data.copy+'</p><div class="fake-actions"><span class="fake-btn">'+data.cta+'</span><span class="fake-btn ghost">'+data.ghost+'</span></div></div></div>'+
-      '<div class="campaign-proof"><span>Fényezéskorrekció</span><span>Kerámia bevonat</span><span>Időpontfoglalás</span></div>'+
+      '<div class="campaign-proof">'+campaignItems+'</div>'+
     '</div>';
   }
 
