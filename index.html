@@ -8,7 +8,6 @@
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
 
   <link rel="canonical" href="https://forgrit.hu/" />
-  <link rel="preload" as="image" href="/logo2.png" fetchpriority="high" />
 
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="hu_HU" />
@@ -73,9 +72,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -522,12 +519,12 @@
       display: block;
       width: 160px; height: auto;
       margin: 0 auto 2rem;
-      opacity: 1;
-      transform: scale(0.92);
-      animation: heroLogoIn 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      opacity: 0; transform: scale(0.8);
+      animation: heroLogoIn 1s 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 
-    @keyframes heroLogoIn { to { transform: scale(1); } }
+
+    @keyframes heroLogoIn { to { opacity: 1; transform: scale(1); } }
 
     .hero h1 {
       font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 800;
@@ -1443,7 +1440,7 @@
     <div class="geo geo-12"><span></span><span></span><span></span><span></span></div>
   </div>
   <div class="hero-content">
-    <img src="logo2.png" alt="FORGRIT" class="hero-logo" width="558" height="298" decoding="async" fetchpriority="high">
+    <img src="logo2.png" alt="FORGRIT" class="hero-logo" width="558" height="298" decoding="async">
     <h1>
       <span data-i18n="hero.title1">Az ötletedből</span><br>
       <span class="gradient-text" data-i18n="hero.title2">kovácsolunk</span>
