@@ -2967,6 +2967,139 @@
       }
     }
 
+
+    /* ===== MOBILE PHONE PREVIEW FIX ===== */
+    @media (max-width: 700px) {
+      .feature-stage:has(.feature-viewport.phone-mode) {
+        min-height: auto !important;
+        padding: 1rem !important;
+      }
+
+      .feature-stage:has(.feature-viewport.phone-mode) .feature-visual {
+        min-height: 560px !important;
+        padding: 0.65rem !important;
+        display: flex !important;
+        align-items: stretch !important;
+      }
+
+      .feature-stage:has(.feature-viewport.phone-mode) .feature-browser {
+        min-height: 540px !important;
+        height: auto !important;
+      }
+
+      .feature-viewport.phone-mode {
+        min-height: 500px !important;
+        max-height: none !important;
+        height: auto !important;
+        padding: 1rem 0.5rem !important;
+        overflow: visible !important;
+        align-items: flex-start !important;
+        justify-content: center !important;
+      }
+
+      .feature-viewport.phone-mode .fake-site {
+        width: min(74vw, 255px) !important;
+        height: auto !important;
+        min-height: 485px !important;
+        max-height: none !important;
+        aspect-ratio: auto !important;
+        border: 7px solid #111827 !important;
+        border-radius: 30px !important;
+        overflow: hidden !important;
+        flex: 0 0 auto !important;
+      }
+
+      .feature-viewport.phone-mode .fake-topnav {
+        min-height: 38px !important;
+        height: auto !important;
+        padding: 0.48rem 0.55rem !important;
+      }
+
+      .feature-viewport.phone-mode .fake-brand {
+        font-size: 0.5rem !important;
+        letter-spacing: 0.04em !important;
+      }
+
+      .feature-viewport.phone-mode .fake-nav-cta {
+        padding: 0.28rem 0.4rem !important;
+        font-size: 0.4rem !important;
+      }
+
+      .feature-viewport.phone-mode .fake-editorial .editorial-grid {
+        grid-template-columns: 1fr !important;
+        gap: 0.55rem !important;
+        padding: 0.6rem !important;
+      }
+
+      .feature-viewport.phone-mode .fake-editorial .editorial-image {
+        min-height: 145px !important;
+        height: 145px !important;
+        order: -1 !important;
+        border-radius: 7px !important;
+      }
+
+      .feature-viewport.phone-mode .fake-editorial .editorial-copy {
+        padding: 0.15rem 0.12rem !important;
+      }
+
+      .feature-viewport.phone-mode .fake-eyebrow {
+        font-size: 0.43rem !important;
+        letter-spacing: 0.08em !important;
+      }
+
+      .feature-viewport.phone-mode .fake-title {
+        font-size: 1.05rem !important;
+        line-height: 1.05 !important;
+        margin-top: 0.32rem !important;
+      }
+
+      .feature-viewport.phone-mode .fake-copy {
+        font-size: 0.48rem !important;
+        line-height: 1.48 !important;
+        margin-top: 0.36rem !important;
+        display: block !important;
+        overflow: visible !important;
+        -webkit-line-clamp: unset !important;
+      }
+
+      .feature-viewport.phone-mode .fake-actions {
+        margin-top: 0.48rem !important;
+        gap: 0.28rem !important;
+      }
+
+      .feature-viewport.phone-mode .fake-btn {
+        padding: 0.3rem 0.42rem !important;
+        font-size: 0.4rem !important;
+        border-radius: 5px !important;
+      }
+
+      .feature-viewport.phone-mode .editorial-bottom {
+        grid-template-columns: 1fr !important;
+        gap: 0.3rem !important;
+        padding: 0.35rem 0.6rem 0.65rem !important;
+        border-top: 0 !important;
+      }
+
+      .feature-viewport.phone-mode .editorial-bottom > div {
+        display: flex !important;
+        align-items: center !important;
+        gap: 0.4rem !important;
+        padding: 0.38rem 0.45rem !important;
+        border: 1px solid var(--demo-border) !important;
+        border-radius: 6px !important;
+      }
+
+      .feature-viewport.phone-mode .editorial-bottom b {
+        min-width: 16px !important;
+        font-size: 0.38rem !important;
+      }
+
+      .feature-viewport.phone-mode .editorial-bottom span {
+        font-size: 0.4rem !important;
+        line-height: 1.2 !important;
+      }
+    }
+
 </style>
 </head>
 <body>
