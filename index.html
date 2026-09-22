@@ -1081,16 +1081,6 @@
       .nav-right .nav-cta-btn { display: none; }
       .mobile-toggle { display: block; }
 
-            /* Keep the first mobile paint immediate: no delayed hero entrance. */
-      .hero-logo,
-      .hero h1,
-      .hero-sub,
-      .hero-buttons {
-        animation: none !important;
-        opacity: 1 !important;
-        transform: none !important;
-      }
-
       .timeline::before { left: 20px; }
       .timeline-item, .timeline-item:nth-child(even) { flex-direction: column; gap: 1rem; padding-left: 50px; }
       .timeline-item::before { left: 20px; top: 0; }
@@ -1453,7 +1443,7 @@
     <div class="geo geo-12"><span></span><span></span><span></span><span></span></div>
   </div>
   <div class="hero-content">
-    <img src="logo2.png" alt="FORGRIT" class="hero-logo" width="558" height="298" loading="eager" fetchpriority="high">
+    <img src="logo2.png" alt="FORGRIT" class="hero-logo" width="558" height="298" decoding="async" fetchpriority="high">
     <h1>
       <span data-i18n="hero.title1">Az ötletedből</span><br>
       <span class="gradient-text" data-i18n="hero.title2">kovácsolunk</span>
