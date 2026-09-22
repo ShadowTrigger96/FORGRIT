@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="hu" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Weboldal készítés – FORGRIT preview</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <style>
+    @font-face{font-family:'Inter';font-style:normal;font-display:swap;font-weight:100 900;src:url('/assets/fonts/inter-latin-ext-wght-normal.woff2') format('woff2-variations')}
+    @font-face{font-family:'Inter';font-style:normal;font-display:swap;font-weight:100 900;src:url('/assets/fonts/inter-latin-wght-normal.woff2') format('woff2-variations')}
+    @font-face{font-family:'Space Grotesk';font-style:normal;font-display:swap;font-weight:300 700;src:url('/assets/fonts/space-grotesk-latin-ext-wght-normal.woff2') format('woff2-variations')}
+    @font-face{font-family:'Space Grotesk';font-style:normal;font-display:swap;font-weight:300 700;src:url('/assets/fonts/space-grotesk-latin-wght-normal.woff2') format('woff2-variations')}
+    *{box-sizing:border-box;margin:0;padding:0}
+    :root{--cyan:#0ea5e9;--cyan2:#38bdf8;--purple:#8b5cf6;--amber:#f59e0b;--bg:#eef2f7;--card:rgba(255,255,255,.82);--text:#0f172a;--muted:#475569;--border:rgba(15,23,42,.09);--nav:rgba(238,242,247,.86);--grid:rgba(14,165,233,.09)}
+    [data-theme="dark"]{--bg:#0f1225;--card:rgba(255,255,255,.06);--text:#e2e8f0;--muted:#94a3b8;--border:rgba(255,255,255,.09);--nav:rgba(15,18,37,.86);--grid:rgba(56,189,248,.07)}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden}
+    h1,h2,h3{font-family:'Space Grotesk',sans-serif}
+    .bg{position:fixed;inset:0;z-index:-2;overflow:hidden;background:var(--bg)}
+    .orb{position:absolute;border-radius:50%;opacity:.72;animation:float 12s ease-in-out infinite}
+    .o1{width:680px;height:680px;left:-220px;top:-180px;background:radial-gradient(circle,rgba(14,165,233,.24),transparent 65%)}
+    .o2{width:620px;height:620px;right:-180px;top:20%;background:radial-gradient(circle,rgba(139,92,246,.20),transparent 65%);animation-delay:-4s}
+    .o3{width:420px;height:420px;left:20%;bottom:-100px;background:radial-gradient(circle,rgba(245,158,11,.16),transparent 65%);animation-delay:-7s}
+    @keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(36px,-28px) scale(1.06)}}
+    .grid{position:absolute;inset:0;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 90% 80% at 50% 35%,#000 25%,transparent 80%)}
+    .shape{position:absolute;opacity:.28;animation:bob 8s ease-in-out infinite}
+    .s1{width:72px;height:72px;border:2px solid var(--cyan);left:6%;top:16%;transform:rotate(14deg)}
+    .s2{width:46px;height:46px;border:2px solid var(--purple);border-radius:50%;right:8%;top:28%;animation-delay:-3s}
+    .s3{width:0;height:0;border-left:28px solid transparent;border-right:28px solid transparent;border-bottom:48px solid var(--amber);right:12%;bottom:22%;opacity:.18;animation-delay:-5s}
+    @keyframes bob{0%,100%{translate:0 0}50%{translate:10px -24px}}
+    .nav{position:sticky;top:0;z-index:20;background:var(--nav);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+    .navin{max-width:1180px;margin:auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);font-family:'Space Grotesk';font-weight:700;letter-spacing:.12em}
+    .brand img{width:42px;height:auto}
+    .navlinks{display:flex;gap:20px;align-items:center}.navlinks a{color:var(--muted);text-decoration:none;font-size:.9rem}.navlinks a:hover{color:var(--text)}
+    .toggle{border:1px solid var(--border);background:var(--card);color:var(--text);border-radius:10px;padding:8px 10px;cursor:pointer}
+    .hero{min-height:82vh;display:grid;place-items:center;padding:110px 22px 70px}
+    .hero-inner{max-width:980px;text-align:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--cyan);font-weight:700;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase}
+    .eyebrow:before,.eyebrow:after{content:'';width:34px;height:1px;background:currentColor}
+    h1{font-size:clamp(2.8rem,7vw,5.8rem);line-height:.98;letter-spacing:-.05em;margin:24px 0}
+    .grad{background:linear-gradient(135deg,var(--cyan),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero p{max-width:720px;margin:auto;color:var(--muted);font-size:1.12rem}
+    .cta{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:32px}
+    .btn{padding:14px 22px;border-radius:999px;text-decoration:none;font-weight:700;border:1px solid var(--border)}
+    .primary{background:linear-gradient(135deg,var(--cyan),#0284c7);color:#fff;box-shadow:0 14px 34px rgba(14,165,233,.22)}
+    .secondary{background:var(--card);color:var(--text)}
+    .section{padding:84px 22px}.wrap{max-width:1120px;margin:auto}
+    .section-head{max-width:760px;margin-bottom:34px}.kicker{color:var(--cyan);font-size:.82rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+    h2{font-size:clamp(2rem,4vw,3.2rem);line-height:1.08;margin-top:10px;letter-spacing:-.03em}.lead{color:var(--muted);margin-top:14px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:22px;padding:26px;box-shadow:0 18px 50px rgba(15,23,42,.05)}
+    .num{font-family:'Space Grotesk';font-size:2.2rem;font-weight:700;color:var(--cyan);opacity:.9}
+    .card h3{font-size:1.25rem;margin:10px 0}.card p{color:var(--muted);font-size:.95rem}
+    .process{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .step{padding:22px;border-top:2px solid var(--border)}.step strong{display:block;font-family:'Space Grotesk';font-size:1.15rem;margin:10px 0}.step p{color:var(--muted);font-size:.93rem}
+    .showcase{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}.mock{background:linear-gradient(160deg,rgba(14,165,233,.12),rgba(139,92,246,.10));border:1px solid var(--border);border-radius:28px;padding:24px;min-height:360px;display:grid;place-items:center}
+    .browser{width:100%;background:var(--card);border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:0 24px 60px rgba(15,23,42,.12)}
+    .bar{height:38px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:6px;padding:0 12px}.dot{width:8px;height:8px;border-radius:50%;background:var(--muted);opacity:.45}
+    .screen{padding:28px}.screen .mini{height:8px;width:36%;background:var(--cyan);border-radius:99px;margin-bottom:18px}.screen h3{font-size:2rem;line-height:1.05}.screen p{margin-top:12px;color:var(--muted)}.pill{display:inline-block;margin-top:18px;background:var(--cyan);color:#fff;padding:10px 16px;border-radius:999px;font-weight:700}
+    .price{background:var(--card);border:1px solid var(--border);border-radius:28px;padding:34px}.price .big{font-family:'Space Grotesk';font-size:2.5rem;font-weight:700;margin:12px 0}.price ul{list-style:none;display:grid;gap:10px;color:var(--muted)}.price li:before{content:'✓';color:#10b981;margin-right:10px;font-weight:800}
+    .faq{display:grid;gap:12px}.faq details{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px 20px}.faq summary{cursor:pointer;font-weight:700}.faq p{color:var(--muted);margin-top:10px}
+    .final{padding:90px 22px 110px;text-align:center}.finalbox{max-width:900px;margin:auto;background:linear-gradient(135deg,rgba(14,165,233,.12),rgba(139,92,246,.12));border:1px solid var(--border);border-radius:30px;padding:54px 26px}
+    footer{border-top:1px solid var(--border);padding:26px 22px;color:var(--muted);font-size:.85rem}.foot{max-width:1120px;margin:auto;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+    @media(max-width:850px){.navlinks a{display:none}.cards{grid-template-columns:1fr}.process{grid-template-columns:1fr 1fr}.showcase{grid-template-columns:1fr}.hero{min-height:auto;padding-top:90px}}
+    @media(max-width:560px){h1{font-size:2.85rem}.process{grid-template-columns:1fr}.section{padding:64px 18px}.hero p{font-size:1rem}.price{padding:26px}}
+  </style>
+</head>
+<body>
+<div class="bg" aria-hidden="true">
+  <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
+  <div class="grid"></div><span class="shape s1"></span><span class="shape s2"></span><span class="shape s3"></span>
+</div>
+<nav class="nav">
+  <div class="navin">
+    <a class="brand" href="index.html"><img src="logo2.png" alt="FORGRIT"><span>FORGRIT</span></a>
+    <div class="navlinks">
+      <a href="#mit-kapsz">Mit kapsz?</a><a href="#folyamat">Folyamat</a><a href="#ar">Árazás</a><a href="#gyik">GYIK</a>
+      <button class="toggle" id="themeToggle" aria-label="Téma váltása">◐</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Weboldal készítés</div>
+    <h1>Weboldal, ami nem csak <span class="grad">jól néz ki</span>.</h1>
+    <p>Gyors, reszponzív és átgondolt weboldalt készítek, ami illik a márkádhoz, érthető a látogatóknak és technikailag is rendben van.</p>
+    <div class="cta">
+      <a class="btn primary" href="#ajanlat">Kérek egyedi ajánlatot</a>
+      <a class="btn secondary" href="#mit-kapsz">Mutasd, mit kapok</a>
+    </div>
+  </div>
+</header>
+
+<section class="section" id="mit-kapsz">
+  <div class="wrap">
+    <div class="section-head"><div class="kicker">Nem sablonmunka</div><h2>Az első benyomástól az utolsó technikai részletig.</h2><p class="lead">Nem csak összerakom az oldalakat. A cél az, hogy az egész egységes legyen: gyors, átlátható, mobilon is kényelmes és könnyen továbbfejleszthető.</p></div>
+    <div class="cards">
+      <article class="card"><div class="num">01</div><h3>Egyedi megjelenés</h3><p>A vizuális irányt a márkádhoz igazítom, nem egy kész sablont húzok rá minden projektre.</p></article>
+      <article class="card"><div class="num">02</div><h3>Mobilra tervezve</h3><p>Telefonon, tableten és asztali gépen is használható felület, nem csak „összenyomott desktop”.</p></article>
+      <article class="card"><div class="num">03</div><h3>Technikai alapok</h3><p>Gyors betöltés, SEO alapok, helyes struktúra, kapcsolatfelvétel és szükséges biztonsági beállítások.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="folyamat">
+  <div class="wrap">
+    <div class="section-head"><div class="kicker">Folyamat</div><h2>Átlátható lépések, fölösleges körök nélkül.</h2></div>
+    <div class="process">
+      <div class="step"><span class="num">01</span><strong>Felmérés</strong><p>Célok, funkciók, célközönség és az oldal szerepe.</p></div>
+      <div class="step"><span class="num">02</span><strong>Tervezés</strong><p>Struktúra, vizuális irány, tartalmi logika és főbb oldalak.</p></div>
+      <div class="step"><span class="num">03</span><strong>Fejlesztés</strong><p>Reszponzív megvalósítás, finomhangolás és tesztelés.</p></div>
+      <div class="step"><span class="num">04</span><strong>Indítás</strong><p>Élesítés, alap SEO, mérés és szükség esetén további támogatás.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap showcase">
+    <div class="mock">
+      <div class="browser"><div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div><div class="screen"><div class="mini"></div><h3>Nem csak szép.<br><span class="grad">Használható is.</span></h3><p>Gyors betöltés, tiszta hierarchia, erős CTA-k és mobilon is kényelmes kezelhetőség.</p><span class="pill">Kapcsolatfelvétel</span></div></div>
+    </div>
+    <div>
+      <div class="kicker">A háttérben</div><h2>Technikailag is rendben rakva.</h2>
+      <p class="lead">Teljesítmény, meta adatok, sitemap, strukturált tartalom, biztonságos kapcsolatfelvétel és olyan megoldások, amik nem csak a Lighthouse pontszám miatt léteznek.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="ar">
+  <div class="wrap">
+    <div class="section-head"><div class="kicker">Árazás</div><h2>Kiindulási pont, nem zsákbamacska.</h2><p class="lead">A végleges ár mindig a tartalomtól és funkcióktól függ, de már az elején kapsz egy reális keretet.</p></div>
+    <div class="price"><div class="kicker">Egyedi weboldal</div><div class="big">249.000 Ft-tól</div><ul><li>egyedi vizuális irány</li><li>reszponzív megvalósítás</li><li>kapcsolatfelvételi lehetőség</li><li>alap technikai SEO</li><li>élesítés és átadás</li></ul></div>
+  </div>
+</section>
+
+<section class="section" id="gyik">
+  <div class="wrap">
+    <div class="section-head"><div class="kicker">GYIK</div><h2>Gyakori kérdések</h2></div>
+    <div class="faq">
+      <details><summary>Mennyi idő alatt készül el egy weboldal?</summary><p>Egy egyszerűbb bemutatkozó oldal jellemzően néhány hét alatt elkészülhet. A pontos idő a tartalom, funkciók és visszajelzési körök számától függ.</p></details>
+      <details><summary>Segítesz a szövegezésben is?</summary><p>Igen, a struktúrában és a webre optimalizált megfogalmazásban is tudok segíteni, hogy ne csak jól nézzen ki az oldal, hanem érthető is legyen.</p></details>
+      <details><summary>Mobilon is rendesen fog működni?</summary><p>Igen. A mobilos használhatóság nem utólagos javítás, hanem a tervezés része.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="final" id="ajanlat">
+  <div class="finalbox"><div class="kicker">Van egy ötleted?</div><h2>Beszéljük át, hogyan lehet belőle működő weboldal.</h2><p class="lead">Írd meg röviden, mire van szükséged, és kapsz egy személyre szabott irányt és ajánlatot.</p><div class="cta"><a class="btn primary" href="index.html#kapcsolat">Kapcsolatfelvétel</a></div></div>
+</section>
+
+<footer><div class="foot"><span>FORGRIT – Tompos Richárd</span><span>Preview oldal · nem indexelendő</span></div></footer>
+
+<script>
+(function(){
+  var theme=localStorage.getItem('fg-theme')||'light';
+  function apply(t){theme=t;document.documentElement.setAttribute('data-theme',t);localStorage.setItem('fg-theme',t)}
+  apply(theme);
+  document.getElementById('themeToggle').addEventListener('click',function(){apply(theme==='light'?'dark':'light')});
+})();
+</script>
+</body>
+</html>
