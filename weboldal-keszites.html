@@ -2068,6 +2068,107 @@
       .estimate-options { flex-direction: column; }
       .estimate-option span { text-align: center; }
     }
+
+    /* ===== REALISTIC INTERACTIVE PREVIEWS ===== */
+    .marquee-track { gap: 0; }
+    .marquee-group { display:flex; align-items:center; gap:3rem; flex-shrink:0; padding-right:3rem; }
+    @keyframes marquee { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+
+    .fake-site {
+      --demo-accent:#0ea5e9;
+      --demo-accent-2:#8b5cf6;
+      --demo-ink:#0f172a;
+      --demo-muted:#64748b;
+      --demo-surface:#ffffff;
+      min-height:100%;
+      background:var(--demo-surface);
+      color:var(--demo-ink);
+      font-family:'Inter',system-ui,sans-serif;
+      position:relative;
+      overflow:hidden;
+    }
+    .fake-site.theme-warm { --demo-accent:#d97706;--demo-accent-2:#f59e0b;--demo-surface:#fffaf3; }
+    .fake-site.theme-green { --demo-accent:#059669;--demo-accent-2:#10b981;--demo-surface:#f5fffb; }
+    .fake-site.theme-violet { --demo-accent:#7c3aed;--demo-accent-2:#a78bfa;--demo-surface:#fbf9ff; }
+    .fake-topnav { display:flex;align-items:center;gap:1rem;padding:1rem 1.25rem;border-bottom:1px solid rgba(15,23,42,.08);background:rgba(255,255,255,.9); }
+    .fake-brand { font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:.88rem;letter-spacing:.09em;white-space:nowrap; }
+    .fake-links { margin-left:auto;display:flex;gap:.9rem;font-size:.62rem;color:#64748b; }
+    .fake-nav-cta { padding:.38rem .65rem;border-radius:100px;background:var(--demo-accent);color:white;font-size:.58rem;font-weight:700; }
+    .fake-hero { display:grid;grid-template-columns:1.05fr .95fr;gap:1.4rem;padding:2rem 1.6rem 1.25rem;align-items:center; }
+    .fake-eyebrow { color:var(--demo-accent);text-transform:uppercase;letter-spacing:.12em;font-size:.58rem;font-weight:800; }
+    .fake-title { font-family:'Space Grotesk',sans-serif;font-size:clamp(1.55rem,2.6vw,2.65rem);line-height:1.02;font-weight:800;margin-top:.55rem;letter-spacing:-.035em; }
+    .fake-copy { color:var(--demo-muted);font-size:.73rem;line-height:1.6;margin-top:.7rem;max-width:390px; }
+    .fake-actions { display:flex;gap:.5rem;margin-top:1rem;flex-wrap:wrap; }
+    .fake-btn { display:inline-flex;padding:.55rem .8rem;border-radius:100px;background:var(--demo-accent);color:white;font-size:.62rem;font-weight:750; }
+    .fake-btn.ghost { background:transparent;color:var(--demo-ink);border:1px solid rgba(15,23,42,.12); }
+    .fake-art { min-height:170px;border-radius:18px;background:linear-gradient(145deg,var(--demo-accent),var(--demo-accent-2));position:relative;overflow:hidden;box-shadow:0 18px 40px rgba(15,23,42,.12); }
+    .fake-art::before { content:'';position:absolute;width:150px;height:150px;border-radius:50%;background:rgba(255,255,255,.18);right:-35px;top:-40px; }
+    .fake-art::after { content:'';position:absolute;left:16%;right:16%;bottom:20%;height:38%;border-radius:14px;background:rgba(255,255,255,.88);box-shadow:0 12px 30px rgba(15,23,42,.16); }
+    .fake-services { display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem;padding:0 1.6rem 1.4rem; }
+    .fake-service { border:1px solid rgba(15,23,42,.09);border-radius:12px;padding:.8rem;background:white;box-shadow:0 4px 14px rgba(15,23,42,.035); }
+    .fake-service b { display:block;font-size:.66rem;font-family:'Space Grotesk',sans-serif; }
+    .fake-service span { display:block;margin-top:.3rem;color:#64748b;font-size:.55rem;line-height:1.45; }
+    .fake-label { position:absolute;right:.7rem;bottom:.7rem;padding:.3rem .55rem;border:1px solid rgba(15,23,42,.1);border-radius:100px;background:rgba(255,255,255,.9);font-size:.52rem;color:#64748b; }
+
+    .feature-browser { width:100%;height:100%;min-height:390px;border:1px solid var(--border);border-radius:16px;background:var(--bg);overflow:hidden;box-shadow:var(--shadow-card); }
+    .feature-viewport { min-height:345px;padding:1rem;display:flex;align-items:stretch;justify-content:center;transition:all .55s cubic-bezier(.16,1,.3,1);overflow:auto; }
+    .feature-viewport .fake-site { width:100%;border-radius:12px;box-shadow:0 14px 38px rgba(15,23,42,.12);transition:width .55s cubic-bezier(.16,1,.3,1),border-radius .55s; }
+    .feature-viewport.phone-mode .fake-site { width:245px;border-radius:28px;border:7px solid #111827;box-shadow:0 20px 45px rgba(15,23,42,.22); }
+    .feature-viewport.phone-mode .fake-topnav { padding:.75rem .7rem; }
+    .feature-viewport.phone-mode .fake-links { display:none; }
+    .feature-viewport.phone-mode .fake-nav-cta { font-size:.48rem;padding:.3rem .45rem; }
+    .feature-viewport.phone-mode .fake-hero { grid-template-columns:1fr;padding:1rem .8rem .7rem;gap:.7rem; }
+    .feature-viewport.phone-mode .fake-title { font-size:1.25rem; }
+    .feature-viewport.phone-mode .fake-art { min-height:105px;order:-1; }
+    .feature-viewport.phone-mode .fake-services { grid-template-columns:1fr;padding:0 .8rem .9rem;gap:.4rem; }
+    .feature-viewport.phone-mode .fake-service { padding:.55rem .6rem; }
+    .feature-viewport.phone-mode .fake-label { display:none; }
+
+    .demo-contact { width:100%;background:#fff;color:#0f172a;border-radius:12px;overflow:hidden;box-shadow:0 14px 38px rgba(15,23,42,.12); }
+    .demo-contact-head { padding:1rem 1.2rem;border-bottom:1px solid #e2e8f0;display:flex;justify-content:space-between;align-items:center; }
+    .demo-contact-head b { font-family:'Space Grotesk';font-size:.8rem;letter-spacing:.08em; }
+    .demo-contact-grid { display:grid;grid-template-columns:.9fr 1.1fr;gap:1.2rem;padding:1.3rem; }
+    .demo-contact-copy h4 { font-family:'Space Grotesk';font-size:1.4rem;line-height:1.05; }
+    .demo-contact-copy p { color:#64748b;font-size:.68rem;margin-top:.55rem;line-height:1.55; }
+    .demo-form { display:grid;gap:.55rem; }
+    .demo-field { border:1px solid #dbe3ed;border-radius:9px;padding:.62rem .7rem;color:#94a3b8;font-size:.58rem;background:#f8fafc; }
+    .demo-field.message { height:72px; }
+    .demo-send { border:0;border-radius:9px;background:#0ea5e9;color:white;padding:.65rem;font-size:.6rem;font-weight:750; }
+
+    .seo-demo { width:100%;background:#fff;color:#0f172a;border-radius:12px;padding:1.2rem;box-shadow:0 14px 38px rgba(15,23,42,.12); }
+    .seo-browserline { display:flex;align-items:center;gap:.5rem;color:#64748b;font-size:.6rem;padding-bottom:.8rem;border-bottom:1px solid #e2e8f0; }
+    .seo-search { margin-top:1rem;border:1px solid #dbe3ed;border-radius:100px;padding:.6rem .85rem;font-size:.66rem;color:#334155; }
+    .seo-result { margin-top:1.1rem;max-width:430px; }
+    .seo-url { color:#166534;font-size:.55rem; }
+    .seo-title { color:#1a0dab;font-size:.92rem;margin-top:.15rem;font-weight:500; }
+    .seo-desc { color:#4b5563;font-size:.61rem;line-height:1.5;margin-top:.25rem; }
+    .seo-meta { display:grid;grid-template-columns:repeat(3,1fr);gap:.55rem;margin-top:1.2rem; }
+    .seo-meta div { border:1px solid #e2e8f0;border-radius:10px;padding:.65rem; }
+    .seo-meta b { display:block;font-size:.58rem; }.seo-meta span{display:block;color:#64748b;font-size:.52rem;margin-top:.2rem;}
+
+    .deploy-demo { width:100%;background:#0b1020;color:#dbeafe;border-radius:12px;padding:1rem;box-shadow:0 16px 40px rgba(2,6,23,.25);font-family:ui-monospace,SFMono-Regular,Menlo,monospace; }
+    .deploy-head { display:flex;justify-content:space-between;gap:1rem;padding-bottom:.75rem;border-bottom:1px solid rgba(255,255,255,.1);font-size:.58rem; }
+    .deploy-status { color:#34d399; }.deploy-url { margin-top:1rem;padding:.65rem .75rem;border:1px solid rgba(255,255,255,.12);border-radius:9px;background:rgba(255,255,255,.04);font-size:.62rem; }
+    .deploy-list { display:grid;gap:.55rem;margin-top:1rem; }.deploy-row{display:flex;justify-content:space-between;gap:1rem;font-size:.58rem;color:#94a3b8;}.deploy-row b{color:#e2e8f0;font-weight:500;}
+
+    .design-demo { width:100%;display:grid;grid-template-columns:1fr 150px;gap:.8rem; }
+    .design-demo .fake-site { border-radius:12px;box-shadow:0 14px 38px rgba(15,23,42,.12); }
+    .design-panel { border:1px solid var(--border);border-radius:12px;background:var(--bg-card);padding:.8rem; }
+    .design-panel h4 { font-size:.68rem; }.swatches{display:flex;gap:.35rem;margin-top:.65rem}.swatches i{width:26px;height:26px;border-radius:8px}.swatches i:nth-child(1){background:#0ea5e9}.swatches i:nth-child(2){background:#8b5cf6}.swatches i:nth-child(3){background:#f59e0b}
+    .type-sample { margin-top:1rem;border-top:1px solid var(--border);padding-top:.7rem; }.type-sample b{font-family:'Space Grotesk';font-size:.8rem}.type-sample span{display:block;font-size:.56rem;color:var(--text-muted);margin-top:.2rem}
+
+    .case-shop-image { position:absolute;left:2rem;right:2rem;bottom:1.8rem;height:150px;border-radius:14px;overflow:hidden;border:1px solid var(--border);background:#fff;box-shadow:0 14px 30px rgba(15,23,42,.08); }
+    .case-shop-image img { width:100%;height:100%;object-fit:cover;object-position:center top;display:block; }
+    .case-shop-link { display:inline-flex;margin-top:1rem;color:var(--cyan);font-size:.78rem;font-weight:650;text-decoration:none;position:relative;z-index:2; }
+    .case-shop-link:hover { text-decoration:underline; }
+
+    @media(max-width:700px){
+      .fake-links{display:none}.fake-hero{grid-template-columns:1fr;padding:1.2rem 1rem .8rem}.fake-art{min-height:120px;order:-1}.fake-services{grid-template-columns:1fr;padding:0 1rem 1rem}.fake-service{padding:.6rem}
+      .design-demo{grid-template-columns:1fr}.design-panel{display:none}
+      .demo-contact-grid{grid-template-columns:1fr}.seo-meta{grid-template-columns:1fr}
+      .case-shop-image{left:1.3rem;right:1.3rem;height:145px}
+    }
+
 </style>
 </head>
 <body>
@@ -2088,6 +2189,7 @@
       <li><a href="#arbecslo">Árbecslő</a></li>
     </ul>
     <div class="nav-right">
+      <button class="toggle-btn lang-toggle" id="langToggle" title="Switch language">EN</button>
       <button class="toggle-btn" id="themeToggle" title="Téma váltás">
         <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
         <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
@@ -2105,6 +2207,7 @@
   <a href="#arbecslo" onclick="closeMobile()">Árbecslő</a>
   <a href="index.html">Főoldal</a>
   <div class="mobile-controls">
+    <button class="toggle-btn lang-toggle" id="mobileLangToggle" onclick="toggleLang()">EN</button>
     <button class="toggle-btn" id="mobileThemeToggle" onclick="toggleTheme()">
       <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/></svg>
       <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
@@ -2150,22 +2253,26 @@
 
 <div class="marquee-section">
   <div class="marquee-track">
-    <span class="marquee-item">Egyedi weboldal <span class="sep">&#x2022;</span></span>
-    <span class="marquee-item">Reszponzív design <span class="sep">&#x2022;</span></span>
-    <span class="marquee-item">Technikai SEO <span class="sep">&#x2022;</span></span>
-    <span class="marquee-item">Domain + tárhely <span class="sep">&#x2022;</span></span>
-    <span class="marquee-item">Kapcsolati űrlap <span class="sep">&#x2022;</span></span>
-    <span class="marquee-item">Search Console <span class="sep">&#x2022;</span></span>
-    <span class="marquee-item">Teljesítmény <span class="sep">&#x2022;</span></span>
-    <span class="marquee-item">Böngészőteszt <span class="sep">&#x2022;</span></span>
-    <span class="marquee-item">Egyedi weboldal <span class="sep">&#x2022;</span></span>
-    <span class="marquee-item">Reszponzív design <span class="sep">&#x2022;</span></span>
-    <span class="marquee-item">Technikai SEO <span class="sep">&#x2022;</span></span>
-    <span class="marquee-item">Domain + tárhely <span class="sep">&#x2022;</span></span>
-    <span class="marquee-item">Kapcsolati űrlap <span class="sep">&#x2022;</span></span>
-    <span class="marquee-item">Search Console <span class="sep">&#x2022;</span></span>
-    <span class="marquee-item">Teljesítmény <span class="sep">&#x2022;</span></span>
-    <span class="marquee-item">Böngészőteszt <span class="sep">&#x2022;</span></span>
+    <div class="marquee-group">
+      <span class="marquee-item">Egyedi weboldal <span class="sep">&#x2022;</span></span>
+      <span class="marquee-item">Reszponzív design <span class="sep">&#x2022;</span></span>
+      <span class="marquee-item">Technikai SEO <span class="sep">&#x2022;</span></span>
+      <span class="marquee-item">Domain + tárhely <span class="sep">&#x2022;</span></span>
+      <span class="marquee-item">Kapcsolati űrlap <span class="sep">&#x2022;</span></span>
+      <span class="marquee-item">Search Console <span class="sep">&#x2022;</span></span>
+      <span class="marquee-item">Teljesítmény <span class="sep">&#x2022;</span></span>
+      <span class="marquee-item">Böngészőteszt <span class="sep">&#x2022;</span></span>
+    </div>
+    <div class="marquee-group">
+      <span class="marquee-item">Egyedi weboldal <span class="sep">&#x2022;</span></span>
+      <span class="marquee-item">Reszponzív design <span class="sep">&#x2022;</span></span>
+      <span class="marquee-item">Technikai SEO <span class="sep">&#x2022;</span></span>
+      <span class="marquee-item">Domain + tárhely <span class="sep">&#x2022;</span></span>
+      <span class="marquee-item">Kapcsolati űrlap <span class="sep">&#x2022;</span></span>
+      <span class="marquee-item">Search Console <span class="sep">&#x2022;</span></span>
+      <span class="marquee-item">Teljesítmény <span class="sep">&#x2022;</span></span>
+      <span class="marquee-item">Böngészőteszt <span class="sep">&#x2022;</span></span>
+    </div>
   </div>
 </div>
 
@@ -2254,19 +2361,11 @@
       </div>
 
       <div class="feature-stage reveal-right">
-        <div class="feature-visual">
-          <div class="feature-device">
-            <div class="feature-device-top"><i></i><i></i><i></i></div>
-            <div class="feature-mini-hero">
-              <div class="feature-line title"></div>
-              <div class="feature-line title short"></div>
-              <div class="feature-line"></div>
-              <div class="feature-line short"></div>
-              <div class="feature-cta"></div>
-            </div>
-            <div class="feature-mini-grid"><div class="feature-mini-card"></div><div class="feature-mini-card"></div><div class="feature-mini-card"></div></div>
+        <div class="feature-visual" id="featureVisual">
+          <div class="feature-browser">
+            <div class="browser-top"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-address"></span></div>
+            <div class="feature-viewport" id="featureViewport"></div>
           </div>
-          <div class="feature-focus" id="featureFocus"></div>
         </div>
         <div class="feature-copy demo-swap" id="featureCopy"></div>
       </div>
@@ -2281,8 +2380,8 @@
   <div class="section-inner" style="position:relative;z-index:1;">
     <div class="reveal">
       <div class="section-label"><span class="line"></span> Mini esettanulmány</div>
-      <h2 class="section-title">A FORGRIT oldalán ezeket kellett megoldani</h2>
-      <p class="section-desc">Saját projekten egyszerű megmutatni, mit jelent a tervezésen túl a technikai finomhangolás.</p>
+      <h2 class="section-title">Carsystemshop.hu – egy működő webshop a háttérben</h2>
+      <p class="section-desc">Itt nem egy fiktív mintát látsz. A Carsystemshop egy valós B2B/B2C webshop, amelyen több fejlesztési és üzemeltetési feladat is összeér.</p>
     </div>
 
     <div class="case-layout">
@@ -2290,19 +2389,12 @@
         <div class="case-stage-inner demo-swap" id="caseStage"></div>
       </div>
       <div class="case-tabs reveal-right">
-        <button class="case-tab active" data-case="base"><strong>01 · Kiindulás</strong><span>Mire kellett az oldal?</span></button>
-        <button class="case-tab" data-case="build"><strong>02 · Megvalósítás</strong><span>Mi került mögé?</span></button>
-        <button class="case-tab" data-case="tune"><strong>03 · Finomhangolás</strong><span>Mi történt az élesítés után?</span></button>
+        <button class="case-tab active" data-case="base"><strong>01 · A webshop</strong><span>Mit szolgál ki?</span></button>
+        <button class="case-tab" data-case="build"><strong>02 · Fejlesztések</strong><span>Milyen feladatok kerültek bele?</span></button>
+        <button class="case-tab" data-case="tune"><strong>03 · Folyamatos munka</strong><span>Mi történik az élesítés után?</span></button>
       </div>
     </div>
 
-    <div class="stats-grid proof-grid stagger">
-      <div class="stat-card reveal" style="--i:0"><div class="stat-number" data-count="98">0</div><div class="stat-label">Performance · mobil</div></div>
-      <div class="stat-card reveal" style="--i:1"><div class="stat-number" data-count="100">0</div><div class="stat-label">Accessibility</div></div>
-      <div class="stat-card reveal" style="--i:2"><div class="stat-number" data-count="100">0</div><div class="stat-label">Best Practices</div></div>
-      <div class="stat-card reveal" style="--i:3"><div class="stat-number" data-count="100">0</div><div class="stat-label">SEO</div></div>
-    </div>
-    <p class="proof-note reveal">Google PageSpeed Insights mobil mérés a forgrit.hu oldalon. A laboreredmény mérésenként kis mértékben változhat.</p>
   </div>
 </section>
 
@@ -2399,6 +2491,9 @@
 <script>
 (function(){
   var currentTheme=localStorage.getItem('fg-theme')||'light';
+  var currentLang=localStorage.getItem('fg-lang')||'hu';
+  var activeDecision='start',activeFeature='design',activeCase='base';
+
   function applyTheme(theme){
     currentTheme=theme;
     document.documentElement.setAttribute('data-theme',theme);
@@ -2407,247 +2502,262 @@
     document.querySelectorAll('.icon-moon').forEach(function(el){el.style.display=theme==='dark'?'block':'none';});
   }
   window.toggleTheme=function(){applyTheme(currentTheme==='light'?'dark':'light');};
-  applyTheme(currentTheme);
-  document.getElementById('themeToggle').addEventListener('click',toggleTheme);
-  document.getElementById('y').textContent=new Date().getFullYear();
 
-  var progressBar=document.getElementById('scrollProgress');
-  function updateProgress(){
-    var scrollTop=window.scrollY;
-    var docHeight=document.documentElement.scrollHeight-window.innerHeight;
-    progressBar.style.transform='scaleX('+(docHeight>0?scrollTop/docHeight:0)+')';
-  }
-
-  var navbar=document.getElementById('navbar');
-  function updateNavbar(){navbar.classList.toggle('scrolled',window.scrollY>50);}
-
-  var mobileToggle=document.getElementById('mobileToggle');
-  var mobileMenu=document.getElementById('mobileMenu');
-  mobileToggle.addEventListener('click',function(){
-    mobileMenu.classList.toggle('open');
-    mobileToggle.innerHTML=mobileMenu.classList.contains('open')?'&#x2715;':'&#9776;';
-    mobileToggle.setAttribute('aria-expanded',String(mobileMenu.classList.contains('open')));
-  });
-  window.closeMobile=function(){
-    mobileMenu.classList.remove('open');
-    mobileToggle.innerHTML='&#9776;';
-    mobileToggle.setAttribute('aria-expanded','false');
+  var en={
+    'Mire van szükséged?':'What do you need?',
+    'Mit kapsz?':'What is included?',
+    'Példa':'Example',
+    'Árbecslő':'Price guide',
+    'Főoldal':'Home',
+    'Weboldal a':'A website built',
+    'vállalkozásodhoz':'around your',
+    'igazítva':'business',
+    'Bemutatkozó oldal, céges weboldal vagy külön landing page. A tervezéstől az élesítésig egy helyen kezeljük a projektet.':'A company website, business site or a dedicated landing page. From planning to launch, the project stays in one place.',
+    'Nézzük meg, mire van szükséged':'Find the right starting point',
+    'Ajánlatot kérek':'Request a quote',
+    'Preview · a végleges oldal a főoldal szolgáltatásblokkjából lesz elérhető':'Preview · the final page will be linked from the services section on the homepage',
+    'GÖRGESS':'SCROLL',
+    'Első kérdés':'First question',
+    'Válaszd ki azt a helyzetet, amelyik a legközelebb áll hozzád. A minta rögtön mutat egy ésszerű kiindulási irányt.':'Choose the situation closest to yours. The preview immediately shows a sensible starting point.',
+    'Még nincs weboldalam':'I do not have a website yet',
+    'Most indul a vállalkozás, vagy eddig nem volt saját oldalad.':'You are just starting out, or you have not had your own website yet.',
+    'Van oldalam, de cserélném':'I have a site, but I want to replace it',
+    'A jelenlegi oldal elavult, lassú, vagy egyszerűen már nem azt mutatja, amit szeretnél.':'Your current site is outdated, slow, or simply no longer represents the business properly.',
+    'Több szolgáltatásom van':'I offer several services',
+    'Külön szeretnéd bemutatni a szolgáltatásokat, referenciákat és a fontos információkat.':'You want separate space for services, references and important information.',
+    'Egy dolgot szeretnék hirdetni':'I want to promote one offer',
+    'Egy szolgáltatásnak, kampánynak vagy ajánlatnak kell külön, fókuszált oldal.':'A service, campaign or offer needs its own focused page.',
+    'Mutasd a javaslatot →':'Show the suggestion →',
+    'Nem csak egy HTML fájl':'More than an HTML file',
+    'Mi kerül bele a weboldalba?':'What goes into the website?',
+    'Ugyanannak a projektnek több része van. Kattints végig rajtuk, a minta megmutatja, mire gondolok.':'A website project has several parts. Click through them and the demo will show what each one means.',
+    'Megjelenés':'Design',
+    'színek, tipográfia, elrendezés':'colours, typography, layout',
+    'Mobilnézet':'Mobile view',
+    'külön ellenőrzött tördelés':'layout checked separately',
+    'Kapcsolat':'Contact',
+    'űrlap és e-mail küldés':'form and email delivery',
+    'SEO alapok':'SEO basics',
+    'indexelés és oldalszerkezet':'indexing and page structure',
+    'Élesítés':'Launch',
+    'domain, tárhely, HTTPS':'domain, hosting, HTTPS',
+    'Mini esettanulmány':'Mini case study',
+    'Carsystemshop.hu – egy működő webshop a háttérben':'Carsystemshop.hu – a real webshop behind the scenes',
+    'Itt nem egy fiktív mintát látsz. A Carsystemshop egy valós B2B/B2C webshop, amelyen több fejlesztési és üzemeltetési feladat is összeér.':'This is not a fictional demo. Carsystemshop is a real B2B/B2C webshop where development and day-to-day operation meet.',
+    '01 · A webshop':'01 · The webshop',
+    'Mit szolgál ki?':'What does it serve?',
+    '02 · Fejlesztések':'02 · Development',
+    'Milyen feladatok kerültek bele?':'What was added?',
+    '03 · Folyamatos munka':'03 · Ongoing work',
+    'Mi történik az élesítés után?':'What happens after launch?',
+    'Folyamat':'Process',
+    'Így készül el':'How it gets built',
+    'A részleteket mindig a projekthez igazítjuk, de a fő lépések ugyanazok.':'The details depend on the project, but the main steps stay the same.',
+    'Felmérés':'Discovery',
+    'Átbeszéljük, mit kell tudnia az oldalnak, milyen tartalom van már meg, és mi hiányzik.':'We go through what the site needs to do, what content already exists and what is still missing.',
+    'Tervezés':'Design',
+    'Összeáll a struktúra és a vizuális irány. Itt dől el, hogyan épül fel az oldal.':'The structure and visual direction are defined. This is where the site takes shape.',
+    'Fejlesztés és teszt':'Development and testing',
+    'Elkészül a desktop és mobil változat, az űrlapok, integrációk és a szükséges technikai beállítások.':'Desktop and mobile layouts, forms, integrations and the required technical setup are built and tested.',
+    'Felkerül a saját domainre, ellenőrizzük az indexelést, és átadom a kész oldalt.':'The site goes live on your domain, indexing is checked and the finished site is handed over.',
+    'Gyors árbecslő':'Quick price guide',
+    'Melyik kategóriába eshet a projekt?':'Which category might your project fit?',
+    'Nem ajánlatot számol, csak segít eldönteni, melyik kiindulási csomagot érdemes megnézni.':'This is not an automatic quote. It simply helps identify the most relevant starting package.',
+    'Hogyan épüljön fel?':'How should it be structured?',
+    'Egy hosszabb oldal':'One long page',
+    'Több aloldal':'Multiple pages',
+    'Mennyire legyen egyedi a megjelenés?':'How custom should the design be?',
+    'Letisztult, visszafogott':'Clean and simple',
+    'Egyedi animációk és interakciók':'Custom animations and interactions',
+    'Kell egyedi működés vagy integráció?':'Do you need custom functionality or integrations?',
+    'Alap funkciók elegendők':'Standard features are enough',
+    'Igen / még nem tudom':'Yes / not sure yet',
+    'Pontos ajánlatot kérek':'Request an exact quote',
+    'Nettó irányár. A végleges ár a pontos tartalom és funkciók alapján készül.':'Net guide price. The final quote depends on the exact content and features.',
+    'Van már elképzelésed?':'Already have an idea?',
+    'Írd le röviden, mire van szükséged. Nem kell technikai specifikációval készülnöd.':'Tell me briefly what you need. You do not need to prepare a technical specification.',
+    'Vissza a főoldalra':'Back to homepage',
+    'Minden jog fenntartva.':'All rights reserved.',
+    'Impresszum':'Imprint','Adatkezelés':'Privacy','Sütikezelés':'Cookies'
   };
 
-  var cursorGlow=document.getElementById('cursorGlow');
-  var mouseX=0,mouseY=0,glowX=0,glowY=0;
-  var isMobile=window.matchMedia('(max-width: 900px)').matches;
-  if(!isMobile&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-    document.addEventListener('mousemove',function(e){mouseX=e.clientX;mouseY=e.clientY;});
-    (function animateGlow(){
-      glowX+=(mouseX-glowX)*0.08;glowY+=(mouseY-glowY)*0.08;
-      cursorGlow.style.left=glowX+'px';cursorGlow.style.top=glowY+'px';
-      requestAnimationFrame(animateGlow);
-    })();
-  }else{cursorGlow.style.display='none';}
-
-  var revealObserver=new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){if(entry.isIntersecting)entry.target.classList.add('visible');});
-  },{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
-  document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale').forEach(function(el){revealObserver.observe(el);});
-
-  var parallaxElements=document.querySelectorAll('[data-parallax]');
-  function updateParallax(){
-    var scrollTop=window.scrollY;
-    parallaxElements.forEach(function(el){
-      var speed=parseFloat(el.getAttribute('data-parallax'));
-      var rect=el.parentElement.getBoundingClientRect();
-      var offset=(rect.top+scrollTop-window.innerHeight/2)*speed;
-      el.style.transform='translateY('+(-offset)+'px)';
+  var originalText=[];
+  var walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
+  while(walker.nextNode()){
+    var node=walker.currentNode,raw=node.nodeValue,trim=raw.trim();
+    if(trim&&en[trim]) originalText.push({node:node,hu:raw,trim:trim});
+  }
+  function translateStatic(lang){
+    originalText.forEach(function(item){
+      if(lang==='en'){
+        var lead=item.hu.match(/^\s*/)[0],trail=item.hu.match(/\s*$/)[0];
+        item.node.nodeValue=lead+en[item.trim]+trail;
+      }else item.node.nodeValue=item.hu;
     });
   }
 
-  var counterDone=new Set();
-  var counterObserver=new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if(entry.isIntersecting&&!counterDone.has(entry.target)){
-        counterDone.add(entry.target);
-        var el=entry.target,target=parseInt(el.getAttribute('data-count')),start=performance.now();
-        (function step(now){
-          var progress=Math.min((now-start)/1500,1);
-          var eased=1-Math.pow(1-progress,4);
-          el.textContent=Math.round(eased*target);
-          if(progress<1)requestAnimationFrame(step);
-        })(start);
-      }
-    });
-  },{threshold:0.5});
-  document.querySelectorAll('[data-count]').forEach(function(el){counterObserver.observe(el);});
-
-  var decisions={
+  var fakeSites={
     start:{
-      kicker:'Javasolt kiindulás',
-      title:'Bemutatkozó weboldal',
-      copy:'Egy átlátható oldal, ahol röviden bemutatkozik a vállalkozás, látszanak a szolgáltatások és könnyű kapcsolatba lépni.',
-      nav:['Főoldal','Szolgáltatások','Rólam','Kapcsolat'],
-      blocks:3,
-      result:'A legtöbb induló vállalkozásnál innen érdemes kezdeni.'
+      hu:{brand:'BORÓKA STÚDIÓ',links:['Szolgáltatások','Rólam','Kapcsolat'],eyebrow:'Lakberendezés · Győr',title:'Otthon, ami tényleg rólad szól.',copy:'Lakberendezési tervezés és személyes tanácsadás az első ötlettől a kész térig.',cta:'Időpontot kérek',ghost:'Munkáim',services:[['Lakberendezés','Teljes koncepció és tértervezés.'],['3D látványterv','Lásd előre, hogyan áll össze a tér.'],['Tanácsadás','Konkrét kérdésekre, személyesen.']]},
+      en:{brand:'BORÓKA STUDIO',links:['Services','About','Contact'],eyebrow:'Interior design · Győr',title:'A home that actually feels like yours.',copy:'Interior planning and personal consultation from the first idea to the finished space.',cta:'Book a consultation',ghost:'Projects',services:[['Interior design','Full concept and space planning.'],['3D visualisation','See the space before it is built.'],['Consultation','Practical help for specific questions.']]}
     },
     replace:{
-      kicker:'Javasolt kiindulás',
-      title:'Újratervezett céges oldal',
-      copy:'A meglévő tartalmat átnézzük, ami használható marad, a szerkezetet és a megjelenést pedig újraépítjük.',
-      nav:['Főoldal','Szolgáltatások','Referenciák','Cégünkről','Kapcsolat'],
-      blocks:4,
-      result:'Nem feltétlenül kell mindent kidobni; először azt nézzük meg, mi menthető.'
+      hu:{brand:'VARGA KLÍMA',links:['Klímák','Telepítés','Karbantartás','Kapcsolat'],eyebrow:'Klíma · Hőszivattyú',title:'Telepítés és karbantartás, érthetően.',copy:'Lakossági klímatelepítés, tisztítás és karbantartás Győr és környékén.',cta:'Árajánlatot kérek',ghost:'Szolgáltatások',services:[['Klímatelepítés','Felméréstől a beüzemelésig.'],['Karbantartás','Rendszeres tisztítás és ellenőrzés.'],['Hőszivattyú','Tervezés és kivitelezés.']]},
+      en:{brand:'VARGA AIR',links:['AC units','Installation','Maintenance','Contact'],eyebrow:'Air conditioning · Heat pumps',title:'Installation and maintenance, without the jargon.',copy:'Residential AC installation, cleaning and maintenance in Győr and the surrounding area.',cta:'Request a quote',ghost:'Services',services:[['AC installation','From survey to commissioning.'],['Maintenance','Regular cleaning and inspection.'],['Heat pumps','Planning and installation.']]}
     },
     multi:{
-      kicker:'Javasolt kiindulás',
-      title:'Több aloldalas céges weboldal',
-      copy:'A főbb szolgáltatások külön oldalt kapnak, így több információ fér el, és keresőből is könnyebb egy konkrét témára érkezni.',
-      nav:['Főoldal','Szolgáltatások','Referenciák','Rólam','Kapcsolat'],
-      blocks:6,
-      result:'Akkor jó választás, ha több külön témát szeretnél rendesen kibontani.'
+      hu:{brand:'NEXA CONSULTING',links:['Pénzügy','HR','Folyamatok','Referenciák'],eyebrow:'Üzleti tanácsadás',title:'Külön terület. Külön oldal. Egy rendszer.',copy:'Több szolgáltatás átláthatóan, külön aloldalakkal és egyértelmű útvonalakkal.',cta:'Szolgáltatások',ghost:'Referenciák',services:[['Pénzügyi tervezés','Döntéstámogató riportok és tervezés.'],['HR tanácsadás','Folyamatok és működési keretek.'],['Folyamatfejlesztés','Egyszerűbb, mérhetőbb működés.']]},
+      en:{brand:'NEXA CONSULTING',links:['Finance','HR','Processes','References'],eyebrow:'Business consulting',title:'Separate expertise. Separate pages. One system.',copy:'Multiple services organised into a clear structure with dedicated pages.',cta:'Services',ghost:'References',services:[['Financial planning','Decision support and planning.'],['HR consulting','Processes and operating frameworks.'],['Process improvement','Simpler, measurable operations.']]}
     },
     campaign:{
-      kicker:'Javasolt kiindulás',
-      title:'Önálló landing page',
-      copy:'Egyetlen ajánlatra vagy szolgáltatásra fókuszáló oldal, kevés eltereléssel és egyértelmű kapcsolatfelvétellel.',
-      nav:['Ajánlat','Előnyök','Részletek','Kapcsolat'],
-      blocks:2,
-      result:'Hirdetéshez vagy egy konkrét szolgáltatás kiemeléséhez ez a legegyszerűbb irány.'
+      hu:{brand:'SHINE DETAIL',links:['Kezelés','Előnyök','GYIK'],eyebrow:'Kerámia bevonat · Őszi ajánlat',title:'Tartós védelem az autónak.',copy:'Prémium kerámia bevonat előkészítéssel, polírozással és 24 hónapos védelemmel.',cta:'Időpontot foglalok',ghost:'Mit tartalmaz?',services:[['Előkészítés','Alapos mosás és felület-előkészítés.'],['Polírozás','A fényezés állapotához igazítva.'],['Kerámia bevonat','Hidrofób védelem és könnyebb tisztítás.']]},
+      en:{brand:'SHINE DETAIL',links:['Treatment','Benefits','FAQ'],eyebrow:'Ceramic coating · Autumn offer',title:'Long-lasting protection for your car.',copy:'Premium ceramic coating with preparation, polishing and up to 24 months of protection.',cta:'Book a slot',ghost:'What is included?',services:[['Preparation','Thorough wash and surface preparation.'],['Polishing','Matched to the condition of the paint.'],['Ceramic coating','Hydrophobic protection and easier cleaning.']]}
     }
+  };
+
+  function fakeSiteHtml(data,theme){
+    var links='',cards='';
+    data.links.forEach(function(x){links+='<span>'+x+'</span>';});
+    data.services.forEach(function(x){cards+='<div class="fake-service"><b>'+x[0]+'</b><span>'+x[1]+'</span></div>';});
+    return '<div class="fake-site '+(theme||'')+'"><div class="fake-topnav"><span class="fake-brand">'+data.brand+'</span><div class="fake-links">'+links+'</div><span class="fake-nav-cta">'+data.cta+'</span></div><div class="fake-hero"><div><div class="fake-eyebrow">'+data.eyebrow+'</div><div class="fake-title">'+data.title+'</div><p class="fake-copy">'+data.copy+'</p><div class="fake-actions"><span class="fake-btn">'+data.cta+'</span><span class="fake-btn ghost">'+data.ghost+'</span></div></div><div class="fake-art"></div></div><div class="fake-services">'+cards+'</div><span class="fake-label">'+(currentLang==='hu'?'Fiktív demó':'Fictional demo')+'</span></div>';
+  }
+
+  var decisions={
+    start:{theme:'theme-warm',hu:{title:'Bemutatkozó weboldal',result:'A legtöbb induló vállalkozásnál innen érdemes kezdeni.'},en:{title:'Business introduction website',result:'For most new businesses, this is the sensible place to start.'}},
+    replace:{theme:'',hu:{title:'Újratervezett céges oldal',result:'Először megnézzük, mi használható a régiből, és csak utána építjük újra.'},en:{title:'Redesigned company website',result:'First we check what is worth keeping, then rebuild what needs to change.'}},
+    multi:{theme:'theme-violet',hu:{title:'Több aloldalas céges weboldal',result:'Akkor jó választás, ha több külön témát szeretnél rendesen kibontani.'},en:{title:'Multi-page company website',result:'A good fit when several topics or services need their own space.'}},
+    campaign:{theme:'theme-green',hu:{title:'Önálló landing page',result:'Hirdetéshez vagy egy konkrét szolgáltatás kiemeléséhez ez a legegyszerűbb irány.'},en:{title:'Dedicated landing page',result:'The simplest route for advertising or highlighting one specific offer.'}}
   };
 
   function renderDecision(key){
-    var d=decisions[key],blocks='',nav='';
-    for(var i=0;i<d.blocks;i++)blocks+='<div class="demo-block"></div>';
-    d.nav.forEach(function(n){nav+='<span>'+n+'</span>';});
+    activeDecision=key;
+    var lang=currentLang==='hu'?'hu':'en',d=decisions[key][lang],site=fakeSites[key][lang];
     var demo=document.getElementById('decisionDemo');
     demo.classList.remove('demo-swap');void demo.offsetWidth;demo.classList.add('demo-swap');
-    demo.innerHTML='<div class="demo-kicker">'+d.kicker+'</div><div class="demo-title">'+d.title+'</div><p class="demo-copy">'+d.copy+'</p><div class="demo-nav">'+nav+'</div><div class="demo-blocks">'+blocks+'</div><div class="decision-result"><small>Röviden</small><strong>'+d.title+'</strong><p>'+d.result+'</p></div>';
+    demo.innerHTML=fakeSiteHtml(site,decisions[key].theme)+'<div class="decision-result"><small>'+(lang==='hu'?'Javasolt irány':'Suggested direction')+'</small><strong>'+d.title+'</strong><p>'+d.result+'</p></div>';
   }
-  document.querySelectorAll('.decision-card').forEach(function(btn){
-    btn.addEventListener('click',function(){
-      document.querySelectorAll('.decision-card').forEach(function(x){x.classList.remove('active');});
-      btn.classList.add('active');
-      renderDecision(btn.getAttribute('data-decision'));
-    });
-  });
-  renderDecision('start');
 
-  var features={
-    design:{
-      title:'A megjelenés a vállalkozáshoz igazodik',
-      text:'A színek, betűk, képek és elrendezések egy irányba mutatnak. Nem az a cél, hogy minél több effekt kerüljön rá, hanem hogy az oldal felismerhető és használható legyen.',
-      list:['egyedi színek és tipográfia','átlátható oldalszerkezet','a tartalomhoz illő animációk'],
-      focus:{top:'45px',left:'34px',right:'34px',height:'145px'}
-    },
-    mobile:{
-      title:'A mobilnézet külön feladat',
-      text:'A desktop változatot nem egyszerűen összenyomjuk. A tördelést, gombokat, menüt és olvashatóságot külön ellenőrzöm kisebb kijelzőn is.',
-      list:['mobil menü','érintésre kényelmes gombok','külön ellenőrzött tördelés'],
-      focus:{top:'38px',left:'34%',right:'34%',height:'300px'}
-    },
-    contact:{
-      title:'A kapcsolatfelvétel működjön is',
-      text:'Az űrlap nem csak egy látványelem. A küldést, visszajelzéseket és az e-mail kézbesítést is be kell állítani.',
-      list:['kapcsolati űrlap','e-mail továbbítás','hibajelzések és visszajelzés'],
-      focus:{top:'154px',left:'34px',right:'45%',height:'54px'}
-    },
-    seo:{
-      title:'Az alap technikai SEO már az indulás része',
-      text:'Rendbe kerülnek az oldalcímek, leírások, a sitemap és az indexeléshez szükséges alapok. Ettől még nem lesz automatikusan első helyezett az oldal, de technikailag rendesen indul.',
-      list:['title és meta leírások','sitemap és indexelés','Search Console alapbeállítás'],
-      focus:{top:'38px',left:'28px',right:'28px',height:'305px'}
-    },
-    launch:{
-      title:'Az oldalnak valahol működnie is kell',
-      text:'A domain, tárhely, HTTPS és az éles környezet beállítása ugyanúgy a projekt része lehet, így nem marad félkész állapotban a munka.',
-      list:['domain és DNS','HTTPS','élesítés és végső ellenőrzés'],
-      focus:{top:'16px',left:'12%',right:'12%',height:'32px'}
-    }
+  var featureText={
+    design:{hu:{title:'A megjelenés a vállalkozáshoz igazodik',text:'Színek, betűk, képek és elrendezés egy rendszerben. A bal oldali minta most ugyanazt a fiktív oldalt mutatja teljes desktop nézetben.',list:['egyedi színek és tipográfia','átlátható oldalszerkezet','a tartalomhoz illő animációk']},en:{title:'The design follows the business',text:'Colours, type, imagery and layout work as one system. The demo now shows the same fictional site in a full desktop view.',list:['custom colours and typography','clear page structure','motion that supports the content']}},
+    mobile:{hu:{title:'Ugyanaz az oldal mobilnézetben',text:'Kattintásra ténylegesen telefon szélességre vált a demó. A navigáció eltűnik, a tartalom egy oszlopba rendeződik és a gombok nagyobb érintési felületet kapnak.',list:['mobil menü','érintésre kényelmes gombok','külön tördelés']},en:{title:'The same site in mobile view',text:'The demo actually switches to a phone-width viewport. Navigation collapses, content stacks into one column and controls become easier to tap.',list:['mobile navigation','touch-friendly controls','separate responsive layout']}},
+    contact:{hu:{title:'A kapcsolatfelvétel egy működő felület',text:'A demó most egy valódi űrlapnézetet mutat: név, e-mail, üzenet és küldési gomb. Az éles oldalon ehhez tartozik az e-mail kézbesítés és a visszajelzés is.',list:['kapcsolati űrlap','e-mail továbbítás','sikeres / hibás küldés visszajelzése']},en:{title:'Contact is a working interface',text:'The demo switches to a realistic contact form with name, email, message and submit button. On a live site this also includes delivery and user feedback.',list:['contact form','email delivery','success / error feedback']}},
+    seo:{hu:{title:'Így néz ki a technikai SEO a gyakorlatban',text:'A minta keresési találatot, oldalcímet, leírást és technikai elemeket mutat. Ezek kerülnek rendbe az indulás előtt.',list:['title és meta description','sitemap és indexelés','Search Console alapok']},en:{title:'What technical SEO looks like in practice',text:'The demo shows a search result, page title, description and technical elements that are prepared before launch.',list:['title and meta description','sitemap and indexing','Search Console basics']}},
+    launch:{hu:{title:'Az élesítés több mint egy feltöltés',text:'A demó az éles környezetet mutatja: domain, HTTPS, DNS és deploy állapot. Ezeket a végén ugyanúgy ellenőrizni kell.',list:['domain és DNS','HTTPS tanúsítvány','élesítés és végső ellenőrzés']},en:{title:'Launch is more than uploading files',text:'The demo shows the live environment: domain, HTTPS, DNS and deployment status. These still need to be checked at the end.',list:['domain and DNS','HTTPS certificate','deployment and final check']}}
   };
 
+  function contactHtml(){
+    var enL=currentLang==='en';
+    return '<div class="demo-contact"><div class="demo-contact-head"><b>BORÓKA STÚDIÓ</b><span style="font-size:.55rem;color:#64748b">'+(enL?'Contact':'Kapcsolat')+'</span></div><div class="demo-contact-grid"><div class="demo-contact-copy"><div class="fake-eyebrow">'+(enL?'GET IN TOUCH':'KAPCSOLAT')+'</div><h4>'+(enL?'Tell us about your project.':'Mesélj a projektről.')+'</h4><p>'+(enL?'A short message is enough to get started.':'Kezdésnek elég néhány mondat arról, mire van szükséged.')+'</p></div><div class="demo-form"><div class="demo-field">'+(enL?'Name':'Név')+'</div><div class="demo-field">'+(enL?'Email address':'E-mail cím')+'</div><div class="demo-field message">'+(enL?'Message':'Üzenet')+'</div><button class="demo-send">'+(enL?'Send message':'Üzenet küldése')+'</button></div></div></div>';
+  }
+  function seoHtml(){
+    var enL=currentLang==='en';
+    return '<div class="seo-demo"><div class="seo-browserline">◉ '+(enL?'Search preview':'Keresési előnézet')+'</div><div class="seo-search">'+(enL?'interior designer győr':'lakberendező győr')+'</div><div class="seo-result"><div class="seo-url">https://borokastudio.hu/</div><div class="seo-title">'+(enL?'Interior design in Győr | Boróka Studio':'Lakberendezés Győrben | Boróka Stúdió')+'</div><div class="seo-desc">'+(enL?'Interior planning, 3D visualisation and personal consultation in Győr and the surrounding area.':'Lakberendezési tervezés, 3D látványterv és személyes tanácsadás Győrben és környékén.')+'</div></div><div class="seo-meta"><div><b>Title</b><span>56 '+(enL?'characters':'karakter')+'</span></div><div><b>Meta description</b><span>148 '+(enL?'characters':'karakter')+'</span></div><div><b>Sitemap</b><span>✓ '+(enL?'ready':'kész')+'</span></div></div></div>';
+  }
+  function deployHtml(){
+    var enL=currentLang==='en';
+    return '<div class="deploy-demo"><div class="deploy-head"><span>BORÓKA STÚDIÓ · production</span><span class="deploy-status">● '+(enL?'LIVE':'ÉLES')+'</span></div><div class="deploy-url">🔒 https://borokastudio.hu</div><div class="deploy-list"><div class="deploy-row"><span>DNS</span><b>'+ (enL?'configured':'beállítva') +'</b></div><div class="deploy-row"><span>HTTPS / SSL</span><b>'+ (enL?'active':'aktív') +'</b></div><div class="deploy-row"><span>www redirect</span><b>301 → apex</b></div><div class="deploy-row"><span>'+ (enL?'Last deploy':'Utolsó deploy') +'</span><b>success · 42s</b></div><div class="deploy-row"><span>robots.txt</span><b>200 OK</b></div></div></div>';
+  }
+  function designHtml(){
+    return '<div class="design-demo">'+fakeSiteHtml(fakeSites.start[currentLang==='hu'?'hu':'en'],'theme-warm')+'<aside class="design-panel"><h4>'+(currentLang==='hu'?'Arculati minta':'Design system')+'</h4><div class="swatches"><i></i><i></i><i></i></div><div class="type-sample"><b>Space Grotesk</b><span>Headings · 700</span></div><div class="type-sample"><b>Inter</b><span>Body · 400 / 600</span></div></aside></div>';
+  }
+
   function renderFeature(key){
-    var f=features[key],list='';
+    activeFeature=key;
+    var lang=currentLang==='hu'?'hu':'en',f=featureText[key][lang],list='';
     f.list.forEach(function(x){list+='<li>'+x+'</li>';});
     var copy=document.getElementById('featureCopy');
     copy.classList.remove('demo-swap');void copy.offsetWidth;copy.classList.add('demo-swap');
     copy.innerHTML='<h3>'+f.title+'</h3><p>'+f.text+'</p><ul>'+list+'</ul>';
-    var focus=document.getElementById('featureFocus');
-    focus.style.top=f.focus.top;focus.style.left=f.focus.left;focus.style.right=f.focus.right;focus.style.height=f.focus.height;
+    var vp=document.getElementById('featureViewport');
+    vp.className='feature-viewport'+(key==='mobile'?' phone-mode':'');
+    if(key==='design') vp.innerHTML=designHtml();
+    else if(key==='mobile') vp.innerHTML=fakeSiteHtml(fakeSites.start[lang],'theme-warm');
+    else if(key==='contact') vp.innerHTML=contactHtml();
+    else if(key==='seo') vp.innerHTML=seoHtml();
+    else vp.innerHTML=deployHtml();
   }
-  document.querySelectorAll('.feature-tab').forEach(function(btn){
-    btn.addEventListener('click',function(){
-      document.querySelectorAll('.feature-tab').forEach(function(x){x.classList.remove('active');});
-      btn.classList.add('active');
-      renderFeature(btn.getAttribute('data-feature'));
-    });
-  });
-  renderFeature('design');
 
   var cases={
-    base:{
-      title:'Egy saját bemutatkozó oldal több szolgáltatáshoz',
-      text:'A FORGRIT-nál egy helyen kellett bemutatni a weboldal-, webshop-, grafikai és IT szolgáltatásokat úgy, hogy mobilon se essen szét az oldal.',
-      tech:['több szolgáltatás','light / dark mód','mobil navigáció','animált felület']
-    },
-    build:{
-      title:'A háttérben is össze kellett rakni a működést',
-      text:'A látvány mellett elkészült a kapcsolatfelvétel, a domain és Cloudflare beállítás, a Search Console, a sitemap és az alap strukturált adatok.',
-      tech:['Cloudflare','Resend','Search Console','sitemap','strukturált adatok']
-    },
-    tune:{
-      title:'Élesítés után jött a böngészőteszt és a finomhangolás',
-      text:'Safari alatt az első betöltés lassabb volt a nagy CSS blur miatt. A hibát külön tesztágon szűkítettük le, majd csak a problémás effektet módosítottuk. A Google Fonts betöltést később helyi fontokra cseréltük.',
-      tech:['Safari teszt','célzott javítás','helyi fontok','PageSpeed 98']
-    }
+    base:{hu:{title:'Carsystemshop.hu – B2B/B2C webshop',text:'Autófényezési és járműjavítási termékeket kiszolgáló webshop lakossági és üzleti vásárlóknak. Itt a napi működés és a fejlesztés ugyanazon a felületen találkozik.',tech:['B2B / B2C','termékkatalógus','online rendelés','WooCommerce']},en:{title:'Carsystemshop.hu – B2B/B2C webshop',text:'A webshop for automotive refinishing and repair products, serving both retail and business customers. Development and day-to-day operation meet on the same platform.',tech:['B2B / B2C','product catalogue','online orders','WooCommerce']}},
+    build:{hu:{title:'Nem csak a kinézeten kellett dolgozni',text:'A webshopon egyedi ár- és termékkezelési feladatok, akciós szabályok, új termékek, valamint a K&H bankkártyás fizetés integrációja is megjelent.',tech:['K&H bankkártya','árkezelés','akciós szabályok','termékfeltöltés']},en:{title:'The work went beyond the visual layer',text:'The webshop also required custom pricing and product-management tasks, promotion rules, new product handling and K&H card-payment integration.',tech:['K&H card payment','pricing','promotion rules','product uploads']}},
+    tune:{hu:{title:'Egy webshop élesítés után sem marad magára',text:'A napi használat során folyamatosan jönnek új termékek, árfrissítések, kisebb fejlesztések és optimalizálási feladatok. Ezeket már a működő oldal mellett kell biztonságosan kezelni.',tech:['karbantartás','árfrissítés','új termékek','optimalizálás']},en:{title:'A webshop still needs work after launch',text:'Day-to-day operation brings new products, price changes, smaller improvements and optimisation tasks. These have to be handled safely while the live store keeps running.',tech:['maintenance','price updates','new products','optimisation']}}
   };
 
   function renderCase(key){
-    var c=cases[key],tech='';
-    c.tech.forEach(function(x){tech+='<span>'+x+'</span>';});
+    activeCase=key;
+    var lang=currentLang==='hu'?'hu':'en',d=cases[key][lang],tech='';
+    d.tech.forEach(function(x){tech+='<span>'+x+'</span>';});
     var stage=document.getElementById('caseStage');
     stage.classList.remove('demo-swap');void stage.offsetWidth;stage.classList.add('demo-swap');
-    stage.innerHTML='<h3>'+c.title+'</h3><p>'+c.text+'</p><div class="case-tech">'+tech+'</div><div class="case-demo"><div></div><div></div><div></div><div></div></div>';
+    stage.innerHTML='<h3>'+d.title+'</h3><p>'+d.text+'</p><div class="case-tech">'+tech+'</div><a class="case-shop-link" href="https://carsystemshop.hu/" target="_blank" rel="noopener">'+(lang==='hu'?'Webshop megnyitása ↗':'Open webshop ↗')+'</a><div class="case-shop-image"><img src="cs%20portfolio.png" alt="Carsystemshop webshop preview" loading="lazy" decoding="async"></div>';
   }
-  document.querySelectorAll('.case-tab').forEach(function(btn){
-    btn.addEventListener('click',function(){
-      document.querySelectorAll('.case-tab').forEach(function(x){x.classList.remove('active');});
-      btn.classList.add('active');
-      renderCase(btn.getAttribute('data-case'));
-    });
-  });
-  renderCase('base');
 
   function updateEstimate(){
+    var lang=currentLang==='hu'?'hu':'en';
     var pages=document.querySelector('input[name="pages"]:checked').value;
     var visual=document.querySelector('input[name="visual"]:checked').value;
     var integration=document.querySelector('input[name="integration"]:checked').value;
-    var tier='Starter';
-    var price='249.000 Ft <span class="suffix">-tól</span>';
-    var text='Egyoldalas bemutatkozó vagy landing oldal, alap funkciókkal.';
-
+    var tier='Starter',price=lang==='hu'?'249.000 Ft <span class="suffix">-tól</span>':'from HUF 249,000',text=lang==='hu'?'Egyoldalas bemutatkozó vagy landing oldal, alap funkciókkal.':'A one-page business site or landing page with standard features.';
     if(pages==='multi'||visual==='custom'){
-      tier='Business';
-      price='349.000 Ft <span class="suffix">-tól</span>';
-      text='Több aloldal, egyedi design, animációk és összetettebb tartalom esetén ez a reálisabb kiindulás.';
+      tier='Business';price=lang==='hu'?'349.000 Ft <span class="suffix">-tól</span>':'from HUF 349,000';
+      text=lang==='hu'?'Több aloldal, egyedi design, animációk és összetettebb tartalom esetén ez a reálisabb kiindulás.':'For multiple pages, custom design, animation and more complex content, this is the more realistic starting point.';
     }
     if(integration==='yes'){
-      tier='Egyedi projekt';
-      price='Egyedi árazás';
-      text='Speciális integrációnál vagy egyedi működésnél először a pontos feladatot kell átbeszélni.';
+      tier=lang==='hu'?'Egyedi projekt':'Custom project';price=lang==='hu'?'Egyedi árazás':'Custom pricing';
+      text=lang==='hu'?'Speciális integrációnál vagy egyedi működésnél először a pontos feladatot kell átbeszélni.':'For special integrations or custom behaviour, the exact scope needs to be discussed first.';
     }
     document.getElementById('estimateTier').textContent=tier;
     document.getElementById('estimatePrice').innerHTML=price;
     document.getElementById('estimateText').textContent=text;
   }
+
+  function applyLang(lang){
+    currentLang=lang;
+    localStorage.setItem('fg-lang',lang);
+    document.documentElement.lang=lang;
+    translateStatic(lang);
+    document.querySelectorAll('.lang-toggle').forEach(function(btn){btn.textContent=lang==='hu'?'EN':'HU';});
+    renderDecision(activeDecision);renderFeature(activeFeature);renderCase(activeCase);updateEstimate();
+  }
+  window.toggleLang=function(){applyLang(currentLang==='hu'?'en':'hu');};
+
+  applyTheme(currentTheme);
+  document.getElementById('themeToggle').addEventListener('click',toggleTheme);
+  document.getElementById('langToggle').addEventListener('click',toggleLang);
+  document.getElementById('y').textContent=new Date().getFullYear();
+
+  var progressBar=document.getElementById('scrollProgress');
+  function updateProgress(){var h=document.documentElement.scrollHeight-window.innerHeight;progressBar.style.transform='scaleX('+(h>0?window.scrollY/h:0)+')';}
+  var navbar=document.getElementById('navbar');
+  function updateNavbar(){navbar.classList.toggle('scrolled',window.scrollY>50);}
+
+  var mobileToggle=document.getElementById('mobileToggle'),mobileMenu=document.getElementById('mobileMenu');
+  mobileToggle.addEventListener('click',function(){mobileMenu.classList.toggle('open');mobileToggle.innerHTML=mobileMenu.classList.contains('open')?'&#x2715;':'&#9776;';mobileToggle.setAttribute('aria-expanded',String(mobileMenu.classList.contains('open')));});
+  window.closeMobile=function(){mobileMenu.classList.remove('open');mobileToggle.innerHTML='&#9776;';mobileToggle.setAttribute('aria-expanded','false');};
+
+  var cursorGlow=document.getElementById('cursorGlow'),mouseX=0,mouseY=0,glowX=0,glowY=0;
+  var isMobile=window.matchMedia('(max-width: 900px)').matches;
+  if(!isMobile&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    document.addEventListener('mousemove',function(e){mouseX=e.clientX;mouseY=e.clientY;});
+    (function animateGlow(){glowX+=(mouseX-glowX)*.08;glowY+=(mouseY-glowY)*.08;cursorGlow.style.left=glowX+'px';cursorGlow.style.top=glowY+'px';requestAnimationFrame(animateGlow);})();
+  }else cursorGlow.style.display='none';
+
+  var revealObserver=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting)entry.target.classList.add('visible');});},{threshold:.1,rootMargin:'0px 0px -50px 0px'});
+  document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale').forEach(function(el){revealObserver.observe(el);});
+
+  var parallaxElements=document.querySelectorAll('[data-parallax]');
+  function updateParallax(){var st=window.scrollY;parallaxElements.forEach(function(el){var speed=parseFloat(el.getAttribute('data-parallax')),rect=el.parentElement.getBoundingClientRect(),offset=(rect.top+st-window.innerHeight/2)*speed;el.style.transform='translateY('+(-offset)+'px)';});}
+
+  document.querySelectorAll('.decision-card').forEach(function(btn){btn.addEventListener('click',function(){document.querySelectorAll('.decision-card').forEach(function(x){x.classList.remove('active');});btn.classList.add('active');renderDecision(btn.getAttribute('data-decision'));});});
+  document.querySelectorAll('.feature-tab').forEach(function(btn){btn.addEventListener('click',function(){document.querySelectorAll('.feature-tab').forEach(function(x){x.classList.remove('active');});btn.classList.add('active');renderFeature(btn.getAttribute('data-feature'));});});
+  document.querySelectorAll('.case-tab').forEach(function(btn){btn.addEventListener('click',function(){document.querySelectorAll('.case-tab').forEach(function(x){x.classList.remove('active');});btn.classList.add('active');renderCase(btn.getAttribute('data-case'));});});
   document.querySelectorAll('.estimator-form input').forEach(function(el){el.addEventListener('change',updateEstimate);});
-  updateEstimate();
+
+  renderDecision(activeDecision);renderFeature(activeFeature);renderCase(activeCase);updateEstimate();
+  if(currentLang!=='hu') applyLang(currentLang); else document.querySelectorAll('.lang-toggle').forEach(function(btn){btn.textContent='EN';});
 
   var ticking=false;
-  window.addEventListener('scroll',function(){
-    if(!ticking){
-      requestAnimationFrame(function(){updateProgress();updateNavbar();updateParallax();ticking=false;});
-      ticking=true;
-    }
-  },{passive:true});
+  window.addEventListener('scroll',function(){if(!ticking){requestAnimationFrame(function(){updateProgress();updateNavbar();updateParallax();ticking=false;});ticking=true;}},{passive:true});
   updateProgress();updateNavbar();updateParallax();
 })();
 </script>
