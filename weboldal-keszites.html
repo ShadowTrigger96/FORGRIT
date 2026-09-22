@@ -2981,6 +2981,14 @@
         height: auto !important;
         max-height: none !important;
       }
+
+      /* Contact demo is taller than the shared 275px preview viewport.
+         Give only this preview enough height so the Send button is not clipped. */
+      .feature-viewport.contact-mode {
+        min-height: 322px !important;
+        max-height: 322px !important;
+        overflow: hidden !important;
+      }
     }
 
 
@@ -3837,7 +3845,7 @@
     copy.classList.remove('demo-swap');void copy.offsetWidth;copy.classList.add('demo-swap');
     copy.innerHTML='<h3>'+f.title+'</h3><p>'+f.text+'</p><ul>'+list+'</ul>';
     var vp=document.getElementById('featureViewport');
-    vp.className='feature-viewport'+(key==='mobile'?' phone-mode':key==='design'?' design-mode':'');
+    vp.className='feature-viewport'+(key==='mobile'?' phone-mode':key==='design'?' design-mode':key==='contact'?' contact-mode':'');
     if(key==='design') vp.innerHTML=designHtml();
     else if(key==='mobile') vp.innerHTML=fakeSiteHtml(fakeSites.start[lang],'');
     else if(key==='contact') vp.innerHTML=contactHtml();
