@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sütikezelési tájékoztató – FORGRIT</title>
-  <meta name="description" content="FORGRIT sütikezelési tájékoztató – cookie policy" />
+  <title>Adatkezelési tájékoztató – FORGRIT</title>
+  <meta name="description" content="FORGRIT adatkezelési tájékoztató – a kapcsolatfelvételhez és a weboldal működéséhez kapcsolódó adatkezelés" />
   <style>
     @font-face {
       font-family: 'Inter';
@@ -40,18 +40,26 @@
     }
 
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    :root { --cyan: #0ea5e9; --cyan-dark: #0284c7; --amber: #f59e0b; --purple: #8b5cf6; }
+
+    :root {
+      --cyan: #0ea5e9;
+      --cyan-dark: #0284c7;
+      --amber: #f59e0b;
+      --purple: #8b5cf6;
+    }
 
     [data-theme="light"] {
       --bg: #eef2f7; --bg-card: rgba(255,255,255,0.85); --bg-nav: rgba(238,242,247,0.85);
       --text: #0f172a; --text-secondary: #475569; --text-muted: #94a3b8;
       --border: rgba(15,23,42,0.08); --border-hover: rgba(15,23,42,0.15); --hero-gradient-1: rgba(14,165,233,0.18); --hero-gradient-2: rgba(139,92,246,0.14); --hero-gradient-3: rgba(245,158,11,0.12); --grid-line: rgba(14,165,233,0.1); --geo-opacity: 0.2;
+      --shadow-card: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03); --hero-gradient-1: rgba(14,165,233,0.18); --hero-gradient-2: rgba(139,92,246,0.14); --hero-gradient-3: rgba(245,158,11,0.12); --grid-line: rgba(14,165,233,0.1); --geo-opacity: 0.2;
     }
 
     [data-theme="dark"] {
       --bg: #0f1225; --bg-card: rgba(255,255,255,0.05); --bg-nav: rgba(15,18,37,0.85);
       --text: #e2e8f0; --text-secondary: #94a3b8; --text-muted: #475569;
       --border: rgba(255,255,255,0.08); --border-hover: rgba(255,255,255,0.15); --hero-gradient-1: rgba(56,189,248,0.35); --hero-gradient-2: rgba(167,139,250,0.28); --hero-gradient-3: rgba(245,158,11,0.22); --grid-line: rgba(56,189,248,0.08); --geo-opacity: 0.25;
+      --shadow-card: none; --hero-gradient-1: rgba(56,189,248,0.35); --hero-gradient-2: rgba(167,139,250,0.28); --hero-gradient-3: rgba(245,158,11,0.22); --grid-line: rgba(56,189,248,0.08); --geo-opacity: 0.25;
     }
 
     html { scroll-behavior: smooth; }
@@ -64,6 +72,7 @@
 
     h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
 
+    /* Navbar */
     .navbar {
       position: sticky; top: 0; width: 100%; z-index: 100;
       padding: 0.7rem 0; background: var(--bg-nav);
@@ -71,9 +80,16 @@
       border-bottom: 1px solid var(--border);
     }
 
-    .nav-inner { max-width: 900px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; }
+    .nav-inner {
+      max-width: 900px; margin: 0 auto; padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
 
-    .nav-brand { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--text); }
+    .nav-brand {
+      display: flex; align-items: center; gap: 0.75rem;
+      text-decoration: none; color: var(--text);
+    }
+
     .nav-brand img { height: 32px; width: auto; }
     .nav-brand span { font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem; font-weight: 700; letter-spacing: 0.12em; }
 
@@ -85,32 +101,76 @@
       color: var(--text-secondary); display: flex; align-items: center;
       justify-content: center; cursor: pointer; transition: all 0.3s; font-size: 0;
     }
+
     .toggle-btn:hover { border-color: var(--border-hover); color: var(--text); }
     .toggle-btn svg { width: 18px; height: 18px; }
 
-    .back-link { font-size: 0.875rem; font-weight: 500; color: var(--cyan); text-decoration: none; transition: opacity 0.3s; }
+    .back-link {
+      font-size: 0.875rem; font-weight: 500; color: var(--cyan);
+      text-decoration: none; transition: opacity 0.3s;
+    }
+
     .back-link:hover { opacity: 0.7; }
 
-    .legal-page { max-width: 900px; margin: 0 auto; padding: 3rem 2rem 5rem; }
-    .legal-page h1 { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
-    .legal-page .updated { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 3rem; }
-    .legal-page h2 { font-size: 1.25rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
-    .legal-page h3 { font-size: 1.05rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+    /* Content */
+    .legal-page {
+      max-width: 900px; margin: 0 auto; padding: 3rem 2rem 5rem;
+    }
+
+    .legal-page h1 {
+      font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.5rem;
+    }
+
+    .legal-page .updated {
+      font-size: 0.85rem; color: var(--text-muted); margin-bottom: 3rem;
+    }
+
+    .legal-page h2 {
+      font-size: 1.25rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 1rem;
+      padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
+    }
+
     .legal-page p { margin-bottom: 1rem; color: var(--text-secondary); font-size: 0.95rem; }
-    .legal-page ul, .legal-page ol { margin-bottom: 1rem; padding-left: 1.5rem; color: var(--text-secondary); font-size: 0.95rem; }
+
+    .legal-page ul, .legal-page ol {
+      margin-bottom: 1rem; padding-left: 1.5rem; color: var(--text-secondary); font-size: 0.95rem;
+    }
+
     .legal-page li { margin-bottom: 0.4rem; }
+
     .legal-page a { color: var(--cyan); text-decoration: none; }
     .legal-page a:hover { text-decoration: underline; }
 
-    .info-table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; font-size: 0.95rem; }
-    .info-table th { padding: 0.75rem 1rem; border: 1px solid var(--border); text-align: left; font-weight: 600; color: var(--text); background: var(--bg-card); }
-    .info-table td { padding: 0.75rem 1rem; border: 1px solid var(--border); vertical-align: top; color: var(--text-secondary); }
+    .info-table {
+      width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem;
+      font-size: 0.95rem;
+    }
 
-    .footer { border-top: 1px solid var(--border); padding: 2rem; }
-    .footer-inner { max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .info-table td {
+      padding: 0.75rem 1rem; border: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .info-table td:first-child {
+      font-weight: 600; width: 200px; color: var(--text);
+    }
+
+    .info-table td:last-child { color: var(--text-secondary); }
+
+    /* Footer */
+    .footer {
+      border-top: 1px solid var(--border); padding: 2rem;
+    }
+
+    .footer-inner {
+      max-width: 900px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+    }
+
     .footer-brand { display: flex; align-items: center; gap: 0.75rem; }
     .footer-brand img { height: 24px; width: auto; opacity: 0.7; }
     .footer-brand span { font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: 0.1em; font-size: 0.85rem; color: var(--text-muted); }
+
     .footer-links { display: flex; gap: 1.5rem; }
     .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 0.8rem; transition: color 0.3s; }
     .footer-links a:hover { color: var(--cyan); }
@@ -118,8 +178,7 @@
     @media (max-width: 600px) {
       .legal-page { padding: 2rem 1.2rem 3rem; }
       .legal-page h1 { font-size: 1.6rem; }
-      .info-table { font-size: 0.85rem; }
-      .info-table th, .info-table td { padding: 0.5rem 0.6rem; }
+      .info-table td:first-child { width: 120px; }
     }
     /* FORGRIT moving background — same visual language as the main page, without the Safari-heavy blur filter. */
     body { overflow-x: hidden; position: relative; min-height: 100vh; }
@@ -256,60 +315,71 @@
 </header>
 
 <main class="legal-page">
-  <h1>Sütikezelési tájékoztató</h1>
+  <h1>Adatkezelési tájékoztató</h1>
   <p class="updated">Utolsó frissítés: 2026. szeptember 22.</p>
 
-  <h2>1. Mi az a süti (cookie)?</h2>
-  <p>A sütik kis méretű szöveges fájlok, amelyeket a weboldal a felhasználó böngészőjében helyez el. Segítségükkel a weboldal megjegyezheti a felhasználó beállításait és egyéb információkat, így javítva a felhasználói élményt.</p>
-
-  <h2>2. Milyen sütiket használunk?</h2>
-
-  <h3>2.1. Feltétlenül szükséges sütik (technikai sütik)</h3>
-  <p>Ezek a sütik a weboldal alapvető működéséhez szükségesek. Hozzájárulás nélkül is alkalmazhatók, mert nélkülük a weboldal nem tud megfelelően működni.</p>
+  <h2>1. Az adatkezelő adatai</h2>
   <table class="info-table">
-    <tr><th>Süti neve</th><th>Cél</th><th>Lejárat</th><th>Típus</th></tr>
-    <tr><td>fg-theme</td><td>A felhasználó által választott megjelenítési téma (világos/sötét) tárolása</td><td>Állandó (localStorage)</td><td>Technikai</td></tr>
-    <tr><td>fg-lang</td><td>A felhasználó által választott nyelv (HU/EN) tárolása</td><td>Állandó (localStorage)</td><td>Technikai</td></tr>
+    <tr><td>Adatkezelő</td><td>Tompos Richárd</td></tr>
+    <tr><td>Márkanév</td><td>FORGRIT</td></tr>
+    <tr><td>Kapcsolattartási cím</td><td>9222 Hegyeshalom, Magyarország</td></tr>
+    <tr><td>E-mail</td><td><a href="mailto:hello@forgrit.hu">hello@forgrit.hu</a></td></tr>
+    <tr><td>Telefon</td><td><a href="tel:+36202389569">+36 20 238 9569</a></td></tr>
   </table>
-  <p>A fenti elemek nem „sütik" a hagyományos értelemben: a böngésző localStorage tárhelyén kerülnek tárolásra, nem kerülnek elküldésre a szervernek, és kizárólag a felhasználó eszközén maradnak.</p>
 
-  <h3>2.2. Analitikai / statisztikai sütik</h3>
-  <p>A weboldal jelenleg nem használ Google Analytics vagy más, felhasználókövetésre szolgáló analitikai sütit.</p>
-
-  <h3>2.3. Marketing / harmadik féltől származó sütik</h3>
-  <p>A Weboldal jelenleg nem alkalmaz marketing vagy reklámcélú sütiket.</p>
-
-  <h2>3. Hozzájárulás és annak visszavonása</h2>
-  <p>A weboldal jelenlegi működése során kizárólag a téma- és nyelvbeállításhoz szükséges localStorage-adatok kerülnek tárolásra. Analitikai vagy marketing célú sütik jelenleg nem kerülnek elhelyezésre.</p>
-  <p>A hozzájárulást a felhasználó bármikor visszavonhatja:</p>
+  <h2>2. A kezelt adatok köre és az adatkezelés célja</h2>
+  <h3>2.1. Kapcsolatfelvétel és ajánlatkérés</h3>
+  <p>A weboldal kapcsolatfelvételi űrlapján, illetve e-mailben történő megkeresés során az alábbi adatok kezelhetők:</p>
   <ul>
-    <li>a böngésző beállításaiban a sütik törlésével, illetve</li>
-    <li>a böngésző beállításaiban a sütik letiltásával.</li>
+    <li>név,</li>
+    <li>e-mail cím,</li>
+    <li>a kiválasztott szolgáltatás vagy érdeklődési téma,</li>
+    <li>az üzenetben önkéntesen megadott további információk.</li>
   </ul>
+  <p>Az adatkezelés célja a megkeresés megválaszolása, az igény felmérése, ajánlat előkészítése és az ehhez kapcsolódó kommunikáció.</p>
+  <p>Az adatkezelés jogalapja szolgáltatásra vagy ajánlatra irányuló megkeresés esetén a GDPR 6. cikk (1) bekezdés b) pontja szerinti, az érintett kérésére történő szerződéskötést megelőző lépések megtétele. Egyéb általános kapcsolatfelvétel esetén a jogalap a GDPR 6. cikk (1) bekezdés f) pontja szerinti jogos érdek, amely a megkeresések megválaszolásához és a kapcsolattartáshoz fűződik.</p>
 
-  <h2>4. Sütik kezelése a böngészőben</h2>
-  <p>A felhasználó a böngészőjében bármikor módosíthatja süti-beállításait. Az alábbiakban a leggyakoribb böngészők vonatkozó beállítási útmutatóira találhat hivatkozást:</p>
+  <h3>2.2. Technikai adatok</h3>
+  <p>A weboldal kiszolgálása során a működéshez és biztonsághoz szükséges technikai adatok – például IP-cím, böngésző- és kérésadatok, valamint naplóadatok – a webes infrastruktúrát biztosító szolgáltatóknál technikailag megjelenhetnek. Ezek kezelésének célja a weboldal elérhetőségének, biztonságának és hibamentes működésének biztosítása.</p>
+
+  <h3>2.3. Helyi böngészőtárolás</h3>
+  <p>A weboldal a választott világos/sötét témát (<code>fg-theme</code>) és a nyelvi beállítást (<code>fg-lang</code>) a böngésző localStorage tárhelyén tárolja. Ezek az adatok az eszközön maradnak, és a weboldal nem továbbítja őket a szerverre.</p>
+
+  <h2>3. Adatfeldolgozók és technikai szolgáltatók</h2>
+  <table class="info-table">
+    <tr><th>Szolgáltató</th><th>Szerep</th><th>Érintett adatok</th></tr>
+    <tr><td>Cloudflare, Inc.</td><td>Weboldal infrastruktúra, biztonság és technikai kiszolgálás</td><td>Technikai kérés- és naplóadatok</td></tr>
+    <tr><td>Resend, Inc.</td><td>A kapcsolatfelvételi űrlapból érkező e-mailek továbbítása</td><td>Név, e-mail cím, kiválasztott téma, üzenet tartalma</td></tr>
+  </table>
+  <p>Egyes technikai szolgáltatók nemzetközi szolgáltatók. Amennyiben személyes adat az Európai Gazdasági Térségen kívülre kerül továbbításra, az adattovábbítás a GDPR szerinti megfelelő garanciák alkalmazása mellett történik.</p>
+
+  <h2>4. Az adatkezelés időtartama</h2>
+  <p>A kapcsolatfelvétel során megadott adatokat a megkeresés megválaszolásához és az esetleges további egyeztetéshez szükséges ideig kezeljük. Ha a kapcsolatból szerződéses vagy más, önálló jogviszony jön létre, az ahhoz kapcsolódó adatok kezelése az adott jogviszonyra vonatkozó jogalap és megőrzési szabályok szerint folytatódhat. Ha az adatkezelés célja megszűnik és nincs más jogalap az adatok megőrzésére, az adatok törlésre kerülnek.</p>
+
+  <h2>5. Adatszolgáltatás</h2>
+  <p>A kapcsolatfelvételi adatok megadása önkéntes. A név, az e-mail cím és az üzenet megadása nélkül a megkeresésre nem tudunk érdemben válaszolni.</p>
+
+  <h2>6. Az érintett jogai</h2>
+  <p>Az érintett a vonatkozó adatvédelmi szabályok szerint kérheti:</p>
   <ul>
-    <li><strong>Google Chrome:</strong> Beállítások &rarr; Adatvédelem és biztonság &rarr; Sütik és egyéb webhelyadatok</li>
-    <li><strong>Mozilla Firefox:</strong> Beállítások &rarr; Adatvédelem és biztonság &rarr; Sütik és oldaladatok</li>
-    <li><strong>Microsoft Edge:</strong> Beállítások &rarr; Sütik és webhelyadatok</li>
-    <li><strong>Safari:</strong> Beállítások &rarr; Adatvédelem &rarr; Sütik kezelése</li>
+    <li>a személyes adataihoz való hozzáférést,</li>
+    <li>a pontatlan adatok helyesbítését,</li>
+    <li>az adatok törlését, ha annak feltételei fennállnak,</li>
+    <li>az adatkezelés korlátozását,</li>
+    <li>az adathordozhatóságot, ha annak feltételei fennállnak,</li>
+    <li>jogos érdeken alapuló adatkezelés esetén tiltakozhat az adatkezelés ellen.</li>
   </ul>
-  <p>A sütik letiltása esetén a weboldal egyes funkciói (pl. téma- és nyelvbeállítás megjegyzése) korlátozottan működhetnek.</p>
+  <p>Az érintetti kérelmek a <a href="mailto:hello@forgrit.hu">hello@forgrit.hu</a> címen nyújthatók be. A kérelemre a jogszabályi határidőn belül, főszabály szerint egy hónapon belül válaszolunk.</p>
 
-  <h2>5. A localStorage adatok törlése</h2>
-  <p>A Weboldal által használt localStorage elemek törléséhez nyissa meg a böngésző Fejlesztői eszközök paneljét (F12), válassza az „Application" (Alkalmazás) fület, majd a „Local Storage" szekcióban törölje a forgrit.hu domain alatti bejegyzéseket.</p>
+  <h2>7. Panasztétel és jogorvoslat</h2>
+  <p>Ha úgy érzi, hogy személyes adatainak kezelése nem megfelelő, elsőként közvetlenül is kapcsolatba léphet velünk a <a href="mailto:hello@forgrit.hu">hello@forgrit.hu</a> címen.</p>
+  <p>Emellett panasszal fordulhat a Nemzeti Adatvédelmi és Információszabadság Hatósághoz (NAIH): 1055 Budapest, Falk Miksa utca 9–11.; web: <a href="https://www.naih.hu/" target="_blank" rel="noopener">www.naih.hu</a>.</p>
 
-  <h2>6. Jogszabályi háttér</h2>
-  <ul>
-    <li>Az Európai Parlament és a Tanács (EU) 2016/679 rendelete (GDPR)</li>
-    <li>2011. évi CXII. törvény az információs önrendelkezési jogról és az információszabadságról (Infotv.)</li>
-    <li>2001. évi CVIII. törvény az elektronikus kereskedelmi szolgáltatásokról (Eker. tv.)</li>
-    <li>2002/58/EK irányelv az elektronikus hírközlési ágazatban a magánélet védelméről (ePrivacy irányelv)</li>
-  </ul>
+  <h2>8. Automatizált döntéshozatal</h2>
+  <p>A weboldal a személyes adatok alapján nem végez automatizált döntéshozatalt vagy profilalkotást.</p>
 
-  <h2>7. Kapcsolat</h2>
-  <p>A sütikezeléssel kapcsolatos kérdéseit az <a href="mailto:hello@forgrit.hu">hello@forgrit.hu</a> e-mail címre vagy a <a href="tel:+36202389569">+36 20 238 9569</a> telefonszámra küldheti. További információ az adatkezelésről: <a href="adatkezeles.html">Adatkezelési tájékoztató</a>.</p>
+  <h2>9. Kapcsolat</h2>
+  <p>Adatkezeléssel kapcsolatos kérdés vagy kérelem esetén írjon a <a href="mailto:hello@forgrit.hu">hello@forgrit.hu</a> e-mail címre.</p>
 </main>
 
 <footer class="footer">
