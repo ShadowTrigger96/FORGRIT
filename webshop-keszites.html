@@ -3346,6 +3346,83 @@
       .shop-product-card:nth-child(3){display:none;}
     }
 
+
+    /* Photographic shop examples. Kept separate from the FORGRIT page theme. */
+    .store-preview{width:100%;min-width:0;background:#fffdf9;color:#292b28;border:1px solid #e5e1d9;border-radius:8px;overflow:hidden;font-family:Inter,sans-serif;text-align:left;line-height:1.5;}
+    .store-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;border-bottom:1px solid #e5e1d9;font-size:10px;}
+    .store-head b{font-size:13px;letter-spacing:.1em;}
+    .store-head>span{color:#62645f;}
+    .store-hero{display:grid;grid-template-columns:1fr 1fr;align-items:center;}
+    .store-hero>div{padding:24px;}
+    .store-preview h4{font-family:Georgia,serif;font-size:clamp(23px,2.2vw,34px);font-weight:400;line-height:1.12;letter-spacing:-.025em;margin:10px 0;}
+    .store-preview p{font-size:12px;line-height:1.65;color:#62645f;margin:10px 0 16px;}
+    .store-preview small{font-size:10px;color:#62645f;}
+    .store-hero>img{width:100%;height:265px;object-fit:cover;object-position:72% center;}
+    .store-action{display:inline-block;background:#3b4940;color:#fff;padding:9px 13px;font-size:10px;font-weight:600;white-space:nowrap;}
+    .store-products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:20px;}
+    .store-product{min-width:0;}
+    .store-product img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:#ebe7df;}
+    .store-product b,.store-product>span{display:block;font-size:11px;margin-top:7px;line-height:1.35;}
+    .store-product>span{font-size:10px;margin-top:4px;color:#62645f;}
+    .store-note{font-size:9px;color:#747770;padding:0 20px 12px;}
+    .store-toolbar{display:flex;justify-content:space-between;gap:12px;padding:16px 20px;font-size:11px;}
+    .store-toolbar>span:first-child{color:#62645f;border-bottom:1px solid #cccfc7;flex:1;padding-bottom:5px;}
+    .store-categories{padding:0 20px 8px;font-size:10px;color:#62645f;}
+    .store-filter{display:flex;flex-wrap:wrap;gap:8px;padding:8px 20px 0;font-size:10px;}
+    .store-filter span{padding:5px 8px;border:1px solid #deded7;}
+    .store-detail{display:grid;grid-template-columns:1.1fr 1fr;gap:22px;padding:22px;align-items:center;}
+    .store-detail>img{width:100%;height:280px;object-fit:cover;}
+    .store-detail strong{font-size:17px;font-weight:500;}
+    .store-order{padding:22px;}
+    .store-order h4{max-width:420px;font-size:26px;}
+    .store-order-row{display:grid;grid-template-columns:52px 1fr 34px auto;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid #e5e1d9;font-size:11px;}
+    .store-order-row img{width:52px;height:48px;object-fit:cover;}
+    .store-order-row b,.store-order-row small{display:block;}
+    .store-order-row strong{font-size:11px;white-space:nowrap;}
+    .store-order-foot{display:flex;gap:10px;align-items:center;justify-content:space-between;margin-top:18px;font-size:10px;}
+    #tartalom .feature-viewport.design-mode{max-height:none;height:auto;overflow:visible;}
+    #tartalom .feature-viewport.phone-mode{min-height:0!important;height:auto!important;max-height:none!important;padding:18px!important;}
+    #tartalom .phone-mode .store-preview{width:238px;flex:none;border:6px solid #292b28;border-radius:24px;}
+    .phone-mode .store-head{padding:14px 12px;}
+    .phone-mode .store-head b{font-size:11px;}
+    .phone-mode .store-head>span{display:none;}
+    .phone-mode .store-hero{grid-template-columns:1fr;}
+    .phone-mode .store-hero>img{height:128px;order:-1;}
+    .phone-mode .store-hero>div{padding:15px;}
+    .phone-mode .store-preview h4{font-size:25px;}
+    .phone-mode .store-preview p{font-size:10px;margin-bottom:12px;}
+    .phone-mode .store-preview small{font-size:9px;}
+    .phone-mode .store-products{padding:0 14px 14px;gap:8px;grid-template-columns:repeat(2,minmax(0,1fr));}
+    .phone-mode .store-product:nth-child(3){display:none;}
+    .phone-mode .store-product b{font-size:9px;}
+    .phone-mode .store-product>span{font-size:9px;}
+    .phone-mode .store-note{padding-left:14px;}
+    @media(max-width:700px){
+      .store-head{padding:12px 14px;}
+      .store-hero>div{padding:16px;}
+      .store-hero>img{height:230px;}
+      .store-preview h4{font-size:26px;}
+      .store-products{padding:14px;gap:9px;}
+      .store-detail{gap:14px;padding:14px;}
+      .store-detail>img{height:235px;}
+      .store-order{padding:14px;}
+      .store-order-row{grid-template-columns:40px 1fr 25px auto;gap:6px;font-size:10px;}
+      .store-order-row img{width:40px;height:44px;}
+      .store-order-row strong{font-size:10px;}
+    }
+    @media(max-width:450px){
+      .store-head>span{font-size:9px;}
+      .store-hero{grid-template-columns:1fr;}
+      .store-hero>img{order:-1;height:160px;}
+      .store-detail{grid-template-columns:1fr;}
+      .store-detail>img{height:185px;}
+      .store-product b{font-size:10px;}
+      .store-order h4{font-size:23px;}
+      .store-order-foot{flex-wrap:wrap;}
+      .store-toolbar{padding:14px;}
+      .store-categories,.store-filter{padding-left:14px;padding-right:14px;}
+    }
+
 </style>
 </head>
 <body>
@@ -3427,7 +3504,7 @@
       <span class="gradient-text">igényeidhez</span>
       <span>alakítva</span>
     </h1>
-    <p class="hero-sub">WooCommerce vagy Shopify webshop, a termékektől a fizetésen és szállításon át a számlázásig. A teljes folyamatot közvetlenül velem egyezteted.</p>
+    <p class="hero-sub">WooCommerce vagy Shopify webshopot készítek, a termékek feltöltésétől a fizetés, a szállítás és a számlázás beállításáig. A tervezéstől az indulásig közvetlenül velem egyeztetsz.</p>
     <div class="hero-buttons">
       <a href="#elso-kerdes" class="btn-primary">Nézzük meg, mire van szükséged
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -3447,7 +3524,7 @@
       <span class="marquee-item">Szállítás <span class="sep">&#x2022;</span></span>
       <span class="marquee-item">Számlázás <span class="sep">&#x2022;</span></span>
       <span class="marquee-item">Termékvariációk <span class="sep">&#x2022;</span></span>
-      <span class="marquee-item">Mobil vásárlás <span class="sep">&#x2022;</span></span>
+      <span class="marquee-item">Mobilos vásárlás <span class="sep">&#x2022;</span></span>
       <span class="marquee-item">Technikai SEO <span class="sep">&#x2022;</span></span>
     </div>
     <div class="marquee-group">
@@ -3457,7 +3534,7 @@
       <span class="marquee-item">Szállítás <span class="sep">&#x2022;</span></span>
       <span class="marquee-item">Számlázás <span class="sep">&#x2022;</span></span>
       <span class="marquee-item">Termékvariációk <span class="sep">&#x2022;</span></span>
-      <span class="marquee-item">Mobil vásárlás <span class="sep">&#x2022;</span></span>
+      <span class="marquee-item">Mobilos vásárlás <span class="sep">&#x2022;</span></span>
       <span class="marquee-item">Technikai SEO <span class="sep">&#x2022;</span></span>
     </div>
   </div>
@@ -3490,13 +3567,13 @@
         <button class="service-card decision-card reveal" style="--i:2;--card-accent:var(--purple);" data-decision="multi">
           <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
           <h3>Sok terméket szeretnék kezelni</h3>
-          <p>Sok termék, kategória vagy variáció van, ezért fontos az átlátható felépítés.</p>
+          <p>Sokféle terméket árulsz, ezért jól átlátható kategóriákra és használható szűrőkre van szükséged.</p>
           
         </button>
         <button class="service-card decision-card reveal" style="--i:3;--card-accent:var(--green);" data-decision="campaign">
           <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M4 13V6a2 2 0 0 1 2-2h6l8 8-8 8H6a2 2 0 0 1-2-2v-5"/><circle cx="9" cy="9" r="1"/></svg></div>
-          <h3>Egyedi működés kell</h3>
-          <p>B2B árak, egyedi kedvezmények, import vagy külső rendszer miatt több kell az alap funkcióknál.</p>
+          <h3>Egyedi funkciókra van szükségem</h3>
+          <p>Partnerenként eltérő árakra, termékimportra vagy más rendszerrel való összekötésre van szükséged.</p>
           
         </button>
       </div>
@@ -3505,14 +3582,6 @@
         <div class="browser-frame">
           <div class="browser-top"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-address"></span></div>
           <div class="site-demo" id="decisionDemo">
-            <div class="fake-site fake-editorial theme-warm">
-              <div class="fake-topnav"><span class="fake-brand">NORD HOME</span><div class="fake-links"><span>Újdonságok</span><span>Nappali</span><span>Hálószoba</span><span>Akciók</span></div><span class="fake-nav-cta">Termékek</span></div>
-              <div class="editorial-grid">
-                <div class="editorial-copy"><div class="fake-eyebrow">ÚJ TERMÉKEK</div><div class="fake-title">Lakáskiegészítők otthonra.</div><p class="fake-copy">Válogass kategória szerint, nézd meg a készletet, és rendelj online.</p><div class="fake-actions"><span class="fake-btn">Termékek</span><span class="fake-btn ghost">Kategóriák</span></div></div>
-                <div class="editorial-image" style="background-image:linear-gradient(180deg,rgba(15,23,42,.02),rgba(15,23,42,.18)),url(&quot;https://images.unsplash.com/photo-1771888703723-01d85da1dae1?auto=format&amp;fit=crop&amp;fm=jpg&amp;ixlib=rb-4.1.0&amp;q=60&amp;w=1600&quot;);background-position:center 58%;"><span class="fake-photo-tag">Új kollekció</span></div>
-              </div>
-              <div class="editorial-bottom"><div><b>01</b><span>Dekoráció</span></div><div><b>02</b><span>Textil</span></div><div><b>03</b><span>Világítás</span></div></div>
-            </div>
           </div>
         </div>
       </div>
@@ -3534,7 +3603,7 @@
       <div class="feature-tabs reveal-left">
         <button class="feature-tab active" data-feature="design">
           <span class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L8 18l-4 1 1-4Z"/></svg></span>
-          <span><strong>Termékek & kategóriák</strong><span>kategóriák, variációk, keresés</span></span>
+          <span><strong>Termékek és kategóriák</strong><span>kategóriák, variációk, keresés</span></span>
         </button>
         <button class="feature-tab" data-feature="mobile">
           <span class="service-icon"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><line x1="11" y1="18" x2="13" y2="18"/></svg></span>
@@ -3542,7 +3611,7 @@
         </button>
         <button class="feature-tab" data-feature="contact">
           <span class="service-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="m4 6 8 6 8-6"/></svg></span>
-          <span><strong>Fizetés & pénztár</strong><span>fizetési módok, rendelés</span></span>
+          <span><strong>Fizetés és pénztár</strong><span>fizetési módok, rendelés</span></span>
         </button>
         <button class="feature-tab" data-feature="seo">
           <span class="service-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.5" y2="16.5"/></svg></span>
@@ -3550,7 +3619,7 @@
         </button>
         <button class="feature-tab" data-feature="launch">
           <span class="service-icon"><svg viewBox="0 0 24 24"><path d="M14 3h7v7"/><path d="M10 14 21 3"/><path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"/></svg></span>
-          <span><strong>Szállítás & számlázás</strong><span>szállítási módok, számlázó</span></span>
+          <span><strong>Szállítás és számlázás</strong><span>szállítási módok, számlázó</span></span>
         </button>
       </div>
 
@@ -3559,21 +3628,12 @@
           <div class="feature-browser">
             <div class="browser-top"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-address"></span></div>
             <div class="feature-viewport design-mode" id="featureViewport">
-              <div class="shop-catalog-demo">
-                <div class="shop-demo-head"><b>NORD HOME</b><div class="shop-demo-search">Termék keresése…</div><span class="shop-demo-cart">🛒 2</span></div>
-                <div class="shop-demo-cats"><span>Újdonságok</span><span>Nappali</span><span>Hálószoba</span><span>Akciók</span></div>
-                <div class="shop-product-grid">
-                  <div class="shop-product-card"><div class="shop-product-img">◒</div><b>Asztali lámpa</b><div class="shop-product-meta"><span>Raktáron</span><strong>18 990 Ft</strong></div></div>
-                  <div class="shop-product-card"><div class="shop-product-img">◇</div><b>Gyapjú takaró</b><div class="shop-product-meta"><span>3 szín</span><strong>24 490 Ft</strong></div></div>
-                  <div class="shop-product-card"><div class="shop-product-img">◯</div><b>Kerámia váza</b><div class="shop-product-meta"><span>Raktáron</span><strong>12 990 Ft</strong></div></div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
         <div class="feature-copy" id="featureCopy">
-          <h3>Termékek &amp; kategóriák</h3>
-          <p>A webshop felépítését úgy rakom össze, hogy a termékek könnyen megtalálhatók legyenek, és később is egyszerű maradjon a kezelése.</p>
+          <h3>Termékek és kategóriák</h3>
+          <p>Úgy építem fel a kategóriákat és a termékoldalakat, hogy a vásárlók könnyen megtalálják, amit keresnek. Neked pedig egyszerű legyen új termékeket feltölteni és frissíteni a készletet.</p>
           <ul><li>kategória- és termékoldalak</li><li>variációk és készlet</li><li>keresés és szűrés</li></ul>
         </div>
       </div>
@@ -3595,7 +3655,7 @@
       <div class="case-stage reveal-left">
         <div class="case-stage-inner" id="caseStage">
           <h3>Carsystemshop.hu – B2B/B2C webshop</h3>
-          <p>A webshop lakossági és üzleti vásárlókat is kiszolgál. Sok termék mellett is gyorsan kell lehessen keresni és rendelni.</p>
+          <p>A Carsystemshop.hu lakossági és üzleti vásárlókat is kiszolgál. A széles kínálatban is fontos, hogy a keresett termék könnyen megtalálható és gyorsan megrendelhető legyen.</p>
           <a class="case-shop-link" href="https://carsystemshop.hu/" target="_blank" rel="noopener">Webshop megnyitása ↗</a>
           <div class="case-shop-image"><img src="cs%20portfolio.png" alt="Carsystemshop projekt" loading="lazy" decoding="async"></div>
         </div>
@@ -3617,7 +3677,7 @@
   <div class="section-inner" style="position:relative;z-index:1;">
     <div class="reveal">
       <div class="section-label"><span class="line"></span> Gyors árbecslő</div>
-      <h2 class="section-title">Milyen kategóriába eshet a webshop?</h2>
+      <h2 class="section-title">Mennyibe kerülne a webshopod?</h2>
     </div>
 
     <div class="estimator-grid">
@@ -3626,21 +3686,21 @@
           <h3>Hány termékkel indulnál?</h3>
           <div class="estimate-options">
             <label class="estimate-option"><input type="radio" name="catalog" value="small" checked><span>1–50 termék</span></label>
-            <label class="estimate-option"><input type="radio" name="catalog" value="large"><span>50+ termék</span></label>
+            <label class="estimate-option"><input type="radio" name="catalog" value="large"><span>51 vagy több termék</span></label>
           </div>
         </div>
         <div class="estimator-question">
           <h3>Kellenek egyedi funkciók?</h3>
           <div class="estimate-options">
-            <label class="estimate-option"><input type="radio" name="features" value="standard" checked><span>Nem, az alap webshop funkciók elegendők</span></label>
-            <label class="estimate-option"><input type="radio" name="features" value="custom"><span>Igen, egyedi működés is kell</span></label>
+            <label class="estimate-option"><input type="radio" name="features" value="standard" checked><span>Nem, az alapfunkciók elegendők</span></label>
+            <label class="estimate-option"><input type="radio" name="features" value="custom"><span>Igen, egyedi funkciókra is szükségem van</span></label>
           </div>
         </div>
         <div class="estimator-question">
-          <h3>Kell külső rendszer vagy integráció?</h3>
+          <h3>Összekötnéd más rendszerrel is?</h3>
           <div class="estimate-options">
-            <label class="estimate-option"><input type="radio" name="integration" value="no" checked><span>Nem, az alap fizetés / szállítás / számlázás elég</span></label>
-            <label class="estimate-option"><input type="radio" name="integration" value="yes"><span>Igen / B2B / API / még nem tudom</span></label>
+            <label class="estimate-option"><input type="radio" name="integration" value="no" checked><span>Nem, a fizetés, szállítás és számlázás beállítása elég</span></label>
+            <label class="estimate-option"><input type="radio" name="integration" value="yes"><span>Igen, vagy még egyeztetnünk kell róla</span></label>
           </div>
         </div>
       </div>
@@ -3650,7 +3710,7 @@
         <div class="pricing-price" id="estimatePrice">499.000 Ft <span class="suffix">-tól</span></div>
         <p id="estimateText">WooCommerce vagy Shopify webshop alap fizetési, szállítási és számlázási funkciókkal.</p>
         <a href="index.html#kapcsolat" class="pricing-cta primary" style="margin-top:1.6rem;">Pontos ajánlatot kérek</a>
-        <div class="estimate-meta">Nettó irányár. A végleges ár a pontos igények alapján készül.</div>
+        <div class="estimate-meta">Nettó irányár. A pontos igények egyeztetése után személyre szabott ajánlatot adok.</div>
       </div>
     </div>
   </div>
@@ -3695,6 +3755,15 @@
   window.toggleTheme=function(){applyTheme(currentTheme==='light'?'dark':'light');};
 
   var en={
+    'Mire van szükséged?':'What do you need?',
+    'Bankkártyás fizetés':'Card payment',
+    'Szállítás':'Shipping',
+    'Számlázás':'Invoicing',
+    'Technikai SEO':'Technical SEO',
+    'Termékkatalógus':'Product catalogue',
+    'Termékvariációk':'Product variations',
+    '– Minden jog fenntartva.':'– All rights reserved.',
+    'Webshopkezelés':'Store management',
     'Milyen webshop kell?':'What kind of webshop?',
     'Mit kapsz?':'What is included?',
     'Példa':'Example',
@@ -3703,7 +3772,7 @@
     'Webshop a te':'A webshop',
     'igényeidhez':'built around your',
     'alakítva':'needs',
-    'WooCommerce vagy Shopify webshop, a termékektől a fizetésen és szállításon át a számlázásig. A teljes folyamatot közvetlenül velem egyezteted.':'A WooCommerce or Shopify store, from products and payments to shipping and invoicing. You work directly with me throughout the project.',
+    'WooCommerce vagy Shopify webshopot készítek, a termékek feltöltésétől a fizetés, a szállítás és a számlázás beállításáig. A tervezéstől az indulásig közvetlenül velem egyeztetsz.':'A WooCommerce or Shopify store, from products and payments to shipping and invoicing. You work directly with me throughout the project.',
     'Nézzük meg, mire van szükséged':'Let’s see what you need',
     'Ajánlatot kérek':'Request a quote',
     'GÖRGESS':'SCROLL',
@@ -3714,20 +3783,20 @@
     'Van webshopom, de lecserélném':'I have a webshop, but I want to replace it',
     'A mostani rendszer lassú, nehezen kezelhető, vagy egyszerűen kinőtted.':'Your current store is slow, hard to manage, or you have simply outgrown it.',
     'Sok terméket szeretnék kezelni':'I need to manage a lot of products',
-    'Sok termék, kategória vagy variáció van, ezért fontos az átlátható felépítés.':'You have many products, categories or variations, so a clear structure matters.',
-    'Egyedi működés kell':'I need custom functionality',
-    'B2B árak, egyedi kedvezmények, import vagy külső rendszer miatt több kell az alap funkcióknál.':'B2B pricing, custom discounts, imports or external systems need more than the standard setup.',
+    'Sokféle terméket árulsz, ezért jól átlátható kategóriákra és használható szűrőkre van szükséged.':'You have many products, categories or variations, so a clear structure matters.',
+    'Egyedi funkciókra van szükségem':'I need custom functionality',
+    'Partnerenként eltérő árakra, termékimportra vagy más rendszerrel való összekötésre van szükséged.':'B2B pricing, custom discounts, imports or external systems need more than the standard setup.',
     'A webshop fő részei':'Core webshop parts',
     'Mi kerül bele a webshopba?':'What goes into the webshop?',
-    'Termékek & kategóriák':'Products & categories',
+    'Termékek és kategóriák':'Products & categories',
     'kategóriák, variációk, keresés':'categories, variations, search',
     'Mobilos vásárlás':'Mobile shopping',
     'kosár és pénztár telefonon':'cart and checkout on mobile',
-    'Fizetés & pénztár':'Payment & checkout',
+    'Fizetés és pénztár':'Payment & checkout',
     'fizetési módok, rendelés':'payment methods, ordering',
     'SEO alapok':'SEO basics',
     'termék- és kategóriaoldalak':'product and category pages',
-    'Szállítás & számlázás':'Shipping & invoicing',
+    'Szállítás és számlázás':'Shipping & invoicing',
     'szállítási módok, számlázó':'shipping methods, invoicing',
     'Mini esettanulmány':'Mini case study',
     'Carsystemshop.hu – valós webshop, valós feladatok':'Carsystemshop.hu – a real webshop with real work behind it',
@@ -3738,18 +3807,18 @@
     '03 · Folyamatos munka':'03 · Ongoing work',
     'Mi történik utána?':'What happens afterwards?',
     'Gyors árbecslő':'Quick price guide',
-    'Milyen kategóriába eshet a webshop?':'Which category might your webshop fit into?',
+    'Mennyibe kerülne a webshopod?':'How much would your webshop cost?',
     'Hány termékkel indulnál?':'How many products would you start with?',
     '1–50 termék':'1–50 products',
-    '50+ termék':'50+ products',
+    '51 vagy több termék':'51 or more products',
     'Kellenek egyedi funkciók?':'Do you need custom features?',
-    'Nem, az alap webshop funkciók elegendők':'No, standard webshop features are enough',
-    'Igen, egyedi működés is kell':'Yes, I need custom functionality',
-    'Kell külső rendszer vagy integráció?':'Do you need an external system or integration?',
-    'Nem, az alap fizetés / szállítás / számlázás elég':'No, standard payment / shipping / invoicing is enough',
-    'Igen / B2B / API / még nem tudom':'Yes / B2B / API / not sure yet',
+    'Nem, az alapfunkciók elegendők':'No, standard webshop features are enough',
+    'Igen, egyedi funkciókra is szükségem van':'Yes, I need custom functionality',
+    'Összekötnéd más rendszerrel is?':'Would you connect it to another system?',
+    'Nem, a fizetés, szállítás és számlázás beállítása elég':'No, standard payment / shipping / invoicing is enough',
+    'Igen, vagy még egyeztetnünk kell róla':'Yes, or I would like to discuss it first',
     'Pontos ajánlatot kérek':'Request an exact quote',
-    'Nettó irányár. A végleges ár a pontos igények alapján készül.':'Net guide price. Final pricing depends on the exact requirements.',
+    'Nettó irányár. A pontos igények egyeztetése után személyre szabott ajánlatot adok.':'Net guide price. I provide a tailored quote after we discuss your requirements.',
     'Kapcsolat':'Contact',
     'Van már elképzelésed a webshopról?':'Already have an idea for your webshop?',
     'Vissza a főoldalra':'Back to homepage',
@@ -3775,212 +3844,64 @@
     });
   }
 
-  var fakeSites={
-    start:{
-      hu:{
-        brand:'NORD HOME',
-        layout:'editorial',
-        links:['Újdonságok','Nappali','Hálószoba','Akciók'],
-        eyebrow:'ÚJ TERMÉKEK',
-        title:'Lakáskiegészítők otthonra.',
-        copy:'Válogass kategória szerint, nézd meg a készletet, és rendelj online.',
-        cta:'Termékek',
-        ghost:'Kategóriák',
-        image:'https://images.unsplash.com/photo-1771888703723-01d85da1dae1?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=60&w=1600',
-        imagePos:'center 58%',
-        tag:'Új kollekció',
-        items:[['01','Dekoráció'],['02','Textil'],['03','Világítás']]
-      },
-      en:{
-        brand:'NORD HOME',
-        layout:'editorial',
-        links:['New','Living','Bedroom','Sale'],
-        eyebrow:'NEW PRODUCTS',
-        title:'Home accessories for everyday use.',
-        copy:'Browse by category, check stock and order online.',
-        cta:'Products',
-        ghost:'Categories',
-        image:'https://images.unsplash.com/photo-1771888703723-01d85da1dae1?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=60&w=1600',
-        imagePos:'center 58%',
-        tag:'New collection',
-        items:[['01','Decor'],['02','Textiles'],['03','Lighting']]
-      }
-    },
-    replace:{
-      hu:{
-        brand:'GEARLAB',
-        layout:'service',
-        links:['Termékek','Márkák','Akciók','Kapcsolat'],
-        eyebrow:'MEGÚJULT WEBSHOP',
-        title:'A meglévő kínálat új webshopban.',
-        copy:'A termékek maradnak, a keresés, szűrés és rendelés egyszerűbb lesz.',
-        cta:'Termékek',
-        ghost:'Márkák',
-        image:'https://images.unsplash.com/photo-1567808291548-fc3ee04dbcf0?ixlib=rb-4.1.0&q=80&fm=jpg&crop=entropy&cs=srgb',
-        imagePos:'center 58%',
-        tag:'Megújult webshop',
-        items:[['Keresés','gyors kereső'],['Szűrés','fontos szempontok szerint'],['Pénztár','kevesebb lépés']]
-      },
-      en:{
-        brand:'GEARLAB',
-        layout:'service',
-        links:['Products','Brands','Sale','Contact'],
-        eyebrow:'UPDATED WEBSHOP',
-        title:'Your current catalogue in a new webshop.',
-        copy:'The products stay, but search, filtering and ordering become simpler.',
-        cta:'Products',
-        ghost:'Brands',
-        image:'https://images.unsplash.com/photo-1567808291548-fc3ee04dbcf0?ixlib=rb-4.1.0&q=80&fm=jpg&crop=entropy&cs=srgb',
-        imagePos:'center 58%',
-        tag:'Updated webshop',
-        items:[['Search','quick search'],['Filters','important criteria'],['Checkout','fewer steps']]
-      }
-    },
-    multi:{
-      hu:{
-        brand:'MARKET ONE',
-        layout:'consulting',
-        links:['Kategóriák','Márkák','Újdonságok','Fiókom'],
-        eyebrow:'NAGYOBB KATALÓGUS',
-        title:'Több termék, egyszerűbb keresés.',
-        copy:'Kategóriák, szűrők és variációk egy helyen.',
-        cta:'Kategóriák',
-        ghost:'Újdonságok',
-        image:'https://unsplash.com/photos/PhYq704ffdA/download?force=true',
-        imagePos:'center 52%',
-        tag:'Termékkatalógus',
-        items:[['01','Kategóriák'],['02','Szűrők'],['03','Variációk']]
-      },
-      en:{
-        brand:'MARKET ONE',
-        layout:'consulting',
-        links:['Categories','Brands','New','Account'],
-        eyebrow:'LARGER CATALOGUE',
-        title:'More products, easier to find.',
-        copy:'Categories, filters and variations in one place.',
-        cta:'Categories',
-        ghost:'New arrivals',
-        image:'https://unsplash.com/photos/PhYq704ffdA/download?force=true',
-        imagePos:'center 52%',
-        tag:'Product catalogue',
-        items:[['01','Categories'],['02','Filters'],['03','Variations']]
-      }
-    },
-    campaign:{
-      hu:{
-        brand:'PROLINE B2B',
-        layout:'campaign',
-        links:['Termékek','Saját árak','Rendelések'],
-        eyebrow:'B2B WEBSHOP',
-        title:'Saját árak belépés után.',
-        copy:'A partner a saját kedvezményeit látja, és újra tudja rendelni a megszokott termékeket.',
-        cta:'Belépés',
-        ghost:'Részletek',
-        image:'https://images.unsplash.com/photo-1567808291548-fc3ee04dbcf0?ixlib=rb-4.1.0&q=80&fm=jpg&crop=entropy&cs=srgb',
-        imagePos:'center 58%',
-        tag:'B2B rendelés',
-        items:['Partnerárak','Egyedi kedvezmények','Korábbi rendelések']
-      },
-      en:{
-        brand:'PROLINE B2B',
-        layout:'campaign',
-        links:['Products','My prices','Orders'],
-        eyebrow:'B2B WEBSHOP',
-        title:'Your prices after sign-in.',
-        copy:'Business customers see their own discounts and can reorder familiar products.',
-        cta:'Sign in',
-        ghost:'Details',
-        image:'https://images.unsplash.com/photo-1567808291548-fc3ee04dbcf0?ixlib=rb-4.1.0&q=80&fm=jpg&crop=entropy&cs=srgb',
-        imagePos:'center 58%',
-        tag:'B2B ordering',
-        items:['Partner prices','Custom discounts','Previous orders']
-      }
-    }
-  };
 
-  function fakeSiteHtml(data,theme){
-    var links='';
-    data.links.forEach(function(x){links+='<span>'+x+'</span>';});
-    var art='style="background-image:linear-gradient(180deg,rgba(15,23,42,.02),rgba(15,23,42,.18)),url(&quot;'+data.image+'&quot;);background-position:'+data.imagePos+';"';
-
-    if(data.layout==='editorial'){
-      var items='';
-      data.items.forEach(function(x){items+='<div><b>'+x[0]+'</b><span>'+x[1]+'</span></div>';});
-      return '<div class="fake-site fake-editorial '+(theme||'')+'">'+
-        '<div class="fake-topnav"><span class="fake-brand">'+data.brand+'</span><div class="fake-links">'+links+'</div><span class="fake-nav-cta">'+data.cta+'</span></div>'+
-        '<div class="editorial-grid"><div class="editorial-copy"><div class="fake-eyebrow">'+data.eyebrow+'</div><div class="fake-title">'+data.title+'</div><p class="fake-copy">'+data.copy+'</p><div class="fake-actions"><span class="fake-btn">'+data.cta+'</span><span class="fake-btn ghost">'+data.ghost+'</span></div></div>'+
-        '<div class="editorial-image" '+art+'><span class="fake-photo-tag">'+data.tag+'</span></div></div>'+
-        '<div class="editorial-bottom">'+items+'</div>'+
-      '</div>';
-    }
-
-    if(data.layout==='service'){
-      var serviceItems='';
-      data.items.forEach(function(x){serviceItems+='<div><b>'+x[0]+'</b><span>'+x[1]+'</span></div>';});
-      return '<div class="fake-site fake-service-layout '+(theme||'')+'">'+
-        '<div class="fake-topnav"><span class="fake-brand">'+data.brand+'</span><div class="fake-links">'+links+'</div><span class="fake-nav-cta">'+data.cta+'</span></div>'+
-        '<div class="service-cover" '+art+'><div class="service-cover-copy"><div class="fake-eyebrow">'+data.eyebrow+'</div><div class="fake-title">'+data.title+'</div><p class="fake-copy">'+data.copy+'</p><span class="fake-btn">'+data.cta+'</span></div></div>'+
-        '<div class="service-strip">'+serviceItems+'</div>'+
-      '</div>';
-    }
-
-    if(data.layout==='consulting'){
-      var consultingItems='';
-      data.items.forEach(function(x){consultingItems+='<div><span>'+x[0]+'</span><b>'+x[1]+'</b></div>';});
-      return '<div class="fake-site fake-consulting '+(theme||'')+'">'+
-        '<div class="fake-topnav"><span class="fake-brand">'+data.brand+'</span><div class="fake-links">'+links+'</div><span class="fake-nav-cta">'+data.cta+'</span></div>'+
-        '<div class="consulting-hero"><div class="consulting-copy"><div class="fake-eyebrow">'+data.eyebrow+'</div><div class="fake-title">'+data.title+'</div><p class="fake-copy">'+data.copy+'</p><div class="fake-actions"><span class="fake-btn">'+data.cta+'</span><span class="fake-btn ghost">'+data.ghost+'</span></div></div><div class="consulting-photo" '+art+'></div></div>'+
-        '<div class="consulting-cards">'+consultingItems+'</div>'+
-      '</div>';
-    }
-
-    var campaignItems='';
-    data.items.forEach(function(x,i){
-      var icons=['✦','◆','↗'];
-      campaignItems+='<div class="campaign-proof-item"><i>'+icons[i%icons.length]+'</i><span>'+x+'</span></div>';
-    });
-    return '<div class="fake-site fake-campaign '+(theme||'')+'">'+
-      '<div class="campaign-photo" '+art+'><div class="campaign-overlay"><span class="fake-brand">'+data.brand+'</span><div class="fake-eyebrow">'+data.eyebrow+'</div><div class="fake-title">'+data.title+'</div><p class="fake-copy">'+data.copy+'</p><div class="fake-actions"><span class="fake-btn">'+data.cta+'</span><span class="fake-btn ghost">'+data.ghost+'</span></div></div></div>'+
-      '<div class="campaign-proof">'+campaignItems+'</div>'+
-    '</div>';
+  // Illustrative stores, not client references. Photo sources: assets/webshop/CREDITS.md.
+  var fakeSites={start:{kind:'start'},replace:{kind:'replace'},multi:{kind:'multi'},campaign:{kind:'campaign'}};
+  function shopText(hu,en){return currentLang==='en'?en:hu;}
+  function shopPhoto(file,alt,cls){return '<img class="'+(cls||'')+'" src="assets/webshop/'+file+'.webp" alt="'+alt+'" loading="lazy" decoding="async">';}
+  function shopHead(partner){
+    return '<div class="store-head"><b>NORD HOME</b><span>'+shopText(partner?'Partnerfiók':'Lakberendezés',partner?'Trade account':'Furniture & decor')+'</span></div>';
   }
-
-  var decisions={
-    start:{
-      theme:'theme-warm',
-      hu:{title:'Induló webshop',result:'Itt a termékek, a fizetés, a szállítás és a pénztár az alap.'},
-      en:{title:'New webshop',result:'Products, payment, shipping and checkout are the starting point.'}
-    },
-    replace:{
-      theme:'',
-      hu:{title:'Meglévő webshop cseréje',result:'A használható adatokat megtartjuk, a kezelést és a vásárlási folyamatot pedig rendbe tesszük.'},
-      en:{title:'Replacing an existing webshop',result:'We keep the useful data and improve the management and buying flow.'}
-    },
-    multi:{
-      theme:'theme-violet',
-      hu:{title:'Nagyobb katalógus',result:'Itt a kategóriák, keresés, szűrők és variációk kapnak nagyobb szerepet.'},
-      en:{title:'Larger catalogue',result:'Categories, search, filters and variations become more important here.'}
-    },
-    campaign:{
-      theme:'theme-green',
-      hu:{title:'Egyedi / B2B webshop',result:'Egyedi árak, import vagy külső rendszer esetén először a pontos működést kell összerakni.'},
-      en:{title:'Custom / B2B webshop',result:'With custom pricing, imports or external systems, the exact workflow comes first.'}
+  function shopProducts(){
+    return [
+      {file:'lamp',name:shopText('Asztali lámpa','Desk lamp'),price:'18 990 Ft'},
+      {file:'armchair',name:shopText('Olvasófotel','Reading chair'),price:'89 900 Ft'},
+      {file:'vase',name:shopText('Kerámia váza','Ceramic vase'),price:'12 990 Ft'}
+    ];
+  }
+  function productGrid(){
+    return '<div class="store-products">'+shopProducts().map(function(p){
+      return '<div class="store-product">'+shopPhoto(p.file,p.name)+'<b>'+p.name+'</b><span>'+p.price+'</span></div>';
+    }).join('')+'</div>';
+  }
+  function sampleNote(){return '<div class="store-note">'+shopText('Szemléltető minta','Illustrative example')+'</div>';}
+  function catalogHtml(filters){
+    return '<div class="store-preview">'+shopHead(false)+
+      '<div class="store-toolbar"><span>'+shopText('Termék keresése…','Search products…')+'</span><span>'+shopText('Kosár (2)','Cart (2)')+'</span></div>'+
+      '<div class="store-categories">'+shopText('Összes termék · Bútorok · Világítás · Dekoráció','All products · Furniture · Lighting · Decor')+'</div>'+
+      (filters?'<div class="store-filter"><span>'+shopText('Kategória: Lakberendezés','Category: Home')+'</span><span>'+shopText('Készlet: Raktáron','Stock: Available')+'</span></div>':'')+
+      productGrid()+sampleNote()+'</div>';
+  }
+  function fakeSiteHtml(data){
+    if(data.kind==='multi') return catalogHtml(true);
+    if(data.kind==='replace'){
+      return '<div class="store-preview">'+shopHead(false)+'<div class="store-detail">'+
+        shopPhoto('armchair',shopText('Bézs olvasófotel egy napfényes szobában','Beige reading chair in a sunlit room'))+
+        '<div><small>'+shopText('Nappali / Fotelek','Living room / Armchairs')+'</small><h4>'+shopText('Olvasófotel','Reading chair')+'</h4><p>'+shopText('Egy kényelmes hely a kedvenc könyvedhez.','A comfortable spot for your favourite book.')+'</p><strong>89 900 Ft</strong><p>'+shopText('Szín: bézs · Raktáron','Colour: beige · In stock')+'</p><span class="store-action">'+shopText('Kosárba','Add to cart')+'</span></div></div>'+sampleNote()+'</div>';
     }
-  };
+    if(data.kind==='campaign'){
+      var rows=shopProducts().map(function(p,i){return '<div class="store-order-row">'+shopPhoto(p.file,'')+'<div><b>'+p.name+'</b><small>NH–10'+(i+1)+'</small></div><span>'+[6,2,8][i]+' '+shopText('db','pcs')+'</span><strong>'+['15 192','71 920','10 392'][i]+' Ft</strong></div>';}).join('');
+      return '<div class="store-preview">'+shopHead(true)+'<div class="store-order"><h4>'+shopText('Rendeld újra a bevált termékeket','Reorder your usual products')+'</h4><p>'+shopText('A listában a partnerkedvezményeddel csökkentett egységárakat látod.','The list shows unit prices with your trade discount applied.')+'</p>'+rows+'<div class="store-order-foot"><span>'+shopText('Partnerkedvezmény: 20%','Trade discount: 20%')+'</span><span class="store-action">'+shopText('Kosárba teszem','Add to cart')+'</span></div></div>'+sampleNote()+'</div>';
+    }
+    return '<div class="store-preview">'+shopHead(false)+'<div class="store-hero">'+
+      '<div><small>'+shopText('Világítás és lakáskiegészítők','Lighting & home accessories')+'</small><h4>'+shopText('Apró részletek.<br>Otthonos terek.','Small details.<br>A welcoming home.')+'</h4><p>'+shopText('Lámpák, bútorok és kerámiák a mindennapokra.','Lighting, furniture and ceramics for everyday living.')+'</p><span class="store-action">'+shopText('Megnézem a kínálatot','Explore the collection')+'</span></div>'+
+      shopPhoto('interior',shopText('Asztali lámpa és növény egy világos szobában','Desk lamp and plant in a bright room'))+'</div>'+productGrid()+sampleNote()+'</div>';
+  }
 
   function renderDecision(key){
     activeDecision=key;
-    var lang=currentLang==='hu'?'hu':'en',d=decisions[key][lang],site=fakeSites[key][lang];
     var demo=document.getElementById('decisionDemo');
     demo.classList.remove('demo-swap');void demo.offsetWidth;demo.classList.add('demo-swap');
-    demo.innerHTML=fakeSiteHtml(site,decisions[key].theme); requestAnimationFrame(updateProgress);
+    demo.innerHTML=fakeSiteHtml(fakeSites[key]);
+    document.querySelectorAll('.decision-card').forEach(function(btn){btn.setAttribute('aria-pressed',String(btn.getAttribute('data-decision')===key));});
+    requestAnimationFrame(updateProgress);
   }
 
   var featureText={
     design:{
       hu:{
-        title:'Termékek & kategóriák',
-        text:'A webshop felépítését úgy rakom össze, hogy a termékek könnyen megtalálhatók legyenek, és később is egyszerű maradjon a kezelése.',
+        title:'Termékek és kategóriák',
+        text:'Úgy építem fel a kategóriákat és a termékoldalakat, hogy a vásárlók könnyen megtalálják, amit keresnek. Neked pedig egyszerű legyen új termékeket feltölteni és frissíteni a készletet.',
         list:['kategória- és termékoldalak','variációk és készlet','keresés és szűrés']
       },
       en:{
@@ -3992,20 +3913,20 @@
     mobile:{
       hu:{
         title:'Mobilos vásárlás',
-        text:'Telefonon külön végigtesztelem a termékoldalakat, a kosarat és a pénztárat. Nem csak összenyomom a desktop nézetet.',
-        list:['mobil termékoldalak','kényelmes kosárkezelés','ellenőrzött pénztár']
+        text:'A termékoldalakat, a kosarat és a pénztárat telefonon is végigtesztelem, hogy kisebb képernyőn is kényelmes legyen a vásárlás.',
+        list:['telefonon is jól használható termékoldalak','könnyen módosítható kosár','mobilon is tesztelt pénztár']
       },
       en:{
         title:'Mobile shopping',
-        text:'I check product pages, the cart and checkout separately on mobile. It is not just a smaller desktop layout.',
+        text:'I test product pages, the cart and checkout on a phone too, so shopping feels comfortable on a smaller screen.',
         list:['mobile product pages','easy cart handling','checked mobile checkout']
       }
     },
     contact:{
       hu:{
-        title:'Fizetés & pénztár',
-        text:'Beállítom a szükséges fizetési módokat és a rendelési visszaigazolást. A cél, hogy a vásárló egyértelműen végig tudjon menni a rendelésen.',
-        list:['bankkártyás fizetés','átutalás / utánvét, ha kell','rendelési visszaigazolás']
+        title:'Fizetés és pénztár',
+        text:'Beállítom a választott fizetési módokat és a rendelést visszaigazoló e-maileket. A pénztárban a vásárló átlátja a költségeket, és néhány lépésben le tudja adni a rendelését.',
+        list:['bankkártyás fizetés','átutalás és utánvét igény szerint','rendelési visszaigazolás']
       },
       en:{
         title:'Payment & checkout',
@@ -4016,8 +3937,8 @@
     seo:{
       hu:{
         title:'SEO alapok',
-        text:'Beállítom a termék- és kategóriaoldalak technikai SEO alapjait, a sitemapet és a Search Console-t.',
-        list:['termék- és kategória URL-ek','title és meta leírás','sitemap és Search Console']
+        text:'Beállítom az oldalcímeket, a keresőben megjelenő leírásokat és a webhelytérképet. A Search Console összekötésével a Google-keresésekből érkező forgalmat is követheted.',
+        list:['átlátható termék- és kategórialinkek','oldalcímek és keresési leírások','webhelytérkép és Search Console']
       },
       en:{
         title:'SEO basics',
@@ -4027,9 +3948,9 @@
     },
     launch:{
       hu:{
-        title:'Szállítás & számlázás',
-        text:'Beállítom a szállítási módokat, díjakat és a számlázó kapcsolatot, ha szükség van rá.',
-        list:['szállítási módok és díjak','számlázó kapcsolat','rendelési státuszok']
+        title:'Szállítás és számlázás',
+        text:'Beállítom a szállítási lehetőségeket és a hozzájuk tartozó díjakat. Igény szerint a számlázóprogramodat is összekötöm a webshoppal.',
+        list:['szállítási módok és díjak','kapcsolat a számlázóprogrammal','rendelési státuszok']
       },
       en:{
         title:'Shipping & invoicing',
@@ -4041,17 +3962,17 @@
 
   function contactHtml(){
     var enL=currentLang==='en';
-    return '<div class="demo-contact"><div class="demo-contact-head"><b>NORD HOME</b><span style="font-size:.55rem;color:#64748b">'+(enL?'Checkout':'Pénztár')+'</span></div><div class="demo-contact-grid"><div class="demo-contact-copy"><div class="fake-eyebrow">'+(enL?'ORDER':'RENDELÉS')+'</div><h4>'+(enL?'Order summary':'Rendelés összesítése')+'</h4><div class="checkout-summary"><div class="checkout-summary-row"><span>2 '+(enL?'items':'termék')+'</span><strong>43 480 Ft</strong></div><div class="checkout-summary-row"><span>'+(enL?'Shipping':'Szállítás')+'</span><strong>1 990 Ft</strong></div></div></div><div class="demo-form"><div class="demo-field">'+(enL?'Email address':'E-mail cím')+'</div><div class="demo-field">'+(enL?'Shipping method':'Szállítási mód')+'</div><div class="demo-field message">'+(enL?'Card payment · secure':'Bankkártyás fizetés · biztonságos')+'</div><button class="demo-send">'+(enL?'Place order':'Megrendelés')+'</button></div></div></div>';
+    return '<div class="demo-contact"><div class="demo-contact-head"><b>NORD HOME</b><span style="font-size:.55rem;color:#64748b">'+(enL?'Checkout':'Pénztár')+'</span></div><div class="demo-contact-grid"><div class="demo-contact-copy"><div class="fake-eyebrow">'+(enL?'ORDER':'RENDELÉS')+'</div><h4>'+(enL?'Order summary':'Rendelési összesítő')+'</h4><div class="checkout-summary"><div class="checkout-summary-row"><span>2 '+(enL?'items':'termék')+'</span><strong>31 980 Ft</strong></div><div class="checkout-summary-row"><span>'+(enL?'Shipping':'Szállítás')+'</span><strong>1 990 Ft</strong></div></div></div><div class="demo-form"><div class="demo-field">'+(enL?'Email address':'E-mail cím')+'</div><div class="demo-field">'+(enL?'Shipping method':'Szállítási mód')+'</div><div class="demo-field message">'+(enL?'Card payment · secure':'Bankkártyás fizetés · biztonságos')+'</div><span class="demo-send">'+(enL?'Place order':'Megrendelés')+'</span></div></div></div>';
   }
 
   function seoHtml(){
     var enL=currentLang==='en';
-    return '<div class="seo-demo"><div class="seo-browserline">◉ '+(enL?'Search preview':'Keresési előnézet')+'</div><div class="seo-search">'+(enL?'desk lamp webshop':'asztali lámpa webshop')+'</div><div class="seo-result"><div class="seo-url">https://nordhome.hu/vilagitas/asztali-lampak</div><div class="seo-title">'+(enL?'Desk lamps | NORD HOME':'Asztali lámpák | NORD HOME')+'</div><div class="seo-desc">'+(enL?'Desk lamps with stock information, shipping details and online ordering.':'Asztali lámpák készletinformációval, szállítással és online rendeléssel.')+'</div></div><div class="seo-meta"><div><b>Title</b><span>49 '+(enL?'characters':'karakter')+'</span></div><div><b>Meta</b><span>148 '+(enL?'characters':'karakter')+'</span></div><div><b>Sitemap</b><span>✓ '+(enL?'ready':'kész')+'</span></div></div></div>';
+    return '<div class="seo-demo"><div class="seo-browserline">◉ '+(enL?'Search preview':'Keresési előnézet')+'</div><div class="seo-search">'+(enL?'desk lamp webshop':'asztali lámpa webshop')+'</div><div class="seo-result"><div class="seo-url">nordhome.example/vilagitas/asztali-lampak</div><div class="seo-title">'+(enL?'Desk lamps | NORD HOME':'Asztali lámpák | NORD HOME')+'</div><div class="seo-desc">'+(enL?'Desk lamps with stock information, shipping details and online ordering.':'Asztali lámpák munkához és olvasáshoz. Nézd meg a kínálatot, és válaszd ki a hozzád illő darabot.')+'</div></div><div class="seo-meta"><div><b>Title</b><span>'+(enL?'Page title':'Oldalcím')+'</span></div><div><b>Meta</b><span>'+(enL?'Search description':'Keresési leírás')+'</span></div><div><b>Sitemap</b><span>✓ '+(enL?'ready':'kész')+'</span></div></div></div>';
   }
 
   function deployHtml(){
     var enL=currentLang==='en';
-    return '<div class="deploy-demo"><div class="deploy-head"><span>NORD HOME · #1048</span><span class="deploy-status">● '+(enL?'PAID':'FIZETVE')+'</span></div><div class="deploy-url">✓ '+(enL?'Order received successfully':'Rendelés sikeresen beérkezett')+'</div><div class="deploy-list"><div class="deploy-row"><span>'+(enL?'Payment':'Fizetés')+'</span><b>'+ (enL?'card · successful':'bankkártya · sikeres') +'</b></div><div class="deploy-row"><span>'+(enL?'Shipping':'Szállítás')+'</span><b>GLS · 1 990 Ft</b></div><div class="deploy-row"><span>'+(enL?'Invoice':'Számla')+'</span><b>'+ (enL?'created':'elkészült') +'</b></div><div class="deploy-row"><span>'+(enL?'Status':'Státusz')+'</span><b>'+ (enL?'processing':'feldolgozás alatt') +'</b></div></div></div>';
+    return '<div class="deploy-demo"><div class="deploy-head"><span>NORD HOME · #1048</span><span class="deploy-status">● '+(enL?'PAID':'FIZETVE')+'</span></div><div class="deploy-url">✓ '+(enL?'Order received successfully':'A rendelés beérkezett')+'</div><div class="deploy-list"><div class="deploy-row"><span>'+(enL?'Payment':'Fizetés')+'</span><b>'+ (enL?'card · successful':'bankkártya · sikeres') +'</b></div><div class="deploy-row"><span>'+(enL?'Shipping':'Szállítás')+'</span><b>GLS · 1 990 Ft</b></div><div class="deploy-row"><span>'+(enL?'Invoice':'Számla')+'</span><b>'+ (enL?'created':'elkészült') +'</b></div><div class="deploy-row"><span>'+(enL?'Status':'Státusz')+'</span><b>'+ (enL?'processing':'feldolgozás alatt') +'</b></div></div></div>';
   }
 
   function designHtml(){ return catalogHtml(); }
@@ -4066,10 +3987,11 @@
     var vp=document.getElementById('featureViewport');
     vp.className='feature-viewport'+(key==='mobile'?' phone-mode':key==='design'?' design-mode':key==='contact'?' contact-mode':'');
     if(key==='design') vp.innerHTML=designHtml();
-    else if(key==='mobile') vp.innerHTML=fakeSiteHtml(fakeSites.start[lang],'');
+    else if(key==='mobile') vp.innerHTML=fakeSiteHtml(fakeSites.start);
     else if(key==='contact') vp.innerHTML=contactHtml();
     else if(key==='seo') vp.innerHTML=seoHtml();
     else vp.innerHTML=deployHtml();
+    document.querySelectorAll('.feature-tab').forEach(function(btn){btn.setAttribute('aria-pressed',String(btn.getAttribute('data-feature')===key));});
     requestAnimationFrame(updateProgress);
   }
 
@@ -4077,7 +3999,7 @@
     base:{
       hu:{
         title:'Carsystemshop.hu – B2B/B2C webshop',
-        text:'A webshop lakossági és üzleti vásárlókat is kiszolgál. Sok termék mellett is gyorsan kell lehessen keresni és rendelni.',
+        text:'A Carsystemshop.hu lakossági és üzleti vásárlókat is kiszolgál. A széles kínálatban is fontos, hogy a keresett termék könnyen megtalálható és gyorsan megrendelhető legyen.',
         visual:'image',
         image:'cs%20portfolio.png'
       },
@@ -4091,7 +4013,7 @@
     build:{
       hu:{
         title:'Fejlesztések a működő webshopon',
-        text:'A napi használat során több egyedi igény is felmerült, például bankkártyás fizetés, akciók kezelése és kisebb fejlesztések.',
+        text:'A napi használat során felmerülő igényekhez igazodnak a fejlesztések: a bankkártyás fizetéstől az akciók kezeléséig.',
         visual:'development'
       },
       en:{
@@ -4103,7 +4025,7 @@
     tune:{
       hu:{
         title:'Folyamatos karbantartás',
-        text:'Új termékek, akciók és kisebb módosítások rendszeresen jönnek, ezért a webshopot folyamatosan karban kell tartani.',
+        text:'A webshop az indulás után is rendszeres figyelmet igényel: új termékek kerülnek fel, változnak az akciók, és időnként a működésen is igazítani kell.',
         visual:'maintenance'
       },
       en:{
@@ -4152,7 +4074,7 @@
       tier='Shop+';
       price=lang==='hu'?'Egyedi árazás':'Custom pricing';
       text=lang==='hu'
-        ?'Nagyobb katalógus vagy egyedi funkciók esetén külön árazás készül a pontos igények alapján.'
+        ?'Nagyobb termékkínálathoz vagy egyedi funkciókhoz személyre szabott ajánlatot készítek.'
         :'For a larger catalogue or custom features, pricing is based on the exact requirements.';
     }
 
@@ -4160,7 +4082,7 @@
       tier=lang==='hu'?'Egyedi projekt':'Custom project';
       price=lang==='hu'?'Egyedi árazás':'Custom pricing';
       text=lang==='hu'
-        ?'B2B árak, API vagy külső rendszer esetén először a működést és az adatkapcsolatokat kell átbeszélni.'
+        ?'Ha partnerárakra vagy más rendszerrel való összekötésre van szükséged, először átbeszéljük a működést. Ez alapján készítem el az ajánlatot.'
         :'For B2B pricing, APIs or external systems, the workflow and data connections need to be discussed first.';
     }
 
@@ -4213,14 +4135,7 @@
   document.querySelectorAll('.case-tab').forEach(function(btn){btn.addEventListener('click',function(){document.querySelectorAll('.case-tab').forEach(function(x){x.classList.remove('active');});btn.classList.add('active');renderCase(btn.getAttribute('data-case'));});});
   document.querySelectorAll('.estimator-form input').forEach(function(el){el.addEventListener('change',updateEstimate);});
 
-  updateEstimate();
-  if(currentLang!=='hu'){
-    applyLang(currentLang);
-  }else{
-    document.querySelectorAll('.lang-toggle').forEach(function(btn){btn.textContent='EN';});
-    var estimateCard=document.querySelector('.estimate-result');
-    if(estimateCard) estimateCard.setAttribute('data-badge',estimateCard.getAttribute('data-badge-hu')||'Becsült kategória');
-  }
+  applyLang(currentLang);
 
   var ticking=false;
   window.addEventListener('scroll',function(){if(!ticking){requestAnimationFrame(function(){updateProgress();updateNavbar();updateParallax();ticking=false;});ticking=true;}},{passive:true});
