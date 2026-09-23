@@ -116,7 +116,7 @@
   .bz .cafe-hero>.bz-photo { order:-1; height:143px; min-height:0; max-height:none; object-position:center 55%; }
   .bz .cafe-copy { padding:18px; }
   .bz .cafe-copy h4 { font-size:30px; }
-  .cafe-copy h4 br:nth-child(2) { display:none; }
+  .cafe-copy h4 br:nth-child(2) { display:initial; }
   .cafe-bottom { grid-template-columns:1fr; gap:18px; padding:18px; }
   .cafe-hours dl { margin-top:8px; }
   .cafe-head .cafe-brand { font-size:28px; }
