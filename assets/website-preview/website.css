@@ -93,8 +93,10 @@
 .compact-example .sample-rail span{font-size:9px;}
 .compact-example .sample-note{font-size:8px;padding:5px 14px 9px;}
 .website-preview .case-shop-image img{width:100%;height:auto;}
-.website-preview .menu-open{overflow:hidden;}
+body.website-preview.menu-open{overflow:hidden;}
 .website-preview .estimate-result{align-self:start;}
+.website-preview .case-stage h3{overflow-wrap:anywhere;}
+.website-preview .hero{padding-block:110px 80px;}
 @media (max-width:1100px){
 .website-preview #tartalom .feature-layout{grid-template-columns:1fr;}
 .website-preview .feature-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));}
