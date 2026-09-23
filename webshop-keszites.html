@@ -3504,7 +3504,16 @@
       <div class="decision-stage reveal-right">
         <div class="browser-frame">
           <div class="browser-top"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-address"></span></div>
-          <div class="site-demo demo-swap" id="decisionDemo"></div>
+          <div class="site-demo" id="decisionDemo">
+            <div class="fake-site fake-editorial theme-warm">
+              <div class="fake-topnav"><span class="fake-brand">NORD HOME</span><div class="fake-links"><span>Újdonságok</span><span>Nappali</span><span>Hálószoba</span><span>Akciók</span></div><span class="fake-nav-cta">Termékek</span></div>
+              <div class="editorial-grid">
+                <div class="editorial-copy"><div class="fake-eyebrow">ÚJ TERMÉKEK</div><div class="fake-title">Lakáskiegészítők otthonra.</div><p class="fake-copy">Válogass kategória szerint, nézd meg a készletet, és rendelj online.</p><div class="fake-actions"><span class="fake-btn">Termékek</span><span class="fake-btn ghost">Kategóriák</span></div></div>
+                <div class="editorial-image" style="background-image:linear-gradient(180deg,rgba(15,23,42,.02),rgba(15,23,42,.18)),url(&quot;https://images.unsplash.com/photo-1771888703723-01d85da1dae1?auto=format&amp;fit=crop&amp;fm=jpg&amp;ixlib=rb-4.1.0&amp;q=60&amp;w=1600&quot;);background-position:center 58%;"><span class="fake-photo-tag">Új kollekció</span></div>
+              </div>
+              <div class="editorial-bottom"><div><b>01</b><span>Dekoráció</span></div><div><b>02</b><span>Textil</span></div><div><b>03</b><span>Világítás</span></div></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -3549,10 +3558,24 @@
         <div class="feature-visual" id="featureVisual">
           <div class="feature-browser">
             <div class="browser-top"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-address"></span></div>
-            <div class="feature-viewport" id="featureViewport"></div>
+            <div class="feature-viewport design-mode" id="featureViewport">
+              <div class="shop-catalog-demo">
+                <div class="shop-demo-head"><b>NORD HOME</b><div class="shop-demo-search">Termék keresése…</div><span class="shop-demo-cart">🛒 2</span></div>
+                <div class="shop-demo-cats"><span>Újdonságok</span><span>Nappali</span><span>Hálószoba</span><span>Akciók</span></div>
+                <div class="shop-product-grid">
+                  <div class="shop-product-card"><div class="shop-product-img">◒</div><b>Asztali lámpa</b><div class="shop-product-meta"><span>Raktáron</span><strong>18 990 Ft</strong></div></div>
+                  <div class="shop-product-card"><div class="shop-product-img">◇</div><b>Gyapjú takaró</b><div class="shop-product-meta"><span>3 szín</span><strong>24 490 Ft</strong></div></div>
+                  <div class="shop-product-card"><div class="shop-product-img">◯</div><b>Kerámia váza</b><div class="shop-product-meta"><span>Raktáron</span><strong>12 990 Ft</strong></div></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="feature-copy demo-swap" id="featureCopy"></div>
+        <div class="feature-copy" id="featureCopy">
+          <h3>Termékek &amp; kategóriák</h3>
+          <p>A webshop felépítését úgy rakom össze, hogy a termékek könnyen megtalálhatók legyenek, és később is egyszerű maradjon a kezelése.</p>
+          <ul><li>kategória- és termékoldalak</li><li>variációk és készlet</li><li>keresés és szűrés</li></ul>
+        </div>
       </div>
     </div>
   </div>
@@ -3565,12 +3588,17 @@
   <div class="section-inner" style="position:relative;z-index:1;">
     <div class="reveal">
       <div class="section-label"><span class="line"></span> Mini esettanulmány</div>
-      <h2 class="section-title">Carsystemshop.hu – valós webshop, valós feladatok</h2>
+      <h2 class="section-title">Példa: Carsystemshop.hu</h2>
     </div>
 
     <div class="case-layout">
       <div class="case-stage reveal-left">
-        <div class="case-stage-inner demo-swap" id="caseStage"></div>
+        <div class="case-stage-inner" id="caseStage">
+          <h3>Carsystemshop.hu – B2B/B2C webshop</h3>
+          <p>A webshop lakossági és üzleti vásárlókat is kiszolgál. Sok termék mellett is gyorsan kell lehessen keresni és rendelni.</p>
+          <a class="case-shop-link" href="https://carsystemshop.hu/" target="_blank" rel="noopener">Webshop megnyitása ↗</a>
+          <div class="case-shop-image"><img src="cs%20portfolio.png" alt="Carsystemshop projekt" loading="lazy" decoding="async"></div>
+        </div>
       </div>
       <div class="case-tabs reveal-right">
         <button class="case-tab active" data-case="base"><strong>01 · A webshop</strong><span>Mire használják?</span></button>
@@ -3729,6 +3757,7 @@
     'Impresszum':'Imprint',
     'Adatkezelés':'Privacy',
     'Sütikezelés':'Cookies'
+    'Példa: Carsystemshop.hu':'Example: Carsystemshop.hu',
   };
 
   var originalText=[];
@@ -3783,28 +3812,28 @@
         layout:'service',
         links:['Termékek','Márkák','Akciók','Kapcsolat'],
         eyebrow:'MEGÚJULT WEBSHOP',
-        title:'Könnyebb keresés és rendelés.',
-        copy:'A meglévő termékek egy átláthatóbb, könnyebben kezelhető webshopban.',
+        title:'A meglévő kínálat új webshopban.',
+        copy:'A termékek maradnak, a keresés, szűrés és rendelés egyszerűbb lesz.',
         cta:'Termékek',
         ghost:'Márkák',
         image:'https://images.unsplash.com/photo-1567808291548-fc3ee04dbcf0?ixlib=rb-4.1.0&q=80&fm=jpg&crop=entropy&cs=srgb',
         imagePos:'center 58%',
         tag:'Megújult webshop',
-        items:[['Keresés','gyors találatok'],['Szűrés','könnyebb választás'],['Pénztár','kevesebb lépés']]
+        items:[['Keresés','gyors kereső'],['Szűrés','fontos szempontok szerint'],['Pénztár','kevesebb lépés']]
       },
       en:{
         brand:'GEARLAB',
         layout:'service',
         links:['Products','Brands','Sale','Contact'],
         eyebrow:'UPDATED WEBSHOP',
-        title:'Easier search and ordering.',
-        copy:'Existing products in a clearer, easier-to-manage store.',
+        title:'Your current catalogue in a new webshop.',
+        copy:'The products stay, but search, filtering and ordering become simpler.',
         cta:'Products',
         ghost:'Brands',
         image:'https://images.unsplash.com/photo-1567808291548-fc3ee04dbcf0?ixlib=rb-4.1.0&q=80&fm=jpg&crop=entropy&cs=srgb',
         imagePos:'center 58%',
         tag:'Updated webshop',
-        items:[['Search','quick results'],['Filters','easier choices'],['Checkout','fewer steps']]
+        items:[['Search','quick search'],['Filters','important criteria'],['Checkout','fewer steps']]
       }
     },
     multi:{
@@ -3951,13 +3980,13 @@
     design:{
       hu:{
         title:'Termékek & kategóriák',
-        text:'A kategóriákat, termékeket és variációkat úgy rakom össze, hogy könnyű legyen megtalálni, amit keresel, és később is kezelhető maradjon a webshop.',
-        list:['kategóriák és termékoldalak','variációk és készlet','keresés és szűrés']
+        text:'A webshop felépítését úgy rakom össze, hogy a termékek könnyen megtalálhatók legyenek, és később is egyszerű maradjon a kezelése.',
+        list:['kategória- és termékoldalak','variációk és készlet','keresés és szűrés']
       },
       en:{
         title:'Products & categories',
-        text:'Categories, products and variations are set up so customers can find what they need and the store stays manageable later.',
-        list:['categories and product pages','variations and stock','search and filters']
+        text:'I structure the webshop so products are easy to find and the store stays easy to manage later on.',
+        list:['category and product pages','variations and stock','search and filters']
       }
     },
     mobile:{
@@ -4048,13 +4077,13 @@
     base:{
       hu:{
         title:'Carsystemshop.hu – B2B/B2C webshop',
-        text:'A webshop lakossági és üzleti vásárlókat is kiszolgál, több száz termékkel. Itt az a fontos, hogy a nagy kínálat mellett is könnyű legyen keresni és rendelni.',
+        text:'A webshop lakossági és üzleti vásárlókat is kiszolgál. Sok termék mellett is gyorsan kell lehessen keresni és rendelni.',
         visual:'image',
         image:'cs%20portfolio.png'
       },
       en:{
         title:'Carsystemshop.hu – B2B/B2C webshop',
-        text:'The store serves both retail and business customers with hundreds of products. The main challenge is keeping search and ordering simple despite the large catalogue.',
+        text:'The store serves both retail and business customers. Even with many products, browsing and ordering still need to stay simple.',
         visual:'image',
         image:'cs%20portfolio.png'
       }
@@ -4062,24 +4091,24 @@
     build:{
       hu:{
         title:'Fejlesztések a működő webshopon',
-        text:'A használat közben több egyedi igény is előjött: K&H bankkártyás fizetés, akciók kezelése, árlogika és kisebb napi fejlesztések.',
+        text:'A napi használat során több egyedi igény is felmerült, például bankkártyás fizetés, akciók kezelése és kisebb fejlesztések.',
         visual:'development'
       },
       en:{
         title:'Development on the live webshop',
-        text:'Several custom needs came up during daily use: K&H card payment, promotion handling, pricing logic and smaller day-to-day improvements.',
+        text:'During daily use, several custom needs came up, such as card payment, promotion handling and smaller improvements.',
         visual:'development'
       }
     },
     tune:{
       hu:{
         title:'Folyamatos karbantartás',
-        text:'Új termékek, akciók, tartalmi módosítások és kisebb fejlesztések rendszeresen jönnek. Ezeket úgy kell megoldani, hogy közben a webshop használható maradjon.',
+        text:'Új termékek, akciók és kisebb módosítások rendszeresen jönnek, ezért a webshopot folyamatosan karban kell tartani.',
         visual:'maintenance'
       },
       en:{
         title:'Ongoing maintenance',
-        text:'New products, promotions, content changes and smaller improvements come up regularly. They need to be handled without disrupting the live store.',
+        text:'New products, promotions and smaller changes come up regularly, so the webshop needs ongoing maintenance.',
         visual:'maintenance'
       }
     }
@@ -4184,8 +4213,14 @@
   document.querySelectorAll('.case-tab').forEach(function(btn){btn.addEventListener('click',function(){document.querySelectorAll('.case-tab').forEach(function(x){x.classList.remove('active');});btn.classList.add('active');renderCase(btn.getAttribute('data-case'));});});
   document.querySelectorAll('.estimator-form input').forEach(function(el){el.addEventListener('change',updateEstimate);});
 
-  renderDecision(activeDecision);renderFeature(activeFeature);renderCase(activeCase);updateEstimate();
-  if(currentLang!=='hu') applyLang(currentLang); else document.querySelectorAll('.lang-toggle').forEach(function(btn){btn.textContent='EN';});
+  updateEstimate();
+  if(currentLang!=='hu'){
+    applyLang(currentLang);
+  }else{
+    document.querySelectorAll('.lang-toggle').forEach(function(btn){btn.textContent='EN';});
+    var estimateCard=document.querySelector('.estimate-result');
+    if(estimateCard) estimateCard.setAttribute('data-badge',estimateCard.getAttribute('data-badge-hu')||'Becsült kategória');
+  }
 
   var ticking=false;
   window.addEventListener('scroll',function(){if(!ticking){requestAnimationFrame(function(){updateProgress();updateNavbar();updateParallax();ticking=false;});ticking=true;}},{passive:true});
