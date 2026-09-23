@@ -123,31 +123,7 @@
     }).join('') + '</div>';
   }
   function websiteSample(key, compact) {
-    var body='', brand='', nav='';
-    if (key==='replace') {
-      brand='FORMA DESIGN';
-      nav=t('Munkák · Rólunk · Kapcsolat','Projects · About · Contact');
-      body='<div class="sample-split sample-reverse">' + photo('armchair',t('Világos fotel egy berendezett szobában','Light armchair in a furnished room')) +
-        '<div><small>' + t('Lakberendezés · Referenciák','Interior design · Selected projects') + '</small><h4>' + t('Belső terek, átgondolva.','Interiors, thoughtfully designed.') + '</h4><p>' +
-        t('Nézd meg az elkészült munkáinkat, és ismerd meg, hogyan dolgozunk.','Explore our completed projects and find out how we work.') + '</p><span class="sample-action">' + t('Munkáink','Our projects') + '</span></div></div>' +
-        '<div class="sample-projects">' + photo('interior',t('Lakberendezési részlet','Interior detail')) + photo('lamp',t('Világítási részlet','Lighting detail')) + '<div><b>' + t('Egy helyen minden fontos.','All the essentials in one place.') + '</b><span>' + t('Munkák, szolgáltatások és kapcsolatfelvétel.','Projects, services and a way to get in touch.') + '</span></div></div>';
-    } else if (key==='multi') {
-      brand='LUMEN STÚDIÓ';
-      nav=t('Tervezés · Kivitelezés · Kapcsolat','Planning · Installation · Contact');
-      body='<div class="sample-service-hero"><div><small>' + t('Világítástervezés','Lighting design') + '</small><h4>' + t('Minden helyiséghez a megfelelő fény.','The right light for every room.') + '</h4><p>' + t('Felmérés, tervezés és kivitelezés. Ismerd meg a szolgáltatásainkat.','Survey, design and installation. Find out what each service includes.') + '</p></div>' + photo('lamp',t('Asztali lámpa','Desk lamp')) + '</div>' +
-        '<div class="sample-services">' + [[t('Felmérés','Survey'),t('A helyszín és az igények megismerése.','Understanding the space and your needs.')],[t('Tervezés','Design'),t('Lámpák, elhelyezés és fények.','Fixtures, placement and lighting.')],[t('Kivitelezés','Installation'),t('Egyeztetés és megvalósítás.','Coordination and installation.')]].map(function (item) {
-          return '<div><b>' + item[0] + '</b><span>' + item[1] + '</span><i>' + t('Részletek','Details') + ' →</i></div>';
-        }).join('') + '</div>';
-    } else if (key==='campaign') {
-      brand='AGYAG MŰHELY';
-      nav=t('Kerámiafoglalkozás','Ceramics workshop');
-      body='<div class="sample-campaign">' + photo('vase',t('Kézzel készített kerámia váza','Handmade ceramic vase')) + '<div><small>' + t('Kezdőknek is','Beginners welcome') + '</small><h4>' + t('Készítsd el az első kerámiádat.','Make your first piece of pottery.') + '</h4><p>' + t('Kiscsoportos foglalkozás, ahol megmutatjuk az alapokat. Az anyagot és az eszközöket mi adjuk.','A small-group workshop covering the basics. Materials and tools are provided.') + '</p><span class="sample-action">' + t('Jelentkezem','Book a place') + '</span></div></div>' + rail([t('Kezdőknek','For beginners'),t('Kis csoport','Small groups'),t('Eszközökkel','Tools included')]);
-    } else {
-      brand='BORÓKA STÚDIÓ';
-      nav=t('Szolgáltatások · Munkák · Kapcsolat','Services · Projects · Contact');
-      body='<div class="sample-split"><div><small>' + t('Lakberendezés · Győr','Interior design · Győr') + '</small><h4>' + t('Otthon, ami hozzád igazodik.','A home designed around you.') + '</h4><p>' + t('Az első alaprajztól a bútorok és színek kiválasztásáig segítünk megtervezni az otthonodat.','From the first floor plan to choosing furniture and colours, we help you plan your home.') + '</p><span class="sample-action">' + t('Konzultációt kérek','Book a consultation') + '</span></div>' + photo('interior',t('Lámpa és növény egy világos szobában','Lamp and plant in a bright room')) + '</div>' + rail([t('Tértervezés','Space planning'),t('3D látványterv','3D visualisation'),t('Anyagok és színek','Materials & colours')]);
-    }
-    return '<div class="site-example example-' + key + (compact?' compact-example':'') + '">' + sampleHead(brand,nav) + body + note() + '</div>';
+    return window.FORGRITSamples.render(key, compact, currentLang);
   }
   var featureText={
     design:{
@@ -172,13 +148,13 @@
     }
   };
   function contactHtml() {
-    return '<div class="site-example contact-example">' + sampleHead('BORÓKA STÚDIÓ',t('Kapcsolat','Contact')) + '<div class="sample-contact-grid"><div><small>' + t('Beszéljük át','Let’s talk') + '</small><h4>' + t('Miben segíthetünk?','How can we help?') + '</h4><p>' + t('Írj pár mondatot az elképzelésedről, és felvesszük veled a kapcsolatot.','Tell us a little about your plans and we will get back to you.') + '</p></div><div class="sample-form" aria-label="' + t('Kapcsolati űrlap mintája','Sample contact form') + '"><div>' + t('Név','Name') + '</div><div>' + t('E-mail-cím','Email address') + '</div><div class="sample-message">' + t('Üzenet','Message') + '</div><span class="sample-action">' + t('Üzenet küldése','Send message') + '</span></div></div>' + note() + '</div>';
+    return '<div class="site-example contact-example">' + sampleHead('FÜGE KÁVÉZÓ',t('Kapcsolat','Contact')) + '<div class="sample-contact-grid"><div><small>' + t('Beszéljük át','Let’s talk') + '</small><h4>' + t('Miben segíthetünk?','How can we help?') + '</h4><p>' + t('Írj pár mondatot az elképzelésedről, és felvesszük veled a kapcsolatot.','Tell us a little about your plans and we will get back to you.') + '</p></div><div class="sample-form" aria-label="' + t('Kapcsolati űrlap mintája','Sample contact form') + '"><div>' + t('Név','Name') + '</div><div>' + t('E-mail-cím','Email address') + '</div><div class="sample-message">' + t('Üzenet','Message') + '</div><span class="sample-action">' + t('Üzenet küldése','Send message') + '</span></div></div>' + note() + '</div>';
   }
   function seoHtml() {
-    return '<div class="site-example search-example"><div class="sample-search">' + t('lakberendező Győr','interior designer Győr') + '</div><div class="sample-search-result"><small>borokastudio.example</small><h4>' + t('Lakberendezés Győrben | Boróka Stúdió','Interior design in Győr | Boróka Studio') + '</h4><p>' + t('Lakberendezési tervezés, 3D látványterv és személyes konzultáció Győrben. Ismerd meg a munkáinkat.','Interior planning, 3D visualisation and personal consultation in Győr. Explore our work.') + '</p></div>' + rail([t('Oldalcím','Page title'),t('Keresési leírás','Search description'),t('Oldaltérkép','Sitemap')]) + note() + '</div>';
+    return '<div class="site-example search-example"><div class="sample-search">' + t('reggeli és kávé Győr','breakfast and coffee Győr') + '</div><div class="sample-search-result"><small>fugekave.example</small><h4>' + t('Kávé és reggeli | Füge Kávézó','Coffee and breakfast | Füge Café') + '</h4><p>' + t('Frissen pörkölt kávé, reggeli és péksütemények. Nézd meg az étlapot és a nyitvatartásunkat.','Freshly roasted coffee, breakfast and pastries. Explore the menu and find our opening hours.') + '</p></div>' + rail([t('Oldalcím','Page title'),t('Keresési leírás','Search description'),t('Oldaltérkép','Sitemap')]) + note() + '</div>';
   }
   function launchHtml() {
-    return '<div class="site-example launch-example"><div class="launch-head"><b>BORÓKA STÚDIÓ</b><span>' + t('Átadás előtt','Before handover') + '</span></div><h4>' + t('Az utolsó ellenőrzések.','The final checks.') + '</h4><div class="launch-rows">' + [['Domain / DNS',t('beállítva','configured')],['HTTPS',t('aktív','active')],[t('Kapcsolati űrlap','Contact form'),t('tesztelve','tested')],[t('Mobil és asztali nézet','Mobile and desktop'),t('ellenőrizve','checked')]].map(function (row) { return '<div><span>' + row[0] + '</span><b>✓ ' + row[1] + '</b></div>'; }).join('') + '</div>' + note() + '</div>';
+    return '<div class="site-example launch-example"><div class="launch-head"><b>FÜGE KÁVÉZÓ</b><span>' + t('Átadás előtt','Before handover') + '</span></div><h4>' + t('Az utolsó ellenőrzések.','The final checks.') + '</h4><div class="launch-rows">' + [['Domain / DNS',t('beállítva','configured')],['HTTPS',t('aktív','active')],[t('Kapcsolati űrlap','Contact form'),t('tesztelve','tested')],[t('Mobil és asztali nézet','Mobile and desktop'),t('ellenőrizve','checked')]].map(function (row) { return '<div><span>' + row[0] + '</span><b>✓ ' + row[1] + '</b></div>'; }).join('') + '</div>' + note() + '</div>';
   }
   function renderDecision(key, animate) {
     activeDecision=key;

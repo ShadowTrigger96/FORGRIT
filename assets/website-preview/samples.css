@@ -1,0 +1,148 @@
+/* Individual sample brands; intentionally separate from the outer FORGRIT UI. */
+.site-example.bz { container:concept / inline-size; --paper:#fcf9f2; --ink:#342b22; --muted:#71665b; --rule:#ded8cc; --accent:#824534; color:var(--ink); background:var(--paper); border:1px solid var(--rule); border-radius:4px; font-family:Inter,Arial,sans-serif; overflow:hidden; width:100%; min-width:0; text-align:left; }
+.bz * { box-sizing:border-box; }
+.bz h4,.bz h5,.bz p,.bz figure,.bz dl,.bz dd { margin:0; }
+.bz h4 { color:var(--ink); font:400 clamp(29px,6.5cqw,42px)/1.05 Georgia,serif; letter-spacing:-.04em; }
+.bz h5 { color:var(--ink); font:400 clamp(16px,3.7cqw,23px)/1.13 Georgia,serif; letter-spacing:-.025em; }
+.bz p { color:var(--muted); font:400 clamp(10px,2.05cqw,12px)/1.65 Inter,Arial,sans-serif; }
+.bz .bz-photo { display:block; width:100%; max-width:100%; object-fit:cover; background:var(--rule); }
+.bz .bz-head { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:18px 22px; border-bottom:1px solid var(--rule); }
+.bz-head nav { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:12px; font-size:9px; line-height:1.4; color:var(--muted); }
+.bz .bz-eyebrow { display:block; font:500 8px/1.5 Inter,Arial,sans-serif; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); }
+.bz .bz-cta { display:inline-flex; align-items:center; justify-content:space-between; gap:16px; padding:11px 13px; background:var(--accent); color:#fff9f0; font:600 9px/1.4 Inter,Arial,sans-serif; max-width:100%; }
+.bz-cta>span { font-size:14px; }
+.bz .bz-note { display:flex; justify-content:space-between; flex-wrap:wrap; gap:4px 14px; padding:9px 20px; font:400 8px/1.4 Inter,Arial,sans-serif; color:var(--muted); border-top:1px solid var(--rule); }
+/* A neighbourhood cafe: menu, opening times and a genuinely photographic interior. */
+.bz .cafe-brand { font:italic 400 34px/.9 Georgia,serif; letter-spacing:-.07em; }
+.cafe-brand>span { display:block; font:400 7px/1.5 Inter,sans-serif; letter-spacing:.1em; margin-top:5px; }
+.cafe-open { font-size:8px; border-bottom:1px solid var(--accent); padding-bottom:3px; }
+.cafe-hero { display:grid; grid-template-columns:1fr 1.02fr; }
+.bz .cafe-copy { padding:30px 24px; }
+.cafe-copy h4 { margin:14px 0; }
+.cafe-copy p { margin-bottom:18px; }
+.bz .cafe-hero>.bz-photo { height:100%; min-height:310px; max-height:390px; object-position:55% 56%; }
+.cafe-bottom { display:grid; grid-template-columns:1fr 1fr; gap:26px; padding:22px 24px; border-top:1px solid var(--rule); }
+.cafe-bottom h5 { margin:10px 0 6px; }
+.bz .cafe-bottom p { font-size:9px; }
+.cafe-hours dl { margin-top:14px; font-size:9px; }
+.cafe-hours dl>div { display:flex; justify-content:space-between; flex-wrap:wrap; gap:4px 8px; padding:6px 0; border-bottom:1px solid var(--rule); }
+/* Architecture: quiet editorial hierarchy, one large project photograph, a typed index. */
+.bz.bz-replace { --paper:#f8f8f5; --ink:#22231f; --muted:#6d6e67; --rule:#d9dbd2; --accent:#343d34; }
+.arch-brand { font:600 16px/1.1 Inter,sans-serif; letter-spacing:.18em; }
+.arch-brand>span { display:block; margin-top:6px; font:400 7px/1.2 Inter,sans-serif; letter-spacing:.1em; }
+.arch-intro { display:grid; grid-template-columns:1.08fr 1fr; gap:20px; padding:25px 22px 22px; align-items:end; }
+.bz .arch-intro h4 { font:400 clamp(25px,5.5cqw,33px)/1.08 Inter,sans-serif; letter-spacing:-.05em; }
+.bz .arch-intro p { font-size:9px; }
+.arch-project { position:relative; margin:0 14px!important; }
+.bz .arch-project>.bz-photo { height:245px; object-position:50% 51%; }
+.arch-project figcaption { display:flex; justify-content:space-between; position:absolute; bottom:0; left:0; right:0; padding:24px 14px 12px; font-size:9px; color:#fff; background:linear-gradient(transparent,rgba(0,0,0,.5)); }
+.arch-bottom { display:grid; grid-template-columns:1fr 1fr; gap:25px; padding:22px; }
+.arch-bottom h5 { margin-top:10px; font:400 20px/1.1 Inter,sans-serif; letter-spacing:-.04em; }
+.arch-index>div { display:flex; justify-content:space-between; gap:10px; padding:8px 0; border-bottom:1px solid var(--rule); font-size:10px; }
+/* Garden studio: deep green hero and three real service rows, not floating cards. */
+.bz.bz-multi { --paper:#f4f5eb; --ink:#293d2d; --muted:#65745e; --rule:#d6dcc9; --accent:#334e39; }
+.bz .garden-head { background:#233e2e; border-color:#47604c; color:#f2f4e4; }
+.garden-brand { font:400 23px/1.1 Georgia,serif; letter-spacing:-.06em; }
+.garden-brand>span { color:#bacb95; }
+.garden-head nav { color:#dee4d1; }
+.garden-hero { display:grid; grid-template-columns:1fr 1.08fr; background:#233e2e; }
+.bz .garden-hero>div { padding:25px 24px; }
+.bz .garden-hero h4 { font-size:clamp(35px,7.8cqw,46px); color:#f5f5e6; margin:16px 0; }
+.bz .garden-hero .bz-eyebrow,.bz .garden-hero p { color:#d7dfc9; }
+.bz .garden-hero>.bz-photo { height:100%; min-height:300px; max-height:360px; object-position:50% center; }
+.garden-cta { display:inline-block; color:#edf2da; font-size:9px; padding-bottom:5px; border-bottom:1px solid #a9bd91; margin-top:15px; }
+.garden-services { padding:18px 22px 12px; }
+.garden-services>div { display:grid; grid-template-columns:18px minmax(90px,.8fr) 1fr 10px; gap:10px; align-items:baseline; padding:12px 0; border-bottom:1px solid var(--rule); }
+.bz .garden-services h5 { font:500 11px/1.3 Inter,sans-serif; letter-spacing:0; }
+.bz .garden-services p,.garden-services small { font-size:9px; }
+.garden-services small { color:var(--muted); }
+/* Pottery landing page: expressive type, tactile photo and practical workshop details. */
+.bz.bz-campaign { --paper:#f4e8da; --ink:#713c2c; --muted:#8c6657; --rule:#d8c3ad; --accent:#9c4530; }
+.bz .clay-head { padding:16px 22px; }
+.clay-brand { font:400 30px/1 Georgia,serif; letter-spacing:-.06em; }
+.clay-brand>span { font:400 10px/1 Inter,sans-serif; letter-spacing:0; }
+.clay-hero { display:grid; grid-template-columns:1fr 1fr; }
+.clay-copy { padding:26px 24px; }
+.clay-copy h4 { font-size:clamp(35px,7.3cqw,44px); margin:15px 0; }
+.clay-copy p { margin-bottom:20px; }
+.bz .clay-hero>.bz-photo { height:100%; min-height:340px; max-height:440px; object-position:50% 50%; }
+.bz .clay-footnote { display:block; font:400 8px/1.4 Inter,sans-serif; margin-top:9px; color:var(--muted); }
+.clay-details { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:15px; padding:20px 22px; border-top:1px solid var(--rule); }
+.clay-details>div>span { font:400 9px/1.4 Inter,sans-serif; }
+.bz .clay-details h5 { font-size:16px; margin:8px 0 6px; }
+.bz .clay-details p { font-size:9px; }
+/* Each brand has an intentional dark variant; the photos stay photographic. */
+[data-theme="dark"] .bz-start { --paper:#272724; --ink:#f2e8d9; --muted:#bfb6a9; --rule:#46463d; --accent:#94634b; }
+[data-theme="dark"] .bz-replace { --paper:#252724; --ink:#efeee7; --muted:#b9bbb0; --rule:#464b41; }
+[data-theme="dark"] .bz-multi { --paper:#273a2c; --ink:#eef2df; --muted:#c0ceb6; --rule:#495e43; }
+[data-theme="dark"] .bz-campaign { --paper:#3a2b26; --ink:#f1d6bf; --muted:#cfb3a1; --rule:#694b3e; --accent:#9e5741; }
+/* Fit the sample to its actual container, including the smaller feature preview. */
+.website-preview #decisionDemo { align-items:center; padding:.8rem; }
+.website-preview #decisionDemo>.bz { flex:none; }
+.website-preview .phone-mode .bz { width:252px; max-width:100%; flex:0 1 252px; border:6px solid #242822; border-radius:25px; }
+.website-preview #tartalom .feature-viewport { transition:none; }
+@container concept (max-width:440px) {
+  .bz .bz-head { padding:14px 16px; }
+  .bz-head nav { gap:8px; font-size:8px; }
+  .cafe-open { display:none; }
+  .cafe-hero { grid-template-columns:1fr 1fr; }
+  .bz .cafe-copy { padding:20px 16px; }
+  .bz .cafe-copy h4 { font-size:27px; }
+  .bz .cafe-copy p { font-size:10px; }
+  .bz .cafe-hero>.bz-photo { min-height:290px; }
+  .cafe-bottom { gap:15px; padding:16px; }
+  .bz .cafe-bottom h5 { font-size:18px; }
+  .bz .bz-cta { font-size:8px; padding:9px; gap:7px; }
+  .arch-intro { padding:20px 16px; gap:15px; }
+  .bz .arch-intro h4 { font-size:27px; }
+  .bz .arch-project>.bz-photo { height:195px; }
+  .arch-bottom { padding:18px 16px; gap:12px; }
+  .garden-hero { grid-template-columns:1fr .85fr; }
+  .bz .garden-hero>div { padding:22px 16px; }
+  .bz .garden-hero h4 { font-size:32px; }
+  .garden-services { padding:16px; }
+  .garden-services>div { grid-template-columns:17px 1fr 12px; gap:8px; }
+  .garden-services p { grid-column:2; grid-row:auto; }
+  .garden-services>div>span { grid-column:3; grid-row:1/3; }
+  .clay-copy { padding:22px 16px; }
+  .clay-copy h4 { font-size:32px; }
+  .clay-details { gap:10px; padding:16px; }
+  .bz .clay-details h5 { font-size:15px; }
+  .bz .bz-note { padding:8px 16px; font-size:7px; }
+}
+@container concept (max-width:310px) {
+  .cafe-head nav { gap:7px; font-size:7px; }
+  .cafe-hero { display:flex; flex-direction:column; }
+  .bz .cafe-hero>.bz-photo { order:-1; height:143px; min-height:0; max-height:none; object-position:center 55%; }
+  .bz .cafe-copy { padding:18px; }
+  .bz .cafe-copy h4 { font-size:30px; }
+  .cafe-copy h4 br:nth-child(2) { display:none; }
+  .cafe-bottom { grid-template-columns:1fr; gap:18px; padding:18px; }
+  .cafe-hours dl { margin-top:8px; }
+  .cafe-head .cafe-brand { font-size:28px; }
+  .arch-intro { grid-template-columns:1fr; gap:12px; }
+  .arch-bottom { grid-template-columns:1fr; }
+  .arch-head nav { font-size:7px; }
+  .arch-brand { font-size:12px; }
+  .garden-hero,.clay-hero { grid-template-columns:1fr; }
+  .bz .garden-hero>.bz-photo,.bz .clay-hero>.bz-photo { height:180px; min-height:0; order:-1; }
+  .clay-details { grid-template-columns:1fr; }
+}
+/* The feature panel is a compact view, not a taller copy of the main showcase. */
+@container concept (min-width:311px) {
+  .bz-compact .bz-head { padding:10px 14px; }
+  .bz-compact .cafe-brand { font-size:26px; }
+  .bz-compact .cafe-brand>span { font-size:6px; }
+  .bz-compact .cafe-copy { padding:16px 14px; }
+  .bz-compact .cafe-copy h4 { font-size:25px; margin:9px 0; }
+  .bz-compact .cafe-copy p { font-size:9px; line-height:1.5; margin-bottom:12px; }
+  .bz-compact .cafe-hero>.bz-photo { min-height:225px; max-height:280px; }
+  .bz-compact .cafe-bottom { padding:13px 14px; gap:16px; }
+  .bz-compact .cafe-bottom h5 { font-size:17px; margin:7px 0 5px; }
+  .bz-compact .cafe-bottom p { font-size:8px; }
+  .bz-compact .cafe-hours dl { font-size:8px; margin-top:7px; }
+  .bz-compact .cafe-hours dl>div { padding:4px 0; }
+  .bz-compact .bz-cta { font-size:8px; padding:8px 10px; }
+  .bz-compact .bz-note { padding:7px 14px; font-size:7px; }
+}
+.website-preview .phone-mode .bz .cafe-copy h4 { font-size:30px; }
