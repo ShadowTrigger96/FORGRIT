@@ -3065,7 +3065,7 @@
     }
 
 
-    /* ===== MOBILE PHONE PREVIEW FIX ===== */
+    /* ===== FINAL FEATURE SECTION MOBILE LAYOUT ===== */
     @media (max-width: 700px) {
       .feature-stage:has(.feature-viewport.phone-mode) {
         min-height: auto !important;
@@ -3195,11 +3195,8 @@
         font-size: 0.4rem !important;
         line-height: 1.2 !important;
       }
-    }
 
-
-    /* ===== FEATURE SECTION MOBILE LAYOUT FIX ===== */
-    @media (max-width: 700px) {
+      /* Final section geometry: these intentionally override the generic phone shell above. */
       #tartalom .feature-layout {
         grid-template-columns: 1fr !important;
         gap: 1rem !important;
@@ -3248,7 +3245,6 @@
         max-width: none !important;
       }
 
-      /* When the Mobile view tab is selected, keep a proper phone preview */
       #tartalom .feature-viewport.phone-mode {
         min-height: 520px !important;
         display: flex !important;
