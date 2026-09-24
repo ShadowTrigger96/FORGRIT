@@ -35,6 +35,7 @@ jobs:
         run: |
           mkdir -p preview-qa/source/assets
           cp weboldal-keszites.html preview-qa/source/
+          cp assets/service-layout.css preview-qa/source/assets/
           cp -r assets/website-preview preview-qa/source/assets/
       - uses: actions/upload-artifact@v4
         if: always()
