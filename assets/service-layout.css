@@ -55,7 +55,8 @@ body.service-layout :is(#decisionDemo,.feature-viewport,.phone-mode>.site-exampl
   body.service-layout #tartalom .feature-tab{min-height:72px;padding:12px 14px;}
   body.service-layout #tartalom .feature-stage{padding:12px!important;}
   body.service-layout #tartalom .feature-browser{height:370px!important;}
-  body.service-layout #tartalom .feature-viewport{height:330px!important;max-height:330px!important;padding:8px!important;}
+  body.service-layout #tartalom .feature-viewport,
+  body.service-layout #tartalom .feature-viewport.phone-mode{height:330px!important;max-height:330px!important;padding:8px!important;}
   body.service-layout #tartalom .phone-mode>.site-example,
   body.service-layout #tartalom .phone-mode>.store-preview{height:312px!important;max-height:312px!important;width:194px!important;}
   body.service-layout #tartalom .feature-copy{min-height:256px;padding:4px!important;}
