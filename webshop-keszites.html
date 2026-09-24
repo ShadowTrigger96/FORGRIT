@@ -3424,8 +3424,9 @@
     }
 
 </style>
+<link href="assets/service-layout.css?v=20260924-phone" rel="stylesheet">
 </head>
-<body>
+<body class="service-layout">
 <div class="noise"></div>
 <div class="cursor-glow" id="cursorGlow"></div>
 <div class="scroll-progress" id="scrollProgress"></div>
@@ -3581,7 +3582,7 @@
       <div class="decision-stage reveal-right">
         <div class="browser-frame">
           <div class="browser-top"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-address"></span></div>
-          <div class="site-demo" id="decisionDemo">
+          <div class="site-demo" id="decisionDemo" tabindex="0" aria-label="Webshopminta – görgethető előnézet">
           </div>
         </div>
       </div>
@@ -3627,7 +3628,7 @@
         <div class="feature-visual" id="featureVisual">
           <div class="feature-browser">
             <div class="browser-top"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-address"></span></div>
-            <div class="feature-viewport design-mode" id="featureViewport">
+            <div class="feature-viewport design-mode" id="featureViewport" tabindex="0" aria-label="Szolgáltatás bemutatója – görgethető előnézet">
             </div>
           </div>
         </div>
@@ -3991,6 +3992,7 @@
     else if(key==='contact') vp.innerHTML=contactHtml();
     else if(key==='seo') vp.innerHTML=seoHtml();
     else vp.innerHTML=deployHtml();
+    if(key==='mobile'){vp.firstElementChild.setAttribute('tabindex','0');vp.firstElementChild.setAttribute('aria-label',lang==='hu'?'Görgethető mobilnézet':'Scrollable mobile preview');}
     document.querySelectorAll('.feature-tab').forEach(function(btn){btn.setAttribute('aria-pressed',String(btn.getAttribute('data-feature')===key));});
     requestAnimationFrame(updateProgress);
   }

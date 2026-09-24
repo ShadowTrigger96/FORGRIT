@@ -233,7 +233,7 @@
     currentLang=lang;root.lang=lang;savePreference('fg-lang',lang);
     originalText.forEach(function(item){item.node.nodeValue=lang==='hu'?item.original:item.original.match(/^\s*/)[0]+translations[item.key]+item.original.match(/\s*$/)[0];});
     document.querySelectorAll('.lang-toggle').forEach(function(e){e.textContent=lang==='hu'?'EN':'HU';});
-    document.title=t('Weboldal készítés | FORGRIT - Előnézet','Website development | FORGRIT - Preview');
+    document.title=t('Weboldal készítés vállalkozásoknak | FORGRIT','Website development for businesses | FORGRIT');
     renderDecision(activeDecision,animate);renderFeature(activeFeature,animate);renderCase(activeCase,animate);updateEstimate();applyTheme(currentTheme);
   }
   window.toggleLang=function(){applyLang(currentLang==='hu'?'en':'hu',true);};

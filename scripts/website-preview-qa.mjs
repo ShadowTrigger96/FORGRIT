@@ -36,11 +36,20 @@ try {
       }
       check(document.documentElement.lang===lang,'initial language');
       check(document.documentElement.dataset.theme===theme,'initial theme');
+      check(document.querySelector('link[rel="canonical"]').href==='https://forgrit.hu/weboldal-keszites','production canonical');
+      check(!document.querySelector('meta[name="robots"]').content.includes('noindex'),'production indexability');
+      check(!/Előnézet|Preview/.test(document.title),'production title');
       for(const key of ['start','replace','multi','campaign']){
         click('[data-decision="'+key+'"]');check(document.querySelector('#decisionDemo').dataset.view===key,'decision '+key);geometry('decision '+key);
       }
       for(const key of ['design','mobile','contact','seo','launch']){
         click('[data-feature="'+key+'"]');check(document.querySelector('#featureViewport').dataset.view===key,'feature '+key);geometry('feature '+key);
+        if(key==='mobile'){
+          const phone=document.querySelector('#featureViewport .site-example'),rect=phone.getBoundingClientRect();
+          check(rect.height/rect.width>=1.85&&rect.height/rect.width<=2,'phone proportions');
+          check(phone.scrollWidth<=phone.clientWidth+2,'phone horizontal overflow');
+          check(getComputedStyle(phone).overflowY==='auto'&&phone.tabIndex===0,'phone scroll access');
+        }
       }
       for(const key of ['base','build','tune']){
         click('[data-case="'+key+'"]');check(document.querySelector('#caseStage').dataset.view===key,'case '+key);geometry('case '+key);
