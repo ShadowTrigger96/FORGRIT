@@ -146,3 +146,38 @@
   .bz-compact .bz-note { padding:7px 14px; font-size:7px; }
 }
 .website-preview .phone-mode .bz .cafe-copy h4 { font-size:30px; }
+
+/* Keep the examples readable inside a service demonstration. */
+.bz .garden-hero h4{font-size:clamp(25px,5.6cqw,34px);line-height:1.12;letter-spacing:-.035em;}
+.bz .clay-copy h4{font-size:clamp(26px,5.8cqw,35px);line-height:1.12;}
+.bz .arch-intro{grid-template-columns:1.1fr 1fr;gap:18px;}
+.bz .arch-intro h4{font-size:clamp(24px,5cqw,31px);}
+.bz .arch-project>.bz-photo{height:200px;}
+.bz .cafe-hero>.bz-photo{min-height:245px;max-height:310px;}
+.bz .cafe-copy{padding:24px 22px;}
+.bz .cafe-bottom{padding:18px 22px;gap:20px;}
+.bz .cafe-bottom h5{font-size:20px;}
+.bz .clay-hero>.bz-photo{min-height:285px;max-height:340px;}
+.bz .garden-hero>.bz-photo{min-height:270px;max-height:320px;}
+.bz-compact .cafe-bottom{display:none;}
+.bz-compact .cafe-copy{padding:16px;}
+.bz-compact .cafe-copy h4{font-size:26px;}
+.bz-compact .cafe-copy p{font-size:10px;line-height:1.55;}
+.bz-compact .cafe-hero>.bz-photo{min-height:230px;max-height:270px;}
+.website-preview .phone-mode .bz .bz-head{padding:12px;}
+.website-preview .phone-mode .bz .cafe-brand{font-size:26px;}
+.website-preview .phone-mode .bz .cafe-brand>span{font-size:6px;}
+.website-preview .phone-mode .bz-head nav{font-size:7px;gap:6px;max-width:88px;}
+.website-preview .phone-mode .bz .cafe-hero>.bz-photo{height:100px;min-height:0;max-height:none;}
+.website-preview .phone-mode .bz .cafe-copy{padding:14px;}
+.website-preview .phone-mode .bz .cafe-copy h4{font-size:25px;margin:9px 0;}
+.website-preview .phone-mode .bz .cafe-copy p{font-size:10px;margin-bottom:12px;}
+.website-preview .phone-mode .bz .cafe-bottom{padding:14px;gap:16px;}
+@container concept (max-width:310px){
+  .bz .arch-intro{grid-template-columns:1fr;gap:12px;}
+  .bz .cafe-hero>.bz-photo{height:140px;min-height:0;max-height:none;}
+  .bz .cafe-copy{padding:18px;}
+  .bz .cafe-bottom{grid-template-columns:1fr;padding:18px;gap:18px;}
+  .bz .garden-hero>.bz-photo,.bz .clay-hero>.bz-photo{height:160px;min-height:0;}
+  .bz .clay-details{grid-template-columns:1fr;gap:14px;}
+}

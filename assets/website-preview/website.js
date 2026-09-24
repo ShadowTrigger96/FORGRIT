@@ -25,59 +25,59 @@
     "Első kérdés":"First question",
     "Még nincs weboldalam":"I do not have a website yet",
     "Most indul a vállalkozás, vagy eddig nem volt saját oldalad.":"You are just starting out, or you have not had your own website yet.",
-    "Van oldalam, de cserélném":"I have a site, but I want to replace it",
+    "Megújítanám a weboldalamat":"I have a site, but I want to replace it",
     "A jelenlegi oldal elavult, lassú, vagy egyszerűen már nem azt mutatja, amit szeretnél.":"Your current site is outdated, slow, or simply no longer represents the business properly.",
     "Több szolgáltatásom van":"I offer several services",
     "Külön szeretnéd bemutatni a szolgáltatásokat, referenciákat és a fontos információkat.":"You want separate space for services, references and important information.",
-    "Egy dolgot szeretnék hirdetni":"I want to promote one offer",
-    "Egy szolgáltatásnak, kampánynak vagy ajánlatnak kell külön, fókuszált oldal.":"A service, campaign or offer needs its own focused page.",
+    "Egy ajánlatot szeretnék hirdetni":"I want to promote one offer",
+    "Külön oldalra van szükséged egy szolgáltatás, akció vagy esemény bemutatásához.":"A service, campaign or offer needs its own focused page.",
     "Mi kerül bele a weboldalba?":"What goes into the website?",
     "Megjelenés":"Design",
     "színek, tipográfia, elrendezés":"colours, typography, layout",
     "Mobilnézet":"Mobile view",
-    "külön ellenőrzött tördelés":"layout checked separately",
+    "telefonon is kényelmes használat":"layout checked separately",
     "Kapcsolat":"Contact",
-    "űrlap és e-mail küldés":"form and email delivery",
+    "űrlap és e-mailes értesítés":"form and email delivery",
     "SEO alapok":"SEO basics",
-    "indexelés és oldalszerkezet":"indexing and page structure",
+    "oldalcímek és keresési leírások":"indexing and page structure",
     "Élesítés":"Launch",
     "domain, tárhely, HTTPS":"domain, hosting, HTTPS",
     "Mini esettanulmány":"Mini case study",
     "01 · A webshop":"01 · The webshop",
-    "Mit szolgál ki?":"What does it serve?",
+    "Kik használják?":"What does it serve?",
     "02 · Fejlesztések":"02 · Development",
-    "Milyen feladatok kerültek bele?":"What was added?",
+    "Milyen fejlesztések készültek?":"What was added?",
     "03 · Folyamatos munka":"03 · Ongoing work",
     "Mi történik az élesítés után?":"What happens after launch?",
     "Gyors árbecslő":"Quick price guide",
-    "Melyik kategóriába eshet a projekt?":"Which category might your project fit?",
+    "Mennyibe kerülne a weboldalad?":"How much would your website cost?",
     "Hogyan épüljön fel?":"How should it be structured?",
-    "Egy hosszabb oldal":"One long page",
+    "Egyoldalas bemutatkozó honlap":"One long page",
     "Több aloldal":"Multiple pages",
     "Mennyire legyen egyedi a megjelenés?":"How custom should the design be?",
     "Letisztult, visszafogott":"Clean and simple",
     "Egyedi animációk és interakciók":"Custom animations and interactions",
-    "Kell egyedi működés vagy integráció?":"Do you need custom functionality or integrations?",
-    "Alap funkciók elegendők":"Standard features are enough",
-    "Igen / még nem tudom":"Yes / not sure yet",
+    "Szükséged van egyedi funkciókra?":"Do you need custom functionality or integrations?",
+    "Az alapfunkciók elegendők":"Standard features are enough",
+    "Igen, vagy még egyeztetnék róla":"Yes / not sure yet",
     "Pontos ajánlatot kérek":"Request an exact quote",
-    "Nettó irányár. A végleges ár a pontos tartalom és funkciók alapján készül.":"Net guide price. The final quote depends on the exact content and features.",
+    "Nettó irányár. A tartalom és a funkciók egyeztetése után személyre szabott ajánlatot adok.":"Net guide price. The final quote depends on the exact content and features.",
     "Van már elképzelésed?":"Already have an idea?",
     "Vissza a főoldalra":"Back to homepage",
     "Minden jog fenntartva.":"All rights reserved.",
     "Impresszum":"Imprint",
     "Adatkezelés":"Privacy",
     "Sütikezelés":"Cookies",
-    "Bemutatkozó oldal, céges weboldal vagy külön landing page. A tervezéstől az élesítésig közvetlenül velem egyeztetsz.":"A company website, business site or dedicated landing page. From planning to launch, you work directly with me.",
+    "Bemutatkozó weboldalt, többoldalas céges honlapot vagy egy konkrét ajánlathoz külön oldalt készítek. A tervezéstől az indulásig közvetlenül velem egyeztetsz.":"A company website, business site or dedicated landing page. From planning to launch, you work directly with me.",
     "Példa: Carsystemshop.hu":"Example: Carsystemshop.hu",
     "A weboldal fő részei":"Core website features",
     "Egyedi weboldal":"Custom website",
-    "Reszponzív design":"Responsive design",
+    "Mobilbarát megjelenés":"Responsive design",
     "Technikai SEO":"Technical SEO",
-    "Domain + tárhely":"Domain + hosting",
+    "Domain és tárhely":"Domain + hosting",
     "Kapcsolati űrlap":"Contact form",
     "Teljesítmény":"Performance",
-    "Böngészőteszt":"Browser testing"
+    "Böngészőkben tesztelve":"Browser testing"
   };
   function t(hu, en) { return currentLang === 'en' ? en : hu; }
   function escapeHTML(value) {
@@ -127,28 +127,28 @@
   }
   var featureText={
     design:{
-      hu:{title:'Megjelenés',text:'A színeket, betűket, képeket és az elrendezést a vállalkozáshoz igazítom. Nem egy kész sablont húzok rá minden oldalra.',list:['színek és tipográfia','desktop elrendezés','animációk, ha indokolt']},
-      en:{title:'Design',text:'Colours, typography, imagery and layout are matched to the business. I do not put the same ready-made template on every site.',list:['colours and typography','desktop layout','motion where it makes sense']}
+      hu:{title:'Megjelenés',text:'A színeket, betűtípusokat és képeket a vállalkozásodhoz választom. Úgy rendezem el a tartalmat, hogy a látogatók könnyen megtalálják a szolgáltatásaidat és az elérhetőségedet.',list:['színek és tipográfia','átlátható oldalfelépítés','visszafogott animációk']},
+      en:{title:'Design',text:'I choose colours, typefaces and imagery that suit your business, and arrange the content so visitors can find your services and contact details easily.',list:['colours and typography','desktop layout','motion where it makes sense']}
     },
     mobile:{
-      hu:{title:'Mobilnézet',text:'Telefonon külön átnézem az oldalt. A menü, a gombok és a tördelés nem marad desktop méreten.',list:['mobil menü','kényelmes gombméret','külön ellenőrzött tördelés']},
-      en:{title:'Mobile view',text:'The site is checked separately on a phone. Navigation, buttons and layout are adjusted instead of simply shrinking the desktop version.',list:['mobile navigation','comfortable tap targets','responsive layout checked separately']}
+      hu:{title:'Mobilnézet',text:'Az oldalt telefonon és számítógépen is ellenőrzöm. Figyelek arra, hogy a szöveg jól olvasható legyen, a menü és a gombok pedig kisebb képernyőn is kényelmesen használhatók maradjanak.',list:['könnyen kezelhető menü','jól megnyomható gombok','telefonon is kényelmes használat']},
+      en:{title:'Mobile view',text:'I check the site on phones and computers, with readable text and navigation and buttons that work comfortably on smaller screens.',list:['mobile navigation','comfortable tap targets','responsive layout checked separately']}
     },
     contact:{
-      hu:{title:'Kapcsolat',text:'Beállítom az űrlapot és az e-mail küldést, hogy az üzenet tényleg megérkezzen. A látogató sikeres vagy hibás küldésnél is kap visszajelzést.',list:['név, e-mail, üzenet mezők','e-mail továbbítás','küldési visszajelzés']},
+      hu:{title:'Kapcsolat',text:'Beállítom a kapcsolatfelvételi űrlapot, és tesztüzenettel ellenőrzöm az e-mailes értesítést. A látogató visszajelzést kap a küldésről, hiba esetén pedig látja, mit kell javítania.',list:['név, e-mail, üzenet mezők','e-mailes értesítés','visszajelzés az üzenet elküldéséről']},
       en:{title:'Contact',text:'I set up the form and email delivery so messages actually arrive. Visitors also get clear feedback after a successful or failed submission.',list:['name, email and message fields','email delivery','submission feedback']}
     },
     seo:{
-      hu:{title:'SEO alapok',text:'Beállítom az oldalcímeket, leírásokat, sitemapet és a Search Console-t. Ezek az alapok kellenek ahhoz, hogy a Google rendesen lássa az oldalt.',list:['title és meta leírás','sitemap','Search Console']},
+      hu:{title:'SEO alapok',text:'Beállítom az oldalcímeket, a keresőben megjelenő leírásokat és a webhelytérképet. A Search Console segítségével követheted, hogyan jelenik meg az oldalad a Google találatai között.',list:['oldalcímek és keresési leírások','webhelytérkép','Search Console']},
       en:{title:'SEO basics',text:'Page titles, descriptions, sitemap and Search Console are set up so Google can properly understand and index the site.',list:['title and meta description','sitemap','Search Console']}
     },
     launch:{
-      hu:{title:'Élesítés',text:'Domain, DNS, HTTPS, tárhely és egy végső ellenőrzés. Élesítés után is megnézem, hogy minden ugyanúgy működik-e.',list:['domain és DNS','HTTPS','végső ellenőrzés']},
+      hu:{title:'Élesítés',text:'Összekötöm a domaint a tárhellyel, beállítom a biztonságos HTTPS-kapcsolatot, és közzéteszem az oldalt. Ezután a végleges címen is ellenőrzöm a linkeket, az űrlapot és a megjelenést.',list:['domain és DNS','HTTPS','végső ellenőrzés']},
       en:{title:'Launch',text:'Domain, DNS, HTTPS, hosting and a final check. After launch I also verify that everything works the same way in production.',list:['domain and DNS','HTTPS','final checks']}
     }
   };
   function contactHtml() {
-    return '<div class="site-example contact-example">' + sampleHead('FÜGE KÁVÉZÓ',t('Kapcsolat','Contact')) + '<div class="sample-contact-grid"><div><small>' + t('Beszéljük át','Let’s talk') + '</small><h4>' + t('Miben segíthetünk?','How can we help?') + '</h4><p>' + t('Írj pár mondatot az elképzelésedről, és felvesszük veled a kapcsolatot.','Tell us a little about your plans and we will get back to you.') + '</p></div><div class="sample-form" aria-label="' + t('Kapcsolati űrlap mintája','Sample contact form') + '"><div>' + t('Név','Name') + '</div><div>' + t('E-mail-cím','Email address') + '</div><div class="sample-message">' + t('Üzenet','Message') + '</div><span class="sample-action">' + t('Üzenet küldése','Send message') + '</span></div></div>' + note() + '</div>';
+    return '<div class="site-example contact-example">' + sampleHead('FÜGE KÁVÉZÓ',t('Kapcsolat','Contact')) + '<div class="sample-contact-grid"><div><small>' + t('Írj nekünk','Let’s talk') + '</small><h4>' + t('Miben segíthetünk?','How can we help?') + '</h4><p>' + t('Asztalt foglalnál, vagy kérdésed van az étlapról? Írj nekünk, és válaszolunk.','Would you like to book a table or ask about the menu? Send us a message.') + '</p></div><div class="sample-form" aria-label="' + t('Kapcsolati űrlap mintája','Sample contact form') + '"><div>' + t('Név','Name') + '</div><div>' + t('E-mail-cím','Email address') + '</div><div class="sample-message">' + t('Üzenet','Message') + '</div><span class="sample-action">' + t('Üzenet küldése','Send message') + '</span></div></div>' + note() + '</div>';
   }
   function seoHtml() {
     return '<div class="site-example search-example"><div class="sample-search">' + t('reggeli és kávé Győr','breakfast and coffee Győr') + '</div><div class="sample-search-result"><small>fugekave.example</small><h4>' + t('Kávé és reggeli | Füge Kávézó','Coffee and breakfast | Füge Café') + '</h4><p>' + t('Frissen pörkölt kávé, reggeli és péksütemények. Nézd meg az étlapot és a nyitvatartásunkat.','Freshly roasted coffee, breakfast and pastries. Explore the menu and find our opening hours.') + '</p></div>' + rail([t('Oldalcím','Page title'),t('Keresési leírás','Search description'),t('Oldaltérkép','Sitemap')]) + note() + '</div>';
@@ -169,6 +169,7 @@
     vp.className='feature-viewport '+(key==='mobile'?'phone-mode':key+'-mode');
     var markup=key==='contact'?contactHtml():key==='seo'?seoHtml():key==='launch'?launchHtml():websiteSample('start',key==='design');
     updateContent(vp,key,markup,false);
+    if(key==='mobile'){vp.firstElementChild.setAttribute('tabindex','0');vp.firstElementChild.setAttribute('aria-label',t('Görgethető mobilnézet','Scrollable mobile preview'));}
     updateContent(document.getElementById('featureCopy'),key,'<h3>'+f.title+'</h3><p>'+f.text+'</p><ul>'+f.list.map(function (x) { return '<li>'+x+'</li>'; }).join('')+'</ul>',animate);
     selectButton('.feature-tab','data-feature',key);
     requestAnimationFrame(updateProgress);
@@ -211,10 +212,10 @@
     var integration=document.querySelector('input[name="integration"]:checked').value==='yes';
     var tier=multi||custom?'Business':'Starter';
     var price=multi||custom?t('349.000 Ft <span class="suffix">-tól</span>','from HUF 349,000'):t('249.000 Ft <span class="suffix">-tól</span>','from HUF 249,000');
-    var text=multi||custom?t('Több aloldalhoz, egyedi megjelenéshez vagy összetettebb tartalomhoz.','For multiple pages, custom design or more detailed content.'):t('Egyoldalas bemutatkozó vagy landing oldal, alapfunkciókkal.','A one-page business website or landing page with standard features.');
+    var text=multi||custom?t('Többoldalas honlap, külön szolgáltatásoldalakkal vagy egyedi megjelenéssel.','For multiple pages, custom design or more detailed content.'):t('Egyoldalas honlap a vállalkozásod vagy egy konkrét ajánlat bemutatására.','A one-page business website or landing page with standard features.');
     if(integration) {
       tier=t('Egyedi projekt','Custom project');price=t('Egyedi árazás','Custom pricing');
-      text=t('Az egyedi működést és az integrációkat külön egyeztetjük, ezek alapján készül az ajánlat.','Custom functionality and integrations are discussed separately before preparing a quote.');
+      text=t('Az egyedi funkciókat és a más rendszerekkel való összekötést előbb átbeszéljük. Ez alapján készítem el az ajánlatot.','Custom functionality and integrations are discussed separately before preparing a quote.');
     }
     document.getElementById('estimateTier').textContent=tier;
     document.getElementById('estimatePrice').innerHTML=price;

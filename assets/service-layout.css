@@ -1,0 +1,71 @@
+/* Shared proportions for the website and webshop service pages.
+   The scoped overrides replace earlier viewport-specific minimum heights. */
+body.service-layout .decision-layout{align-items:start;gap:24px;}
+body.service-layout .decision-options{align-items:stretch;grid-auto-rows:1fr;gap:16px;}
+body.service-layout .decision-card{min-height:210px;padding:24px;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;}
+body.service-layout .decision-card .service-icon{margin-bottom:20px;flex:none;}
+body.service-layout .decision-card h3{margin-top:0;}
+body.service-layout .decision-stage{min-height:0;padding:16px;align-self:start;}
+body.service-layout .decision-stage .browser-frame{height:auto;min-height:0;}
+body.service-layout #decisionDemo{flex:none;height:480px;min-height:0;max-height:none;padding:12px;display:block;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;}
+body.service-layout #tartalom .feature-layout{grid-template-columns:240px minmax(0,1fr);gap:24px;align-items:start;}
+body.service-layout #tartalom .feature-tabs{display:grid;grid-template-columns:1fr;grid-auto-rows:1fr;gap:10px;}
+body.service-layout #tartalom .feature-tab{min-height:76px;padding:14px 16px;}
+body.service-layout #tartalom .feature-stage{min-height:430px!important;grid-template-columns:minmax(0,1.3fr) minmax(210px,.85fr)!important;align-items:center!important;padding:18px!important;gap:20px!important;}
+body.service-layout #tartalom .feature-visual{width:100%!important;min-width:0!important;min-height:0!important;padding:0!important;display:block!important;border:0;background:transparent;overflow:visible;}
+body.service-layout #tartalom .feature-browser{width:100%!important;height:390px!important;min-height:0!important;border-radius:14px;}
+body.service-layout #tartalom .feature-browser>.browser-top{height:38px;min-height:38px;padding:10px 14px;box-sizing:border-box;}
+body.service-layout #tartalom .feature-viewport{box-sizing:border-box;width:100%!important;min-width:0!important;height:350px!important;min-height:0!important;max-height:350px!important;padding:12px!important;display:grid!important;grid-template-columns:minmax(0,1fr);justify-items:center;align-items:safe center!important;overflow:auto!important;overscroll-behavior:contain;scrollbar-width:thin;transition:none;}
+body.service-layout #tartalom .feature-viewport.phone-mode{overflow:hidden!important;grid-template-columns:1fr;background:var(--bg);border:0;border-radius:0;}
+body.service-layout #tartalom .phone-mode>.site-example,
+body.service-layout #tartalom .phone-mode>.store-preview{width:204px!important;max-width:100%!important;height:324px!important;min-height:0!important;max-height:324px!important;aspect-ratio:auto!important;border:5px solid #292d29!important;border-radius:23px!important;overflow-y:auto!important;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#9da499 transparent;}
+body.service-layout #tartalom .feature-copy{padding:0!important;min-width:0;align-self:center!important;}
+body.service-layout #tartalom .feature-copy p{max-width:none;}
+body.service-layout .case-layout{align-items:start;gap:24px;}
+body.service-layout .case-stage{min-height:0;padding:16px;}
+body.service-layout .case-stage-inner{min-height:0;padding:24px;}
+body.service-layout .case-tab{min-height:88px;padding:18px 20px;}
+body.service-layout .estimator-question{padding:24px;}
+body.service-layout .estimate-result{align-self:start;}
+body.service-layout :is(#decisionDemo,.feature-viewport,.phone-mode>.site-example,.phone-mode>.store-preview):focus-visible{outline:2px solid var(--cyan);outline-offset:3px;}
+@media(max-width:1100px){
+  body.service-layout #tartalom .feature-layout{grid-template-columns:1fr;gap:18px;}
+  body.service-layout #tartalom .feature-tabs{grid-template-columns:repeat(5,minmax(0,1fr));}
+  body.service-layout #tartalom .feature-tab{padding:14px 12px;display:block;min-height:130px;}
+  body.service-layout #tartalom .feature-tab .service-icon{margin-bottom:10px;}
+  body.service-layout #tartalom .feature-tab strong{font-size:.86rem;}
+}
+@media(max-width:800px){
+  body.service-layout #tartalom .feature-tabs{grid-template-columns:repeat(2,minmax(0,1fr));}
+  body.service-layout #tartalom .feature-tab{min-height:84px;display:flex;}
+  body.service-layout #tartalom .feature-tab .service-icon{margin-bottom:0;flex:none;}
+  body.service-layout #tartalom .feature-stage{grid-template-columns:1fr!important;min-height:0!important;gap:20px!important;}
+  body.service-layout #tartalom .feature-copy{min-height:190px;}
+  body.service-layout .decision-card{min-height:185px;}
+}
+@media(max-width:600px){
+  body.service-layout .decision-options{grid-template-columns:1fr;grid-auto-rows:auto;gap:12px;}
+  body.service-layout .decision-card{min-height:0;padding:20px;display:grid;grid-template-columns:44px minmax(0,1fr);gap:8px 14px;align-items:start;}
+  body.service-layout .decision-card .service-icon{width:44px;height:44px;grid-row:1/3;margin:0;}
+  body.service-layout .decision-card h3{font-size:1rem;line-height:1.4;}
+  body.service-layout .decision-card p{grid-column:2;margin:0;font-size:.84rem;}
+  body.service-layout .decision-stage{padding:10px;}
+  body.service-layout #decisionDemo{height:460px;padding:8px;}
+  body.service-layout #tartalom .feature-tabs{grid-template-columns:1fr;gap:8px;}
+  body.service-layout #tartalom .feature-tab{min-height:72px;padding:12px 14px;}
+  body.service-layout #tartalom .feature-stage{padding:12px!important;}
+  body.service-layout #tartalom .feature-browser{height:370px!important;}
+  body.service-layout #tartalom .feature-viewport{height:330px!important;max-height:330px!important;padding:8px!important;}
+  body.service-layout #tartalom .phone-mode>.site-example,
+  body.service-layout #tartalom .phone-mode>.store-preview{height:312px!important;max-height:312px!important;width:194px!important;}
+  body.service-layout #tartalom .feature-copy{min-height:256px;padding:4px!important;}
+  body.service-layout .case-stage{padding:10px;}
+  body.service-layout .case-stage-inner{padding:18px;}
+  body.service-layout .case-tab{min-height:76px;padding:16px;}
+  body.service-layout .estimator-question{padding:20px;}
+}
+
+body.service-layout #tartalom .phone-mode .store-head{padding:12px;}
+body.service-layout #tartalom .phone-mode .store-hero>img{height:100px;}
+body.service-layout #tartalom .phone-mode .store-hero>div{padding:12px;}
+body.service-layout #tartalom .phone-mode .store-preview h4{font-size:22px;line-height:1.15;}
