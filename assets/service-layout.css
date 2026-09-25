@@ -18,7 +18,7 @@ body.service-layout #tartalom .feature-browser>.browser-top{height:38px;min-heig
 body.service-layout #tartalom .feature-viewport{box-sizing:border-box;width:100%!important;min-width:0!important;height:350px!important;min-height:0!important;max-height:350px!important;padding:12px!important;display:grid!important;grid-template-columns:minmax(0,1fr);justify-items:center;align-items:safe center!important;overflow:auto!important;overscroll-behavior:contain;scrollbar-width:thin;transition:none;}
 body.service-layout #tartalom .feature-viewport.phone-mode{overflow:hidden!important;grid-template-columns:1fr;background:var(--bg);border:0;border-radius:0;}
 body.service-layout #tartalom .phone-mode>.site-example,
-body.service-layout #tartalom .phone-mode>.store-preview{width:204px!important;max-width:100%!important;height:324px!important;min-height:0!important;max-height:324px!important;aspect-ratio:auto!important;border:5px solid #292d29!important;border-radius:23px!important;overflow-y:auto!important;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#9da499 transparent;}
+body.service-layout #tartalom .phone-mode>.store-preview{width:172px!important;max-width:100%!important;height:324px!important;min-height:0!important;max-height:324px!important;aspect-ratio:auto!important;border:5px solid #292d29!important;border-radius:23px!important;overflow-y:auto!important;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#9da499 transparent;}
 body.service-layout #tartalom .feature-copy{padding:0!important;min-width:0;align-self:center!important;}
 body.service-layout #tartalom .feature-copy p{max-width:none;}
 body.service-layout .case-layout{align-items:start;gap:24px;}
@@ -58,7 +58,7 @@ body.service-layout :is(#decisionDemo,.feature-viewport,.phone-mode>.site-exampl
   body.service-layout #tartalom .feature-viewport,
   body.service-layout #tartalom .feature-viewport.phone-mode{height:330px!important;max-height:330px!important;padding:8px!important;}
   body.service-layout #tartalom .phone-mode>.site-example,
-  body.service-layout #tartalom .phone-mode>.store-preview{height:312px!important;max-height:312px!important;width:194px!important;}
+  body.service-layout #tartalom .phone-mode>.store-preview{height:312px!important;max-height:312px!important;width:166px!important;}
   body.service-layout #tartalom .feature-copy{min-height:256px;padding:4px!important;}
   body.service-layout .case-stage{padding:10px;}
   body.service-layout .case-stage-inner{padding:18px;}
@@ -67,6 +67,8 @@ body.service-layout :is(#decisionDemo,.feature-viewport,.phone-mode>.site-exampl
 }
 
 body.service-layout #tartalom .phone-mode .store-head{padding:12px;}
+body.service-layout #tartalom .phone-mode .store-hero{grid-template-columns:minmax(0,1fr);}
 body.service-layout #tartalom .phone-mode .store-hero>img{height:100px;}
-body.service-layout #tartalom .phone-mode .store-hero>div{padding:12px;}
+body.service-layout #tartalom .phone-mode .store-hero>div{padding:12px;min-width:0;}
+body.service-layout #tartalom .phone-mode .store-action{max-width:100%;white-space:normal;padding:8px 10px;font-size:9px;}
 body.service-layout #tartalom .phone-mode .store-preview h4{font-size:22px;line-height:1.15;}

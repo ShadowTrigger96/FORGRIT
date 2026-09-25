@@ -1,0 +1,45 @@
+name: Website preview browser checks
+on:
+  push:
+    branches: [preview/weboldal-keszites-v2]
+permissions:
+  contents: read
+jobs:
+  browser-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install test-only browser dependency
+        run: |
+          npm install --no-save --package-lock=false playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Validate preview scripts
+        run: |
+          node --check assets/website-preview/website.js
+          node --check assets/website-preview/samples.js
+      - name: Start local preview
+        run: python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/preview-http.log 2>&1 &
+      - name: Check all responsive states
+        run: node scripts/website-preview-qa.mjs
+      - name: Verify actual photographs and capture all four concepts
+        if: always()
+        run: node scripts/website-samples-qa.mjs
+      - name: Package tested preview sources
+        if: always()
+        run: |
+          mkdir -p preview-qa/source/assets
+          cp weboldal-keszites.html preview-qa/source/
+          cp assets/service-layout.css preview-qa/source/assets/
+          cp -r assets/website-preview preview-qa/source/assets/
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: website-preview-qa
+          path: preview-qa/
+          retention-days: 7
